@@ -16,22 +16,52 @@ from collections import defaultdict
 from typing import Dict, List, Tuple, Any
 import re
 
+try:
+    import tiktoken
+    TIKTOKEN_AVAILABLE = True
+except ImportError:
+    TIKTOKEN_AVAILABLE = False
+
 
 class TokenCounter:
-    """Estimate tokens using GPT approximation (1 token ≈ 4 chars for English)"""
+    """Count tokens using tiktoken (OpenAI's tokenizer)"""
+    
+    _encoder = None
+    
+    @classmethod
+    def _get_encoder(cls):
+        """Lazily initialize tiktoken encoder for GPT-4"""
+        if cls._encoder is None and TIKTOKEN_AVAILABLE:
+            try:
+                cls._encoder = tiktoken.encoding_for_model("gpt-4")
+            except Exception:
+                # Fallback to cl100k_base encoding if gpt-4 not available
+                try:
+                    cls._encoder = tiktoken.get_encoding("cl100k_base")
+                except Exception:
+                    pass
+        return cls._encoder
     
     @staticmethod
     def count_tokens(text: str) -> int:
         """
-        Approximate token count using character-based heuristic.
-        For precise counts, use tiktoken with the model's encoding.
+        Count tokens using tiktoken (accurate OpenAI tokenization).
+        Falls back to character-based heuristic if tiktoken unavailable.
         """
         if not text:
             return 0
-        # Rough approximation: 1 token ≈ 4 characters for English
-        # Add extra for special characters and structure
+        
+        encoder = TokenCounter._get_encoder()
+        
+        if encoder is not None:
+            try:
+                return len(encoder.encode(text))
+            except Exception:
+                pass
+        
+        # Fallback: character-based approximation
+        # (1 token ≈ 4 characters for English, adjusted for other scripts)
         token_count = len(text) // 4
-        # Add tokens for punctuation and structure
         token_count += len(re.findall(r'[.,!?;:\-]', text)) // 2
         return max(1, token_count)
 
@@ -191,6 +221,10 @@ class JSONLValidator:
         print("\n" + "="*70)
         print("JSONL FINE-TUNE FILE VALIDATION REPORT")
         print("="*70)
+        if TIKTOKEN_AVAILABLE:
+            print("[Using tiktoken (OpenAI GPT-4 tokenizer) for accurate token counts]")
+        else:
+            print("[⚠ Using character-based approximation - tiktoken not available]")
         print(f"\nFile: {stats['file']}")
         print(f"Valid: {'✓ YES' if stats['valid'] else '✗ NO'}")
         print(f"Total Entries: {stats['num_entries']}")
