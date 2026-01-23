@@ -9,8 +9,13 @@ Each line of training data follows this structure:
 {"messages": [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}, ...]}
 ```
 
-The system prompt is consistent across all files:
+## System Prompts
+
+**Forward-direction files** (prototype.jsonl, vocabulary.jsonl) use an English system prompt:
 > You are an expert in Ur Djudeo-Mahikanítakh, a constructed fusion language blending Eastern Algonquian languages (primarily Munsee/Lenape) with Hebrew. You help users translate between English and Ur Djudeo-Mahikanítakh, and explain the linguistic principles behind each translation.
+
+**Reverse-direction files** (reverse.jsonl, vocab-reverse.jsonl) use an Ur Djudeo-Mahikanítakh system prompt:
+> אַתָּה מֻמְחֶה בְּאוּר דְּיוּדֵאוֹ-מָהִיקָאנִיטָאך, שְׂפַת מִזּוּג שֶׁל לְשׁוֹנוֹת אַלְגוֹנְקְוִין מִזְרָחִיּוֹת (בְּעִקָּר מוּנְסִי/לֶנַאפֶּה) וְעִבְרִית. נֶמִּינֵין עֶזְרָה לְתַרְגֵּם בֵּין אַנְגְּלִית לְאוּר דְּיוּדֵאוֹ-מָהִיקָאנִיטָאך, וּנֶוָאפּוּוֵין אֶת הָעִקְרוֹנוֹת הַלְּשׁוֹנִיִּים שֶׁמֵּאֲחוֹרֵי כָּל תַּרְגּוּם.
 
 ---
 
@@ -48,7 +53,7 @@ The system prompt is consistent across all files:
 
 1. **User (English)**: "What is the Ur Djudeo-Mahikanítakh word for '{english}'?"
 2. **Assistant**: `{conlang}`
-3. **User (English)**: "Explain the etymology of this word."
+3. **User (English)**: "Explain the etymology of '{conlang}'."
 4. **Assistant**: `{etymology}`
 
 ---
@@ -61,5 +66,5 @@ The system prompt is consistent across all files:
 
 1. **User (Ur Djudeo-Mahikanítakh)**: "מַה הַתַּרְגּוּם לְאַנְגְּלִית שֶׁל '{conlang}'?" *(What is the English translation of '{conlang}'?)*
 2. **Assistant**: `{english}`
-3. **User (Ur Djudeo-Mahikanítakh)**: "הַסְבֵּר אֶת הָאֶטִימוֹלוֹגְיָה שֶׁל הַמִּלָּה הַזֹּאת." *(Explain the etymology of this word.)*
+3. **User (Ur Djudeo-Mahikanítakh)**: "הַסְבֵּר אֶת הָאֶטִימוֹלוֹגְיָה שֶׁל '{conlang}'." *(Explain the etymology of '{conlang}'.)*
 4. **Assistant**: `{etymology_in_conlang}`

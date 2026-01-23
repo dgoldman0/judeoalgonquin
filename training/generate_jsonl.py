@@ -13,16 +13,26 @@ import csv
 import json
 from pathlib import Path
 
-SYSTEM_PROMPT = (
+# English system prompt for forward-direction files
+SYSTEM_PROMPT_EN = (
     "You are an expert in Ur Djudeo-Mahikanítakh, a constructed fusion language "
     "blending Eastern Algonquian languages (primarily Munsee/Lenape) with Hebrew. "
     "You help users translate between English and Ur Djudeo-Mahikanítakh, and "
     "explain the linguistic principles behind each translation."
 )
 
-def create_training_example(messages: list[dict]) -> dict:
+# Ur Djudeo-Mahikanítakh system prompt for reverse-direction files
+# Uses Hebrew for abstract concepts (מֻמְחֶה, תַּרְגּוּם, עִקְרוֹנוֹת) with Algonquian verbs
+# and the language's characteristic hybrid structures
+SYSTEM_PROMPT_CONLANG = (
+    "אַתָּה מֻמְחֶה בְּאוּר דְּיוּדֵאוֹ-מָהִיקָאנִיטָאך, שְׂפַת מִזּוּג שֶׁל לְשׁוֹנוֹת אַלְגוֹנְקְוִין מִזְרָחִיּוֹת "
+    "(בְּעִקָּר מוּנְסִי/לֶנַאפֶּה) וְעִבְרִית. נֶמִּינֵין עֶזְרָה לְתַרְגֵּם בֵּין אַנְגְּלִית לְאוּר דְּיוּדֵאוֹ-מָהִיקָאנִיטָאך, "
+    "וּנֶוָאפּוּוֵין אֶת הָעִקְרוֹנוֹת הַלְּשׁוֹנִיִּים שֶׁמֵּאֲחוֹרֵי כָּל תַּרְגּוּם."
+)
+
+def create_training_example(messages: list[dict], system_prompt: str) -> dict:
     """Wrap messages in standard JSONL training format."""
-    return {"messages": [{"role": "system", "content": SYSTEM_PROMPT}] + messages}
+    return {"messages": [{"role": "system", "content": system_prompt}] + messages}
 
 
 def process_prototype(input_path: Path, output_path: Path) -> int:
@@ -46,7 +56,7 @@ def process_prototype(input_path: Path, output_path: Path) -> int:
                 {"role": "assistant", "content": conlang},
             ]
             
-            outfile.write(json.dumps(create_training_example(messages), ensure_ascii=False) + '\n')
+            outfile.write(json.dumps(create_training_example(messages, SYSTEM_PROMPT_EN), ensure_ascii=False) + '\n')
             count += 1
     return count
 
@@ -73,7 +83,7 @@ def process_reverse(input_path: Path, output_path: Path) -> int:
                 {"role": "assistant", "content": english},
             ]
             
-            outfile.write(json.dumps(create_training_example(messages), ensure_ascii=False) + '\n')
+            outfile.write(json.dumps(create_training_example(messages, SYSTEM_PROMPT_CONLANG), ensure_ascii=False) + '\n')
             count += 1
     return count
 
@@ -95,11 +105,11 @@ def process_vocabulary(input_path: Path, output_path: Path) -> int:
             messages = [
                 {"role": "user", "content": f"What is the Ur Djudeo-Mahikanítakh word for '{english}'?"},
                 {"role": "assistant", "content": conlang},
-                {"role": "user", "content": "Explain the etymology of this word."},
+                {"role": "user", "content": f"Explain the etymology of '{conlang}'."},
                 {"role": "assistant", "content": etymology},
             ]
             
-            outfile.write(json.dumps(create_training_example(messages), ensure_ascii=False) + '\n')
+            outfile.write(json.dumps(create_training_example(messages, SYSTEM_PROMPT_EN), ensure_ascii=False) + '\n')
             count += 1
     return count
 
@@ -122,11 +132,11 @@ def process_vocab_reverse(input_path: Path, output_path: Path) -> int:
             messages = [
                 {"role": "user", "content": f"מַה הַתַּרְגּוּם לְאַנְגְּלִית שֶׁל '{conlang}'?"},
                 {"role": "assistant", "content": english},
-                {"role": "user", "content": "הַסְבֵּר אֶת הָאֶטִימוֹלוֹגְיָה שֶׁל הַמִּלָּה הַזֹּאת."},
+                {"role": "user", "content": f"הַסְבֵּר אֶת הָאֶטִימוֹלוֹגְיָה שֶׁל '{conlang}'."},
                 {"role": "assistant", "content": etymology},
             ]
             
-            outfile.write(json.dumps(create_training_example(messages), ensure_ascii=False) + '\n')
+            outfile.write(json.dumps(create_training_example(messages, SYSTEM_PROMPT_CONLANG), ensure_ascii=False) + '\n')
             count += 1
     return count
 
