@@ -5,7 +5,7 @@
 
 ## Introduction
 
-**Judeo-Algonquin** (also: *Munsee-Evrit*, *Lenape-Lashon*) is a constructed fusion language imagining a world where Jewish communities and Algonquian peoples of the Eastern Woodlands—particularly those of the **Mahikanítakh** (the "Hudson Valley," from Mahican *Mahicannituck* "the river that flows both ways" + Hebrew territorial suffix *-ítakh*)—developed a shared linguistic tradition through centuries of cohabitation, trade, and cultural exchange.
+**Judeo-Algonquin** (also: Djudeo-Mahikanítakh and 'Ur' Djudeo-Mahikanítakh in its current prototype form) is a constructed fusion language imagining a world where Jewish communities and Algonquian peoples of the Eastern Woodlands—particularly those of the **Mahikanítakh** (the "Hudson Valley," from Mahican *Mahicannituck* "the river that flows both ways" + Hebrew territorial suffix *-ítakh*)—developed a shared linguistic tradition through centuries of cohabitation, trade, and cultural exchange.
 
 The language is neither "Hebrew with Algonquian vocabulary" nor "Munsee written in Hebrew script." It is a true hybrid: **Algonquian morphology and worldview drive the predicate system**, while **Hebrew provides discourse architecture, connective tissue, and literary registers**. The result is a language capable of expressing both the polysynthetic richness of Eastern Algonquian languages and the narrative propulsion of Biblical Hebrew.
 
