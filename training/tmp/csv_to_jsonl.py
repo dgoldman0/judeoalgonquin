@@ -33,7 +33,7 @@ def translate_into_conlang(text: str) -> str:
     translation = response.choices[0].message.content.strip()
     return translation
     
-def parse_csv_to_conversations(csv_file: str) -> list[dict]:
+def parse_csv_to_conversations(csv_file: str, test_mode: bool) -> list[dict]:
     """
     Parse CSV file where each line is a conversation delimited by |||
     Returns list of conversation dictionaries.
@@ -79,6 +79,9 @@ def parse_csv_to_conversations(csv_file: str) -> list[dict]:
                 print(f"Error translating message: {e}")
             
             conversations.append({"messages": messages})
+
+            if test_mode:
+                break  # Process only first conversation in test mode
     
     return conversations
 
@@ -103,7 +106,7 @@ def main():
         return
     
     # Parse conversations
-    conversations = parse_csv_to_conversations(str(csv_file))
+    conversations = parse_csv_to_conversations(str(csv_file), True)
     print(f"Parsed {len(conversations)} conversations")
     
     # Write to JSONL
