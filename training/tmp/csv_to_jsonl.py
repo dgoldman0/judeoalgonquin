@@ -7,17 +7,32 @@ Applies a conlang translation function to each message.
 import json
 import csv
 from pathlib import Path
+import openai
 
+model = "ur-djudeo-mahikanitakh"
+
+client = openai.Client()
 
 def translate_into_conlang(text: str) -> str:
     """
-    Dummy translation function for now.
-    This can be replaced with actual conlang translation logic later.
+    Translate given text into Ur Djudeo-Mahikanítakh using OpenAI API.
     """
-    # For now, just return the text as-is
-    return text
 
+    system_prompt = "Translate between English and Ur Djudeo-Mahikanítakh."
+    user = "Translate the following text into Ur Djudeo-Mahikanítakh:\n\n" + text
 
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user}
+        ],
+        temperature=0.7,
+        max_tokens=1000,
+    )
+    translation = response.choices[0].message.content.strip()
+    return translation
+    
 def parse_csv_to_conversations(csv_file: str) -> list[dict]:
     """
     Parse CSV file where each line is a conversation delimited by |||
@@ -48,17 +63,20 @@ def parse_csv_to_conversations(csv_file: str) -> list[dict]:
             })
             
             # Add alternating user/assistant messages
-            for i in range(1, len(parts)):
-                content = parts[i].strip()
-                if i % 2 == 1:  # Odd indices are user messages
-                    role = "user"
-                else:  # Even indices are assistant messages
-                    role = "assistant"
-                
-                messages.append({
-                    "role": role,
-                    "content": translate_into_conlang(content)
-                })
+            try:
+                for i in range(1, len(parts)):
+                    content = parts[i].strip()
+                    if i % 2 == 1:  # Odd indices are user messages
+                        role = "user"
+                    else:  # Even indices are assistant messages
+                        role = "assistant"
+                    
+                    messages.append({
+                        "role": role,
+                        "content": translate_into_conlang(content)
+                    })
+            except Exception as e:
+                print(f"Error translating message: {e}")
             
             conversations.append({"messages": messages})
     
