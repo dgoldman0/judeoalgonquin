@@ -1,0 +1,560 @@
+# Translation Components - Discourse Building Blocks
+
+## Opening Phrases (How responses start)
+- Great question!
+- Good question.
+- That's a great question.
+- Let me explain.
+- Here's how it works.
+- Here's what I recommend.
+- The key is
+- The answer is
+- There are several ways to do this.
+- This is a common issue.
+- I'd be happy to help.
+- Of course!
+- Absolutely.
+- Let's break this down.
+- Let's start with the basics.
+- First, let me ask:
+
+## Transition Phrases (Connecting ideas)
+- Here's the thing:
+- The reason is
+- This is because
+- That said,
+- However,
+- On the other hand,
+- In other words,
+- For example,
+- To put it simply,
+- What this means is
+- The result is
+- This leads to
+- As a result,
+- In contrast,
+- Similarly,
+- Additionally,
+- Also,
+- Furthermore,
+- Most importantly,
+- Keep in mind that
+
+## Listing/Structuring Phrases
+- First,
+- Second,
+- Third,
+- Next,
+- Then,
+- Finally,
+- Start with
+- After that,
+- Once you've done that,
+- The last step is
+- Here are a few options:
+- There are three main approaches:
+- Let's look at each one:
+- Consider the following:
+
+## Emphasis Phrases
+- The most important thing is
+- What really matters is
+- The key point is
+- Don't forget that
+- Make sure to
+- Be careful to
+- It's worth noting that
+- This is crucial:
+- The critical part is
+- Pay attention to
+
+## Conditional Phrases
+- If you want to
+- If that happens,
+- If this doesn't work,
+- When you're ready,
+- Once you have
+- As long as
+- Unless you
+- In case of
+- Should this occur,
+- Depending on
+
+## Clarifying/Asking Phrases
+- What do you mean by
+- Could you clarify
+- Let me make sure I understand:
+- To be clear,
+- What I'm hearing is
+- Is that correct?
+- Does that make sense?
+- Do you have any questions?
+- What specifically are you looking for?
+- Can you tell me more about
+
+## Offering Help/Options
+- Would you like me to
+- I can help you with
+- There are a few ways to approach this.
+- You have several options:
+- One approach is
+- Another option is
+- You could also
+- Alternatively,
+- A better approach might be
+- I'd suggest
+
+## Explaining Cause/Effect
+- This happens because
+- The reason for this is
+- This is caused by
+- This results in
+- This means that
+- Therefore,
+- As a result,
+- Consequently,
+- So what happens is
+- The effect is
+
+## Giving Recommendations
+- I recommend
+- I'd suggest
+- You should
+- Try this:
+- The best approach is
+- What works well is
+- A good strategy is
+- My advice would be
+- Consider doing
+- Focus on
+
+## Summarizing/Concluding
+- In short,
+- To summarize,
+- The bottom line is
+- Overall,
+- In conclusion,
+- The main takeaway is
+- What it comes down to is
+- To wrap up,
+- So to answer your question:
+- Hope that helps!
+- Let me know if you have questions.
+- Does that answer your question?
+- Feel free to ask if anything is unclear.
+
+## Acknowledging/Validating
+- That's a good point.
+- You're right that
+- I understand.
+- That makes sense.
+- I see what you mean.
+- That's correct.
+- Exactly.
+- Yes, that's right.
+- Good thinking.
+- That's a valid concern.
+
+## Expressing Uncertainty/Hedging
+- It depends on
+- This varies depending on
+- Generally speaking,
+- In most cases,
+- Typically,
+- Usually,
+- It's possible that
+- This might
+- One possibility is
+- There's a chance that
+
+## Warnings/Cautions
+- Be careful with
+- Watch out for
+- Avoid
+- Don't forget to
+- Make sure you don't
+- One thing to avoid is
+- A common mistake is
+- Be aware that
+- Keep in mind
+- Important:
+
+## Time/Frequency References
+- Usually
+- Always
+- Never
+- Sometimes
+- Often
+- Rarely
+- Daily
+- Weekly
+- Once a month
+- Every time
+- The first time
+- Each time
+
+## Comparisons
+- This is similar to
+- Unlike
+- Compared to
+- The difference is
+- This is better than
+- This is worse than
+- Just like
+- In the same way
+- On the other hand
+- While X does Y, Z does W
+
+## Numbers/Quantities in Context
+- about 5 minutes
+- around 10%
+- approximately
+- at least
+- at most
+- more than
+- less than
+- between X and Y
+- a few
+- several
+- many
+- most
+
+## Formatting Markers
+- **Bold text**
+- Here's an example:
+- For instance:
+- Step 1:
+- Note:
+- Tip:
+- Warning:
+- Example:
+- See below:
+- As shown here:
+
+## Follow-up Prompts
+- What else would you like to know?
+- Any other questions?
+- Is there anything else?
+- Would you like more details?
+- Should I explain further?
+- Want me to elaborate?
+- Need more examples?
+- Shall I continue?
+
+## User Question Patterns
+- How do I
+- What is
+- Why does
+- Can you explain
+- I'm trying to
+- I need help with
+- What's the best way to
+- Is it possible to
+- Should I
+- What happens if
+- I don't understand
+- Can you show me
+- What do you recommend
+- I'm having trouble with
+- It's not working
+
+## Short User Responses
+- That makes sense.
+- I see.
+- Got it.
+- Thanks!
+- That's helpful.
+- I'll try that.
+- What about X?
+- And then?
+- What if X?
+- Is that safe?
+- How long does it take?
+- What else?
+- Any other tips?
+- Perfect.
+- Okay.
+
+## Content Fragments (Fillers)
+- the main thing
+- the key point
+- the first step
+- the next step
+- the final step
+- the result
+- the goal
+- the problem
+- the solution
+- the answer
+- the reason
+- the difference
+- the benefit
+- the risk
+- the cost
+
+## Agreement/Affirmation
+- That's exactly right.
+- Precisely.
+- You've got it.
+- That's the idea.
+- Correct.
+- Right.
+- Indeed.
+- Definitely.
+- Without a doubt.
+- No question about it.
+
+## Disagreement/Correction
+- Not quite.
+- Actually,
+- That's not entirely accurate.
+- I'd have to disagree.
+- That's a common misconception.
+- The reality is
+- In fact,
+- To correct that,
+- That's partially true, but
+- There's more to it than that.
+
+## Expressing Difficulty
+- This can be tricky.
+- It's not always straightforward.
+- This is where it gets complicated.
+- The challenge is
+- The hard part is
+- This requires patience.
+- It takes practice.
+- Don't be discouraged if
+- It's normal to struggle with this at first.
+- Most people find this difficult.
+
+## Expressing Ease
+- This is actually quite simple.
+- It's easier than it sounds.
+- Once you get the hang of it,
+- The good news is
+- Fortunately,
+- Luckily,
+- This part is straightforward.
+- You'll pick this up quickly.
+- It becomes second nature after a while.
+- Don't overthink it.
+
+## Sequencing Events
+- Before you begin,
+- To start,
+- At this point,
+- By now,
+- From here,
+- Moving forward,
+- Going forward,
+- At the end,
+- When you're done,
+- After completing this,
+
+## Describing Results
+- You should see
+- The outcome will be
+- This will give you
+- You'll end up with
+- The end result is
+- What you get is
+- This produces
+- This creates
+- This leads to
+- You'll notice that
+
+## Providing Context
+- For context,
+- To give you some background,
+- It's important to understand that
+- What you need to know is
+- The thing about this is
+- Here's some context:
+- To set the stage,
+- Before we dive in,
+- Some background:
+- A bit of history:
+
+## Making Exceptions
+- The exception is
+- Unless otherwise noted,
+- In rare cases,
+- There are exceptions, of course.
+- This doesn't apply when
+- One exception to this is
+- Keep in mind there are edge cases.
+- Most of the time this works, but
+- The only time this changes is
+- With some exceptions,
+
+## Expressing Preferences
+- I prefer
+- The better option is
+- If I had to choose,
+- Personally,
+- In my experience,
+- What I find works best is
+- My preference would be
+- Given the choice,
+- All things considered,
+- If you ask me,
+
+## Asking for Feedback
+- How does that sound?
+- What do you think?
+- Does this work for you?
+- Is this what you had in mind?
+- Am I on the right track?
+- Is this helpful so far?
+- Are we aligned on this?
+- Does this approach make sense?
+- Any concerns with this?
+- Thoughts?
+
+## Referring Back
+- As I mentioned,
+- Like I said,
+- Going back to what we discussed,
+- To revisit that point,
+- Building on that,
+- Related to what I said earlier,
+- This connects to
+- Remember when I mentioned
+- Earlier I noted that
+- This ties back to
+
+## Looking Forward
+- Next time,
+- In the future,
+- Going forward,
+- From now on,
+- Eventually,
+- Down the road,
+- Later on,
+- When you're ready to move on,
+- Once you've mastered this,
+- The next thing to learn is
+
+## Softening Statements
+- You might want to
+- It could be worth
+- Perhaps consider
+- It may help to
+- You may find that
+- It wouldn't hurt to
+- One thing you could try is
+- Something to consider is
+- It's worth exploring
+- You might benefit from
+
+## Intensifying Statements
+- You absolutely must
+- It's essential that
+- Under no circumstances should you
+- This is non-negotiable.
+- You really need to
+- I can't stress enough
+- This is critical.
+- Without this, nothing else works.
+- This makes all the difference.
+- Everything depends on this.
+
+---
+
+# EXAMPLE COMPOSITIONS (Text Blocks Built from Components Above)
+
+## Block 1: Simple Explanation
+Great question! The key is the first step. First, start with the basics. Then, once you've done that, move to the next step. Make sure to pay attention to the details. Does that make sense?
+
+## Block 2: Multi-step Instructions
+There are several ways to do this. Here's what I recommend: First, start with the basics. Second, once you've done that, the next step is straightforward. Finally, check the result. The most important thing is the details. Let me know if you have questions.
+
+## Block 3: Clarification Request
+I understand. Let me make sure I understand: What specifically are you looking for? Could you clarify the problem?
+
+## Block 4: Problem Response
+That makes sense. This is a common issue. The reason is the first step affects the next step. Try this: Start with the basics. If this doesn't work, let me know.
+
+## Block 5: Recommendation with Options
+I'd suggest a few options. One approach is the first step. Another option is a different approach. Alternatively, you could also try the second approach. The best approach is it depends on the situation. What works well is taking it step by step.
+
+## Block 6: Comparison
+Good question. The difference is significant. The first one is similar to the basics. Unlike the first, the second is better for complex situations. Compared to the first, the second takes more time. In most cases, either will work. It depends on the goal.
+
+## Block 7: Warning
+Generally speaking, yes. However, be careful with a few things. First, avoid the common mistake. A common mistake is skipping the first step. **Important:** Make sure you don't ignore the warning. Keep in mind the result varies depending on conditions.
+
+## Block 8: Summary
+Of course! To put it simply, the answer is straightforward. The bottom line is the first step, then the next step. In short, it takes about 5 minutes. The result is worth it. Hope that helps!
+
+## Block 9: Conditional Advice
+It depends on the situation. If you want to get the result quickly, then yes. However, if you have more time, a better approach might be the thorough method. In most cases, the first approach is fine. Typically, you should see the result within a few days.
+
+## Block 10: Structured List
+Here are a few options. Consider the following:
+
+**Step 1:** Start with the basics. This is crucial.
+**Step 2:** Once you've done that, the next step follows.
+**Step 3:** Finally, check the result carefully.
+
+Note: The most important thing is patience. Tip: Don't forget the details.
+
+## Block 11: Acknowledging Concern
+I see what you mean. That's a valid concern. The reason for this is sometimes conditions change. What this means is you might need to adjust. I'd suggest a different approach. One possibility is to start over.
+
+## Block 12: Short Answer
+Usually about 10 minutes. This varies depending on the situation. In most cases, less than an hour.
+
+## Block 13: Validation
+Yes, that's right. Typically this is the result. That's correct.
+
+## Block 14: Offer to Help
+I'd be happy to help. What specifically are you looking for? Can you tell me more about the problem?
+
+## Block 15: Cause and Effect
+This happens because the first step affects the next. The reason for this is each part depends on the previous one. As a result, skipping steps causes the problem. Therefore, follow them in order.
+
+## Block 16: Emphasis Block
+The most important thing is the details. Don't forget that each step matters. Be careful to follow the instructions. It's worth noting that the problem is easy to fix if you catch it early.
+
+## Block 17: Uncertainty
+It's possible that this might not work the first time. One possibility is conditions have changed. There's a chance that you'll need to try again. Generally speaking, most people succeed on the second attempt.
+
+## Block 18: Follow-up Prompt
+What else would you like to know? Is there anything else? Would you like more details? Feel free to ask if anything is unclear.
+
+## Block 19: Long Instructional
+Let me explain. Before you begin, it's important to understand that this requires patience. The challenge is most people find this difficult at first. Don't be discouraged if it takes practice. Here's what I recommend: First, start with the basics. Make sure to pay attention to the details. Then, once you've done that, the next step follows. At this point, you should see the result. The key point is patience. A common mistake is rushing. If this doesn't work, try a different approach. The good news is once you get the hang of it, it becomes second nature after a while. Does that make sense? Let me know if you have questions.
+
+## Block 20: Long Comparison
+Good question. Let me break this down. The difference is significant, and it's worth understanding. The first approach is similar to the basics. It's easier than it sounds, and you'll pick this up quickly. However, the challenge is it doesn't work well in complex situations. On the other hand, the second approach takes more time but the result is better. In my experience, what I find works best is the first approach, then the second once you've mastered the basics. To summarize: If you want the result quickly, the first approach. If you have more time, the second is the better option. All things considered, both have their place. It depends on the situation and the goal.
+
+## Block 21: Long Warning/Caution
+Generally speaking, this is safe. However, there are a few things you absolutely must be aware of. Before you begin, keep in mind that a common mistake is skipping the first step. This is where it gets complicated. The hard part is knowing when to stop. Here's the thing: Under no circumstances should you proceed without checking first. **Warning:** If you ignore this, the result could be the problem down the road. One thing to avoid is rushing. Be careful with the timing. Watch out for signs. If that happens, stop immediately. The good news is most issues are preventable. I can't stress enough how important this is. Make sure you don't skip any steps. The result should be fine.
+
+## Block 22: Long Problem-Solving
+I understand. That's a valid concern, and it's normal to struggle with this at first. Let me make sure I understand: What specifically are you seeing? Is it that the result isn't the goal? This is a common issue. The reason for this is usually one of a few things. First, it could be the first step wasn't quite right. Second, sometimes conditions change. Third, there's a chance that you're missing a step. Here's what I'd suggest: Start by going back to the first step. Check each step carefully. Pay attention to the difference. If this doesn't work, try a different approach entirely. One possibility is you need more information. Can you tell me more about the problem? The bottom line is this is fixable. It takes practice, and most people get it right on the second attempt.
+
+## Block 23: Long Structured List
+There are several ways to do this. Consider the following:
+
+**Approach 1: The Quick Method**
+This is actually quite simple. Start with the basics. You'll end up with the result quickly. The benefit is speed. The risk is you might need to redo it later.
+
+**Approach 2: The Thorough Method**
+This requires patience. Before you begin, make sure you have everything. First, the first step. Then, the next step carefully. Finally, check the result. The outcome will be more reliable. It takes more time.
+
+**Approach 3: The Hybrid Method**
+This combines the best of both. Start with the quick method. Then, go back and refine. In my experience, this is what works best for most situations.
+
+Note: The best approach depends on the situation. Tip: If you're just starting out, try the quick method first. Once you've mastered this, the next thing to learn is the thorough method.
+
+## Block 24: Long Cause and Effect
+Let me explain how this works. It's important to understand that everything here is connected. The first step affects the next, and so on. This is because each part depends on the previous one. Here's what happens: To start, the first step. This creates the conditions for the next step. At this point, you'll notice that things start to change. The effect is gradual at first. As a result, what you do early on has a big impact later. Therefore, the most important thing is the first step. If you skip steps, everything else becomes harder. Consequently, rushing at the beginning causes the problem later. The main takeaway is this: Invest time upfront. Going back to what I said earlier, patience is key. Does this help?
+
+## Block 25: Long Uncertainty with Guidance
+This is where it gets complicated, and I want to be honest. It's not always straightforward. The reality is the result varies depending on many factors. Generally speaking, most people see success. However, there's a chance that your situation is different. One possibility is what works for others might not work for you. It's possible that you'll need to experiment. That said, here's what I'd suggest: Start with the standard approach. Pay attention to what happens. If you see the result, great. If not, don't be discouraged. This is normal. The next thing to try is adjusting. There are a few ways to approach this. You might want to try changing one thing at a time. Eventually, you'll find what works. The bottom line is there's no one-size-fits-all answer. With patience, you'll get there.
+
+## Block 26: Long Validation and Expansion
+That's exactly right. You've got it. Indeed, most people come to this same conclusion. Building on that, let me add a few more details. The thing about this is there's more to it. For context, this connects to a broader pattern. Here's some background: The reason this works is each part reinforces the others. It's worth noting that this is by design. What really matters is understanding *why* it works. Once you understand the underlying logic, you can apply it. This is crucial. The benefit is flexibility. Going forward, you'll be able to adapt. Am I on the right track? Let me know if you want me to elaborate.
