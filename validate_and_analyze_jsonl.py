@@ -189,6 +189,16 @@ class JSONLValidator:
         
         total_tokens = self.token_stats.get('total', 0)
         
+        # Calculate max tokens in any single example
+        max_tokens_in_example = 0
+        if self.messages_list:
+            for entry in self.messages_list:
+                example_tokens = 0
+                for msg in entry.get('messages', []):
+                    content = msg.get('content', '')
+                    example_tokens += TokenCounter.count_tokens(content)
+                max_tokens_in_example = max(max_tokens_in_example, example_tokens)
+        
         stats = {
             'file': str(self.filepath),
             'valid': len(self.errors) == 0,
@@ -200,6 +210,7 @@ class JSONLValidator:
                 'user': self.token_stats.get('user', 0),
                 'assistant': self.token_stats.get('assistant', 0),
                 'total': total_tokens,
+                'max_in_example': max_tokens_in_example,
             },
             'percentages': {},
             'message_counts': dict(self.role_counts),
@@ -251,6 +262,7 @@ class JSONLValidator:
         percentages = stats['percentages']
         
         print(f"\nTotal Tokens: {tokens['total']}")
+        print(f"Maximum Tokens in Any Example: {tokens['max_in_example']}")
         print(f"\nBreakdown by Role:")
         print(f"  System:    {tokens['system']:6d} tokens ({percentages.get('system', 0):5.2f}%)")
         print(f"  User:      {tokens['user']:6d} tokens ({percentages.get('user', 0):5.2f}%)")
