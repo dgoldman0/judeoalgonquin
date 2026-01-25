@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+"""
+Convert narrative_power.md examples to JSONL training format.
+
+Structure per example:
+1. User: Disambiguated English (request to simplify)
+2. Assistant: Simplified/ambiguous English 
+3. User: How could Ur Djudeo-Mahikanítakh help fix the shortcomings?
+4. Assistant: Explanation of language power + English limitations
+5. User: Translate using that narrative power
+6. Assistant: Ur Djudeo-Mahikanítakh translation
+"""
+
+import json
+from pathlib import Path
+
+# Define the 9 samples
+samples = [
+    {
+        "disambiguated": "The elder brother gave his knife to his younger brother. The younger brother took it and smiled. The elder brother nodded and walked away.",
+        "simplified": "The elder brother gave his knife to his younger brother. He took it and smiled. He nodded and walked away.",
+        "explanation": "The proximate (יוֹ) / obviative (יוֹוָא) system disambiguates reference tracking that would be ambiguous in Hebrew or English. The younger brother [OBV] took it and smiled. The elder brother [PROX] nodded and walked away. English must repeat \"elder brother\" and \"younger brother\" explicitly where the constructed language uses grammatical marking.",
+        "translation": "וְמִיגִיוֵא הָאַכִּי־סַאיֵאנְזְ׳ מוֹכּוֹמָאן אֶל־וְשִׁימֵאיוָא אַגָאשִׁינְזְ׳וָא. וַיְאוֹדָאפִּינַאן יוֹוָא מִינַאוָא וַיְזָאמִין. וַיְוֵאוֵאבִּיקְוֵא יוֹ מִינַאוָא וַיְמָאג׳אָא."
+    },
+    {
+        "disambiguated": "A healer found a wounded stranger in the forest. The healer brought the stranger to her lodge. The stranger woke and saw the healer's face. The healer spoke first.",
+        "simplified": "A healer found a stranger wounded in the forest. She brought him to her lodge. He woke and saw her face. She spoke first.",
+        "explanation": "The healer [PROX/יוֹ] is the discourse center throughout. The stranger [OBV/יוֹוָא] woke. When \"she spoke first\" — no need to say \"the healer\" again — יוֹ resumes. English must keep repeating \"the healer\" and \"the stranger\" to maintain clarity about who is doing what.",
+        "translation": "וְמִיקַאן מַאשְׁקִיכִיוִינִינִי מַאיַאגִיזִידוָא מָאאַאזְ׳יד בְּנוֹפִּימִינְג. וַיְבִּידָאן יוֹ יוֹוָא אֶל־וְוִיגְוָאמִינְק. וַיְקוֹשְׁקוֹזִי יוֹוָא מִינַאוָא וַיְוָאבָּאמָאן וְאִינְגְוֵאוָא. וַיְגָאנוֹזִ׳י יוֹ נִיטַאם."
+    },
+    {
+        "disambiguated": "The chief called his son. The son brought a warrior. The chief spoke to the warrior, but the chief watched the son's face. The warrior agreed. The son said nothing.",
+        "simplified": "The chief called his son. His son brought a warrior. The chief spoke to the warrior, but watched his son's face. The warrior agreed. His son said nothing.",
+        "explanation": "Three males tracked: chief [PROX], son [OBV¹], warrior [OBV²]. The system marks which \"he\" is which without repeating names. English must repeat \"the chief,\" \"the son,\" and \"the warrior\" explicitly or use clunky constructions like \"the former\" and \"the latter\" to track three male referents.",
+        "translation": "וַיְנַאנְדוֹמָאן אוֹגִימָא וְאוֹגְוִיסַאןוָא. וַיְבִּידָאן יוֹוָא זְ׳ימָאגַאנִישׁוָא. וַיְגָאנוֹנָאן יוֹ הַזְ׳ימָאגַאנִישׁוָא אֲבָל וַיְגַאנַאוָאבָּאמָאן וְאִינְגְוֵאוָאוָא וְאוֹגְוִיסַאןוָא. וַיְאִינֵנְדַאם הַזְ׳ימָאגַאנִישׁוָא דֶּבְוֵא. וַיְאָאנְגְוָאמִי יוֹוָא וְאוֹגְוִיסַאן."
+    },
+    {
+        "disambiguated": "The hunter tracked the bear for three days. On the fourth day, it was the bear who found the hunter.",
+        "simplified": "The hunter tracked the bear for three days. On the fourth day, the bear found him.",
+        "explanation": "The hunter [PROX] tracks the bear [OBV]. But on day four, the INVERSE marker -איגוֹ shows the bear [now agent] found him [PROX as patient]. The bear acts ON the proximate — Hebrew would need to restructure; here the verb form carries it. English must add \"it was...who\" construction or passive voice \"the hunter was found by the bear\" to clarify the role reversal that the inverse marker handles morphologically.",
+        "translation": "וַיְנוֹפִּינַאוֵא גִיאוֹוֵאוִינִינִי מַאקְוָאוָא נִיסְוִי גִיזְ׳יגַאדוֹן. בְּנִיאוֹ־גִיזְ׳יגַאדִינְק, וַיְמִיקָאאִיגוֹ יוֹ מַאקְוָא."
+    },
+    {
+        "disambiguated": "The woman waited by the river. A canoe appeared. The paddler was her husband, long thought dead. The woman ran to the man. The man stepped onto the shore. The two of them did not speak.",
+        "simplified": "The woman waited by the river. A canoe appeared. The paddler was her husband, long thought dead. She ran to him. He stepped onto the shore. They did not speak.",
+        "explanation": "She [PROX] runs to him [OBV]. He [OBV] steps ashore. At \"they did not speak\" — the dual/plural form resolves them together. The husband never needs to steal PROX status from her — she remains the narrative anchor. English must use \"the woman,\" \"the man,\" \"her husband,\" \"the paddler,\" or \"the two of them\" to maintain clarity where pronouns would create ambiguity.",
+        "translation": "וַיְבִּיהָא אִיקְוֵא בְּזִיבִּיאַאגִינְק. וַיְנָאגְוַאד ג׳ימָאן. הָאוֹנָאבְוִייַאד וְאָאו וְנָאבֵּאמוָא, גִינְוֵאנְז אִינֵנְדָאגְוַאד נִיבוֹד. וַיְאַאזְ׳יבַּאטוֹ יוֹ אֶל־יוֹוָא. וַיְגָאבָּאוִי יוֹוָא עַל־וְאַאגָאמִינְק. קָאוִין וַיְגָאנוֹזִ׳יטוֹנַאוָא."
+    },
+    {
+        "disambiguated": "The hunter saw the deer. The hunter drew his bow. The hunter aimed carefully. The hunter released the arrow. The arrow flew true. The deer fell.",
+        "simplified": "The hunter saw the deer. He drew his bow. He aimed carefully. He released the arrow. It flew true. The deer fell.",
+        "explanation": "Pure wayyiqtol chain: וַיְ-verb, וַיְ-verb, וַיְ-verb. Each action flows into the next with the waw-consecutive maintaining the narrative momentum. No subject needed after the first verb—the chain carries it forward. English must repeat subjects or rely on context. The wayyiqtol chain in the constructed language eliminates this repetition while maintaining perfect clarity through verb morphology.",
+        "translation": "וַיְוָאבָּאמָאן גִיאוֹוֵאוִינִינִי אַדִּיקְוָא. וַיְאוֹזִיטוֹן וְמִיטִיגְוָאבִּי. וַיְנַאנַאגַאדַאוֵאנְדַאן. וַיְבָּאשְׁקִיזִיגֵא. וַיְפִּימִיבִּיזוֹ. וַיְפַּאנְגִישִׁין אַדִּיקְ."
+    },
+    {
+        "disambiguated": "When the sun sets, then the gates will close. And then the guards will take their positions. And then the torches will be lit. And then no one will enter or leave until dawn.",
+        "simplified": "When the sun sets, the gates will close. The guards will take their positions. The torches will be lit. No one will enter or leave until dawn.",
+        "explanation": "Weqatal chain: וְ-perfect form creates a sequence of future/modal consequences. Each וְ links the next inevitable result. The chain creates a sense of determined sequence—one thing will lead to another. English needs \"then\" or \"and then\" to create the same sense of consequential flow that weqatal provides morphologically.",
+        "translation": "כַּאֲשֶׁר גִיזִיס וְפַּאנְגִישִׁין, וְגִיבָּאקְוַאהוֹאָאגוֹנַאוָא אִישְׁקְוַאנְדֵאמַאן. וְנַאבָּאוִינַאוָא גַנָאוֵאוִינִינִיוַאק וְנָאבָּאוִינִיוָא. וְוָאסֵאשְׁקַאנֵאוִינַאוָא וָאסַאמוֹוִינַאן. קָאוִין אַאוִי וְבִּינְדִיגֵא אוֹ וְסָאגַאם עַד וָאבַּאנְג."
+    },
+    {
+        "disambiguated": "The mother called her daughter. The daughter came. The daughter bowed. The daughter spoke. The mother listened. The daughter left.",
+        "simplified": "The mother called her daughter. She came. She bowed. She spoke. She listened. She left.",
+        "explanation": "The wayyiqtol chain flows smoothly: וַיְ-וַיְ-וַיְ. BUT the obviative marking shows: mother [PROX] called, daughter [OBV] came, daughter bowed, daughter spoke, mother [PROX] listened, daughter left. The TWO systems together create a perfectly clear six-action sequence with no subject repetition. English must repeat \"the mother\" and \"the daughter\" explicitly to track which \"she\" does what.",
+        "translation": "וַיְנַאנְדוֹמָאן אוֹמָאמָא וְאוֹדָאנִיסַאןוָא. וַיְבִּיאָאיָא יוֹוָא. וַיְאוֹזְ׳ישְׁקוֹזוֹ יוֹוָא. וַיְגָאנוֹזִ׳י יוֹוָא. וַיְבִּיזִינְדַאם יוֹ. וַיְמָאג׳אָא יוֹוָא."
+    },
+    {
+        "disambiguated": "The teacher told a story to his student—a story about a warrior. The teacher described the warrior's journey. In the story, the warrior met a wise woman. The wise woman taught the warrior. The warrior returned to his home. Then, exiting the story, the warrior within the tale told others what the warrior had learned. The others believed the warrior.",
+        "simplified": "The teacher told a story to his student. He spoke of a warrior. He described the warrior's journey. The warrior met a wise woman. She taught him. He returned home. He told others what he had learned. They believed him.",
+        "explanation": "Pure narrative flow—eleven consecutive וַיְ verbs. The teacher [PROX/יוֹ] remains the narrative center. The student [OBV] is grammatically marked. The warrior [also OBV] enters as a character IN the story. The wise woman [OBV feminine] appears and acts ON the warrior (יוֹוָא object form). The warrior [OBV] returns and tells. \"Others\" [plural] believed. All tracked perfectly through morphology alone. English becomes tortured, needing phrases like \"in the story,\" \"the warrior within the tale,\" \"exiting the story,\" and constant repetition of \"the teacher,\" \"the warrior,\" \"the wise woman\" to track multiple narrative levels and actors. The constructed language handles all of this with verb prefixes and PROX/OBV marking.",
+        "translation": "וַיְדִיבָּאג׳ימוֹן גִיכִינוֹהַאמָאגֵא אַאדִיזוֹכֵא אֶל־וְגִיכִינוֹאַאמָאגַןוָא. וַיְאִיקִידוֹ יוֹ עַל־זְ׳ימָאגַאנִישׁוָא. וַיְדִיבָּאג׳ימוֹן בַּאבָּאמָאדִיזִיוִיןוָא זְ׳ימָאגַאנִישׁוָא. וַיְנַאגַאשְׁקָאוָאן זְ׳ימָאגַאנִישׁוָא נִיבְוָאקָאאִיקְוֵאוָא. וַיְגִיכִינוֹהַאמָאגוֹן יוֹוָא. וַיְגִיוֵא זְ׳ימָאגַאנִישׁוָא וְאוֹדֵאקִינְק. וַיְוִינְדַאמַאוָאן בֵּיכָאנַאק מִי גִיכֶנְדַאמוֹוִין. וַיְדֵאבְוֵאטַאוָאוָאן."
+    }
+]
+
+def main():
+    output_file = Path(__file__).parent / "narrative_power.jsonl"
+    
+    conversations = []
+    
+    for i, sample in enumerate(samples, 1):
+        conversation = {
+            "messages": [
+                {"role": "system", "content": ""},
+                {"role": "user", "content": f"Simplify this narrative:\n\n{sample['disambiguated']}"},
+                {"role": "assistant", "content": sample['simplified']},
+                {"role": "user", "content": "How could Ur Djudeo-Mahikanítakh's narrative power help fix the shortcomings of this simplified version?"},
+                {"role": "assistant", "content": sample['explanation']},
+                {"role": "user", "content": "Translate this narrative into Ur Djudeo-Mahikanítakh utilizing that narrative power."},
+                {"role": "assistant", "content": sample['translation']}
+            ]
+        }
+        conversations.append(conversation)
+    
+    # Write JSONL
+    with open(output_file, "w", encoding="utf-8") as f:
+        for conv in conversations:
+            f.write(json.dumps(conv, ensure_ascii=False) + "\n")
+    
+    print(f"Created {output_file} with {len(conversations)} training conversations")
+
+if __name__ == "__main__":
+    main()

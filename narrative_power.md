@@ -1,0 +1,177 @@
+# Narrative Power: Proximate/Obviative Demonstrations
+
+Short narratives showcasing how the proximate (יוֹ) / obviative (יוֹוָא) system disambiguates reference tracking that would be ambiguous in Hebrew or English.
+
+---
+
+## Sample 1: Two Brothers
+
+**English:**
+The elder brother gave his knife to his younger brother. He took it and smiled. He nodded and walked away.
+
+*(Ambiguous: Who took? Who nodded? Who walked away?)*
+
+**Ur Djudeo-Mahikanítakh:**
+וְמִיגִיוֵא הָאַכִּי־סַאיֵאנְזְ׳ מוֹכּוֹמָאן אֶל־וְשִׁימֵאיוָא אַגָאשִׁינְזְ׳וָא. וַיְאוֹדָאפִּינַאן יוֹוָא מִינַאוָא וַיְזָאמִין. וַיְוֵאוֵאבִּיקְוֵא יוֹ מִינַאוָא וַיְמָאג׳אָא.
+
+*(Clear: The younger brother [OBV] took it and smiled. The elder brother [PROX] nodded and walked away.)*
+
+**English (Disambiguated):**
+The elder brother gave his knife to his younger brother. The younger brother took it and smiled. The elder brother nodded and walked away.
+
+*(English must repeat "elder brother" and "younger brother" explicitly where the constructed language uses grammatical marking.)*
+
+---
+
+## Sample 2: The Healer and the Stranger
+
+**English:**
+A healer found a stranger wounded in the forest. She brought him to her lodge. He woke and saw her face. She spoke first.
+
+**Ur Djudeo-Mahikanítakh:**
+וְמִיקַאן מַאשְׁקִיכִיוִינִינִי מַאיַאגִיזִידוָא מָאאַאזְ׳יד בְּנוֹפִּימִינְג. וַיְבִּידָאן יוֹ יוֹוָא אֶל־וְוִיגְוָאמִינְק. וַיְקוֹשְׁקוֹזִי יוֹוָא מִינַאוָא וַיְוָאבָּאמָאן וְאִינְגְוֵאוָא. וַיְגָאנוֹזִ׳י יוֹ נִיטַאם.
+
+*(The healer [PROX/יוֹ] is the discourse center throughout. The stranger [OBV/יוֹוָא] woke. When "she spoke first" — no need to say "the healer" again — יוֹ resumes.)*
+
+**English (Disambiguated):**
+A healer found a wounded stranger in the forest. The healer brought the stranger to her lodge. The stranger woke and saw the healer's face. The healer spoke first.
+
+*(English must keep repeating "the healer" and "the stranger" to maintain clarity about who is doing what.)*
+
+---
+
+## Sample 3: The Chief's Decision
+
+**English:**
+The chief called his son. His son brought a warrior. The chief spoke to the warrior, but watched his son's face. The warrior agreed. His son said nothing.
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְנַאנְדוֹמָאן אוֹגִימָא וְאוֹגְוִיסַאןוָא. וַיְבִּידָאן יוֹוָא זְ׳ימָאגַאנִישׁוָא. וַיְגָאנוֹנָאן יוֹ הַזְ׳ימָאגַאנִישׁוָא אֲבָל וַיְגַאנַאוָאבָּאמָאן וְאִינְגְוֵאוָאוָא וְאוֹגְוִיסַאןוָא. וַיְאִינֵנְדַאם הַזְ׳ימָאגַאנִישׁוָא דֶּבְוֵא. וַיְאָאנְגְוָאמִי יוֹוָא וְאוֹגְוִיסַאן.
+
+*(Three males tracked: chief [PROX], son [OBV¹], warrior [OBV²]. The system marks which "he" is which without repeating names.)*
+
+**English (Disambiguated):**
+The chief called his son. The son brought a warrior. The chief spoke to the warrior, but the chief watched the son's face. The warrior agreed. The son said nothing.
+
+*(English must repeat "the chief," "the son," and "the warrior" explicitly or use clunky constructions like "the former" and "the latter" to track three male referents.)*
+
+---
+
+## Sample 4: Inverse Action
+
+**English:**
+The hunter tracked the bear for three days. On the fourth day, the bear found him.
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְנוֹפִּינַאוֵא גִיאוֹוֵאוִינִינִי מַאקְוָאוָא נִיסְוִי גִיזְ׳יגַאדוֹן. בְּנִיאוֹ־גִיזְ׳יגַאדִינְק, וַיְמִיקָאאִיגוֹ יוֹ מַאקְוָא.
+
+*(The hunter [PROX] tracks the bear [OBV]. But on day four, the INVERSE marker -איגוֹ shows the bear [now agent] found him [PROX as patient]. The bear acts ON the proximate — Hebrew would need to restructure; here the verb form carries it.)*
+
+**English (Disambiguated):**
+The hunter tracked the bear for three days. On the fourth day, it was the bear who found the hunter.
+
+*(English must add "it was...who" construction or passive voice "the hunter was found by the bear" to clarify the role reversal that the inverse marker handles morphologically.)*
+
+---
+
+## Sample 5: Obviative Shift
+
+**English:**
+The woman waited by the river. A canoe appeared. The paddler was her husband, long thought dead. She ran to him. He stepped onto the shore. They did not speak.
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְבִּיהָא אִיקְוֵא בְּזִיבִּיאַאגִינְק. וַיְנָאגְוַאד ג׳ימָאן. הָאוֹנָאבְוִייַאד וְאָאו וְנָאבֵּאמוָא, גִינְוֵאנְז אִינֵנְדָאגְוַאד נִיבוֹד. וַיְאַאזְ׳יבַּאטוֹ יוֹ אֶל־יוֹוָא. וַיְגָאבָּאוִי יוֹוָא עַל־וְאַאגָאמִינְק. קָאוִין וַיְגָאנוֹזִ׳יטוֹנַאוָא.
+
+*(She [PROX] runs to him [OBV]. He [OBV] steps ashore. At "they did not speak" — the dual/plural form resolves them together. The husband never needs to steal PROX status from her — she remains the narrative anchor.)*
+
+**English (Disambiguated):**
+The woman waited by the river. A canoe appeared. The paddler was her husband, long thought dead. The woman ran to the man. The man stepped onto the shore. The two of them did not speak.
+
+*(English must use "the woman," "the man," "her husband," "the paddler," or "the two of them" to maintain clarity where pronouns would create ambiguity.)*
+
+---
+
+## Sample 6: Wayyiqtol Narrative Chain
+
+**English:**
+The hunter saw the deer. He drew his bow. He aimed carefully. He released the arrow. It flew true. The deer fell.
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְוָאבָּאמָאן גִיאוֹוֵאוִינִינִי אַדִּיקְוָא. וַיְאוֹזִיטוֹן וְמִיטִיגְוָאבִּי. וַיְנַאנַאגַאדַאוֵאנְדַאן. וַיְבָּאשְׁקִיזִיגֵא. וַיְפִּימִיבִּיזוֹ. וַיְפַּאנְגִישִׁין אַדִּיקְ.
+
+*(Pure wayyiqtol chain: וַיְ-verb, וַיְ-verb, וַיְ-verb. Each action flows into the next with the waw-consecutive maintaining the narrative momentum. No subject needed after the first verb—the chain carries it forward.)*
+
+**English (Disambiguated):**
+The hunter saw the deer. The hunter drew his bow. The hunter aimed carefully. The hunter released the arrow. The arrow flew true. The deer fell.
+
+*(English must repeat subjects or rely on context. The wayyiqtol chain in the constructed language eliminates this repetition while maintaining perfect clarity through verb morphology.)*
+
+---
+
+## Sample 7: Weqatal Consequence Chain
+
+**English:**
+When the sun sets, the gates will close. The guards will take their positions. The torches will be lit. No one will enter or leave until dawn.
+
+**Ur Djudeo-Mahikanítakh:**
+כַּאֲשֶׁר גִיזִיס וְפַּאנְגִישִׁין, וְגִיבָּאקְוַאהוֹאָאגוֹנַאוָא אִשְׁקְוַאנְדֵאמַאן. וְנַאבָּאוִינַאוָא גַנָאוֵאוִינִינִיוַאק וְנָאבָּאוִינִיוָא. וְוָאסֵאשְׁקַאנֵאוִינַאוָא וָאסַאמוֹוִינַאן. קָאוִין אַאוִי וְבִּינְדִיגֵא אוֹ וְסָאגַאם עַד וָאבַּאנְג.
+
+*(Weqatal chain: וְ-perfect form creates a sequence of future/modal consequences. Each וְ links the next inevitable result. The chain creates a sense of determined sequence—one thing will lead to another.)*
+
+**English (Disambiguated):**
+When the sun sets, then the gates will close. And then the guards will take their positions. And then the torches will be lit. And then no one will enter or leave until dawn.
+
+*(English needs \"then\" or \"and then\" to create the same sense of consequential flow that weqatal provides morphologically.)*
+
+---
+
+## Sample 8: Waw + Obviation Combined (Simple)
+
+**English:**
+The mother called her daughter. She came. She bowed. She spoke. She listened. She left.
+
+*(Who does each action? Totally ambiguous in English with six "she"s in a row.)*
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְנַאנְדוֹמָאן אוֹמָאמָא וְאוֹדָאנִיסַאןוָא. וַיְבִּיאָאיָא יוֹוָא. וַיְאוֹזְ׳ישְׁקוֹזוֹ יוֹוָא. וַיְגָאנוֹזִ׳י יוֹוָא. וַיְבִּיזִינְדַאם יוֹ. וַיְמָאג׳אָא יוֹוָא.
+
+*(The wayyiqtol chain flows smoothly: וַיְ-וַיְ-וַיְ. BUT the obviative marking shows: mother [PROX] called, daughter [OBV] came, daughter bowed, daughter spoke, mother [PROX] listened, daughter left. The TWO systems together create a perfectly clear six-action sequence with no subject repetition.)*
+
+**English (Disambiguated):**
+The mother called her daughter. The daughter came. The daughter bowed. The daughter spoke. The mother listened. The daughter left.
+
+*(English must repeat \"the mother\" and \"the daughter\" explicitly to track which \"she\" does what.)*
+
+---
+
+## Sample 9: Waw + Obviation Combined (Complex)
+
+**English:**
+The teacher told a story to his student. He spoke of a warrior. He described the warrior's journey. The warrior met a wise woman. She taught him. He returned home. He told others what he had learned. They believed him.
+
+*(Absolute chaos: "he" could be teacher, student, or warrior; "she" is the wise woman; "they" are unnamed others. English cannot handle this without constant clarification.)*
+
+**Ur Djudeo-Mahikanítakh:**
+וַיְדִיבָּאג׳ימוֹן גִיכִינוֹהַאמָאגֵא אַאדִיזוֹכֵא אֶל־וְגִיכִינוֹאַאמָאגַןוָא. וַיְאִיקִידוֹ יוֹ עַל־זְ׳ימָאגַאנִישׁוָא. וַיְדִיבָּאג׳ימוֹן בַּאבָּאמָאדִיזִיוִיןוָא זְ׳ימָאגַאנִישׁוָא. וַיְנַאגַאשְׁקָאוָאן זְ׳ימָאגַאנִישׁוָא נִיבְוָאקָאאִיקְוֵאוָא. וַיְגִיכִינוֹהַאמָאגוֹן יוֹוָא. וַיְגִיוֵא זְ׳ימָאגַאנִישׁוָא וְאוֹדֵאקִינְק. וַיְוִינְדַאמַאוָאן בֵּיכָאנַאק מִי גִיכֶנְדַאמוֹוִין. וַיְדֵאבְוֵאטַאוָאוָאן.
+
+*(Pure narrative flow—eleven consecutive וַיְ verbs. The teacher [PROX/יוֹ] remains the narrative center. The student [OBV] is grammatically marked. The warrior [also OBV] enters as a character IN the story. The wise woman [OBV feminine] appears and acts ON the warrior (יוֹוָא object form). The warrior [OBV] returns and tells. \"Others\" [plural] believed. All tracked perfectly through morphology alone.)*
+
+**English (Disambiguated):**
+The teacher told a story to his student—a story about a warrior. The teacher described the warrior's journey. In the story, the warrior met a wise woman. The wise woman taught the warrior. The warrior returned to his home. Then, exiting the story, the warrior within the tale told others what the warrior had learned. The others believed the warrior.
+
+*(English becomes tortured, needing phrases like \"in the story,\" \"the warrior within the tale,\" \"exiting the story,\" and constant repetition of \"the teacher,\" \"the warrior,\" \"the wise woman\" to track multiple narrative levels and actors. The constructed language handles all of this with verb prefixes and PROX/OBV marking.)*
+
+---
+
+## Key Features Demonstrated
+
+| Feature | Samples |
+|---------|---------|
+| Disambiguation of two same-gender referents | 1, 2, 3, 8 |
+| Obviative noun marking (-וָא suffix) | 1, 3, 5, 8, 9 |
+| Inverse verb marking (OBV→PROX action) | 4 |
+| Sustained PROX across scene changes | 2, 5, 8, 9 |
+| Multiple obviatives in one scene | 3, 9 |
+| Wayyiqtol narrative chains | 6, 8, 9 |
+| Weqatal consequence chains | 7 |
+| **Combined waw + obviation power** | **8, 9** |
