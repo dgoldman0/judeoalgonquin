@@ -17,10 +17,10 @@ def translate_to_ur_djudeo(text):
         Translated text in Ur Djudeo-Mahikanítakh
     """
     response = client.chat.completions.create(
-        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh:D21QblAy",
+        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-extended-finetune:D2FRzjR0",
         messages=[
             {"role": "system", "content": "You are an expert in Ur Djudeo-Mahikanítakh."},
-            {"role": "user", "content": f"Translate:\n{text}"}
+            {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh (exclude any explanation, just give the final translation):\n{text}"}
         ]
     )
     
