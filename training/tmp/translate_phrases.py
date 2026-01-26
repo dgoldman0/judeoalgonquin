@@ -17,7 +17,7 @@ def translate_to_ur_djudeo(text):
         Translated text in Ur Djudeo-Mahikanítakh
     """
     response = client.chat.completions.create(
-        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh:D21QblAy",
+        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-refinement:D24JyLC5",
         messages=[
             {"role": "system", "content": "Translate between English and Ur Djudeo-Mahikanítakh."},
             {"role": "user", "content": f"Translate to Ur Djudeo-Mahikanítakh:\n{text}"}
