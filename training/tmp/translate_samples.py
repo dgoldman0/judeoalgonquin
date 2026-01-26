@@ -17,10 +17,10 @@ def translate_to_ur_djudeo(text):
         Translated text in Ur Djudeo-Mahikanítakh
     """
     response = client.chat.completions.create(
-        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh:D21QblAy",
+        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-extended-finetune:D2FRzjR0",
         messages=[
             {"role": "system", "content": "Translate between English and Ur Djudeo-Mahikanítakh."},
-            {"role": "user", "content": f"Translate:\n{text}"}
+            {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh. Exclude any explanation, just give the final translation. If multiple options exist for the translation, give only one. If no known word is available, take a native Hebrew word and adjust its morphology to align more closely with Algonquin. All translations must be fully in Ur Djudeo-Mahikanítakh, except for specific proper nouns, symbols, etc. that generally would not get translated:\n{text}"}
         ]
     )
     
