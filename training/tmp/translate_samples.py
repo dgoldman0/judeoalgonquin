@@ -21,7 +21,8 @@ def translate_to_ur_djudeo(text):
         messages=[
             {"role": "system", "content": "Translate between English and Ur Djudeo-Mahikanítakh."},
             {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh. Exclude any explanation, just give the final translation. If multiple options exist for the translation, give only one. If no known word is available, take a native Hebrew word and adjust its morphology to align more closely with Algonquin. All translations must be fully in Ur Djudeo-Mahikanítakh, except for specific proper nouns, symbols, etc. that generally would not get translated:\n{text}"}
-        ]
+        ],
+        temperature=0.1
     )
     
     return response.choices[0].message.content
