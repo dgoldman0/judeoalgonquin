@@ -1,0 +1,45 @@
+1. List the capital cities of France, Germany, and Italy in alphabetical order.
+2. What is 847 divided by 7? Round to two decimal places.
+3. Spell the word "encyclopedia" and count the number of letters.
+4. List five primary colors in order of wavelength from longest to shortest.
+5. What are the three largest countries by area in North America?
+6. Convert 45 degrees Celsius to Fahrenheit.
+7. Name the four main oceans and list them by size from largest to smallest.
+8. What is the chemical formula for table salt?
+9. List the first ten prime numbers in order.
+10. How many sides does a hexagon have and what is the sum of its interior angles?
+11. Name the five Great Lakes.
+12. What year did the Titanic sink?
+13. List the planets in our solar system in order from the sun.
+14. What is the square root of 144?
+15. Name three countries that border the Mediterranean Sea.
+16. How many strings does a standard violin have?
+17. What is the largest mammal in the world?
+18. List the days of the week in order starting with Monday.
+19. How many continents are there and name them all?
+20. What is the atomic number of carbon?
+21. Explain the water cycle process, including the four main stages and describe what happens during each stage in sequence.
+22. List the first fifteen Fibonacci numbers starting from 1 and 1, then calculate what the sixteenth number would be.
+23. Name the seven continents in order from largest to smallest by area, and provide the approximate area of the largest one.
+24. Describe the structure of a typical plant cell, listing at least eight key organelles and their primary functions.
+25. List all the bones in the human hand, including the carpals, metacarpals, and phalanges, organized by location.
+26. What are the twelve signs of the zodiac listed in order from Aries through Pisces with their corresponding date ranges?
+27. Explain the process of photosynthesis step-by-step, including the light-dependent and light-independent reactions.
+28. Name all thirteen original United States colonies and identify which geographic region each belonged to.
+29. List the thirty most populous countries in the world in descending order by population.
+30. Describe the carbon cycle including all four major processes: photosynthesis, respiration, decomposition, and combustion.
+31. What are the noble gases on the periodic table and in what group and period does each element appear?
+32. List the chronological order of the first ten amendments to the United States Constitution with their common names.
+33. Explain the rock cycle including the three main types of rocks and the processes that transform one into another.
+34. Name the major tectonic plates of Earth and identify which continents or ocean basins each one underlies.
+35. Describe the structure of an atom including protons, neutrons, electrons, and explain where each is located within the atom.
+36. List the five major food groups in the human diet according to nutritional guidelines, with three examples from each group.
+37. What are the nine planets and dwarf planets recognized by the International Astronomical Union, listed in order from the sun?
+38. Explain the process of cellular respiration including glycolysis, the Krebs cycle, and the electron transport chain in sequence.
+39. Name the six kingdoms of life according to biological classification and provide one example organism from each kingdom.
+40. Describe the complete life cycle of a star from formation through death, including all major stages and the timescales involved.
+41. Provide a comprehensive overview of the human circulatory system including the heart structure with all four chambers, the major arteries and veins, the path blood takes through the body, and the differences between systemic and pulmonary circulation, then explain how each component contributes to overall function.
+42. Explain the complete process of photosynthesis and cellular respiration in detail, including all substrates and products, the location of each stage within the cell or chloroplast, the role of ATP, and how these two processes are complementary at the molecular level.
+43. List and describe all the countries in the European Union as of 2024, including their capital cities, the year they joined, their primary languages, and at least one notable geographic or cultural feature of each nation.
+44. Detail the entire United States government system including the three branches with their specific powers and responsibilities, the checks and balances between branches, the role of each chamber of Congress with their composition, the presidential powers, and how laws are created and passed through both chambers.
+45. Provide a detailed chronological timeline of major world civilizations including ancient Egypt, Mesopotamia, the Indus Valley, ancient China, classical Greece, the Roman Empire, the Islamic Golden Age, and the European Renaissance, describing the key achievements, time periods, geographic locations, and lasting contributions of each civilization.
