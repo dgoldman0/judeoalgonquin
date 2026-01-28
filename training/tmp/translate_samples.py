@@ -17,7 +17,7 @@ def translate_to_ur_djudeo(text):
         Translated text in Ur Djudeo-Mahikanítakh
     """
     response = client.chat.completions.create(
-        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-extended-finetune:D2FRzjR0",
+        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-2:D32J6g9b",
         messages=[
             {"role": "system", "content": "Translate between English and Ur Djudeo-Mahikanítakh."},
             {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh. Exclude any explanation, just give the final translation. If multiple options exist for the translation, give only one. If no known word is available, take a native Hebrew word and adjust its morphology to align more closely with Algonquin. All translations must be fully in Ur Djudeo-Mahikanítakh, except for specific proper nouns, symbols, etc. that generally would not get translated:\n{text}"}
@@ -110,7 +110,7 @@ def translate_jsonl_file(input_file, output_file, max_workers=4):
 def main():
     input_file = "sample.jsonl"
     output_file = "sample_translated.jsonl"
-    max_workers = 10  # Number of parallel threads
+    max_workers = 25  # Number of parallel threads
     
     print(f"Starting translation from {input_file} to {output_file}...")
     print(f"Using {max_workers} parallel threads")
