@@ -6,6 +6,7 @@ import numpy as np
 from typing import List, Tuple
 from difflib import SequenceMatcher
 import re
+from rapidfuzz import distance
 
 # Initialize OpenAI client (uses OPENAI_API_KEY from environment)
 client = OpenAI()
@@ -98,28 +99,36 @@ def get_hebrew_baseline(text: str) -> str:
         messages=[
             {"role": "system", "content": "You are an expert Hebrew translator."},
             {"role": "user", "content": f"Translate to Hebrew (use nikkud). Provide only the translation, no explanation:\n{text}"}
-        ],
-        temperature=0.7
+        ]
     )
-    
     return response.choices[0].message.content
 
 
 def calculate_distance_to_baseline(translation: str, baseline: str) -> float:
     """
-    Calculate token-level distance between a translation and baseline.
-    Lower score means closer to baseline.
+    Calculate character-level distance between a translation and baseline.
+    Uses Levenshtein distance to handle morphological mutations in the conlang.
+    Lower score means closer to baseline, accounting for character transformations.
     
     Args:
         translation: Translation to evaluate
         baseline: Baseline translation to compare against
         
     Returns:
-        Distance score (lower is better, 0 = identical)
+        Normalized distance score from 0 to 1 (lower is better)
     """
-    similarity = calculate_token_similarity(translation, baseline)
-    distance = 1.0 - similarity
-    return distance
+    # Remove diacritics/nikkud for comparison to focus on root/structure similarity
+    trans_clean = re.sub(r'[\u0591-\u05C7]', '', translation)
+    base_clean = re.sub(r'[\u0591-\u05C7]', '', baseline)
+    
+    # Calculate Levenshtein distance (normalized by max length)
+    lev_distance = distance.Levenshtein.distance(trans_clean, base_clean)
+    max_len = max(len(trans_clean), len(base_clean))
+    
+    # Normalize to 0-1 range
+    normalized_distance = lev_distance / max_len if max_len > 0 else 0
+    
+    return min(normalized_distance, 1.0)
 
 
 def translate_to_ur_djudeo_with_temperature(text: str, temperature: float) -> str:
@@ -139,7 +148,8 @@ def translate_to_ur_djudeo_with_temperature(text: str, temperature: float) -> st
             {"role": "system", "content": "You are an expert in Ur Djudeo-Mahikanítakh."},
             {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh. Exclude any explanation, just give the final translation. If multiple options exist for the translation, give only one. If no known word is available, take a native Hebrew word and adjust its morphology to align more closely with Algonquin. All translations must be fully in Ur Djudeo-Mahikanítakh, except for specific proper nouns, symbols, etc. that generally would not get translated:\n{text}"}
         ],
-        temperature=temperature
+        temperature=temperature,
+        max_tokens=50
     )
     
     return response.choices[0].message.content
@@ -164,7 +174,7 @@ def get_best_translation(text: str, n_attempts: int = 5) -> Tuple[str, float, Li
     
     # Generate multiple attempts with varying temperatures
     attempts = []
-    temperatures = np.linspace(0.5, 2.0, n_attempts)
+    temperatures = np.linspace(0.9, 1.1, n_attempts)
     
     for temp in temperatures:
         translation = translate_to_ur_djudeo_with_temperature(text, temp)
@@ -206,7 +216,7 @@ def translate_phrases_file_advanced(input_file: str, output_file: str,
     print(f"Found {len(phrases)} phrases to translate\n")
     
     # Process phrases in parallel
-    def process_phrase(item, include_metadata: bool = False):
+    def process_phrase(item, include_metadata: bool = True):
         line_num, phrase = item
         
         # Get best translation from multiple attempts
@@ -282,10 +292,10 @@ def translate_phrases_file_advanced(input_file: str, output_file: str,
 
 
 def main():
-    input_file = "phrases.txt"
-    output_file = "phrases_translated_advanced.jsonl"
+    input_file = "phrases_shortlist.txt"
+    output_file = "phrases_translated_advanced_shortlist.jsonl"
     n_attempts = 5  # Number of translation attempts per phrase
-    max_workers = 50  # Number of parallel threads
+    max_workers = 25  # Number of parallel threads
     
     print(f"Starting advanced translation from {input_file} to {output_file}...")
     print(f"Using {n_attempts} attempts per phrase with {max_workers} parallel threads")

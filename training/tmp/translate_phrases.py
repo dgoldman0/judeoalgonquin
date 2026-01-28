@@ -6,6 +6,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Initialize OpenAI client (uses OPENAI_API_KEY from environment)
 client = OpenAI()
 
+# Might be good to make this system more robust by having it do n attempts, then using standard Hebrew translation using a standard model like gpt-5.2 as the baseline, calculate cross entropy loss and select the best.
+
 def translate_to_ur_djudeo(text):
     """
     Translate English text to Ur Djudeo-Mahikanítakh using the fine-tuned model.
@@ -17,11 +19,12 @@ def translate_to_ur_djudeo(text):
         Translated text in Ur Djudeo-Mahikanítakh
     """
     response = client.chat.completions.create(
-        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-extended-finetune:D2FRzjR0",
+        model="ft:gpt-4.1-mini-2025-04-14:personal:ur-djudeo-mahikanitakh-2:D32J6g9b",
         messages=[
             {"role": "system", "content": "You are an expert in Ur Djudeo-Mahikanítakh."},
             {"role": "user", "content": f"Translate into Ur Djudeo-Mahikanítakh. Exclude any explanation, just give the final translation. If multiple options exist for the translation, give only one. If no known word is available, take a native Hebrew word and adjust its morphology to align more closely with Algonquin. All translations must be fully in Ur Djudeo-Mahikanítakh, except for specific proper nouns, symbols, etc. that generally would not get translated:\n{text}"}
-        ]
+        ],
+        temperature=2
     )
     
     return response.choices[0].message.content
@@ -104,7 +107,7 @@ def translate_phrases_file(input_file, output_file, max_workers=4):
 def main():
     input_file = "phrases.txt"
     output_file = "phrases_translated.jsonl"
-    max_workers = 10  # Number of parallel threads
+    max_workers = 25  # Number of parallel threads
     
     print(f"Starting translation from {input_file} to {output_file}...")
     print(f"Using {max_workers} parallel threads")
