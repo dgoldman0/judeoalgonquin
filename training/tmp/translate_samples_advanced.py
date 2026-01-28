@@ -216,8 +216,8 @@ def translate_jsonl_file_advanced(input_file: str, output_file: str,
 
 
 def main():
-    input_file = "sample.jsonl"
-    output_file = "sample_translated_advanced.jsonl"
+    input_file = "sample_shortlist.jsonl"
+    output_file = "sample_translated_advanced_shortlist.jsonl"
     n_attempts = 5  # Number of translation attempts per message
     max_workers = 25  # Number of parallel threads
     
