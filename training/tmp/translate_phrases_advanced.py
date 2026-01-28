@@ -174,7 +174,7 @@ def get_best_translation(text: str, n_attempts: int = 5) -> Tuple[str, float, Li
     
     # Generate multiple attempts with varying temperatures
     attempts = []
-    temperatures = np.linspace(0.9, 1.1, n_attempts)
+    temperatures = np.linspace(0.8, 1.2, n_attempts)
     
     for temp in temperatures:
         translation = translate_to_ur_djudeo_with_temperature(text, temp)
@@ -292,9 +292,9 @@ def translate_phrases_file_advanced(input_file: str, output_file: str,
 
 
 def main():
-    input_file = "phrases_shortlist.txt"
-    output_file = "phrases_translated_advanced_shortlist.jsonl"
-    n_attempts = 5  # Number of translation attempts per phrase
+    input_file = "shortnarrative.txt"
+    output_file = "shortnarrative.jsonl"
+    n_attempts = 10  # Number of translation attempts per phrase
     max_workers = 25  # Number of parallel threads
     
     print(f"Starting advanced translation from {input_file} to {output_file}...")
