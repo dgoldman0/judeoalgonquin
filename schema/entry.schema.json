@@ -19,6 +19,9 @@
     "source_evidence",
     "provenance",
     "relations",
+    "composition",
+    "construction_spec",
+    "paradigm",
     "metadata",
     "created_at",
     "updated_at",
@@ -70,7 +73,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "glosses", "definition", "part_of_speech"],
+        "required": ["id", "glosses", "definition", "part_of_speech", "translations"],
         "properties": {
           "id": {
             "type": "string",
@@ -78,7 +81,16 @@
           },
           "glosses": {"$ref": "#/$defs/nonemptyStringArray"},
           "definition": {"type": "string", "minLength": 1},
-          "part_of_speech": {"type": "string", "minLength": 1}
+          "part_of_speech": {"type": "string", "minLength": 1},
+          "translations": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["literal", "idiomatic"],
+            "properties": {
+              "literal": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+              "idiomatic": {"$ref": "#/$defs/nonemptyStringArray"}
+            }
+          }
         }
       }
     },
@@ -96,7 +108,14 @@
     "formation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["historical_etymology", "formation_process", "design_alignment"],
+      "required": [
+        "historical_etymology",
+        "formation_kind",
+        "inputs",
+        "operations",
+        "formation_process",
+        "design_alignment"
+      ],
       "properties": {
         "historical_etymology": {
           "type": "array",
@@ -109,6 +128,60 @@
               "source_ids": {"$ref": "#/$defs/nonemptyStringArray"},
               "locator": {"type": "string", "minLength": 1},
               "confidence": {"enum": ["low", "medium", "high"]}
+            }
+          }
+        },
+        "formation_kind": {
+          "enum": [
+            "direct_borrowing",
+            "phonological_adaptation",
+            "orthographic_adaptation",
+            "calque",
+            "blend",
+            "compound",
+            "derivation",
+            "semantic_extension",
+            "new_coinage",
+            "mixed"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["input_type", "input_id", "form", "contribution"],
+            "properties": {
+              "input_type": {"enum": ["source_record", "language_record", "project_design"]},
+              "input_id": {"type": "string", "minLength": 1},
+              "form": {"type": "string"},
+              "contribution": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["order", "operation", "description"],
+            "properties": {
+              "order": {"type": "integer", "minimum": 1},
+              "operation": {
+                "enum": [
+                  "retain",
+                  "transliterate",
+                  "phonological_adaptation",
+                  "orthographic_adaptation",
+                  "combine",
+                  "derive",
+                  "calque",
+                  "semantic_extension",
+                  "regularize",
+                  "other"
+                ]
+              },
+              "description": {"type": "string", "minLength": 1}
             }
           }
         },
@@ -133,7 +206,10 @@
           "license_status",
           "accessed_at",
           "confidence",
-          "uncertainty"
+          "uncertainty",
+          "supports_sense_ids",
+          "use_type",
+          "gap_reason"
         ],
         "properties": {
           "source_id": {"type": "string", "minLength": 1},
@@ -147,7 +223,20 @@
           "license_status": {"type": "string", "minLength": 1},
           "accessed_at": {"type": "string", "format": "date"},
           "confidence": {"enum": ["low", "medium", "high", "unknown"]},
-          "uncertainty": {"type": "string"}
+          "uncertainty": {"type": "string"},
+          "supports_sense_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*\\.sense\\.[a-z0-9][a-z0-9_-]*$"
+            },
+            "uniqueItems": true
+          },
+          "use_type": {
+            "enum": ["lexical", "grammatical", "historical", "orthographic", "cultural_context", "comparative"]
+          },
+          "gap_reason": {"type": ["string", "null"]}
         }
       }
     },
@@ -169,14 +258,136 @@
         "related_to",
         "conflicts_with",
         "supersedes",
-        "superseded_by"
+        "superseded_by",
+        "dependency_revisions"
       ],
       "properties": {
         "depends_on": {"$ref": "#/$defs/idArray"},
         "related_to": {"$ref": "#/$defs/idArray"},
         "conflicts_with": {"$ref": "#/$defs/idArray"},
         "supersedes": {"$ref": "#/$defs/idArray"},
-        "superseded_by": {"$ref": "#/$defs/idArray"}
+        "superseded_by": {"$ref": "#/$defs/idArray"},
+        "dependency_revisions": {
+          "type": "object",
+          "patternProperties": {
+            "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*$": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "composition": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["components", "construction_ids"],
+      "properties": {
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "order",
+              "record_id",
+              "record_revision",
+              "sense_id",
+              "role",
+              "realization"
+            ],
+            "properties": {
+              "order": {"type": "integer", "minimum": 1},
+              "record_id": {"$ref": "#/$defs/recordId"},
+              "record_revision": {"type": "integer", "minimum": 1},
+              "sense_id": {
+                "type": "string",
+                "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*\\.sense\\.[a-z0-9][a-z0-9_-]*$"
+              },
+              "role": {"type": "string", "minLength": 1},
+              "realization": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "construction_ids": {"$ref": "#/$defs/idArray"}
+      }
+    },
+    "construction_spec": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "function",
+        "formalism",
+        "host_classes",
+        "ordering",
+        "allomorphy",
+        "restrictions",
+        "counterexamples",
+        "test_refs",
+        "productivity"
+      ],
+      "properties": {
+        "kind": {"enum": ["morphological", "syntactic", "discourse", "orthographic"]},
+        "function": {"type": "string", "minLength": 1},
+        "formalism": {"type": "string", "minLength": 1},
+        "host_classes": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "ordering": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "allomorphy": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "restrictions": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "counterexamples": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "test_refs": {"$ref": "#/$defs/nonemptyStringArray"},
+        "productivity": {"enum": ["unproductive", "limited", "productive_candidate", "productive"]}
+      }
+    },
+    "paradigm": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["dimensions", "cells", "gaps"],
+      "properties": {
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "values"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "values": {"$ref": "#/$defs/nonemptyStringArray"}
+            }
+          }
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["features", "hebrew_script", "romanization", "segmentation", "morpheme_gloss", "meaning", "status"],
+            "properties": {
+              "features": {"$ref": "#/$defs/featureMap"},
+              "hebrew_script": {"type": "string", "minLength": 1},
+              "romanization": {"type": "string", "minLength": 1},
+              "segmentation": {"type": "string"},
+              "morpheme_gloss": {"type": "string"},
+              "meaning": {"type": "string", "minLength": 1},
+              "status": {"enum": ["attested_source", "adapted_candidate", "reviewed", "canonical"]}
+            }
+          }
+        },
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["features", "reason"],
+            "properties": {
+              "features": {"$ref": "#/$defs/featureMap"},
+              "reason": {"type": "string", "minLength": 1}
+            }
+          }
+        }
       }
     },
     "metadata": {
@@ -246,9 +457,11 @@
     "review": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["reviewer_type", "decision", "reviewed_at", "note"],
+      "required": ["reviewer_type", "reviewer_id", "authority", "decision", "reviewed_at", "note"],
       "properties": {
         "reviewer_type": {"const": "human"},
+        "reviewer_id": {"type": "string", "minLength": 1},
+        "authority": {"type": "string", "minLength": 1},
         "decision": {
           "enum": ["reviewed", "canonical", "deprecated", "superseded", "rejected"]
         },
@@ -260,6 +473,47 @@
     "updated_at": {"type": "string", "format": "date-time"},
     "change_note": {"type": "string", "minLength": 1}
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {"enum": ["reviewed", "canonical", "deprecated", "superseded", "rejected"]}
+        },
+        "required": ["status"]
+      },
+      "then": {"required": ["review"]},
+      "else": {"not": {"required": ["review"]}}
+    },
+    {
+      "if": {
+        "properties": {"record_type": {"enum": ["phrase", "sentence", "paragraph"]}},
+        "required": ["record_type"]
+      },
+      "then": {
+        "properties": {
+          "composition": {"type": "object"},
+          "senses": {
+            "items": {
+              "properties": {
+                "translations": {
+                  "properties": {
+                    "literal": {"$ref": "#/$defs/nonemptyStringArray"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"record_type": {"const": "construction"}},
+        "required": ["record_type"]
+      },
+      "then": {"properties": {"construction_spec": {"type": "object"}}}
+    }
+  ],
   "$defs": {
     "recordId": {
       "type": "string",
@@ -280,6 +534,11 @@
       "type": "array",
       "items": {"$ref": "#/$defs/recordId"},
       "uniqueItems": true
+    },
+    "featureMap": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1},
+      "minProperties": 1
     }
   }
 }

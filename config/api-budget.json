@@ -1,9 +1,12 @@
 {
   "paid_embeddings_enabled": false,
-  "authorization_note": "The one foundation smoke call is complete. Further paid work requires explicit owner approval.",
+  "authorization_note": "The owner-authorized N1 evaluation completed on 2026-07-12. Further paid embedding or semantic-search work requires a new explicit approval.",
+  "allowed_models": ["text-embedding-3-small"],
+  "allowed_dimensions": [256],
   "max_inputs_per_run": 25,
   "max_utf8_bytes_per_run": 100000,
   "max_total_input_tokens": 250000,
+  "max_estimated_cost_usd": 0.005,
   "price_per_million_input_tokens_usd": 0.02,
   "ledger_path": ".local/api-usage-ledger.json"
 }

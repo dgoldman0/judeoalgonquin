@@ -46,6 +46,10 @@ def embedding_text(record: dict[str, Any]) -> str:
             + " | ".join(sense["glosses"])
             + f"; {sense['definition']}; part of speech: {sense['part_of_speech']}"
         )
+        translations = sense["translations"]
+        if translations["literal"]:
+            lines.append("literal translation: " + " | ".join(translations["literal"]))
+        lines.append("idiomatic translation: " + " | ".join(translations["idiomatic"]))
     if record["grammatical_features"]:
         lines.append("grammatical features: " + " | ".join(record["grammatical_features"]))
     for label, values in (
@@ -56,6 +60,23 @@ def embedding_text(record: dict[str, Any]) -> str:
         if values:
             lines.append(f"{label}: " + " | ".join(values))
     formation = record["formation"]
+    lines.append("formation kind: " + formation["formation_kind"])
+    for formation_input in formation["inputs"]:
+        lines.append(
+            "formation input: "
+            + formation_input["input_type"]
+            + " "
+            + formation_input["input_id"]
+            + "; form: "
+            + (formation_input["form"] or "not applicable")
+            + "; contribution: "
+            + formation_input["contribution"]
+        )
+    for operation in formation["operations"]:
+        lines.append(
+            f"formation operation {operation['order']}: {operation['operation']}; "
+            + operation["description"]
+        )
     if formation["formation_process"]:
         lines.append("formation process: " + formation["formation_process"])
     if formation["design_alignment"]:
@@ -68,8 +89,15 @@ def embedding_text(record: dict[str, Any]) -> str:
             f"{evidence['grammatical_information'] or 'not supplied by source'}; "
             f"confidence: {evidence['confidence']}; uncertainty: "
             f"{evidence['uncertainty'] or 'none recorded'}; contributor or speaker: "
-            f"{evidence['contributor_or_speaker'] or 'not published'}"
+            f"{evidence['contributor_or_speaker'] or 'not published'}; use: "
+            f"{evidence['use_type']}; supports: {' | '.join(evidence['supports_sense_ids'])}"
         )
+    if record["composition"]:
+        lines.append("composition: " + canonical_json(record["composition"]))
+    if record["construction_spec"]:
+        lines.append("construction specification: " + canonical_json(record["construction_spec"]))
+    if record["paradigm"]:
+        lines.append("paradigm: " + canonical_json(record["paradigm"]))
     if record.get("narrative_analysis"):
         lines.append(
             "narrative analysis: "
@@ -150,7 +178,20 @@ def records_needing_embeddings(
     dimensions: int,
 ) -> list[dict[str, Any]]:
     needed: list[dict[str, Any]] = []
+    revisions = {
+        record["id"]: record["revision"]
+        for record in records
+        if isinstance(record.get("id"), str) and isinstance(record.get("revision"), int)
+    }
     for record in records:
+        expected_dependencies = record.get("relations", {}).get("dependency_revisions", {})
+        if not isinstance(expected_dependencies, dict) or any(
+            revisions.get(dependency_id) != dependency_revision
+            for dependency_id, dependency_revision in expected_dependencies.items()
+        ):
+            raise ValueError(
+                f"{record.get('id', '<unknown>')}: dependency revisions are stale or missing"
+            )
         expected = record_fingerprint(record, model, dimensions)
         actual = embedding_fingerprint(connection, record["id"], model, dimensions)
         if actual != expected:

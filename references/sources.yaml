@@ -93,6 +93,39 @@ sources:
       date: "2026-07-12"
       note: Publisher description identifies speaker-based research at Moraviantown.
 
+  - id: omeara_delaware_stem_morphology_1990
+    title: Delaware Stem Morphology
+    creator: John D. W. O'Meara
+    publisher: McGill University; public copy hosted by Library and Archives Canada
+    url: https://www.collectionscanada.ca/obj/thesescanada/vol1/QMM/TC-QMM-39236.pdf
+    authority_kind: scholarly_speaker_based
+    source_type: doctoral_dissertation
+    language_scope:
+      - Munsee Delaware
+      - Moraviantown variety
+    project_priority: regional_anchor_grammatical_and_manual_lexical_research
+    appropriate_uses:
+      - manual page-level grammatical research
+      - manual citation of limited examples and stems
+      - source-phonology and morphology research
+    lexical_import: per_entry_review_required
+    license_status: copyrighted
+    bulk_reuse: not_cleared
+    cautions:
+      - The public copy permits consultation; copyright remains with the author.
+      - Substantial extracts must not be reproduced without permission.
+      - The dissertation's phonemic transcription must not be mixed silently with the later dictionary's practical spelling.
+    verification:
+      status: verified_publisher_url_and_primary_text
+      date: "2026-07-12"
+      note: >-
+        Dissertation pages identify Moraviantown Munsee as the subject. O'Meara
+        says most fieldwork was conducted with Emily Johnson, Ethel Peters, and
+        Beulah Timothy, with lesser amounts of information from Mattie Huff,
+        Enoch Jacobs, Peter Noah, Nellie Noah, and Rebecca Snake, all identified
+        there as Delaware speakers. These are dissertation-wide acknowledgments;
+        the selected examples are not attributed to individual speakers.
+
   - id: stockbridge_munsee_language_notes
     title: Language Walk-in Mohican
     publisher: Stockbridge-Munsee Community Band of Mohican Indians
@@ -210,6 +243,31 @@ sources:
       status: verified_publisher_and_url
       date: "2026-07-12"
       note: Official Academy portal to its terminology, grammar, orthography, and historical resources.
+
+  - id: bdb_1906_sefaria
+    title: A Hebrew and English Lexicon of the Old Testament
+    creator: Francis Brown, S. R. Driver, and Charles A. Briggs
+    publisher: Original 1906 work; digital edition hosted by Sefaria
+    url: https://www.sefaria.org/BDB
+    authority_kind: historical_scholarly_lexicon
+    source_type: biblical_hebrew_lexicon
+    language_scope:
+      - Biblical Hebrew
+    project_priority: hebrew_historical_evidence
+    appropriate_uses:
+      - historical sense research
+      - Biblical Hebrew source-form confirmation
+      - page or headword citation alongside current sources
+    lexical_import: per_entry_review_required
+    license_status: public_domain_original_digital_license_version_specific
+    bulk_reuse: not_cleared
+    cautions:
+      - Biblical evidence does not by itself establish current Hebrew use or pronunciation.
+      - Sefaria licenses are version-specific and must be checked before systematic reuse.
+    verification:
+      status: verified_host_and_bibliographic_identity
+      date: "2026-07-12"
+      note: Sefaria identifies the Brown-Driver-Briggs lexicon and its publication history.
 
   - id: ojibwe_peoples_dictionary
     title: Ojibwe People's Dictionary

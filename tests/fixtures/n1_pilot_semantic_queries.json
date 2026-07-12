@@ -1,0 +1,32 @@
+[
+  {
+    "id": "n1-semantic-01-hebrew-food",
+    "query": "food made by baking dough from ground cereal grain",
+    "expected_id": "ja.lexeme.hebrew_lehem",
+    "rationale": "Tests whether an ordinary Hebrew-derived food lexeme is retrieved from a definition-level paraphrase rather than its English or Hebrew form."
+  },
+  {
+    "id": "n1-semantic-02-munsee-rock",
+    "query": "a small naturally occurring hard fragment of rock",
+    "expected_id": "ja.lexeme.munsee_asen_stone",
+    "rationale": "Tests direct semantic retrieval of a Munsee-derived concrete noun while preserving the record's exclusion of added metaphorical meaning."
+  },
+  {
+    "id": "n1-semantic-03-hybrid-buildings",
+    "query": "a word for several homes that combines material from both parent languages",
+    "expected_id": "ja.phrase.n1_houses",
+    "rationale": "Tests whether retrieval favors the composed hybrid nominal over its Hebrew stem, Munsee-derived suffix, and plural-rule dependencies."
+  },
+  {
+    "id": "n1-semantic-04-hybrid-clause",
+    "query": "a full statement saying that the particular man under discussion has admirable character",
+    "expected_id": "ja.sentence.n1_the_man_is_good",
+    "rationale": "Tests sentence-level retrieval for the full hybrid proposition rather than any one of its article, subject, predicate, person-marker, or word-order components."
+  },
+  {
+    "id": "n1-semantic-05-number-rule",
+    "query": "a grammar rule for making nouns plural in two different ways depending on noun category",
+    "expected_id": "ja.construction.n1_class_plural",
+    "rationale": "Tests retrieval of the class-conditioned construction rather than either individual plural morpheme."
+  }
+]

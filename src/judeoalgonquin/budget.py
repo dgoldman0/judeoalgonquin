@@ -63,9 +63,12 @@ def load_policy(path: str | Path = DEFAULT_POLICY_PATH) -> dict[str, Any]:
     required = {
         "paid_embeddings_enabled": bool,
         "authorization_note": str,
+        "allowed_models": list,
+        "allowed_dimensions": list,
         "max_inputs_per_run": int,
         "max_utf8_bytes_per_run": int,
         "max_total_input_tokens": int,
+        "max_estimated_cost_usd": (int, float),
         "price_per_million_input_tokens_usd": (int, float),
         "ledger_path": str,
     }
@@ -77,6 +80,19 @@ def load_policy(path: str | Path = DEFAULT_POLICY_PATH) -> dict[str, Any]:
         for key in ("max_inputs_per_run", "max_utf8_bytes_per_run", "max_total_input_tokens")
     ):
         raise ValueError(f"{path}: budget caps must be positive")
+    if (
+        not policy["allowed_models"]
+        or any(not isinstance(model, str) or not model for model in policy["allowed_models"])
+        or not policy["allowed_dimensions"]
+        or any(
+            not isinstance(dimensions, int)
+            or isinstance(dimensions, bool)
+            or dimensions < 1
+            for dimensions in policy["allowed_dimensions"]
+        )
+        or policy["max_estimated_cost_usd"] <= 0
+    ):
+        raise ValueError(f"{path}: invalid model, dimensions, or cost authorization")
     return policy
 
 
@@ -90,12 +106,20 @@ def reserve_paid_embedding_run(
     kind: str,
     texts: Sequence[str],
     *,
+    model: str,
+    dimensions: int,
     policy_path: str | Path = DEFAULT_POLICY_PATH,
 ) -> Reservation:
     policy = load_policy(policy_path)
     if not policy["paid_embeddings_enabled"]:
         raise ValueError(
             "paid embeddings are disabled by config/api-budget.json; explicit owner approval is required"
+        )
+    if model not in policy["allowed_models"]:
+        raise ValueError(f"embedding model {model!r} is outside the authorized policy")
+    if dimensions not in policy["allowed_dimensions"]:
+        raise ValueError(
+            f"embedding dimensions {dimensions} are outside the authorized policy"
         )
     if not texts or len(texts) > policy["max_inputs_per_run"]:
         raise ValueError("planned input count exceeds the authorized per-run cap")
@@ -116,11 +140,20 @@ def reserve_paid_embedding_run(
             raise ValueError(f"{ledger_path}: malformed paid-API ledger")
         if accounted + reserve_tokens > policy["max_total_input_tokens"]:
             raise ValueError("planned run exceeds the authorized cumulative input-token cap")
+        estimated_cost = (
+            (accounted + reserve_tokens)
+            * policy["price_per_million_input_tokens_usd"]
+            / 1_000_000
+        )
+        if estimated_cost > policy["max_estimated_cost_usd"]:
+            raise ValueError("planned run exceeds the authorized cumulative dollar cap")
         ledger["accounted_input_tokens"] = accounted + reserve_tokens
         runs.append(
             {
                 "run_id": run_id,
                 "kind": kind,
+                "model": model,
+                "dimensions": dimensions,
                 "status": "reserved",
                 "reserved_token_upper_bound": reserve_tokens,
                 "input_count": len(texts),

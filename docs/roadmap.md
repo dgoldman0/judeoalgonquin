@@ -4,6 +4,8 @@ The roadmap builds a translation knowledge base through repeated, gated epochs. 
 
 ## Phase 0 — Foundation and safety
 
+**Status:** Complete. The foundation is preserved in Git, locally tested, and followed by one bounded N1 architecture probe.
+
 Deliverables:
 
 - authority, language-goal, specification, provenance, workflow, and decision documents;
@@ -21,8 +23,16 @@ Gate:
 - unresolved language choices are explicitly marked;
 - no inherited language record has become canonical without current review;
 - the [creative anchors](../references/creative-anchors/README.md) are preserved as revision input without treating their individual forms as proof;
-- no paid work beyond the one smoke test has occurred; and
+- paid work is restricted to owner-authorized, reported embedding checkpoints; and
 - the project owner receives the test and spending report.
+
+## First N1 architecture probe
+
+The first probe is deliberately too small to claim N1 coverage. It contains 20 candidate records: seven lexemes, five morphemes, five constructions, two phrases, and one sentence. Its source packet uses manually cited Hebrew and Moraviantown Munsee material, keeps project transformations separate from source facts, and marks the provisional script and all language forms noncanonical.
+
+The probe demonstrates revision-pinned composition, source-policy enforcement, literal versus idiomatic translations, incomplete paradigms, deterministic positive and negative construction checks, exact alias retrieval, and stale-vector invalidation. A one-request embedding sanity test over the 20 records and five frozen paraphrases achieved recall@1 of 0.8 and recall@3 of 1.0 for approximately $0.000208. A final citation audit then tightened several source descriptions, so content fingerprints correctly mark those live vectors stale; the paid call was not repeated. This is evidence that the retrieval and invalidation pipeline works on the probe, not that the proposed language forms are correct or that semantic similarity detects contradictions.
+
+Before a larger vocabulary epoch, the owner reviews the probe and decides whether to retain its record granularity, embedding projection, 256 dimensions, and source-first workflow. Canonical Munsee-derived orthography remains blocked pending current community-connected guidance.
 
 ## Project proficiency levels
 
@@ -130,6 +140,6 @@ Reports track at least:
 
 ## Spend gate
 
-Phase 0 authorizes one small paid embedding smoke test. The test should use the least material needed to prove indexing, querying, model/fingerprint metadata, and stale-vector detection. The project then stops paid API activity and returns to the owner before any expanded embedding, generation, or evaluation run.
+Phase 0 authorized one small paid embedding smoke test. After reviewing it, the owner authorized one fixed N1 retrieval sanity evaluation containing 20 records and five frozen queries in a single request. Both checkpoints are complete, and paid API access is disabled again. No paid generative-model work has occurred.
 
-The smoke test is recorded in [`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json). Budget scenarios for a substantial first corpus are in [Initial-Build Budget](initial-build-budget.md). Neither document authorizes the proposed larger spend.
+The two results are recorded in [`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json) and [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json). Budget scenarios for a substantial first corpus are in [Initial-Build Budget](initial-build-budget.md). None of these documents authorizes another paid call or the proposed larger spend.

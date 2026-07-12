@@ -100,7 +100,13 @@ def _record_fields(record: dict[str, Any]) -> dict[str, str | int]:
         *(
             value
             for sense in record["senses"]
-            for value in [*sense["glosses"], sense["definition"], sense["part_of_speech"]]
+            for value in [
+                *sense["glosses"],
+                sense["definition"],
+                sense["part_of_speech"],
+                *sense["translations"]["literal"],
+                *sense["translations"]["idiomatic"],
+            ]
         ),
         *(
             value
@@ -110,10 +116,17 @@ def _record_fields(record: dict[str, Any]) -> dict[str, str | int]:
                 evidence["lect"],
                 evidence["source_form"],
                 evidence["source_meaning"],
+                evidence["grammatical_information"],
                 evidence["locator"],
+                evidence["uncertainty"],
             ]
             if value
         ),
+        record["formation"]["formation_kind"],
+        *(operation["description"] for operation in record["formation"]["operations"]),
+        canonical_json(record["composition"]) if record["composition"] else "",
+        canonical_json(record["construction_spec"]) if record["construction_spec"] else "",
+        canonical_json(record["paradigm"]) if record["paradigm"] else "",
     ]
     notes = "\n".join(value for value in note_values if value)
     serialized = canonical_json(record)
@@ -255,16 +268,22 @@ def search_text(
 
     alias_rows = connection.execute(
         f"""
-        SELECT r.*, 100.0 AS rank_score
+        SELECT r.*,
+            CASE
+              WHEN a.alias_kind = 'source_form' THEN 95.0
+              ELSE 100.0
+            END AS rank_score
         FROM record_aliases a JOIN records r ON r.id=a.record_id
         WHERE a.normalized=? AND {status_sql}
-        ORDER BY r.id
+        ORDER BY rank_score DESC, r.id
         LIMIT ?
         """,
         [normalized, *status_params, limit],
     )
     for row in alias_rows:
-        results[row["id"]] = _result(row, lexical_score=100.0)
+        score = float(row["rank_score"])
+        if row["id"] not in results or score > results[row["id"]]["score"]:
+            results[row["id"]] = _result(row, lexical_score=score)
 
     exact_rows = connection.execute(
         f"""
@@ -397,6 +416,22 @@ def embedding_fingerprint(
     return None if row is None else str(row[0])
 
 
+def _dependencies_current(connection: sqlite3.Connection, record: dict[str, Any]) -> bool:
+    relations = record.get("relations")
+    if not isinstance(relations, dict):
+        return False
+    expected = relations.get("dependency_revisions")
+    if not isinstance(expected, dict):
+        return False
+    for dependency_id, dependency_revision in expected.items():
+        row = connection.execute(
+            "SELECT revision FROM records WHERE id=?", (dependency_id,)
+        ).fetchone()
+        if row is None or row["revision"] != dependency_revision:
+            return False
+    return True
+
+
 def count_fresh_embeddings(
     connection: sqlite3.Connection,
     *,
@@ -418,11 +453,14 @@ def count_fresh_embeddings(
     # Local import avoids the embeddings -> store dependency cycle.
     from .embeddings import record_fingerprint
 
-    return sum(
-        row["embedding_fingerprint"]
-        == record_fingerprint(json.loads(row["record_json"]), model, dimensions)
-        for row in rows
-    )
+    count = 0
+    for row in rows:
+        record = json.loads(row["record_json"])
+        if not _dependencies_current(connection, record):
+            continue
+        if row["embedding_fingerprint"] == record_fingerprint(record, model, dimensions):
+            count += 1
+    return count
 
 
 def cosine_similarity(left: Sequence[float], right: Sequence[float]) -> float:
@@ -463,6 +501,8 @@ def search_vectors(
         from .embeddings import record_fingerprint
 
         record = json.loads(row["record_json"])
+        if not _dependencies_current(connection, record):
+            continue
         expected = record_fingerprint(record, model, dimensions)
         if row["embedding_fingerprint"] != expected:
             continue

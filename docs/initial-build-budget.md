@@ -32,6 +32,18 @@ The sanitized result is committed at [`reports/embedding-smoke-2026-07-12.json`]
 
 An independent review immediately after the call expanded the entry schema and embedding projection to include stable senses, grammatical features, exact source evidence, and narrative analysis. The provider connection and semantic ordering were therefore tested live, while freshness invalidation and the richer projection are tested locally with deterministic fake vectors. The paid smoke was not repeated.
 
+The owner then authorized a single richer N1 retrieval sanity test. Twenty candidate records and five frozen paraphrase queries were embedded together in one request at 256 dimensions:
+
+- billed input: 10,407 tokens;
+- estimated charge: **$0.00020814**;
+- recall@1: 0.8;
+- recall@3: 1.0; and
+- mean reciprocal rank: 0.9.
+
+One preceding sandboxed attempt ended with `APIConnectionError` and no provider response. Its billing status is unknown, so the ignored local ledger conservatively retains the entire reservation. Cumulative accounting is therefore at most 58,102 tokens or **$0.00116204**, while the successful provider response itself cost the amount above.
+
+The sanitized report, including complete rankings and reproducibility hashes, is committed at [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json). A final citation audit changed several source-grounding fields after the call; the report preserves both hashes, and the content-fingerprint gate now treats the live vectors as stale. The call was not repeated. Five project-authored queries have coarse 0.2 metric resolution, so this result establishes only that the bounded retrieval and invalidation pipeline behaves sensibly. It is not a language-quality evaluation or an unbiased benchmark.
+
 For 1,500 richer records, initial indexing plus selective re-embedding over two major revision rounds is conservatively modeled as 1.2 million embedding tokens. At the current small-model rate, that is approximately **$0.024**. Even a much heavier 10-million-token embedding workload would be about **$0.20**.
 
 ## 3. Model-assisted proposal and review estimate

@@ -1,0 +1,612 @@
+{
+  "api_inputs": 25,
+  "api_requests": 1,
+  "authorized_cumulative_cost_cap_usd": 0.005,
+  "completed_at": "2026-07-12T22:24:23.504102+00:00",
+  "conservative_cost_upper_bound_usd": 0.0009538999999999999,
+  "conservative_cumulative_accounted_cost_usd": 0.00116204,
+  "conservative_cumulative_accounted_input_tokens": 58102,
+  "conservative_token_upper_bound": 47695,
+  "contains_credentials": false,
+  "contains_vectors": false,
+  "data": "data/entries/n1-pilot.jsonl",
+  "data_sha256": "611aa7076791c1e605ef5af630eb89832a1f9a949d32984e19af0c165eca6143",
+  "dimensions": 256,
+  "estimated_cost_usd": 0.00020814000000000002,
+  "evaluation": {
+    "mean_reciprocal_rank": 0.9,
+    "passed": true,
+    "queries": [
+      {
+        "expected_id": "ja.lexeme.hebrew_lehem",
+        "expected_rank": 1,
+        "id": "n1-semantic-01-hebrew-food",
+        "query": "food made by baking dough from ground cereal grain",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.2916693570410063
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.20371423266405023
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.1502844722767379
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.13392252639696342
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.1314492283069832
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.125307886266519
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.11983413873851533
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.1183826011088828
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.11744078988483397
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.0928926171108962
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.0897504408056039
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.08258907080457
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.08238510110554886
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.0731307064897449
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.07295683287405806
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.04579106890585389
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.028766522768160257
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.023170182786027057
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.019581119535457756
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": -0.010073843953138479
+          }
+        ],
+        "rationale": "Tests whether an ordinary Hebrew-derived food lexeme is retrieved from a definition-level paraphrase rather than its English or Hebrew form.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.2916693570410063
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.20371423266405023
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.1502844722767379
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_asen_stone",
+        "expected_rank": 1,
+        "id": "n1-semantic-02-munsee-rock",
+        "query": "a small naturally occurring hard fragment of rock",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.26534861756957234
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.25573027442053714
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.23688685753625574
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.23124284721690064
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.21029208901487156
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.20723964205784856
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.19184712562067197
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.18705825816595215
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.17929443827555638
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.17209405957272225
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.1694385394235533
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.15555007641029794
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.1509859339932788
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.15056738306382908
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.14402104758268142
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.13770638184578568
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.13493933788418128
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.12889806298137707
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.1073946202190003
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.06861440304095423
+          }
+        ],
+        "rationale": "Tests direct semantic retrieval of a Munsee-derived concrete noun while preserving the record's exclusion of added metaphorical meaning.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.26534861756957234
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.25573027442053714
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.23688685753625574
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.phrase.n1_houses",
+        "expected_rank": 2,
+        "id": "n1-semantic-03-hybrid-buildings",
+        "query": "a word for several homes that combines material from both parent languages",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.5548331865487258
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.5430777735289289
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.4807473571574892
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.47951730582678653
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.4731705140202955
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.4693653416786903
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.46104659865104375
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.45451992203128416
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.4464696011171004
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.435420499781462
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.4144127158601564
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.41008549664823923
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.407731407510159
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.40298266870336324
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.4025355197232911
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.3899927697628377
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.38828733760131096
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.38150160142721995
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.3801428190439138
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.3424519860524975
+          }
+        ],
+        "rationale": "Tests whether retrieval favors the composed hybrid nominal over its Hebrew stem, Munsee-derived suffix, and plural-rule dependencies.",
+        "reciprocal_rank": 0.5,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.5548331865487258
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.5430777735289289
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.4807473571574892
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.sentence.n1_the_man_is_good",
+        "expected_rank": 1,
+        "id": "n1-semantic-04-hybrid-clause",
+        "query": "a full statement saying that the particular man under discussion has admirable character",
+        "ranking": [
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.47535308986753233
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.4239184205202087
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.41739470878218754
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.3987693604487012
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.3909060499324337
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.35134205622360554
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.34908395982083595
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.3410537967918525
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.3239174011878866
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.32322584624433437
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.31552666709032856
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.3078932804602081
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.3064699658851849
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.30488717381249064
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.29939681358238285
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2982018661003416
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.29347962699196806
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.2916576063395608
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.2883772380858209
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.24849373931948604
+          }
+        ],
+        "rationale": "Tests sentence-level retrieval for the full hybrid proposition rather than any one of its article, subject, predicate, person-marker, or word-order components.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.47535308986753233
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.4239184205202087
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.41739470878218754
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.construction.n1_class_plural",
+        "expected_rank": 1,
+        "id": "n1-semantic-05-number-rule",
+        "query": "a grammar rule for making nouns plural in two different ways depending on noun category",
+        "ranking": [
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.46573412647348594
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.4618392407677136
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.4460666311505746
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.44387037469358287
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.4404656455166025
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.4312307385063906
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.4159626932400556
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.4147389912644413
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.4135116343974889
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.39569859921038764
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.3875680389143595
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.3843149064312121
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.37851089829236684
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.37773228941349324
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.358980126920635
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.3382641341173361
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.33673555516385156
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.3266128949374563
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.3227357279237401
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.3164417029419642
+          }
+        ],
+        "rationale": "Tests retrieval of the class-conditioned construction rather than either individual plural morpheme.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.46573412647348594
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.4618392407677136
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.4460666311505746
+          }
+        ]
+      }
+    ],
+    "query_count": 5,
+    "recall_at_1": 0.8,
+    "recall_at_3": 1.0
+  },
+  "evaluation_kind": "retrieval_sanity_test",
+  "interpretation": "Diagnostic retrieval results over candidate records; they do not validate the language forms or promote any record toward canon.",
+  "ledger_run_id": "8d91aeb1e97a4f819e64f1b6aa227797",
+  "limitations": "Five project-authored paraphrases test the retrieval pipeline over candidate records. They are not an unbiased benchmark and cannot detect linguistic conflict.",
+  "local_execution_note": "The initial sandboxed attempt failed with APIConnectionError before any provider response. The ignored local ledger conservatively retains that reservation as failed_or_unknown; one network-enabled retry completed successfully. Estimated cost uses only the successful response's billed input tokens.",
+  "metric_resolution": 0.2,
+  "mode": "live",
+  "model": "text-embedding-3-small",
+  "predeclared_pass_criteria": {
+    "minimum_recall_at_3": 1.0
+  },
+  "post_call_source_correction": {
+    "current_data_sha256": "f22fca47ccc35d38b1510554b222e3847971db8ba17f4a95a527c1d8f1f86019",
+    "current_fresh_vectors": 8,
+    "current_revision_2_ids": [
+      "ja.construction.n1_ai_third_predicate",
+      "ja.construction.n1_class_plural",
+      "ja.construction.n1_contact_subject_predicate",
+      "ja.lexeme.munsee_asen_stone",
+      "ja.lexeme.munsee_lunew_man",
+      "ja.lexeme.munsee_pemsii_walk",
+      "ja.lexeme.munsee_welesii_good",
+      "ja.morpheme.munsee_plural_ak",
+      "ja.morpheme.munsee_plural_al",
+      "ja.morpheme.munsee_third_w",
+      "ja.phrase.n1_houses",
+      "ja.sentence.n1_the_man_is_good"
+    ],
+    "current_stale_or_missing_vectors": 12,
+    "effect": "The current source-grounded records no longer match the embedded payload. Their stored vectors are stale by content fingerprint and must not be used; no repeat API call was made.",
+    "summary": "Independent citation review tightened dissertation-wide speaker attribution, separated the inferred pəmsii- stem from the printed first-person analysis, and corrected an accidentally inconsistent predicate class label. The evaluation remains a pipeline sanity result for the exact pre-correction data hash recorded above."
+  },
+  "prompt_tokens": 10407,
+  "queries": 5,
+  "query_fixture": "tests/fixtures/n1_pilot_semantic_queries.json",
+  "query_fixture_sha256": "baad899802adf898165c6cfd7a4595350f78fdbf6cf01261de3cbc5fae031096",
+  "record_revisions": {
+    "ja.construction.n1_ai_third_predicate": 1,
+    "ja.construction.n1_class_plural": 1,
+    "ja.construction.n1_contact_subject_predicate": 1,
+    "ja.construction.n1_definite_prefix": 1,
+    "ja.construction.n1_nominal_coordination": 1,
+    "ja.lexeme.hebrew_bayit": 1,
+    "ja.lexeme.hebrew_lehem": 1,
+    "ja.lexeme.hebrew_mayim": 1,
+    "ja.lexeme.munsee_asen_stone": 1,
+    "ja.lexeme.munsee_lunew_man": 1,
+    "ja.lexeme.munsee_pemsii_walk": 1,
+    "ja.lexeme.munsee_welesii_good": 1,
+    "ja.morpheme.hebrew_coord_we": 1,
+    "ja.morpheme.hebrew_definite_ha": 1,
+    "ja.morpheme.munsee_plural_ak": 1,
+    "ja.morpheme.munsee_plural_al": 1,
+    "ja.morpheme.munsee_third_w": 1,
+    "ja.phrase.n1_bread_and_water": 1,
+    "ja.phrase.n1_houses": 1,
+    "ja.sentence.n1_the_man_is_good": 1
+  },
+  "records": 20,
+  "rough_input_token_estimate": 11835,
+  "successful_billed_input_tokens": 10407,
+  "successful_estimated_cost_usd": 0.00020814000000000002,
+  "successful_requests": 1,
+  "failed_or_unknown_attempts": 1,
+  "failed_attempt_billing_status": "Unknown. The attempt ended with APIConnectionError and no provider response; its full conservative reservation remains counted locally.",
+  "total_tokens": 10407,
+  "utf8_bytes": 47695
+}

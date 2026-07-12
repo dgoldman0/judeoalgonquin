@@ -10,6 +10,7 @@ from judeoalgonquin.cli import main
 
 ROOT = Path(__file__).parents[1]
 FIXTURE = ROOT / "tests" / "fixtures" / "creative_anchor_candidates.jsonl"
+PILOT = ROOT / "data" / "entries" / "n1-pilot.jsonl"
 
 
 class CliTests(unittest.TestCase):
@@ -72,6 +73,26 @@ class CliTests(unittest.TestCase):
                 )
         self.assertEqual(code, 2)
         self.assertIn("explicit owner approval", stderr.getvalue())
+
+    def test_pilot_composition_evaluation_is_local(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            self.assertEqual(main(["evaluate", "--data", str(PILOT)]), 0)
+        result = json.loads(output.getvalue())
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["records"], 20)
+        self.assertEqual(result["construction_findings"], [])
+
+    def test_pilot_embedding_evaluation_defaults_to_one_request_dry_run(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            self.assertEqual(main(["pilot-embedding-eval"]), 0)
+        result = json.loads(output.getvalue())
+        self.assertEqual(result["mode"], "dry-run")
+        self.assertEqual(result["evaluation_kind"], "retrieval_sanity_test")
+        self.assertEqual(result["api_requests"], 0)
+        self.assertEqual(result["api_inputs"], 25)
+        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.001)
 
 
 

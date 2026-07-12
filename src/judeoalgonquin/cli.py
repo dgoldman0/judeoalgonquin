@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from datetime import datetime, timezone
@@ -12,7 +13,14 @@ from typing import Any, Sequence
 from .budget import (
     complete_paid_embedding_run,
     fail_paid_embedding_run,
+    load_policy,
     reserve_paid_embedding_run,
+    token_upper_bound,
+)
+from .evaluate import (
+    evaluate_pilot_compositions,
+    evaluate_semantic_rankings,
+    load_semantic_queries,
 )
 from .embeddings import (
     DEFAULT_DIMENSIONS,
@@ -26,7 +34,7 @@ from .embeddings import (
 from .records import (
     ValidationError,
     load_records,
-    load_source_registry_ids,
+    load_source_registry,
     validate_records,
 )
 from .store import (
@@ -46,13 +54,17 @@ DEFAULT_FIXTURE = "tests/fixtures/creative_anchor_candidates.jsonl"
 DEFAULT_SMOKE_DB = ".local/embedding-smoke.sqlite3"
 DEFAULT_SMOKE_MANIFEST = ".local/embedding-smoke-manifest.json"
 SMOKE_REPORT = "docs/reports/embedding-smoke-2026-07-12.json"
+DEFAULT_PILOT_DATA = "data/entries/n1-pilot.jsonl"
+DEFAULT_PILOT_QUERIES = "tests/fixtures/n1_pilot_semantic_queries.json"
+DEFAULT_PILOT_DB = ".local/n1-pilot.sqlite3"
+PILOT_EMBEDDING_REPORT = "docs/reports/n1-pilot-embedding-evaluation-2026-07-12.json"
 SOURCE_REGISTRY = "references/sources.yaml"
 SMOKE_QUERY = "home, dwelling, and the place where people live together"
 
 
 def _records(path: str) -> list[dict[str, Any]]:
-    source_ids = load_source_registry_ids(SOURCE_REGISTRY)
-    return validate_records(load_records(path), source_registry_ids=source_ids)
+    source_registry = load_source_registry(SOURCE_REGISTRY)
+    return validate_records(load_records(path), source_registry=source_registry)
 
 
 def _statuses(value: str) -> tuple[str, ...]:
@@ -84,6 +96,20 @@ def command_build(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_evaluate(args: argparse.Namespace) -> int:
+    records = _records(args.data)
+    findings = evaluate_pilot_compositions(records)
+    _print_json(
+        {
+            "valid": not findings,
+            "records": len(records),
+            "data": args.data,
+            "construction_findings": findings,
+        }
+    )
+    return 0 if not findings else 1
+
+
 def command_search(args: argparse.Namespace) -> int:
     connection = connect(args.db)
     try:
@@ -106,7 +132,9 @@ def command_search(args: argparse.Namespace) -> int:
                 "no fresh matching stored embeddings; run the capped embed command first"
             )
         texts = [args.query]
-        reservation = reserve_paid_embedding_run("semantic-search", texts)
+        reservation = reserve_paid_embedding_run(
+            "semantic-search", texts, model=args.model, dimensions=args.dimensions
+        )
         try:
             embedder = OpenAIEmbedder(model=args.model, dimensions=args.dimensions)
             batch = embedder.embed(texts)
@@ -164,7 +192,9 @@ def command_embed(args: argparse.Namespace) -> int:
             _print_json(plan)
             return 0
         texts = [embedding_text(record) for record in selected]
-        reservation = reserve_paid_embedding_run("record-embedding", texts)
+        reservation = reserve_paid_embedding_run(
+            "record-embedding", texts, model=args.model, dimensions=args.dimensions
+        )
         try:
             embedder = OpenAIEmbedder(model=args.model, dimensions=args.dimensions)
             batch = embedder.embed(texts)
@@ -271,6 +301,148 @@ def command_smoke(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
+    records = _records(args.data)
+    findings = evaluate_pilot_compositions(records)
+    if findings:
+        raise ValueError("pilot composition checks failed: " + "; ".join(findings))
+    queries = load_semantic_queries(args.queries)
+    record_ids = [record["id"] for record in records]
+    unknown_targets = sorted(
+        {query["expected_id"] for query in queries} - set(record_ids)
+    )
+    if unknown_targets:
+        raise ValueError(f"semantic queries target unknown records: {unknown_targets}")
+
+    projected = [embedding_text(record) for record in records]
+    live_texts = [*projected, *(query["query"] for query in queries)]
+    policy = load_policy()
+    byte_count = sum(len(text.encode("utf-8")) for text in live_texts)
+    conservative_tokens = token_upper_bound(live_texts)
+    rough_tokens = sum(max(1, (len(text) + 3) // 4) for text in live_texts)
+    price = float(policy["price_per_million_input_tokens_usd"])
+    plan = {
+        "mode": "live" if args.live else "dry-run",
+        "evaluation_kind": "retrieval_sanity_test",
+        "model": args.model,
+        "dimensions": args.dimensions,
+        "records": len(records),
+        "queries": len(queries),
+        "api_inputs": len(live_texts),
+        "api_requests": 1 if args.live else 0,
+        "utf8_bytes": byte_count,
+        "rough_input_token_estimate": rough_tokens,
+        "conservative_token_upper_bound": conservative_tokens,
+        "conservative_cost_upper_bound_usd": conservative_tokens * price / 1_000_000,
+        "authorized_cumulative_cost_cap_usd": policy["max_estimated_cost_usd"],
+        "predeclared_pass_criteria": {"minimum_recall_at_3": 1.0},
+        "metric_resolution": 1.0 / len(queries),
+        "limitations": (
+            "Five project-authored paraphrases test the retrieval pipeline over candidate "
+            "records. They are not an unbiased benchmark and cannot detect linguistic conflict."
+        ),
+    }
+    if not args.live:
+        _print_json(plan)
+        return 0
+
+    fixed_paths = {
+        "data": (Path(args.data).resolve(), Path(DEFAULT_PILOT_DATA).resolve()),
+        "queries": (Path(args.queries).resolve(), Path(DEFAULT_PILOT_QUERIES).resolve()),
+        "report": (Path(args.report).resolve(), Path(PILOT_EMBEDDING_REPORT).resolve()),
+    }
+    for label, (actual, expected) in fixed_paths.items():
+        if actual != expected:
+            raise ValueError(f"live pilot {label} path is fixed at {expected}")
+    if Path(args.report).exists():
+        raise ValueError(f"the bounded pilot call is already recorded at {args.report}")
+    if args.model != DEFAULT_MODEL or args.dimensions != DEFAULT_DIMENSIONS:
+        raise ValueError("live pilot model and dimensions are fixed")
+    if len(records) != 20 or len(queries) != 5 or len(live_texts) != MAX_LIVE_INPUTS:
+        raise ValueError("live pilot envelope is fixed at 20 records and 5 queries")
+
+    reservation = reserve_paid_embedding_run(
+        "n1-pilot-embedding-evaluation",
+        live_texts,
+        model=args.model,
+        dimensions=args.dimensions,
+    )
+    try:
+        embedder = OpenAIEmbedder(model=args.model, dimensions=args.dimensions)
+        # All records and frozen queries share one request, so this command cannot
+        # quietly multiply provider calls when the evaluation set grows.
+        batch = embedder.embed(live_texts)
+        complete_paid_embedding_run(reservation, batch.prompt_tokens)
+    except Exception as exc:
+        fail_paid_embedding_run(reservation, type(exc).__name__)
+        raise
+
+    record_vectors = batch.vectors[: len(records)]
+    query_vectors = batch.vectors[len(records) :]
+    evaluation = evaluate_semantic_rankings(
+        record_ids,
+        record_vectors,
+        queries,
+        query_vectors,
+    )
+    evaluation["passed"] = evaluation["recall_at_3"] >= 1.0
+
+    connection = connect(args.db)
+    try:
+        index_records(connection, records)
+        for record, vector in zip(records, record_vectors):
+            put_embedding(
+                connection,
+                record["id"],
+                args.model,
+                args.dimensions,
+                record_fingerprint(record, args.model, args.dimensions),
+                vector,
+            )
+    finally:
+        connection.close()
+
+    report = {
+        **plan,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+        "data": args.data,
+        "query_fixture": args.queries,
+        "data_sha256": hashlib.sha256(Path(args.data).read_bytes()).hexdigest(),
+        "query_fixture_sha256": hashlib.sha256(
+            Path(args.queries).read_bytes()
+        ).hexdigest(),
+        "ledger_run_id": reservation.run_id,
+        "prompt_tokens": batch.prompt_tokens,
+        "total_tokens": batch.total_tokens,
+        "estimated_cost_usd": batch.prompt_tokens * price / 1_000_000,
+        "record_revisions": {record["id"]: record["revision"] for record in records},
+        "evaluation": evaluation,
+        "interpretation": (
+            "Diagnostic retrieval results over candidate records; they do not validate "
+            "the language forms or promote any record toward canon."
+        ),
+        "contains_vectors": False,
+        "contains_credentials": False,
+    }
+    report_path = Path(args.report)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    _print_json(
+        {
+            **plan,
+            "prompt_tokens": batch.prompt_tokens,
+            "estimated_cost_usd": report["estimated_cost_usd"],
+            "evaluation": evaluation,
+            "report": str(report_path),
+            "database": args.db,
+        }
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="judeoalgonquin",
@@ -286,6 +458,12 @@ def build_parser() -> argparse.ArgumentParser:
     build.add_argument("--data", default=DEFAULT_DATA)
     build.add_argument("--db", default=DEFAULT_DB)
     build.set_defaults(func=command_build)
+
+    evaluate = subparsers.add_parser(
+        "evaluate", help="run deterministic composition checks over validated records"
+    )
+    evaluate.add_argument("--data", default=DEFAULT_PILOT_DATA)
+    evaluate.set_defaults(func=command_evaluate)
 
     search = subparsers.add_parser("search", help="search a built local index")
     search.add_argument("query")
@@ -319,6 +497,19 @@ def build_parser() -> argparse.ArgumentParser:
     smoke.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
     smoke.add_argument("--live", action="store_true")
     smoke.set_defaults(func=command_smoke)
+
+    pilot = subparsers.add_parser(
+        "pilot-embedding-eval",
+        help="plan or run the fixed one-request N1 semantic retrieval evaluation",
+    )
+    pilot.add_argument("--data", default=DEFAULT_PILOT_DATA)
+    pilot.add_argument("--queries", default=DEFAULT_PILOT_QUERIES)
+    pilot.add_argument("--db", default=DEFAULT_PILOT_DB)
+    pilot.add_argument("--report", default=PILOT_EMBEDDING_REPORT)
+    pilot.add_argument("--model", default=DEFAULT_MODEL)
+    pilot.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
+    pilot.add_argument("--live", action="store_true")
+    pilot.set_defaults(func=command_pilot_embedding_evaluation)
     return parser
 
 

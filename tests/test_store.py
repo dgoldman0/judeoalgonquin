@@ -41,6 +41,8 @@ class StoreTests(unittest.TestCase):
         records[0]["status"] = "deprecated"
         records[0]["review"] = {
             "reviewer_type": "human",
+            "reviewer_id": "test-reviewer",
+            "authority": "unit test",
             "decision": "deprecated",
             "reviewed_at": "2026-07-12T00:00:00Z",
             "note": "test",
@@ -124,6 +126,36 @@ class StoreTests(unittest.TestCase):
             ),
             0,
         )
+
+    def test_changed_dependency_hides_downstream_vector(self) -> None:
+        from judeoalgonquin.embeddings import record_fingerprint
+
+        phrase = self.records[1]
+        put_embedding(
+            self.connection,
+            phrase["id"],
+            "fake",
+            3,
+            record_fingerprint(phrase, "fake", 3),
+            [1.0, 0.0, 0.0],
+        )
+        self.assertEqual(
+            search_vectors(
+                self.connection, [1.0, 0.0, 0.0], model="fake", dimensions=3
+            )[0]["id"],
+            phrase["id"],
+        )
+
+        changed = copy.deepcopy(self.records)
+        changed[0]["revision"] = 2
+        index_records(self.connection, changed)
+        downstream_ids = {
+            item["id"]
+            for item in search_vectors(
+                self.connection, [1.0, 0.0, 0.0], model="fake", dimensions=3
+            )
+        }
+        self.assertNotIn(phrase["id"], downstream_ids)
 
 
 if __name__ == "__main__":

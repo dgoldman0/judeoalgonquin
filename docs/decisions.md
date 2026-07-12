@@ -70,9 +70,15 @@ This file records foundation decisions in a compact form. A decision remains act
 
 **Boundary:** The project must cite historical-source claims and describe the resulting construction as a deliberate conlang adaptation. A single obviative marker cannot be credited with uniquely identifying several participants without additional grammar or context.
 
+### D-016 — Bounded N1 retrieval checkpoint
+
+**Decision:** After reviewing the foundation smoke result, the owner authorized one fixed embedding evaluation over 20 N1 candidate records and five frozen paraphrase queries. The run had to use `text-embedding-3-small` at 256 dimensions, one provider request, the persistent budget ledger, and a sanitized report. The authorization is now consumed and the paid gate is disabled again.
+
+**Result:** The successful call used 10,407 input tokens, cost approximately $0.000208 at the configured rate, and met its predeclared recall@3 sanity criterion. One preceding sandboxed attempt ended with `APIConnectionError` and no provider response; billing is unknown, so its full reservation remains conservatively counted. The local ledger therefore accounts for at most 58,102 tokens or $0.00116204. This checkpoint does not authorize paid generation, validate the candidate language, or establish an unbiased retrieval benchmark.
+
 ## Open decisions
 
-These do not block documentation, schema work, local fixtures, or the one embedding smoke test. They do block canonical content that depends on them.
+These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.
 
 1. Canonical English name and endonym; whether *Djudeo-Mahikanítakh* is retained as a transparent coinage.
 2. Complete source phoneme inventory and the precise Munsee/Mahican relationship used by the conlang.
