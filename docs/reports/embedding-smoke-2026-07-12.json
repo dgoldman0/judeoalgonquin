@@ -1,0 +1,38 @@
+{
+  "api_inputs": 4,
+  "api_requests": 1,
+  "completed_at": "2026-07-12T21:04:41.659343+00:00",
+  "dimensions": 256,
+  "fixture_records": 3,
+  "model": "text-embedding-3-small",
+  "projection_at_call": [
+    "record_type",
+    "level",
+    "English forms",
+    "Judeo-Algonquin form",
+    "romanization",
+    "translation notes",
+    "grammar notes",
+    "design notes",
+    "formation process",
+    "design alignment"
+  ],
+  "post_call_note": "The entry schema and projection were expanded after review. The live call proves provider integration and ranking; current richer projection, fingerprint invalidation, and cost gates are covered by local tests. No second paid call was made.",
+  "prompt_tokens": 422,
+  "query": "home, dwelling, and the place where people live together",
+  "query_inputs": 1,
+  "result_ids": [
+    "ja.lexeme.legacy_home",
+    "ja.phrase.legacy_in_the_home",
+    "ja.lexeme.legacy_path"
+  ],
+  "scores": {
+    "ja.lexeme.legacy_home": 0.5033754243275161,
+    "ja.lexeme.legacy_path": 0.3275173463740693,
+    "ja.phrase.legacy_in_the_home": 0.45742284051662535
+  },
+  "total_tokens": 422,
+  "estimated_usd_at_0_02_per_million_input_tokens": 0.00000844,
+  "contains_vectors": false,
+  "contains_credentials": false
+}

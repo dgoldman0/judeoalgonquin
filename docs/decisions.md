@@ -1,0 +1,89 @@
+# Decision Record
+
+This file records foundation decisions in a compact form. A decision remains active until a later entry explicitly supersedes it.
+
+## Adopted decisions
+
+### D-001 — Fresh canonical corpus
+
+**Decision:** The active canonical corpus starts empty. Inherited translations, vocabulary, paradigms, and generated notes are not imported as canonical records. Creative-anchor wording is preserved as revision input, not canon.
+
+**Reason:** The legacy corpus is circularly generated, inconsistently sourced, and internally contradictory.
+
+### D-002 — Authority order
+
+**Decision:** Authority descends from `language-goals.md`, then adopted decisions, then accepted sections of `language-spec.md`, then canonical structured records. Derived indexes and generated output have no normative authority.
+
+### D-003 — Algonquian source hierarchy
+
+**Decision:** Munsee Delaware / Lunaape is the regional Algonquian anchor. If it cannot meet a documented need, research checks responsibly sourced Mahican/Mohican and Lenape material first. Explicitly labeled Algonquin, Ojibwe, Mi'kmaq, Penobscot, or other Algonquian material may then fill a real gap after review. Nothing is silently mixed or relabeled.
+
+**Revisit trigger:** Better community guidance, unavailable primary documentation, or evidence that a proposed feature depends on a different lect.
+
+### D-004 — Exact attribution
+
+**Decision:** “Algonquian” alone is not an acceptable lexical source label. Language, lect, source form, locator, and transformation are required for canon.
+
+### D-005 — Honest formation history
+
+**Decision:** Historical etymology, project formation process, and design alignment are separate fields. A coinage may be canonical without pretending to have a historical lineage.
+
+### D-006 — Human-only canon
+
+**Decision:** Only an authorized human reviewer may set `canonical` status. Automation may create candidates, evaluations, and recommendations.
+
+### D-007 — Structured truth, derived embeddings
+
+**Decision:** Revisioned structured records are authoritative. Embeddings and search documents are replaceable derivatives linked to record ID, record revision, model, dimensions, and content fingerprint.
+
+### D-008 — Project proficiency levels
+
+**Decision:** Use N1, N2, D1, D2, and R1 as project-specific coverage levels. They are not CEFR claims. Each level proceeds through vocabulary, phrases, and sentences; paragraph work is gated after rich sentence work.
+
+### D-009 — Cultural guardrails
+
+**Decision:** Do not auto-generate sacred, ceremonial, medicine, or community-restricted material. Do not use source-language stereotypes to allocate semantic domains. Fictional history must be labeled as fiction.
+
+### D-010 — API spend boundary
+
+**Decision:** One small live embedding smoke test is permitted. After it, all paid API work stops until the project owner reviews behavior, usage, and estimated cost and explicitly approves expansion.
+
+### D-011 — Legacy archival references
+
+**Decision:** Historical material is normally recovered through Git archive tags rather than kept in the active language tree. The two explicitly designated creative-anchor songs are the documented exception. See `legacy-audit.md` for exact references.
+
+### D-012 — Explicit alternate-history premise
+
+**Decision:** The setting imagines that Judea does not fall, a culturally rich Judean community crosses the Atlantic and settles in the Hudson/Mahicanituck Valley, and long contact develops through pidgin and nativized-creole stages into an increasingly elaborated community language. Hebrew culture is preserved and transformed. This is worldbuilding, never claimed history; the creole stage is itself understood as a full language.
+
+### D-013 — Hebrew/Judean co-parentage
+
+**Decision:** Judean/Hebrew continuity is a full co-parent, not a thin superstrate. Modern/common Hebrew is important for ordinary life; Biblical and Classical Hebrew are important narrative and literary resources. Hebrew may contribute lexicon, morphology, syntax, and discourse across domains.
+
+### D-014 — Active creative anchors
+
+**Decision:** [*We Walk Well* and *When the Lights Learn Our Names*](../references/creative-anchors/README.md) remain active creative anchors. Their exact wording, themes, voice, imagery, registers, and expressive ambitions are protected revision input. Individual forms and analyses remain reviewable.
+
+### D-015 — Required hybrid narrative engine
+
+**Decision:** A defining expressive capability combines an adapted Biblical Hebrew wayyiqtol foreground event chain, an adapted weqatal consequence/habitual frame, and Algonquian-inspired proximate/obviative participant tracking. Their interaction must support fast multi-participant narration, controlled discourse-center shifts, and an event-to-enduring-pattern transition. This capability is required even though its final forms and paradigms remain under research.
+
+**Boundary:** The project must cite historical-source claims and describe the resulting construction as a deliberate conlang adaptation. A single obviative marker cannot be credited with uniquely identifying several participants without additional grammar or context.
+
+## Open decisions
+
+These do not block documentation, schema work, local fixtures, or the one embedding smoke test. They do block canonical content that depends on them.
+
+1. Canonical English name and endonym; whether *Djudeo-Mahikanítakh* is retained as a transparent coinage.
+2. Complete source phoneme inventory and the precise Munsee/Mahican relationship used by the conlang.
+3. Canonical romanization and Hebrew grapheme mappings, including vowel length and reduced vowels.
+4. Exact conventions within Modern/common, Biblical, Classical, rabbinic, liturgical, regional, and diaspora Hebrew material, including how contact transforms them.
+5. Exact implementation of the required narrative engine: wayyiqtol- and weqatal-derived forms, participant marking, center shifts, multiple-obviative handling, and interaction with ordinary tense/aspect.
+6. Inclusive/exclusive distinctions, nominal classes, locatives, and direct/inverse paradigms outside that engine.
+7. Source permissions or licenses for any material considered for systematic extraction.
+8. Quantitative coverage thresholds for each proficiency level after initial measured epochs.
+9. Whether any community-specific ceremonial vocabulary is necessary to the project at all.
+
+## Decision procedure
+
+A new decision records the question, evidence, alternatives, chosen outcome, consequences, reviewer, date, and any records invalidated. Material changes receive a new decision ID; earlier text is not silently rewritten to make the history look unanimous.

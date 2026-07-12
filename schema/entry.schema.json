@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/judeoalgonquin/entry.schema.json",
+  "title": "Judeo-Algonquin language record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "record_type",
+    "revision",
+    "status",
+    "level",
+    "forms",
+    "senses",
+    "grammatical_features",
+    "notes",
+    "formation",
+    "source_evidence",
+    "provenance",
+    "relations",
+    "metadata",
+    "created_at",
+    "updated_at",
+    "change_note"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"$ref": "#/$defs/recordId"},
+    "record_type": {
+      "enum": ["lexeme", "morpheme", "phrase", "sentence", "paragraph", "construction"]
+    },
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {
+      "enum": [
+        "draft",
+        "candidate",
+        "reviewed",
+        "canonical",
+        "deprecated",
+        "superseded",
+        "rejected"
+      ]
+    },
+    "level": {"enum": ["unassigned", "N1", "N2", "D1", "D2", "R1"]},
+    "forms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["english", "judeo_algonquin"],
+      "properties": {
+        "english": {"$ref": "#/$defs/nonemptyStringArray"},
+        "judeo_algonquin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["hebrew_script", "romanization"],
+          "properties": {
+            "hebrew_script": {"type": "string", "minLength": 1},
+            "unpointed": {"type": "string"},
+            "romanization": {"type": "string", "minLength": 1},
+            "segmentation": {"type": "string"},
+            "morpheme_gloss": {"type": "string"},
+            "variants": {"$ref": "#/$defs/nonemptyStringArrayOptional"}
+          }
+        }
+      }
+    },
+    "senses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "glosses", "definition", "part_of_speech"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*\\.sense\\.[a-z0-9][a-z0-9_-]*$"
+          },
+          "glosses": {"$ref": "#/$defs/nonemptyStringArray"},
+          "definition": {"type": "string", "minLength": 1},
+          "part_of_speech": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "grammatical_features": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+    "notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["translation", "grammar", "design"],
+      "properties": {
+        "translation": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "grammar": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "design": {"$ref": "#/$defs/nonemptyStringArrayOptional"}
+      }
+    },
+    "formation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_etymology", "formation_process", "design_alignment"],
+      "properties": {
+        "historical_etymology": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["claim", "source_ids", "locator", "confidence"],
+            "properties": {
+              "claim": {"type": "string", "minLength": 1},
+              "source_ids": {"$ref": "#/$defs/nonemptyStringArray"},
+              "locator": {"type": "string", "minLength": 1},
+              "confidence": {"enum": ["low", "medium", "high"]}
+            }
+          }
+        },
+        "formation_process": {"type": "string"},
+        "design_alignment": {"type": "string"}
+      }
+    },
+    "source_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "language",
+          "lect",
+          "source_form",
+          "source_meaning",
+          "grammatical_information",
+          "locator",
+          "contributor_or_speaker",
+          "license_status",
+          "accessed_at",
+          "confidence",
+          "uncertainty"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "language": {"type": "string", "minLength": 1},
+          "lect": {"type": "string"},
+          "source_form": {"type": "string", "minLength": 1},
+          "source_meaning": {"type": "string", "minLength": 1},
+          "grammatical_information": {"type": "string"},
+          "locator": {"type": "string", "minLength": 1},
+          "contributor_or_speaker": {"type": "string"},
+          "license_status": {"type": "string", "minLength": 1},
+          "accessed_at": {"type": "string", "format": "date"},
+          "confidence": {"enum": ["low", "medium", "high", "unknown"]},
+          "uncertainty": {"type": "string"}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["creator_type", "source_ids"],
+      "properties": {
+        "creator_type": {"enum": ["human", "model", "legacy_import", "mixed"]},
+        "source_ids": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "generation_note": {"type": "string"}
+      }
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "depends_on",
+        "related_to",
+        "conflicts_with",
+        "supersedes",
+        "superseded_by"
+      ],
+      "properties": {
+        "depends_on": {"$ref": "#/$defs/idArray"},
+        "related_to": {"$ref": "#/$defs/idArray"},
+        "conflicts_with": {"$ref": "#/$defs/idArray"},
+        "supersedes": {"$ref": "#/$defs/idArray"},
+        "superseded_by": {"$ref": "#/$defs/idArray"}
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["registers", "domains", "tags", "creative_anchor"],
+      "properties": {
+        "registers": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "domains": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "tags": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+        "creative_anchor": {"type": ["string", "null"]}
+      }
+    },
+    "narrative_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clauses", "transition"],
+      "properties": {
+        "clauses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "clause_id",
+              "construction_ids",
+              "event_role",
+              "participants",
+              "center_shift"
+            ],
+            "properties": {
+              "clause_id": {"type": "string", "minLength": 1},
+              "construction_ids": {"$ref": "#/$defs/idArray"},
+              "event_role": {
+                "enum": [
+                  "foreground",
+                  "background",
+                  "consequence",
+                  "habitual",
+                  "standing_pattern",
+                  "dialogue",
+                  "other"
+                ]
+              },
+              "participants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["participant_id", "discourse_status"],
+                  "properties": {
+                    "participant_id": {"type": "string", "minLength": 1},
+                    "discourse_status": {
+                      "enum": ["proximate", "obviative", "overt", "unspecified"]
+                    }
+                  }
+                }
+              },
+              "center_shift": {"type": "boolean"}
+            }
+          }
+        },
+        "transition": {"type": ["string", "null"]}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer_type", "decision", "reviewed_at", "note"],
+      "properties": {
+        "reviewer_type": {"const": "human"},
+        "decision": {
+          "enum": ["reviewed", "canonical", "deprecated", "superseded", "rejected"]
+        },
+        "reviewed_at": {"type": "string", "format": "date-time"},
+        "note": {"type": "string"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "change_note": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "recordId": {
+      "type": "string",
+      "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*$"
+    },
+    "nonemptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "nonemptyStringArrayOptional": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "idArray": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/recordId"},
+      "uniqueItems": true
+    }
+  }
+}

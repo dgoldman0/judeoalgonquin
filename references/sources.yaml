@@ -1,0 +1,318 @@
+schema_version: 1
+registry_status: foundation
+last_verified: "2026-07-12"
+
+verification_policy:
+  meaning: >-
+    Verified means that the URL was reachable and the publisher or community
+    identity was confirmed on the verification date. It does not grant reuse
+    rights, validate every statement, or permit transfer between language lects.
+  default_bulk_reuse: not_cleared
+  canonical_import: per_entry_review_required
+
+design_source_path:
+  algonquian:
+    regional_anchor:
+      - Munsee Delaware
+      - Lunaape
+    first_gap_search:
+      - Mahican
+      - Mohican
+      - explicitly identified Lenape lects
+    broader_gap_search:
+      - Algonquin
+      - Ojibwe
+      - Mi'gmaq
+      - Mi'kmaq
+      - Penobscot
+      - other explicitly identified Algonquian languages
+    rule: >-
+      A broader source may fill a documented lexical or design gap only after
+      regional sources prove insufficient. The record retains its exact source
+      label, rationale, and transformation; it is never silently made Munsee.
+  hebrew:
+    ordinary_life:
+      - Modern Hebrew
+      - common Hebrew
+    narrative_and_literary:
+      - Biblical Hebrew
+      - Classical Hebrew
+    additional_labeled_sources:
+      - rabbinic
+      - liturgical
+      - regional
+      - diaspora
+    rule: >-
+      Hebrew is a co-parent and may contribute vocabulary, morphology, syntax,
+      and discourse across domains rather than only abstract or elevated material.
+
+sources:
+  - id: munsee_delaware_nation_about
+    title: Munsee-Delaware Nation — About
+    publisher: Munsee-Delaware Nation
+    url: https://munsee.ca/about/
+    authority_kind: community
+    source_type: community_language_context
+    language_scope:
+      - Munsee
+      - Lunaape
+    project_priority: primary_context
+    appropriate_uses:
+      - community naming and identity
+      - public language context
+      - source hierarchy review
+    lexical_import: not_from_this_page
+    license_status: unknown
+    bulk_reuse: not_cleared
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Official Munsee-Delaware Nation site; page identifies its Lunaape dialect.
+
+  - id: omeara_munsee_dictionary_1996
+    title: Delaware-English / English-Delaware Dictionary
+    creator: John O'Meara
+    publisher: University of Toronto Press
+    url: https://utpdistribution.com/9781442621473/delaware-english-english-delaware-dictionary/
+    authority_kind: scholarly_speaker_based
+    source_type: bilingual_dictionary
+    language_scope:
+      - Munsee Delaware
+      - Moraviantown variety
+    project_priority: regional_anchor_lexical_and_grammatical_candidate
+    appropriate_uses:
+      - manual headword research
+      - grammatical class research
+      - inflected-form and usage research
+      - citation
+    lexical_import: per_entry_review_required
+    license_status: copyrighted
+    bulk_reuse: not_cleared
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Publisher description identifies speaker-based research at Moraviantown.
+
+  - id: stockbridge_munsee_language_notes
+    title: Language Walk-in Mohican
+    publisher: Stockbridge-Munsee Community Band of Mohican Indians
+    url: https://www.mohican.com/language-old/
+    authority_kind: community
+    source_type: community_language_notes
+    language_scope:
+      - Mahican
+      - Mohican
+      - Munsee
+    project_priority: regional_gap_filling_manual_review
+    appropriate_uses:
+      - community terminology and framing
+      - historical source leads
+      - manual comparison of published examples
+    lexical_import: per_entry_review_required
+    license_status: unknown
+    bulk_reuse: not_cleared
+    cautions:
+      - The URL labels the page as old; each claim and example needs current review.
+      - Compiled historical forms are not automatically current community usage.
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Page is hosted on the official Stockbridge-Munsee Community domain.
+
+  - id: stockbridge_munsee_community
+    title: Stockbridge-Munsee Community Band of Mohican Indians
+    publisher: Stockbridge-Munsee Community Band of Mohican Indians
+    url: https://www.mohican.com/
+    authority_kind: community
+    source_type: community_context
+    language_scope:
+      - Mahican
+      - Mohican
+      - Munsee
+    project_priority: primary_community_context
+    appropriate_uses:
+      - community naming
+      - language-program context
+      - cultural-policy review
+    lexical_import: not_from_this_page
+    license_status: unknown
+    bulk_reuse: not_cleared
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Official community website.
+
+  - id: delaware_tribe_lenape_language
+    title: Lenape Language
+    publisher: Delaware Tribe of Indians
+    url: https://delawaretribe.org/cultural-education/culture-and-language/lenape-language/
+    authority_kind: community
+    source_type: community_language_portal
+    language_scope:
+      - Unami Lenape
+    project_priority: regional_gap_filling
+    appropriate_uses:
+      - community framing
+      - confirmation of the Lenape Talking Dictionary
+      - public lessons and source leads
+    lexical_import: per_entry_review_required
+    license_status: unknown
+    bulk_reuse: not_cleared
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Official Delaware Tribe of Indians language page.
+
+  - id: lenape_talking_dictionary
+    title: The Lenape Talking Dictionary
+    publisher: Lenape Language Preservation Project, Delaware Tribe of Indians
+    url: https://www.talk-lenape.org/
+    authority_kind: community_speaker_connected
+    source_type: talking_dictionary
+    language_scope:
+      - Unami Lenape
+    project_priority: regional_gap_filling
+    appropriate_uses:
+      - manual headword research
+      - audio and usage review
+      - grammar and lesson consultation
+      - citation
+    lexical_import: per_entry_review_required
+    license_status: unknown
+    bulk_reuse: not_cleared
+    cautions:
+      - Unami forms must not be relabeled as Munsee.
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Site identifies itself as the official dictionary of the Delaware Tribe; the tribal site links to it.
+
+  - id: academy_hebrew_online_resources
+    title: Academy of the Hebrew Language — Online Resources
+    publisher: Academy of the Hebrew Language
+    url: https://eng.hebrew-academy.org.il/our-work/online-resources/
+    authority_kind: official_language_institution
+    source_type: language_resource_portal
+    language_scope:
+      - Standard Hebrew
+      - historical Hebrew lexicography
+      - Hebrew orthography and transliteration
+    project_priority: primary_hebrew
+    appropriate_uses:
+      - orthography and transliteration decisions
+      - standard terminology
+      - inflection reference
+      - historical-dictionary source leads
+    lexical_import: per_entry_review_required
+    license_status: mixed_or_unknown
+    bulk_reuse: not_cleared
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Official Academy portal to its terminology, grammar, orthography, and historical resources.
+
+  - id: ojibwe_peoples_dictionary
+    title: Ojibwe People's Dictionary
+    publisher: University of Minnesota Libraries and Department of American Indian Studies
+    url: https://ojibwe.lib.umn.edu/
+    authority_kind: speaker_connected_scholarly
+    source_type: talking_dictionary
+    language_scope:
+      - Ojibwe
+      - documented regional varieties
+    project_priority: broader_gap_filling_after_regional_search
+    appropriate_uses:
+      - comparative research
+      - regional and speaker variation examples
+      - source-method model
+    lexical_import: documented_gap_and_review_required
+    license_status: mixed_or_unknown
+    bulk_reuse: not_cleared
+    cautions:
+      - Ojibwe is not a substitute for Munsee, Mahican, or Unami.
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Dictionary identifies speaker recordings, regions, editors, and institutional partners.
+
+  - id: kitigan_zibi_picture_dictionary
+    title: Kitigan Zibi Picture Dictionary
+    publisher: Algonquin Anishinabeg Nation Tribal Council
+    url: https://anishinabemowin.ca/en_CA/picture-dictionary/words-demo/
+    authority_kind: community
+    source_type: picture_dictionary_with_audio
+    language_scope:
+      - Algonquin
+      - Kitigan Zibi variety
+    project_priority: broader_gap_filling_after_regional_search
+    appropriate_uses:
+      - comparative research
+      - source-specific Algonquin examples
+      - audio consultation
+    lexical_import: documented_gap_and_review_required
+    license_status: unknown
+    bulk_reuse: not_cleared
+    cautions:
+      - Algonquin is a distinct language and is not the project's primary Munsee source.
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Community language portal provides a labeled picture dictionary and audio.
+
+  - id: migmaq_mikmaq_online_talking_dictionary
+    title: Mi'gmaq/Mi'kmaq Online Talking Dictionary
+    publisher: Mi'gmaq/Mi'kmaq Online Talking Dictionary project
+    url: https://mikmaqonline.org/
+    authority_kind: speaker_connected
+    source_type: talking_dictionary
+    language_scope:
+      - Mi'gmaq
+      - Mi'kmaq
+      - documented speaker variation
+    project_priority: broader_gap_filling_after_regional_search
+    appropriate_uses:
+      - manual headword research for a documented gap
+      - audio and phrase review
+      - speaker-variation review
+      - citation
+    lexical_import: documented_gap_and_review_required
+    license_status: unknown
+    bulk_reuse: not_cleared
+    cautions:
+      - Mi'gmaq or Mi'kmaq material must retain its source label and must not be relabeled as Munsee, Mahican, or Lenape.
+      - A regional-source gap and design rationale are required before use.
+    verification:
+      status: verified_publisher_and_url
+      date: "2026-07-12"
+      note: Talking dictionary states that each headword is recorded by at least three speakers and used in a phrase.
+
+required_source_gaps:
+  - id: munsee_current_community_lexical_guidance
+    need: >-
+      Current community guidance on preferred Munsee spelling, pronunciation,
+      and acceptable use beyond published dictionary consultation.
+    blocks:
+      - canonical Munsee-derived orthography
+      - systematic lexical epochs
+
+  - id: mahican_normative_reference
+    need: >-
+      A current, community-connected Mahican/Mohican reference suitable for
+      exact lexical and grammatical citation.
+    blocks:
+      - canonical Mahican-derived paradigms
+
+  - id: biblical_hebrew_grammar
+    need: >-
+      A suitable scholarly primary reference for claims about Biblical Hebrew
+      narrative morphology and discourse, especially wayyiqtol and weqatal,
+      with page-level citations and attention to their contextual functions.
+    blocks:
+      - canonical wayyiqtol-derived or weqatal-derived construction records
+
+  - id: source_reuse_permissions
+    need: >-
+      Recorded terms or permissions for any source proposed for systematic
+      extraction or bulk storage.
+    blocks:
+      - bulk source ingestion

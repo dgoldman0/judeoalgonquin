@@ -1,0 +1,89 @@
+# Initial-Build Budget
+
+**Estimate date:** 2026-07-12
+
+**Status:** Planning estimate, not spending authorization. Pricing and assumptions must be rechecked before a bulk run.
+
+## 1. What “decent initial build” means here
+
+This estimate models a substantial first N1-oriented corpus rather than a token demo:
+
+| Record family | Target |
+|---|---:|
+| Lexemes and productive morphemes | 600 |
+| Phrases | 400 |
+| Sentences | 400 |
+| Constructions plus separately structured source/evaluation artifacts | 100 |
+| **Total reviewed working units** | **1,500** |
+
+Every language record is assumed to include source or formation metadata, Hebrew script, romanization, notes, dependencies, and review state. These counts are planning targets, not proficiency definitions or a commitment to accept 1,500 forms.
+
+## 2. Measured embedding result
+
+The one authorized live smoke test embedded three noncanonical fixture records plus one query in one request:
+
+- model: `text-embedding-3-small`;
+- dimensions: 256;
+- billed input: 422 tokens;
+- ranking: home lexeme, home-locative phrase, then path lexeme; and
+- estimated charge at $0.02 per million input tokens: **$0.00000844**.
+
+The sanitized result is committed at [`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json). Reduced dimensions lower local storage and comparison cost; embedding API charges remain based on input tokens.
+
+An independent review immediately after the call expanded the entry schema and embedding projection to include stable senses, grammatical features, exact source evidence, and narrative analysis. The provider connection and semantic ordering were therefore tested live, while freshness invalidation and the richer projection are tested locally with deterministic fake vectors. The paid smoke was not repeated.
+
+For 1,500 richer records, initial indexing plus selective re-embedding over two major revision rounds is conservatively modeled as 1.2 million embedding tokens. At the current small-model rate, that is approximately **$0.024**. Even a much heavier 10-million-token embedding workload would be about **$0.20**.
+
+## 3. Model-assisted proposal and review estimate
+
+Content work dominates the cost. The planning envelope assumes two model passes per record:
+
+| Pass | Assumed input | Assumed output | Corpus total |
+|---|---:|---:|---:|
+| Sourced proposal / composition | 1,800 tokens per record | 500 tokens per record | 2.70M input + 0.75M output |
+| Conflict, provenance, and consistency review | 2,200 tokens per record | 350 tokens per record | 3.30M input + 0.525M output |
+| **Total** |  |  | **6.00M input + 1.275M output** |
+
+The envelope intentionally includes retrieved context and substantive notes. It does not assume that every generated candidate becomes canonical.
+
+Using current published standard token rates:
+
+| Generation/review model | Input / output per 1M tokens | Estimated language-work cost | Plus embeddings |
+|---|---:|---:|---:|
+| GPT-5.6 Luna | $1 / $6 | $13.65 | about $13.67 |
+| GPT-5.6 Terra | $2.50 / $15 | $34.13 | about $34.15 |
+| GPT-5.6 Sol | $5 / $30 | $68.25 | about $68.27 |
+
+The balanced working recommendation is approximately 85% Terra for proposal and routine review, with 15% Sol reserved for difficult formation, narrative-engine, and conflict decisions. On the same token envelope this is about **$39.27 including embeddings**. A 25% allowance for rejected attempts, retries, and underestimation brings the proposed cap to **$50**.
+
+## 4. Recommended spending gates
+
+Do not authorize the whole estimate as one uncontrolled run.
+
+1. **$5 checkpoint:** build and review a representative slice spanning Hebrew-derived ordinary vocabulary, regionally anchored Algonquian material, hybrid formations, phrases, sentences, and one narrative-engine micro-scene.
+2. **$20 cumulative checkpoint:** expand only after retrieval, provenance, and consistency evaluations show that the workflow is improving accepted material rather than producing volume.
+3. **$50 hard cap:** complete the modeled 1,500-record first build only if the earlier checkpoints pass. Stop before the cap and report actual usage if quality or source availability becomes the limiting factor.
+
+Luna may be useful for mechanical classification or formatting after evaluation, but source-sensitive language decisions should not be assigned to it merely to reduce cost. Sol should be selective rather than the bulk default.
+
+## 5. Exclusions and uncertainty
+
+The estimate does not include:
+
+- paid web-search or other tool-call fees;
+- purchasing dictionaries, books, or permissions;
+- human expert or community consultation;
+- unusually long reasoning traces or provider retries;
+- taxes or account-specific contractual pricing; or
+- wholesale reprocessing after a major grammar redesign.
+
+Prompt caching or batch processing may lower cost, but the budget does not depend on those savings. Current account credit and billing limits are not visible to this repository or CLI and must be checked in the OpenAI dashboard before authorizing the first $5 tranche.
+
+## 6. Pricing references
+
+- [OpenAI vector embeddings guide](https://developers.openai.com/api/docs/guides/embeddings)
+- [`text-embedding-3-small` model page](https://developers.openai.com/api/docs/models/text-embedding-3-small)
+- [Current model-selection guidance](https://developers.openai.com/api/docs/guides/latest-model)
+- [GPT-5.6 Luna](https://developers.openai.com/api/docs/models/gpt-5.6-luna)
+- [GPT-5.6 Terra](https://developers.openai.com/api/docs/models/gpt-5.6-terra)
+- [GPT-5.6 Sol](https://developers.openai.com/api/docs/models/gpt-5.6-sol)

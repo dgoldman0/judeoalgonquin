@@ -1,0 +1,9 @@
+{
+  "paid_embeddings_enabled": false,
+  "authorization_note": "The one foundation smoke call is complete. Further paid work requires explicit owner approval.",
+  "max_inputs_per_run": 25,
+  "max_utf8_bytes_per_run": 100000,
+  "max_total_input_tokens": 250000,
+  "price_per_million_input_tokens_usd": 0.02,
+  "ledger_path": ".local/api-usage-ledger.json"
+}
