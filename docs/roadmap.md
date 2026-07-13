@@ -60,6 +60,32 @@ disabled again. A final source comparison then corrected four lexical records
 and refreshed four downstream compositions. Their eight vectors are correctly
 stale; the paid call was not repeated.
 
+## First contact-lexicon synthesis probe
+
+The source-first checkpoint is now explicitly treated as 72 donor ingredients,
+not 72 finished words. Every Hebrew-line and regional-source lexeme or morpheme
+has a machine-readable contact decision, and the typed `donor_candidate` layer
+prevents source evidence from being promoted as language canon.
+
+The first actual contact-language slice adds 15 candidate lexemes. Seven pass
+Hebrew ordinary-life material through the shared sound filter, six turn fixed
+regional analyses into surface words while retaining their segmentation, and
+two combine a Hebrew-line root with a regional-source nominal final:
+`prinčəw` “fruit dish” and `lexemiikaan` “bakery/bread house.” The two mixed
+forms are isolated tests, not proof of a productive derivational rule.
+
+The `contact_pointed_candidate` profile round-trips the proposed shared sound
+inventory in fully pointed Hebrew script. Its unpointed alias is intentionally
+lossy, and the profile blocks canon while phonemic, etymographic, and
+morphographic running-text strategies remain under comparison. The database
+now contains 107 noncanonical records. All local language validation,
+dependency, script, renderer, exact-search, and negative-gate tests pass.
+
+No API call was made. Typing the donor layer and adding the synthesis records
+leaves all 107 stored vectors stale or missing; refreshing them remains unapproved.
+The exact state and a rough refresh estimate are recorded in [the local
+synthesis report](reports/n1-contact-synthesis-2026-07-12.json).
+
 ## Project proficiency levels
 
 These are project levels, not CEFR equivalences.
@@ -176,6 +202,8 @@ The results are recorded in
 [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json),
 and
 [`reports/n1-core-embedding-evaluation-2026-07-12.json`](reports/n1-core-embedding-evaluation-2026-07-12.json).
+The subsequent contact-synthesis work was wholly local and is recorded in
+[`reports/n1-contact-synthesis-2026-07-12.json`](reports/n1-contact-synthesis-2026-07-12.json).
 Budget scenarios for a substantial first corpus are in [Initial-Build
 Budget](initial-build-budget.md). None of these documents authorizes another
 paid call or the proposed larger spend.

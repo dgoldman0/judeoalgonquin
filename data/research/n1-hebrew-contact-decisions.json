@@ -1,0 +1,1561 @@
+{
+  "schema_version": 1,
+  "packet_id": "n1-hebrew-contact-decisions",
+  "status": "research_decisions_noncanonical",
+  "scope": {
+    "source_files": [
+      "data/entries/n1-pilot.jsonl",
+      "data/entries/n1-core-lexicon.jsonl"
+    ],
+    "included_record_types": [
+      "lexeme",
+      "morpheme"
+    ],
+    "required_tag": "hebrew-derived",
+    "record_count": 30
+  },
+  "design_boundary": [
+    "Exact pointed Hebrew source forms remain source evidence; the proposed Roman forms record ordinary contact-language pronunciation rather than silently respelling the sources.",
+    "The initial executable probe uses a reversible phonemic Hebrew-script profile. Exact Hebrew spelling remains source evidence and a source-facing alternative; choosing a later etymographic or morphographic running-text convention is still open.",
+    "For ordinary contact vocabulary, consonantal yod is y, shin is š, het is x, and qoph is k; source r, d, and g remain distinct.",
+    "Ordinary contact vocabulary does not preserve dagesh-forte gemination, does not pronounce nonphonemic word-edge aleph or final he, and does not insert a vowel merely because a written sheva is present.",
+    "The bounded current coda rule maps source-final v to w only in the reviewed forms aw, xalaw, and lew; it is not yet a productive rule for unreviewed vocabulary.",
+    "Source lexical stress must be stored separately when stress becomes a modeled field; this packet does not posit a global contact-language stress shift.",
+    "These ordinary lexical decisions do not automatically govern the separate Biblical narrative source profile. Wayyiqtol, weqatal, narrative waw, discourse sequencing, and their intended interaction with Algonquian obviation require their own source-grounded construction decisions.",
+    "A hybrid_input_candidate identifies an approved lexical input and design direction, not a licensed hybrid output. No possessive or stative morphology may be attached until the receiving paradigm is sourced and adopted."
+  ],
+  "decision_enum": [
+    "direct_contact_inheritance",
+    "phonological_adaptation",
+    "semantic_reallocation",
+    "hybrid_input_candidate"
+  ],
+  "records": [
+    {
+      "source_record_id": "ja.lexeme.hebrew_bayit",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "בַּיִת",
+        "romanization": "bayit"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "בַּיִת"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "lect": "Biblical Hebrew",
+          "form": "בַּ֫יִת"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "bayit",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "בַּיִת",
+        "hebrew_script": "בַּייִט",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain the Standard Hebrew pointed spelling as the ordinary source-facing form.",
+        "Retain the segmental contact pronunciation bayit; no reviewed ordinary contact rule changes this form.",
+        "Do not import Hebrew gender, construct-state behavior, or plural morphology."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "house",
+          "home",
+          "dwelling"
+        ],
+        "definition": "A building or place used as a dwelling."
+      },
+      "excluded_senses": [
+        "household or family",
+        "lineage or dynasty",
+        "temple or institutional house",
+        "poetic stanza",
+        "computing byte"
+      ],
+      "future_integration": {
+        "status": "awaiting_nominal_paradigms",
+        "guidance": "Retain as the lexical base for later sourced class, number, possession, and locative work. The pilot class-sensitive plural probe remains provisional rather than inherited Hebrew morphology."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword בַּיִת; https://old.hebrew-academy.org.il/keyword/%D7%91%D6%BC%D6%B7%D7%99%D6%B4%D7%AA/"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "locator": "BDB displayed headword בַּ֫יִת; https://www.sefaria.org/BDB%2C_%D7%91%D6%B7%D6%BC%D6%AB%D7%99%D6%B4%D7%AA"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_mayim",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "מַיִם",
+        "romanization": "mayim"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "מַיִם"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "lect": "Biblical Hebrew",
+          "form": "מַי 1"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "mayim",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "מַיִם",
+        "hebrew_script": "מַייִם",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain the Standard Hebrew pointed spelling and the contact pronunciation mayim.",
+        "Treat the lexeme as an ordinary mass/substance base without importing Hebrew plural-only or agreement behavior."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "water"
+        ],
+        "definition": "Water as an ordinary substance or mass noun."
+      },
+      "excluded_senses": [
+        "empty talk or nonsense",
+        "automatic inheritance of source-language number behavior"
+      ],
+      "future_integration": {
+        "status": "awaiting_mass_noun_design",
+        "guidance": "Use as the lexical base when mass/count, measure, agreement, and nominal-class behavior are sourced and adopted."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy terminology result water → מַיִם; https://terms.hebrew-academy.org.il/munnah/1535_2/water"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "locator": "BDB displayed headword מַי 1 (entry for מַיִם); https://www.sefaria.org/BDB%2C_%D7%9E%D6%B7%D7%99.1?lang=bi&with=all"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_lehem",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "לֶחֶם",
+        "romanization": "leḥem"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "לֶחֶם"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "lect": "Biblical Hebrew",
+          "form": "לֶ֫חֶם 1"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "lexem",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "לֶחֶם",
+        "hebrew_script": "לֶכֶם",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain exact source spelling לֶחֶם.",
+        "Map source het to ordinary contact x: leḥem → lexem.",
+        "Do not import Hebrew gender or inflection."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "bread"
+        ],
+        "definition": "Bread as an ordinary prepared food."
+      },
+      "excluded_senses": [
+        "food in general",
+        "livelihood or sustenance as a figurative extension"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use lexem in ordinary food phrases and later compounds only under independently adopted phrase and nominal rules."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword לֶחֶם; https://old.hebrew-academy.org.il/keyword/%D7%9C%D6%B6%D7%97%D6%B6%D7%9D/"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "locator": "BDB displayed headword לֶ֫חֶם 1; https://www.sefaria.org/BDB%2C_%D7%9C%D6%B6%D6%AB%D7%97%D6%B6%D7%9D.1"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.morpheme.hebrew_coord_we",
+      "record_type": "morpheme",
+      "current_form": {
+        "hebrew_script": "וְ־",
+        "romanization": "wə-"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "וְ־"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "wə-",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "וְ־",
+        "hebrew_script": "ווְ־",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain וְ־ as the source-facing spelling of the ordinary coordinator.",
+        "Regularize the source coordinator's conditioned pronunciations to invariant contact wə-.",
+        "Keep this ordinary coordinator formally and functionally distinct from Biblical narrative waw and from future wayyiqtol/weqatal constructions."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "and"
+        ],
+        "definition": "An ordinary coordinator joining comparable words or phrases."
+      },
+      "excluded_senses": [
+        "narrative sequencing",
+        "wayyiqtol marking",
+        "weqatal marking",
+        "automatic inheritance of all source-conditioned allomorphs"
+      ],
+      "future_integration": {
+        "status": "bounded_construction_only",
+        "guidance": "Use in the existing ordinary coordination probe. Review host selection and any contact allomorphy separately before productive expansion; never use this decision as the narrative-aspect analysis."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy conjunction vocalization ruling and ordinary-vs-narrative waw discussion; https://hebrew-academy.org.il/meeting/%D7%A8%D7%A0%D7%97/ ; https://hebrew-academy.org.il/%D7%95-%D7%94%D7%94%D7%99%D7%A4%D7%95%D7%9A/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.morpheme.hebrew_definite_ha",
+      "record_type": "morpheme",
+      "current_form": {
+        "hebrew_script": "הַ־",
+        "romanization": "ha-"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "הַ־"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "ha-",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "הַ־",
+        "hebrew_script": "הַ־",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain הַ־ as the source-facing spelling of the definite prefix.",
+        "Regularize conditioned Hebrew vocalization and dagesh behavior to invariant contact ha-.",
+        "Do not infer that Hebrew definiteness alone supplies the contact language's full discourse-reference system."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "definite",
+          "identifiable"
+        ],
+        "definition": "Marks a referent as definite or identifiable within the bounded nominal construction."
+      },
+      "excluded_senses": [
+        "automatic discourse-center marking",
+        "automatic obviation marking",
+        "the full source-language allomorphy and consonant-gemination pattern"
+      ],
+      "future_integration": {
+        "status": "bounded_construction_only",
+        "guidance": "Retain the pilot definite-prefix construction as provisional. Test ha- against future demonstratives, obviation, discourse status, and noun-class behavior before broadening it."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy definiteness overview and vocalization rules; https://hebrew-academy.org.il/category/%D7%99%D7%99%D7%93%D7%95%D7%A2/ ; https://hebrew-academy.org.il/topic/hahlatot/grammardecisions/formation-and-vocalization/2-4-%D7%A2%D7%A0%D7%99%D7%99%D7%A0%D7%99-%D7%A0%D7%99%D7%A7%D7%95%D7%93-%D7%A9%D7%95%D7%A0%D7%99%D7%9D/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_adam_person",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אָדָם",
+        "romanization": "adam"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אָדָם"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "adam",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אָדָם",
+        "hebrew_script": "אַדַם",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain the source spelling and segmental pronunciation adam.",
+        "Allocate the contact lexeme to human/person as a general category, contrasting it with Munsee-derived lənəw in its narrower man sense.",
+        "Do not import Hebrew gender or inflection."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "person",
+          "human"
+        ],
+        "definition": "A human being without specifying sex, gender, or age."
+      },
+      "excluded_senses": [
+        "the proper name Adam",
+        "a specifically male adult",
+        "nonhuman or figurative personhood"
+      ],
+      "future_integration": {
+        "status": "requires_lexical_contrast_review",
+        "guidance": "Use as the general human/person term while explicitly testing its boundary against lənəw and later people, community, and kin terms."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אָדָם, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%93%D6%B8%D7%9D/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_ishah_woman",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אִשָּׁה",
+        "romanization": "ishah"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אִשָּׁה"
+        },
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Academy Demography terminology (Standard Hebrew)",
+          "form": "אִשָּׁה",
+          "supported_sense": "wife; female spouse",
+          "locator": "https://terms.hebrew-academy.org.il/munnah/62384_1/%D7%A8%D6%B7%D7%A2%D6%B0%D7%99%D6%B8%D7%94"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "iša",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אִשָּׁה",
+        "hebrew_script": "אִשַׁ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain the exact source spelling אִשָּׁה.",
+        "Map shin to š, omit dagesh-forte gemination, and omit nonpronounced final he: ishah → iša.",
+        "Allocate the independently documented Hebrew wife/female-spouse sense to the separate contact record iša; retain generic regional oxkweew only as a donor candidate unless later contact review admits it."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "wife",
+          "female spouse"
+        ],
+        "definition": "A wife or female spouse in a relational sense."
+      },
+      "excluded_senses": [
+        "generic woman",
+        "automatic inheritance of Hebrew feminine or irregular inflection"
+      ],
+      "future_integration": {
+        "status": "requires_contact_collision_and_promotion_review",
+        "guidance": "Review the separate ja.lexeme.contact_wife allocation against the regional oxkweew donor candidate. Do not rewrite the Hebrew donor record, which continues to preserve its sourced generic-woman evidence."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אִשָּׁה; Academy inflection decision https://old.hebrew-academy.org.il/meeting/%D7%A8%D7%9C%D7%94/; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B4%D7%A9%D6%BC%D7%81%D6%B8%D7%94/"
+        },
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy Demography terminology lists אִשָּׁה and רַעְיָה for wife; https://terms.hebrew-academy.org.il/munnah/62384_1/%D7%A8%D6%B7%D7%A2%D6%B0%D7%99%D6%B8%D7%94"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_yeled_child",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "יֶלֶד",
+        "romanization": "yeled"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "יֶלֶד"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "yeled",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "יֶלֶד",
+        "hebrew_script": "ייֶלֶד",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain source spelling and the segmental pronunciation yeled.",
+        "Allocate the item to age-defined child rather than importing the source's relational or gendered paradigm."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "child"
+        ],
+        "definition": "A human in the early years of life, without specifying gender or a parent-child relation."
+      },
+      "excluded_senses": [
+        "son",
+        "relational offspring",
+        "automatic gendered forms or source inflection"
+      ],
+      "future_integration": {
+        "status": "requires_life_stage_review",
+        "guidance": "Use as the age-category base after its boundary with baby, youth, offspring, and gender-specific terms is designed."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword יֶלֶד, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%99%D6%B6%D7%9C%D6%B6%D7%93/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_em_mother",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אֵם",
+        "romanization": "em"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אֵם"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "em",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אֵם",
+        "hebrew_script": "אֶם",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "hybrid_input_candidate",
+      "transformations": [
+        "Retain אֵם and contact base em.",
+        "Approve the lexeme only as a prospective input to a source-grounded contact possession construction; do not create a possessed form yet."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "mother"
+        ],
+        "definition": "A female parent."
+      },
+      "excluded_senses": [
+        "figurative source or origin",
+        "foundation",
+        "automatic inheritance of Hebrew gender or plural forms"
+      ],
+      "future_integration": {
+        "status": "blocked_on_possessive_paradigm",
+        "guidance": "Use em as a kinship base only after a documented possessive paradigm establishes person prefixes, dependent-noun behavior, and any stem alternations."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אֵם, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B5%D7%9D/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_av_father",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אָב",
+        "romanization": "av"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אָב"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "aw",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אָב",
+        "hebrew_script": "אַוו",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "hybrid_input_candidate",
+      "transformations": [
+        "Retain the exact source spelling אָב.",
+        "Apply the bounded reviewed word-final v → w adaptation: av → aw.",
+        "Approve aw only as a prospective input to a sourced contact possession construction."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "father"
+        ],
+        "definition": "A male parent."
+      },
+      "excluded_senses": [
+        "founder",
+        "ancestor beyond the immediate parent sense",
+        "clerical or divine title",
+        "automatic inheritance of the Hebrew irregular plural"
+      ],
+      "future_integration": {
+        "status": "blocked_on_possessive_paradigm",
+        "guidance": "Use aw as a kinship base only after a documented possessive paradigm establishes person prefixes, dependent-noun behavior, and any stem alternations."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אָב, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%91/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_ahot_sister",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אָחוֹת",
+        "romanization": "ahot"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אָחוֹת"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "axot",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אָחוֹת",
+        "hebrew_script": "אַכֹט",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "hybrid_input_candidate",
+      "transformations": [
+        "Retain the exact source spelling אָחוֹת.",
+        "Map source het to ordinary contact x: ahot → axot.",
+        "Approve axot only as a prospective input to a sourced contact possession construction."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "sister"
+        ],
+        "definition": "A female sibling."
+      },
+      "excluded_senses": [
+        "nurse",
+        "religious sister or nun",
+        "automatic inheritance of Hebrew gender or plural forms"
+      ],
+      "future_integration": {
+        "status": "blocked_on_possessive_paradigm",
+        "guidance": "Use axot as a kinship base only after a documented possessive paradigm establishes person prefixes, dependent-noun behavior, and any stem alternations."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אָחוֹת, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%97%D7%95%D6%B9%D7%AA/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_delet_door",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "דֶּלֶת",
+        "romanization": "delet"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "דֶּלֶת"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "delet",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "דֶּלֶת",
+        "hebrew_script": "דֶלֶט",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain the exact source spelling and contact pronunciation delet.",
+        "Treat the written dagesh as non-geminating in the ordinary contact form.",
+        "Do not import Hebrew gender or inflection."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "door"
+        ],
+        "definition": "A movable physical barrier used to open or close an entrance."
+      },
+      "excluded_senses": [
+        "doorway or opening when no door panel is meant",
+        "figurative opportunity or access",
+        "page or leaf"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use in concrete household and motion constructions after the relevant noun and locative syntax is adopted."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword דֶּלֶת, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%93%D6%BC%D6%B6%D7%9C%D6%B6%D7%AA/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_heder_room",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "חֶדֶר",
+        "romanization": "heder"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "חֶדֶר"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "xeder",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "חֶדֶר",
+        "hebrew_script": "כֶדֶר",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling חֶדֶר.",
+        "Map source het to ordinary contact x: heder → xeder.",
+        "Preserve source d and r."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "room"
+        ],
+        "definition": "A distinct enclosed interior space within a building."
+      },
+      "excluded_senses": [
+        "school classroom as an institution",
+        "chamber in an anatomical or mechanical extended sense"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use in household and location phrases after locative and possessive constructions are adopted."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword חֶדֶר, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%97%D6%B6%D7%93%D6%B6%D7%A8/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_shulhan_table",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "שֻׁלְחָן",
+        "romanization": "shulhan"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "שֻׁלְחָן"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "šulxan",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "שֻׁלְחָן",
+        "hebrew_script": "שֻׁלכַן",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling שֻׁלְחָן.",
+        "Map shin to š and het to x: shulhan → šulxan.",
+        "Do not insert a vowel into the source cluster."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "table"
+        ],
+        "definition": "A piece of furniture with a flat raised surface."
+      },
+      "excluded_senses": [
+        "tabular data",
+        "ritual table or altar by default",
+        "a group seated at a table"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use for ordinary furniture and household phrases; specialized ritual and abstract senses require separate records."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword שֻׁלְחָן, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%A9%D7%81%D6%BB%D7%9C%D6%B0%D7%97%D6%B8%D7%9F/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_kisse_chair",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "כִּסֵּא",
+        "romanization": "kisse"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "כִּסֵּא"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "kise",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "כִּסֵּא",
+        "hebrew_script": "קִסֶ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling כִּסֵּא.",
+        "Do not preserve dagesh-forte gemination: kisse → kise.",
+        "Treat word-final aleph as nonpronounced in the contact form."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "chair"
+        ],
+        "definition": "A seat for one person, ordinarily with a back."
+      },
+      "excluded_senses": [
+        "throne",
+        "academic chair or office",
+        "committee chairperson"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use for ordinary furniture. Political, ceremonial, and institutional extensions require separate semantic decisions."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword כִּסֵּא, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%9B%D6%BC%D6%B4%D7%A1%D6%BC%D6%B5%D7%90/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_halav_milk",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "חָלָב",
+        "romanization": "halav"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "חָלָב"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "xalaw",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "חָלָב",
+        "hebrew_script": "כַלַוו",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling חָלָב.",
+        "Map source het to ordinary contact x.",
+        "Apply the bounded reviewed word-final v → w adaptation: halav → xalaw."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "milk"
+        ],
+        "definition": "Milk as an ordinary liquid food."
+      },
+      "excluded_senses": [
+        "plant latex or milky sap",
+        "a specific animal source unless separately stated",
+        "automatic source-language gender or number behavior"
+      ],
+      "future_integration": {
+        "status": "awaiting_mass_noun_design",
+        "guidance": "Use xalaw in ordinary food vocabulary after mass/count, measure, and noun-class behavior are adopted."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword חָלָב, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%97%D6%B8%D7%9C%D6%B8%D7%91/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_peri_fruit",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "פְּרִי",
+        "romanization": "peri"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "פְּרִי"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "pri",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "פְּרִי",
+        "hebrew_script": "פּרִ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling פְּרִי.",
+        "Treat the written sheva as nonvocal and do not insert an epenthetic vowel: peri → pri.",
+        "Retain source p and r."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "fruit"
+        ],
+        "definition": "An edible fruit as ordinary produce."
+      },
+      "excluded_senses": [
+        "figurative product, result, or offspring",
+        "automatic collective or botanical technical senses"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_base",
+        "guidance": "Use pri for ordinary food vocabulary; botanical and figurative extensions require separate senses."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword פְּרִי, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%A4%D6%BC%D6%B0%D7%A8%D6%B4%D7%99/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_yad_upper_limb",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "יָד",
+        "romanization": "yad"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "יָד"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "yad",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "יָד",
+        "hebrew_script": "ייַד",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain exact source spelling and segmental contact pronunciation yad.",
+        "Preserve the source-supported hand-to-upper-limb anatomical breadth rather than inventing an unsupported hand-only narrowing."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "hand",
+          "upper limb"
+        ],
+        "definition": "The hand or, in contexts licensed by the source semantic range, the upper limb."
+      },
+      "excluded_senses": [
+        "control or authority",
+        "agency or assistance",
+        "side, handle, pointer, or monument",
+        "a falsely imposed hand-only boundary"
+      ],
+      "future_integration": {
+        "status": "requires_body_part_paradigm",
+        "guidance": "Retain yad for anatomical use while later examples document when the contact language distinguishes hand from arm and how body-part possession is marked."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword יָד 1, anatomical dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%99%D6%B8%D7%93/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_rosh_head",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "רֹאשׁ",
+        "romanization": "rosh"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "רֹאשׁ"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "roš",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "רֹאשׁ",
+        "hebrew_script": "רֹשׁ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain the exact source spelling רֹאשׁ.",
+        "Map shin to š: rosh → roš.",
+        "Narrow the contact entry to the anatomical head sense."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "head"
+        ],
+        "definition": "The anatomical head of a person or animal."
+      },
+      "excluded_senses": [
+        "leader or chief",
+        "top, beginning, or front",
+        "heading or headword",
+        "unit counter"
+      ],
+      "future_integration": {
+        "status": "requires_body_part_paradigm",
+        "guidance": "Use roš anatomically. Leadership, spatial, textual, and temporal extensions require their own sourced entries."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword רֹאשׁ 1, anatomical dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%A8%D6%B9%D7%90%D7%A9%D7%81/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_ayin_eye",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "עַיִן",
+        "romanization": "ayin"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "עַיִן"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "ayin",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "עַיִן",
+        "hebrew_script": "אַייִן",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling עַיִן.",
+        "Treat the word-initial pharyngeal consonant as absent in the ordinary contact pronunciation while retaining consonantal yod as y.",
+        "Use ayin as the practical contact Roman form."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "eye"
+        ],
+        "definition": "The organ of sight."
+      },
+      "excluded_senses": [
+        "spring or fountain",
+        "eye-shaped opening or feature",
+        "appearance, attention, or viewpoint",
+        "the Hebrew letter name"
+      ],
+      "future_integration": {
+        "status": "requires_body_part_paradigm",
+        "guidance": "Use ayin anatomically. Possession and any plural or paired-body-part behavior await a sourced contact paradigm."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword עַיִן 1, organ-of-sight dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%A2%D6%B7%D7%99%D6%B4%D7%9F/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_peh_mouth",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "פֶּה",
+        "romanization": "peh"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "פֶּה"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "pe",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "פֶּה",
+        "hebrew_script": "פֶּ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain the exact source spelling פֶּה.",
+        "Treat the written dagesh as non-geminating and final he as nonpronounced: peh → pe.",
+        "Narrow the contact entry to the anatomical mouth sense."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "mouth"
+        ],
+        "definition": "The anatomical mouth."
+      },
+      "excluded_senses": [
+        "opening or entrance",
+        "edge or opening of a vessel",
+        "speech, command, or testimony",
+        "the Hebrew letter name"
+      ],
+      "future_integration": {
+        "status": "requires_body_part_paradigm",
+        "guidance": "Use pe anatomically; speech-related and spatial extensions require separate semantic records."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword פֶּה, anatomical dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%A4%D6%BC%D6%B6%D7%94/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_lev_heart",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "לֵב",
+        "romanization": "lev"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "לֵב"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "lew",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "לֵב",
+        "hebrew_script": "לֶוו",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling לֵב.",
+        "Apply the bounded reviewed word-final v → w adaptation: lev → lew.",
+        "Keep the current entry anatomical rather than automatically importing metaphorical extensions."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "heart"
+        ],
+        "definition": "The anatomical heart."
+      },
+      "excluded_senses": [
+        "emotion or courage",
+        "mind or intention",
+        "center or core",
+        "symbolic heart"
+      ],
+      "future_integration": {
+        "status": "requires_body_part_paradigm",
+        "guidance": "Use lew anatomically. Emotional, cognitive, and spatial metaphors require separate evidence-backed senses."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword לֵב, anatomical dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%9C%D6%B5%D7%91/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_gadol_large",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "גָּדוֹל",
+        "romanization": "gadol"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "גָּדוֹל"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "gadol",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "גָּדוֹל",
+        "hebrew_script": "גַדֹל",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "hybrid_input_candidate",
+      "transformations": [
+        "Retain exact source spelling and segmental base gadol; do not preserve dagesh-forte gemination.",
+        "Restrict the approved input to physical size.",
+        "Do not append the pilot -əsii material or invent a stative stem until a receiving Algonquian-derived predicate pattern is directly sourced."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "large",
+          "big"
+        ],
+        "definition": "Large in physical size or extent."
+      },
+      "excluded_senses": [
+        "great in status, importance, age, or intensity",
+        "automatic Hebrew gender or number agreement",
+        "an unsourced hybrid stative form"
+      ],
+      "future_integration": {
+        "status": "blocked_on_stative_predicate_paradigm",
+        "guidance": "Pair gadol with katan as lexical inputs while researching a directly attested regional stative-predicate pattern. Generate no hybrid output before that paradigm is reviewed."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword גָּדוֹל, adjective dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%92%D6%BC%D6%B8%D7%93%D7%95%D6%B9%D7%9C/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_qatan_small",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "קָטָן",
+        "romanization": "qatan"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "קָטָן"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "katan",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "קָטָן",
+        "hebrew_script": "קַטַן",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "hybrid_input_candidate",
+      "transformations": [
+        "Retain the exact source spelling קָטָן.",
+        "Map ordinary source qoph to contact k: qatan → katan.",
+        "Restrict the approved input to physical size and create no hybrid stative output until the receiving paradigm is sourced."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "small",
+          "little"
+        ],
+        "definition": "Small in physical size or extent."
+      },
+      "excluded_senses": [
+        "young, minor, unimportant, or low in rank",
+        "automatic Hebrew gender or number agreement",
+        "an unsourced hybrid stative form"
+      ],
+      "future_integration": {
+        "status": "blocked_on_stative_predicate_paradigm",
+        "guidance": "Pair katan with gadol as lexical inputs while researching a directly attested regional stative-predicate pattern. Generate no hybrid output before that paradigm is reviewed."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword קָטָן, adjective dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%A7%D6%B8%D7%98%D6%B8%D7%9F/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_hayom_today",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "הַיּוֹם",
+        "romanization": "hayom"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "הַיּוֹם"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "hayom",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "הַיּוֹם",
+        "hebrew_script": "הַייֹם",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain exact source spelling and contact pronunciation hayom.",
+        "Treat hayom as a lexicalized temporal adverb rather than productively regenerating it from the contact definite prefix plus a word for day.",
+        "Treat the written dagesh as non-geminating."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "today"
+        ],
+        "definition": "On or during the present day."
+      },
+      "excluded_senses": [
+        "the present era or nowadays unless separately licensed",
+        "productive evidence that ha- may attach to every temporal noun"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_adverb",
+        "guidance": "Use as an indivisible time adverb while tense, aspect, and temporal-clause syntax are developed independently."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy expression הַיּוֹם, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%94%D6%B7%D7%99%D6%BC%D7%95%D6%B9%D7%9D/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_mahar_tomorrow",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "מָחָר",
+        "romanization": "mahar"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "מחר"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "lect": "Biblical Hebrew",
+          "form": "מָחָר"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "maxar",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "מָחָר",
+        "hebrew_script": "מַכַר",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the pointed source-facing form מָחָר supported by the BDB citation while recording the Academy's unpointed form separately.",
+        "Map source het to ordinary contact x: mahar → maxar.",
+        "Do not assign tense, aspect, or narrative-sequencing force to the adverb itself."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "tomorrow"
+        ],
+        "definition": "On or during the day after today."
+      },
+      "excluded_senses": [
+        "the future in general",
+        "tense or aspect marking",
+        "narrative sequencing"
+      ],
+      "future_integration": {
+        "status": "ready_as_lexical_adverb",
+        "guidance": "Use maxar as a temporal adverb while future reference, aspect, and narrative constructions are developed independently."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy article שבוע הבא או בשבוע הבא?, section identifying מחר and אתמול as temporal adverbs; https://old.hebrew-academy.org.il/2020/06/28/%D7%A9%D7%91%D7%95%D7%A2-%D7%94%D7%91%D7%90-%D7%90%D7%95-%D7%91%D7%A9%D7%91%D7%95%D7%A2-%D7%94%D7%91%D7%90/"
+        },
+        {
+          "source_id": "bdb_1906_sefaria",
+          "locator": "BDB displayed headword מָחָר; https://www.sefaria.org/BDB%2C_%D7%9E%D6%B8%D7%97%D6%B8%D7%A8.1"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_ehad_one",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אֶחָד",
+        "romanization": "ehad"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אֶחָד"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "exad",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אֶחָד",
+        "hebrew_script": "אֶכַד",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling אֶחָד.",
+        "Map source het to ordinary contact x: ehad → exad.",
+        "Do not import Hebrew gender agreement or inflection."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "one"
+        ],
+        "definition": "The cardinal numeral one."
+      },
+      "excluded_senses": [
+        "a certain or particular one",
+        "unity as a theological or abstract concept",
+        "first as an ordinal",
+        "source-language gender agreement"
+      ],
+      "future_integration": {
+        "status": "requires_numeral_syntax",
+        "guidance": "Use exad as the numeral base after numeral order, agreement, counting, and classifier or noun-class interactions are established."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אֶחָד, numeral dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B6%D7%97%D6%B8%D7%93/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_mah_what",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "מָה",
+        "romanization": "mah"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "מָה"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "ma",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "מָה",
+        "hebrew_script": "מַ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "semantic_reallocation",
+      "transformations": [
+        "Retain the exact source spelling מָה.",
+        "Omit nonpronounced final he: mah → ma.",
+        "Restrict the contact item to direct thing/content questions until interrogative syntax is designed."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "what"
+        ],
+        "definition": "An interrogative requesting the identity or nature of a thing or content."
+      },
+      "excluded_senses": [
+        "how, how much, or exclamative degree",
+        "indefinite whatever",
+        "clause-linking or relative functions"
+      ],
+      "future_integration": {
+        "status": "requires_interrogative_syntax",
+        "guidance": "Use ma only in directly licensed thing/content questions. Develop person, manner, quantity, reason, and embedded-question constructions separately."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword מָה, direct-question dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%9E%D6%B8%D7%94/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.lexeme.hebrew_eifo_where",
+      "record_type": "lexeme",
+      "current_form": {
+        "hebrew_script": "אֵיפֹה",
+        "romanization": "eifo"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "אֵיפֹה"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "efo",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "אֵיפֹה",
+        "hebrew_script": "אֶפֹ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "phonological_adaptation",
+      "transformations": [
+        "Retain the exact source spelling אֵיפֹה.",
+        "Render source tsere as contact e rather than a spelling-driven ei sequence.",
+        "Treat initial aleph and final he as nonpronounced: eifo → efo."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "where"
+        ],
+        "definition": "An interrogative requesting a static location."
+      },
+      "excluded_senses": [
+        "where to or whither",
+        "where from or whence",
+        "relative or indefinite wherever"
+      ],
+      "future_integration": {
+        "status": "requires_interrogative_and_locative_syntax",
+        "guidance": "Use efo only for static-location questions. Directional and source-location questions must follow the contact language's eventual locative and motion system."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword אֵיפֹה, locative question dictionary sense; https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B5%D7%99%D7%A4%D6%B9%D7%94/"
+        }
+      ]
+    },
+    {
+      "source_record_id": "ja.morpheme.hebrew_lo_negation",
+      "record_type": "morpheme",
+      "current_form": {
+        "hebrew_script": "לֹא",
+        "romanization": "lo"
+      },
+      "exact_source_hebrew": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "lect": "Standard Hebrew",
+          "form": "לֹא"
+        }
+      ],
+      "proposed_contact_form": {
+        "romanization": "lo",
+        "status": "proposed_noncanonical",
+        "source_facing_hebrew_script": "לֹא",
+        "hebrew_script": "לֹ",
+        "script_policy": "The reversible probe spelling follows contact phonemes; exact Hebrew spelling remains source evidence and a source-facing alternative."
+      },
+      "decision": "direct_contact_inheritance",
+      "transformations": [
+        "Retain the exact source spelling לֹא and contact pronunciation lo.",
+        "Treat word-final aleph as nonpronounced.",
+        "Admit lo as a free ordinary negator without importing its entire source syntactic distribution."
+      ],
+      "retained_sense": {
+        "glosses": [
+          "not",
+          "no"
+        ],
+        "definition": "A free marker of ordinary negation in constructions that explicitly license it."
+      },
+      "excluded_senses": [
+        "a complete negative-construction grammar",
+        "automatic imperative prohibition",
+        "negative concord or constituent-negation behavior not yet sourced"
+      ],
+      "future_integration": {
+        "status": "requires_negation_syntax",
+        "guidance": "Keep the lexical form lo while separately deciding its clause position, scope, interaction with predicates, prohibition, answers, and narrative constructions."
+      },
+      "cited_sources": [
+        {
+          "source_id": "academy_hebrew_online_resources",
+          "locator": "Academy headword לֹא, dictionary section; https://old.hebrew-academy.org.il/keyword/%D7%9C%D6%B9%D7%90/"
+        }
+      ]
+    }
+  ]
+}

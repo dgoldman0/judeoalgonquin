@@ -100,11 +100,11 @@ class CliTests(unittest.TestCase):
             self.assertEqual(main(["n1-core-embedding-eval"]), 0)
         result = json.loads(output.getvalue())
         self.assertEqual(result["mode"], "dry-run")
-        self.assertEqual(result["records"], 92)
+        self.assertEqual(result["records"], 107)
         self.assertEqual(result["queries"], 12)
-        self.assertEqual(result["api_inputs"], 104)
+        self.assertEqual(result["api_inputs"], 119)
         self.assertEqual(result["api_requests"], 0)
-        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.005)
+        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.006)
 
 
 

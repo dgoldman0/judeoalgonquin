@@ -15,6 +15,7 @@ ROOT = Path(__file__).parents[1]
 DATA = ROOT / "data" / "entries"
 OUTPUT = DATA / "n1-core-regressions.jsonl"
 CREATED_AT = "2026-07-13T00:20:00Z"
+DONOR_REFRESHED_AT = "2026-07-13T00:51:00Z"
 
 COORDINATION = "ja.construction.n1_nominal_coordination"
 DEFINITE = "ja.construction.n1_definite_prefix"
@@ -189,7 +190,7 @@ def _record(
         "schema_version": 1,
         "id": record_id,
         "record_type": record_type,
-        "revision": 2 if revised else 1,
+        "revision": 3 if revised else 2,
         "status": "candidate",
         "level": "N1",
         "forms": {
@@ -282,11 +283,10 @@ def _record(
             "creative_anchor": None,
         },
         "created_at": CREATED_AT,
-        "updated_at": "2026-07-13T00:46:00Z" if revised else CREATED_AT,
+        "updated_at": DONOR_REFRESHED_AT,
         "change_note": (
-            "Refreshed the Hebrew woman dependency snapshot after the post-embedding source audit."
-            if revised
-            else "Created as a frozen N1 construction regression."
+            "Refreshed dependency revisions after the source-facing lexical layer was "
+            "classified as donor evidence."
         ),
     }
 

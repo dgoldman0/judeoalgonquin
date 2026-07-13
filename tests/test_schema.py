@@ -14,6 +14,9 @@ SCHEMA_PATH = ROOT / "schema" / "entry.schema.json"
 DATASETS = (
     ROOT / "tests" / "fixtures" / "creative_anchor_candidates.jsonl",
     ROOT / "data" / "entries" / "n1-pilot.jsonl",
+    ROOT / "data" / "entries" / "n1-core-lexicon.jsonl",
+    ROOT / "data" / "entries" / "n1-core-regressions.jsonl",
+    ROOT / "data" / "entries" / "n1-contact-lexicon.jsonl",
 )
 
 
@@ -55,6 +58,12 @@ class JsonSchemaTests(unittest.TestCase):
         }
         with self.assertRaisesRegex(ValidationError, "should not be valid"):
             self.validator.validate(candidate_with_review)
+
+    def test_contact_adapted_lexeme_requires_a_contact_language_layer(self) -> None:
+        contact = public_record(load_records(DATASETS[-1])[0])
+        del contact["metadata"]["lexical_layer"]
+        with self.assertRaisesRegex(ValidationError, "lexical_layer"):
+            self.validator.validate(contact)
 
 
 if __name__ == "__main__":

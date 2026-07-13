@@ -105,4 +105,18 @@ in [the checkpoint report](../reports/n1-core-embedding-evaluation-2026-07-12.js
 The call was not repeated after the final source corrections: 84 vectors remain
 fresh and eight await a future explicitly authorized incremental checkpoint.
 
+## Later contact-layer reinterpretation
+
+This checkpoint is now explicitly the donor inventory for the first contact
+synthesis pass, not a completed vocabulary. The later pass leaves these records
+and citations intact, types all source-facing lexemes and morphemes as
+`donor_candidate`, and creates separate revision-pinned language records. See
+[Contact Phonology and Lexical Formation](../contact-phonology-and-formation.md)
+and the [local synthesis report](../reports/n1-contact-synthesis-2026-07-12.json).
+
+The “84 fresh / eight stale” count above is the historical state immediately
+after this checkpoint's source corrections. The contact reinterpretation
+changes donor fingerprints and adds new records, so it intentionally supersedes
+that vector-freshness state without repeating the paid call.
+
 Official endpoint reference: <https://developers.openai.com/api/reference/resources/embeddings/methods/create>

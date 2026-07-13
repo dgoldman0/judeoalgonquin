@@ -34,15 +34,19 @@
 
 **[PROPOSED] Abjad-plus-matres design.** Running text may use matres lectionis, with niqqud optional by register. Exact mappings are not yet accepted.
 
-**[DEFERRED] Phoneme inventory.** No complete consonant or vowel inventory is canonical yet. It requires a source-aware comparison of Munsee, Mahican/Mohican, relevant Lenape material, and the chosen Hebrew adaptation strategy.
+**[PROPOSED] Contact-probe inventory.** The first synthesis probe uses the shared consonants `p b t d k g c č f v s z š x h m n l r w y`, short vowels `a e i o u ə`, and regional-source long vowels `aa ee ii oo`. Its ordinary Hebrew adaptation, regional retention rules, phonotactic boundaries, and productivity gates are defined in [Contact Phonology and Lexical Formation](contact-phonology-and-formation.md). This inventory is executable and testable but noncanonical.
 
-**[DEFERRED] Grapheme mapping.** The values of doubled matres, geresh, dagesh, reduced vowels, vowel length, affricates, and source-language contrasts remain unresolved.
+**[PROPOSED] Pointed contact profile.** `contact_pointed_candidate` is a reversible fully pointed teaching and database profile for the proposed contact inventory. Its unpointed alias is deliberately lossy. It does not settle the later choice among phonemic, etymographic, and morphographic running-text spelling.
+
+**[DEFERRED] Canonical inventory and grapheme mapping.** Community-connected review, broader collision tests, stress evidence, and comparison with responsibly sourced Mahican/Mohican and Lenape material remain necessary before the inventory or running-text grapheme system can become canonical.
 
 **[ACCEPTED] Boundary distinction.** Database segmentation uses `-` between morphemes. Hebrew maqaf, geresh, spaces, and punctuation are orthographic choices and must not be used as the only record of morphological structure.
 
 **[REJECTED] Legacy frequency as authority.** Variants such as `-ink`/`-ənk` or multiple spellings of the same legacy word are not accepted allomorphs until a rule accounts for them.
 
 ## 3. Source-layer architecture
+
+**[ACCEPTED] Donor/language separation.** A documented source form is a `donor_candidate`, not automatically a Judeo-Algonquin word. Actual language proposals are separately dependency-linked as `direct_contact_inheritance`, `contact_native_formation`, or later `learned_literary_reborrowing`. A donor candidate cannot become canonical as language material.
 
 **[ACCEPTED] Exact lect attribution.** Each borrowed or adapted item names a specific source lect. Generic “Algonquian origin” is insufficient.
 

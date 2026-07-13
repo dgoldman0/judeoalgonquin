@@ -95,13 +95,44 @@ establish an unbiased benchmark, or authorize another API call. Current
 community-connected guidance remains a blocker for canonical Munsee-derived
 spelling and systematic source extraction.
 
+### D-018 — Separate donor evidence from the contact lexicon
+
+**Decision:** Reclassify all 72 source-facing lexeme and morpheme records as
+`donor_candidate` research ingredients. A proposed language word must instead
+be a revision-pinned `direct_contact_inheritance`, `contact_native_formation`,
+or later `learned_literary_reborrowing` record. Donor candidates can never be
+canonical language entries.
+
+Adopt `contact_pointed_candidate` as a reversible, fully pointed, explicitly
+noncanonical profile for the first synthesis tests. Build a 15-item probe with
+seven Hebrew-line adaptations, six regional fixed-word lexicalizations, and
+two right-headed mixed formations. Neither mixed form makes its pattern
+productive.
+
+**Reason:** The preceding inventory documented useful ingredients but blurred
+the difference between citing a form and designing the resulting contact
+language. Separate layers preserve all evidence while making sound changes,
+semantic allocation, hybrid formation, conflicts, and later revisions
+inspectable.
+
+**Result:** All 30 Hebrew-line and 42 regional-source inputs have machine-readable
+decisions. The probe distinguishes `adam` person from regional `lənəw` man and
+`iša` wife from the regional `oxkweew` donor candidate for woman, lexicalizes six regional fixed words,
+and tests `prinčəw` “fruit dish” and `lexemiikaan` “bakery/bread house” as
+isolated mixed candidates. No API call was made; all 107 local vectors are now stale
+or missing and remain behind the paid-work gate.
+
+**Revisit trigger:** Broader phonological collisions, community-connected
+orthographic guidance, evidence that a semantic allocation is unnatural, or
+failure of the mixed finals across the required productivity tests.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.
 
 1. Canonical English name and endonym; whether *Djudeo-Mahikanítakh* is retained as a transparent coinage.
-2. Complete source phoneme inventory and the precise Munsee/Mahican relationship used by the conlang.
-3. Canonical romanization and Hebrew grapheme mappings, including vowel length and reduced vowels.
+2. Promotion, revision, or rejection of the proposed contact inventory and the precise Munsee/Mahican relationship used by the conlang.
+3. Canonical romanization and the choice among phonemic, etymographic, or morphographic Hebrew running-text spelling, including stress, vowel length, and reduced vowels.
 4. Exact conventions within Modern/common, Biblical, Classical, rabbinic, liturgical, regional, and diaspora Hebrew material, including how contact transforms them.
 5. Exact implementation of the required narrative engine: wayyiqtol- and weqatal-derived forms, participant marking, center shifts, multiple-obviative handling, and interaction with ordinary tense/aspect.
 6. Inclusive/exclusive distinctions, nominal classes, locatives, and direct/inverse paradigms outside that engine.

@@ -11,10 +11,11 @@ import unicodedata
 from dataclasses import dataclass
 from functools import lru_cache
 
-from .normalize import nfc
+from .normalize import nfc, strip_hebrew_marks
 
 
 MUNSEE_TRANSPORT_PROFILE = "omeara_hebrew_transport"
+CONTACT_POINTED_PROFILE = "contact_pointed_candidate"
 HEBREW_RETAINED_PROFILE = "hebrew_source_retained"
 COMPONENTWISE_PROFILE = "componentwise_analytic"
 PROJECT_SCHEMATIC_PROFILE = "project_schematic"
@@ -47,12 +48,57 @@ _VOWEL_MARKS = {
     "o": "ֹ",
     "ə": "ְ",
 }
+CONTACT_CONSONANTS = {
+    "p": "פּ",
+    "b": "בּ",
+    "f": "פ",
+    "v": "ב",
+    "t": "ט",
+    "d": "ד",
+    "k": "ק",
+    "g": "ג",
+    "c": "צ",
+    "č": "צ׳",
+    "s": "ס",
+    "z": "ז",
+    "š": "שׁ",
+    "x": "כ",
+    "h": "ה",
+    "m": "מ",
+    "n": "נ",
+    "l": "ל",
+    "r": "ר",
+    "w": "וו",
+    "y": "יי",
+}
+CONTACT_VOWELS = ("aa", "ee", "ii", "oo", "a", "e", "i", "o", "u", "ə")
+_CONTACT_VOWEL_MARKS = {**_VOWEL_MARKS, "u": "ֻ"}
+_CONTACT_MARK_TO_VOWEL = {
+    "ַ": "a",
+    "ָ": "aa",
+    "ֶ": "e",
+    "ֵ": "ee",
+    "ִ": "i",
+    "ֹ": "o",
+    "ֻ": "u",
+    "ְ": "ə",
+}
 _FINAL_BASES = {"פ": "ף", "צ": "ץ", "כ": "ך", "מ": "ם", "נ": "ן"}
 _MEDIAL_BASES = {value: key for key, value in _FINAL_BASES.items()}
 _TOKEN_RE = re.compile(
     "|".join(
         re.escape(token)
         for token in sorted([*CONSONANTS, *VOWELS, "-", " "], key=len, reverse=True)
+    )
+)
+_CONTACT_TOKEN_RE = re.compile(
+    "|".join(
+        re.escape(token)
+        for token in sorted(
+            [*CONTACT_CONSONANTS, *CONTACT_VOWELS, "-", " "],
+            key=len,
+            reverse=True,
+        )
     )
 )
 
@@ -91,6 +137,33 @@ def _tokens(value: str) -> list[str]:
         if match is None:
             raise ValueError(
                 f"unsupported O'Meara transport symbol at character {position}: "
+                f"{value[position]!r}"
+            )
+        tokens.append(match.group(0))
+        position = match.end()
+    return tokens
+
+
+def normalize_contact_input(value: str) -> str:
+    """Normalize a declared contact-phonemic Roman form without adapting it."""
+
+    if not isinstance(value, str) or not value:
+        raise ValueError("contact-pointed input must be a non-empty string")
+    return nfc(value.strip().lower())
+
+
+def _contact_tokens(value: str) -> list[str]:
+    if "sh" in value or "ch" in value:
+        raise ValueError(
+            "unsupported contact digraph; use declared phonemic š, c, or č"
+        )
+    tokens: list[str] = []
+    position = 0
+    while position < len(value):
+        match = _CONTACT_TOKEN_RE.match(value, position)
+        if match is None:
+            raise ValueError(
+                f"unsupported contact-pointed symbol at character {position}: "
                 f"{value[position]!r}"
             )
         tokens.append(match.group(0))
@@ -150,6 +223,67 @@ def encode_munsee_transport(value: str) -> str:
     return nfc("".join(unit.text for unit in units))
 
 
+def _add_contact_vowel(unit: _Unit, vowel: str) -> None:
+    if vowel == "oo":
+        unit.text += "וֹ"
+    else:
+        unit.text = _add_mark(unit.text, _CONTACT_VOWEL_MARKS[vowel])
+        if vowel == "aa":
+            unit.text += "א"
+        elif vowel in {"ee", "ii"}:
+            unit.text += "י"
+    unit.has_vowel = True
+
+
+def encode_contact_pointed(value: str) -> str:
+    """Encode the provisional contact-phonemic inventory as pointed Hebrew."""
+
+    normalized = normalize_contact_input(value)
+    units: list[_Unit] = []
+    for token in _contact_tokens(normalized):
+        if token in CONTACT_CONSONANTS:
+            units.append(_Unit("consonant", token, CONTACT_CONSONANTS[token]))
+        elif token in CONTACT_VOWELS:
+            if units and units[-1].kind == "consonant" and not units[-1].has_vowel:
+                _add_contact_vowel(units[-1], token)
+            else:
+                carrier = _Unit("carrier", token, "א")
+                _add_contact_vowel(carrier, token)
+                units.append(carrier)
+        elif token == "-":
+            units.append(_Unit("boundary", token, "־"))
+        elif token == " ":
+            units.append(_Unit("space", token, " "))
+
+    for index, unit in enumerate(units):
+        if (
+            unit.kind != "consonant"
+            or unit.has_vowel
+            or unit.source not in {"p", "f", "c", "č", "x", "m", "n"}
+        ):
+            continue
+        at_word_edge = index + 1 == len(units) or units[index + 1].kind == "space"
+        if not at_word_edge:
+            continue
+        decomposed = unicodedata.normalize("NFD", unit.text)
+        base = decomposed[0]
+        if base in _FINAL_BASES:
+            marks = "".join(
+                character
+                for character in decomposed[1:]
+                if unicodedata.combining(character)
+            )
+            suffix = "׳" if unit.source == "č" else ""
+            unit.text = _FINAL_BASES[base] + marks + suffix
+    return nfc("".join(unit.text for unit in units))
+
+
+def encode_contact_unpointed(value: str) -> str:
+    """Return the deliberately lossy unpointed alias of a contact form."""
+
+    return strip_hebrew_marks(encode_contact_pointed(value))
+
+
 @dataclass(frozen=True)
 class _Cluster:
     base: str
@@ -173,13 +307,11 @@ def _clusters(value: str) -> list[_Cluster | str]:
     return result
 
 
-def _mark_vowel(marks: tuple[str, ...]) -> str | None:
-    vowel_marks = [mark for mark in marks if mark in set(_VOWEL_MARKS.values())]
-    if len(vowel_marks) > 1:
-        raise ValueError("Hebrew transport cluster contains multiple vowel marks")
-    if not vowel_marks:
-        return None
-    return {
+def _mark_vowel(
+    marks: tuple[str, ...],
+    vowel_marks_to_source: dict[str, str] | None = None,
+) -> str | None:
+    mapping = vowel_marks_to_source or {
         "ַ": "a",
         "ָ": "aa",
         "ֶ": "e",
@@ -187,7 +319,13 @@ def _mark_vowel(marks: tuple[str, ...]) -> str | None:
         "ִ": "i",
         "ֹ": "o",
         "ְ": "ə",
-    }[vowel_marks[0]]
+    }
+    vowel_marks = [mark for mark in marks if mark in mapping]
+    if len(vowel_marks) > 1:
+        raise ValueError("Hebrew transport cluster contains multiple vowel marks")
+    if not vowel_marks:
+        return None
+    return mapping[vowel_marks[0]]
 
 
 def _consume_consonant(clusters: list[_Cluster | str], index: int) -> tuple[str, tuple[str, ...], int]:
@@ -231,9 +369,12 @@ def _consume_consonant(clusters: list[_Cluster | str], index: int) -> tuple[str,
 
 
 def _decode_vowel_options(
-    clusters: list[_Cluster | str], index: int, marks: tuple[str, ...]
+    clusters: list[_Cluster | str],
+    index: int,
+    marks: tuple[str, ...],
+    vowel_marks_to_source: dict[str, str] | None = None,
 ) -> tuple[tuple[str, int], ...]:
-    vowel = _mark_vowel(marks)
+    vowel = _mark_vowel(marks, vowel_marks_to_source)
     if vowel is None:
         if index < len(clusters) and isinstance(clusters[index], _Cluster):
             next_item = clusters[index]
@@ -319,6 +460,127 @@ def decode_munsee_transport(value: str) -> str:
     if len(candidates) > 1:
         raise ValueError("Hebrew transport input has more than one source decoding")
     return candidates.pop()
+
+
+def _consume_contact_consonant(
+    clusters: list[_Cluster | str], index: int
+) -> tuple[str, tuple[str, ...], int]:
+    item = clusters[index]
+    if not isinstance(item, _Cluster):
+        raise ValueError("expected a contact-pointed Hebrew consonant")
+    base = _MEDIAL_BASES.get(item.base, item.base)
+    marks = item.marks
+    if base == "ו" and not marks:
+        if index + 1 < len(clusters) and isinstance(clusters[index + 1], _Cluster):
+            second = clusters[index + 1]
+            if second.base == "ו":
+                return "w", second.marks, index + 2
+    if base == "י" and not marks:
+        if index + 1 < len(clusters) and isinstance(clusters[index + 1], _Cluster):
+            second = clusters[index + 1]
+            if second.base == "י":
+                return "y", second.marks, index + 2
+    if base == "צ":
+        if index + 1 < len(clusters) and clusters[index + 1] == "׳":
+            return "č", marks, index + 2
+        return "c", marks, index + 1
+    if base == "ש" and "ׁ" in marks:
+        return "š", tuple(mark for mark in marks if mark != "ׁ"), index + 1
+    if base == "פ":
+        consonant = "p" if "ּ" in marks else "f"
+        return consonant, tuple(mark for mark in marks if mark != "ּ"), index + 1
+    if base == "ב":
+        consonant = "b" if "ּ" in marks else "v"
+        return consonant, tuple(mark for mark in marks if mark != "ּ"), index + 1
+    reverse = {
+        "ט": "t",
+        "ד": "d",
+        "ק": "k",
+        "ג": "g",
+        "ס": "s",
+        "ז": "z",
+        "כ": "x",
+        "ה": "h",
+        "מ": "m",
+        "נ": "n",
+        "ל": "l",
+        "ר": "r",
+    }
+    if base not in reverse:
+        raise ValueError(f"unsupported contact-pointed Hebrew letter {item.base!r}")
+    return reverse[base], marks, index + 1
+
+
+def decode_contact_pointed(value: str) -> str:
+    """Decode canonical fully pointed output of the contact candidate profile."""
+
+    if not isinstance(value, str) or not value or value != nfc(value):
+        raise ValueError("contact-pointed input must be a non-empty NFC string")
+    clusters = _clusters(value)
+
+    @lru_cache(maxsize=None)
+    def parse(index: int) -> tuple[str, ...]:
+        if index == len(clusters):
+            return ("",)
+        item = clusters[index]
+        if item == "־":
+            return tuple("-" + tail for tail in parse(index + 1))
+        if item == " ":
+            return tuple(" " + tail for tail in parse(index + 1))
+        if not isinstance(item, _Cluster):
+            return ()
+        results: set[str] = set()
+        if item.base == "א":
+            try:
+                options = _decode_vowel_options(
+                    clusters,
+                    index + 1,
+                    item.marks,
+                    _CONTACT_MARK_TO_VOWEL,
+                )
+            except ValueError:
+                return ()
+            for vowel, next_index in options:
+                if vowel:
+                    results.update(vowel + tail for tail in parse(next_index))
+            return tuple(results)
+        try:
+            consonant, marks, next_index = _consume_contact_consonant(clusters, index)
+            options = _decode_vowel_options(
+                clusters,
+                next_index,
+                marks,
+                _CONTACT_MARK_TO_VOWEL,
+            )
+        except ValueError:
+            return ()
+        for vowel, after_vowel in options:
+            results.update(consonant + vowel + tail for tail in parse(after_vowel))
+        return tuple(results)
+
+    candidates: set[str] = set()
+    for candidate in parse(0):
+        try:
+            if encode_contact_pointed(candidate) == value:
+                candidates.add(candidate)
+        except ValueError:
+            continue
+    if not candidates:
+        raise ValueError(
+            "Hebrew input is not canonical output of the contact-pointed profile"
+        )
+    if len(candidates) > 1:
+        raise ValueError("contact-pointed input has more than one source decoding")
+    return candidates.pop()
+
+
+def assert_contact_round_trip(value: str) -> str:
+    normalized = normalize_contact_input(value)
+    encoded = encode_contact_pointed(normalized)
+    decoded = decode_contact_pointed(encoded)
+    if decoded != normalized:
+        raise ValueError(f"contact-pointed round trip failed: {normalized!r} -> {decoded!r}")
+    return encoded
 
 
 def assert_transport_round_trip(value: str) -> str:

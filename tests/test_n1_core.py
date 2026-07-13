@@ -18,6 +18,7 @@ from judeoalgonquin.store import connect, index_records, search_text
 ROOT = Path(__file__).parents[1]
 DATA = ROOT / "data" / "entries"
 LEXICON = DATA / "n1-core-lexicon.jsonl"
+CONTACT = DATA / "n1-contact-lexicon.jsonl"
 REGRESSIONS = DATA / "n1-core-regressions.jsonl"
 HEBREW_SEEDS = ROOT / "data" / "research" / "n1-core-hebrew-seeds.json"
 MUNSEE_SEEDS = ROOT / "data" / "research" / "n1-core-munsee-seeds.json"
@@ -34,6 +35,8 @@ class N1CoreTests(unittest.TestCase):
         cls.records = validate_records(load_records(DATA), source_registry=registry)
         cls.by_id = {record["id"]: record for record in cls.records}
         cls.lexicon = validate_records(load_records(LEXICON), source_registry=registry)
+        contact_ids = {record["id"] for record in load_records(CONTACT)}
+        cls.contact = [record for record in cls.records if record["id"] in contact_ids]
         regression_ids = {
             record["id"] for record in load_records(REGRESSIONS)
         }
@@ -42,14 +45,15 @@ class N1CoreTests(unittest.TestCase):
         ]
 
     def test_frozen_record_envelope(self) -> None:
-        self.assertEqual(len(self.records), 92)
+        self.assertEqual(len(self.records), 107)
         self.assertEqual(len(self.lexicon), 60)
+        self.assertEqual(len(self.contact), 15)
         self.assertEqual(len(self.regressions), 12)
         self.assertEqual(
             Counter(record["record_type"] for record in self.records),
             Counter(
                 {
-                    "lexeme": 64,
+                    "lexeme": 79,
                     "morpheme": 8,
                     "construction": 5,
                     "phrase": 10,
@@ -173,7 +177,21 @@ class N1CoreTests(unittest.TestCase):
         environment["PYTHONPATH"] = str(ROOT / "src")
         with tempfile.TemporaryDirectory() as tempdir:
             lexical_output = Path(tempdir) / "lexicon.jsonl"
+            contact_output = Path(tempdir) / "contact.jsonl"
             regression_output = Path(tempdir) / "regressions.jsonl"
+            subprocess.run(
+                [
+                    sys.executable,
+                    str(ROOT / "scripts" / "render_n1_contact_probe.py"),
+                    "--output",
+                    str(contact_output),
+                ],
+                cwd=ROOT,
+                env=environment,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
             subprocess.run(
                 [
                     sys.executable,
@@ -201,6 +219,7 @@ class N1CoreTests(unittest.TestCase):
                 text=True,
             )
             self.assertEqual(lexical_output.read_bytes(), LEXICON.read_bytes())
+            self.assertEqual(contact_output.read_bytes(), CONTACT.read_bytes())
             self.assertEqual(regression_output.read_bytes(), REGRESSIONS.read_bytes())
 
     def test_embedding_report_matches_the_frozen_data_and_consumed_gate(self) -> None:
@@ -217,8 +236,8 @@ class N1CoreTests(unittest.TestCase):
         self.assertNotEqual(report["data_sha256"], aggregate.hexdigest())
         self.assertNotEqual(report["data_file_sha256"], hashes)
         correction = report["post_call_source_correction"]
-        self.assertEqual(correction["current_data_sha256"], aggregate.hexdigest())
-        self.assertEqual(correction["current_data_file_sha256"], hashes)
+        self.assertNotEqual(correction["current_data_sha256"], aggregate.hexdigest())
+        self.assertNotEqual(correction["current_data_file_sha256"], hashes)
         self.assertEqual(correction["current_fresh_vectors"], 84)
         self.assertEqual(correction["current_stale_or_missing_vectors"], 8)
         self.assertFalse(correction["embedding_call_repeated"])

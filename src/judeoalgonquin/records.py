@@ -11,11 +11,13 @@ from typing import Any, Iterable, Iterator
 from .normalize import is_nfc, normalize_search, strip_hebrew_marks, unsafe_codepoints
 from .orthography import (
     COMPONENTWISE_PROFILE,
+    CONTACT_POINTED_PROFILE,
     HEBREW_RETAINED_PROFILE,
     LEGACY_UNVERIFIED_PROFILE,
     MUNSEE_TRANSPORT_PROFILE,
     PROJECT_SCHEMATIC_PROFILE,
     assert_transport_round_trip,
+    assert_contact_round_trip,
 )
 
 
@@ -55,6 +57,7 @@ FORMATION_KINDS = {
     "blend",
     "compound",
     "derivation",
+    "semantic_reallocation",
     "semantic_extension",
     "new_coinage",
     "mixed",
@@ -67,6 +70,7 @@ FORMATION_OPERATIONS = {
     "combine",
     "derive",
     "calque",
+    "semantic_reallocation",
     "semantic_extension",
     "regularize",
     "other",
@@ -419,6 +423,7 @@ def _validate_record(
                 if status_value not in {
                     "source_retained",
                     "provisional_transport",
+                    "contact_adapted",
                     "componentwise",
                     "project_schematic",
                     "unverified",
@@ -430,6 +435,7 @@ def _validate_record(
                 if orthography.get("script_origin") not in {
                     "retained_hebrew",
                     "munsee_source_transport",
+                    "contact_adapted",
                     "componentwise",
                     "project_schematic",
                     "legacy_unverified",
@@ -445,6 +451,7 @@ def _validate_record(
                     "citation",
                     "surface",
                     "morphophonemic",
+                    "contact_phonemic",
                     "componentwise",
                     "schematic",
                     "unverified",
@@ -475,6 +482,12 @@ def _validate_record(
                         MUNSEE_TRANSPORT_PROFILE,
                         "munsee_source_transport",
                         None,
+                        "pointed_only",
+                    ),
+                    "contact_adapted": (
+                        CONTACT_POINTED_PROFILE,
+                        "contact_adapted",
+                        "contact_phonemic",
                         "pointed_only",
                     ),
                     "componentwise": (
@@ -535,6 +548,21 @@ def _validate_record(
                             if encoded != hebrew:
                                 errors.append(
                                     f"{orthography_label}: Hebrew form does not match transport profile"
+                                )
+                elif status_value == "contact_adapted":
+                    if normalized_input is not None and conlang.get("romanization") != normalized_input:
+                        errors.append(
+                            f"{orthography_label}.normalized_input: must equal contact romanization"
+                        )
+                    if normalized_input is not None and hebrew is not None:
+                        try:
+                            encoded = assert_contact_round_trip(normalized_input)
+                        except ValueError as exc:
+                            errors.append(f"{orthography_label}: {exc}")
+                        else:
+                            if encoded != hebrew:
+                                errors.append(
+                                    f"{orthography_label}: Hebrew form does not match contact profile"
                                 )
                 elif status_value == "source_retained":
                     if hebrew is not None and orthography.get("source_exact") != hebrew:
@@ -1139,6 +1167,7 @@ def _validate_record(
         f"{label}.metadata",
         errors,
         required={"registers", "domains", "tags", "creative_anchor"},
+        optional={"lexical_layer"},
     )
     if metadata is not None:
         for key in ("registers", "domains", "tags"):
@@ -1146,6 +1175,29 @@ def _validate_record(
         anchor = metadata.get("creative_anchor")
         if anchor is not None and not isinstance(anchor, str):
             errors.append(f"{label}.metadata.creative_anchor: must be a string or null")
+        lexical_layer = metadata.get("lexical_layer")
+        if lexical_layer is not None and lexical_layer not in {
+            "donor_candidate",
+            "direct_contact_inheritance",
+            "contact_native_formation",
+            "learned_literary_reborrowing",
+        }:
+            errors.append(f"{label}.metadata.lexical_layer: invalid value")
+        if (
+            record_type in {"lexeme", "morpheme"}
+            and isinstance(orthography, dict)
+            and orthography.get("status") == "contact_adapted"
+            and lexical_layer
+            not in {
+                "direct_contact_inheritance",
+                "contact_native_formation",
+                "learned_literary_reborrowing",
+            }
+        ):
+            errors.append(
+                f"{label}.metadata.lexical_layer: contact-adapted lexical records "
+                "require a contact-language layer"
+            )
 
     narrative = record.get("narrative_analysis")
     if narrative is not None:
@@ -1272,6 +1324,13 @@ def _validate_record(
 
     if status == "canonical":
         tags = metadata.get("tags", []) if isinstance(metadata, dict) else []
+        lexical_layer = (
+            metadata.get("lexical_layer") if isinstance(metadata, dict) else None
+        )
+        if lexical_layer == "donor_candidate":
+            errors.append(
+                f"{label}.metadata.lexical_layer: donor candidates cannot be canonical"
+            )
         creator_type = provenance.get("creator_type") if isinstance(provenance, dict) else None
         if creator_type == "legacy_import":
             errors.append(f"{label}.provenance.creator_type: legacy imports cannot be canonical")
@@ -1288,7 +1347,12 @@ def _validate_record(
                 + ", ".join(blocking_tags)
             )
         orthography_status = orthography.get("status") if isinstance(orthography, dict) else None
-        if orthography_status in {"provisional_transport", "project_schematic", "unverified"}:
+        if orthography_status in {
+            "provisional_transport",
+            "contact_adapted",
+            "project_schematic",
+            "unverified",
+        }:
             errors.append(
                 f"{label}.forms.judeo_algonquin.orthography.status: "
                 f"{orthography_status} blocks canon"
@@ -1372,7 +1436,7 @@ def validate_records(
     ids: dict[str, str] = {}
     sense_ids: dict[str, str] = {}
     sense_owner: dict[str, str] = {}
-    headwords: dict[str, str] = {}
+    headwords: dict[str, list[dict[str, Any]]] = {}
 
     for index, record in enumerate(records):
         label = record.get("_source", f"record[{index}]")
@@ -1410,12 +1474,40 @@ def validate_records(
                 normalized = normalize_search(headword)
                 metadata = record.get("metadata")
                 tags = metadata.get("tags", []) if isinstance(metadata, dict) else []
-                if normalized in headwords and "homonym" not in tags:
-                    errors.append(
-                        f"{label}: duplicate normalized headword; mark an intentional homonym explicitly"
-                    )
-                else:
-                    headwords[normalized] = label
+                prior_records = headwords.setdefault(normalized, [])
+                if prior_records and "homonym" not in tags:
+                    unmarked_group = [
+                        prior
+                        for prior in prior_records
+                        if "homonym" not in prior.get("metadata", {}).get("tags", [])
+                    ] + [record]
+                    is_pinned_donor_overlay = False
+                    if len(unmarked_group) == 2:
+                        first, second = unmarked_group
+                        first_layer = first.get("metadata", {}).get("lexical_layer")
+                        second_layer = second.get("metadata", {}).get("lexical_layer")
+                        first_id = first.get("id")
+                        second_id = second.get("id")
+                        first_dependencies = first.get("relations", {}).get(
+                            "depends_on", []
+                        )
+                        second_dependencies = second.get("relations", {}).get(
+                            "depends_on", []
+                        )
+                        is_pinned_donor_overlay = (
+                            first_layer == "donor_candidate"
+                            and second_layer == "direct_contact_inheritance"
+                            and first_id in second_dependencies
+                        ) or (
+                            second_layer == "donor_candidate"
+                            and first_layer == "direct_contact_inheritance"
+                            and second_id in first_dependencies
+                        )
+                    if not is_pinned_donor_overlay:
+                        errors.append(
+                            f"{label}: duplicate normalized headword; mark an intentional homonym explicitly"
+                        )
+                prior_records.append(record)
 
     known_ids = set(ids)
     records_by_id = {

@@ -47,7 +47,7 @@ class PilotTests(unittest.TestCase):
         self.assertEqual({record["status"] for record in self.records}, {"candidate"})
         self.assertEqual(
             Counter(record["revision"] for record in self.records),
-            Counter({2: 8, 3: 12}),
+            Counter({3: 8, 4: 12}),
         )
         self.assertTrue(
             all("noncanonical" in record["metadata"]["tags"] for record in self.records)

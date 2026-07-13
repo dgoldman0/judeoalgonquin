@@ -1,8 +1,13 @@
 import unittest
 
 from judeoalgonquin.orthography import (
+    CONTACT_POINTED_PROFILE,
+    assert_contact_round_trip,
     assert_transport_round_trip,
+    decode_contact_pointed,
     decode_munsee_transport,
+    encode_contact_pointed,
+    encode_contact_unpointed,
     encode_munsee_transport,
 )
 from judeoalgonquin.normalize import strip_hebrew_marks
@@ -103,6 +108,86 @@ class OrthographyTransportTests(unittest.TestCase):
             with self.subTest(value=value):
                 with self.assertRaises(ValueError):
                     decode_munsee_transport(value)
+
+
+class ContactPointedCandidateTests(unittest.TestCase):
+    def test_profile_name_and_complete_consonant_inventory(self) -> None:
+        self.assertEqual(CONTACT_POINTED_PROFILE, "contact_pointed_candidate")
+        forms = [
+            "pa",
+            "ba",
+            "fa",
+            "va",
+            "ta",
+            "da",
+            "ka",
+            "ga",
+            "ca",
+            "ča",
+            "sa",
+            "za",
+            "ša",
+            "xa",
+            "ha",
+            "ma",
+            "na",
+            "la",
+            "ra",
+            "wa",
+            "ya",
+        ]
+        encoded = [assert_contact_round_trip(form) for form in forms]
+        self.assertEqual(len(encoded), len(set(encoded)))
+
+    def test_vowel_quality_length_and_reduced_vowel_round_trip(self) -> None:
+        forms = [
+            "pa",
+            "paa",
+            "pe",
+            "pee",
+            "pi",
+            "pii",
+            "po",
+            "poo",
+            "pu",
+            "pə",
+        ]
+        encoded = [assert_contact_round_trip(form) for form in forms]
+        self.assertEqual(len(encoded), len(set(encoded)))
+
+    def test_contact_adaptation_examples_and_boundaries(self) -> None:
+        for form in (
+            "iša",
+            "lexem",
+            "katan",
+            "šulxan",
+            "em wə-av",
+            "pəməsii-w",
+            "iya",
+            "iiya",
+        ):
+            with self.subTest(form=form):
+                hebrew = encode_contact_pointed(form)
+                self.assertEqual(decode_contact_pointed(hebrew), form)
+
+    def test_c_and_caron_affricate_and_final_pairs_remain_distinct(self) -> None:
+        pairs = [("c", "č"), ("p", "f"), ("b", "v")]
+        for first, second in pairs:
+            with self.subTest(pair=(first, second)):
+                first_hebrew = assert_contact_round_trip(first)
+                second_hebrew = assert_contact_round_trip(second)
+                self.assertNotEqual(first_hebrew, second_hebrew)
+
+    def test_unpointed_alias_is_deliberately_lossy(self) -> None:
+        self.assertEqual(encode_contact_unpointed("pa"), encode_contact_unpointed("fa"))
+        self.assertEqual(encode_contact_unpointed("ba"), encode_contact_unpointed("va"))
+        self.assertNotEqual(encode_contact_unpointed("pa"), encode_contact_pointed("pa"))
+
+    def test_donor_spellings_outside_contact_inventory_fail_closed(self) -> None:
+        for form in ("sham", "chad", "qatan", "leḥem"):
+            with self.subTest(form=form):
+                with self.assertRaisesRegex(ValueError, "unsupported"):
+                    encode_contact_pointed(form)
 
 
 if __name__ == "__main__":

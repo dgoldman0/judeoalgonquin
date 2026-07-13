@@ -68,6 +68,15 @@ Records that contain language forms also carry, as applicable:
 - translation and grammar notes; and
 - normalized text used for exact matching.
 
+Lexical and morphemic records may also carry a typed lexical layer:
+
+- `donor_candidate` preserves a reviewed source ingredient but is not itself a language word;
+- `direct_contact_inheritance` records a source item after explicit contact adaptation or reviewed retention;
+- `contact_native_formation` records a new internally formed word with revision-pinned inputs; and
+- `learned_literary_reborrowing` is reserved for a deliberately less-adapted later Hebrew re-entry.
+
+A donor and its contact output may share a surface form only when the contact record depends on that exact donor revision. This is an evidence/language overlay, not an undeclared homonym.
+
 Empty fields are explicit. “Unknown,” “not applicable,” and “not yet researched” must not be conflated.
 
 ## 4. Lifecycle
@@ -136,6 +145,8 @@ Embeddings are regenerated only for changed records and any derived documents wh
 
 Similarity is a discovery signal, not proof of equivalence or conflict. Every suggested duplicate or contradiction must be resolved through structured evidence and review.
 
+Donor candidates remain searchable for research, but generation should prefer contact-language layers. Until layer filtering is implemented in the index, callers must inspect `metadata.lexical_layer` rather than treating every lexical search result as usable output.
+
 ## 8. Conflict handling
 
 Conflicts are first-class records or evaluations. Useful categories include:
@@ -165,3 +176,10 @@ explicit owner authorization, an enabled `config/api-budget.json`, per-run
 caps, a cumulative token cap, and an ignored local reservation/usage ledger.
 Reservations are written before network access so a crash or uncertain failure
 cannot silently invite an unaccounted retry.
+
+The first contact-synthesis pass made no API request. Its donor-layer typing,
+revision propagation through dependent probes, and 15 new contact records
+correctly leave all 107 records stale or missing in the local checkpoint index.
+A dry-run estimates about 64,703 record-input tokens, or roughly $0.00129 at
+the configured embedding rate, for a full refresh; that
+estimate is not authorization.

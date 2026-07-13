@@ -25,6 +25,11 @@ HEBREW_SEEDS = ROOT / "data" / "research" / "n1-core-hebrew-seeds.json"
 MUNSEE_SEEDS = ROOT / "data" / "research" / "n1-core-munsee-seeds.json"
 OUTPUT = ROOT / "data" / "entries" / "n1-core-lexicon.jsonl"
 CREATED_AT = "2026-07-13T00:15:00Z"
+DONOR_UPDATED_AT = "2026-07-13T00:50:00Z"
+DONOR_CHANGE_NOTE = (
+    "Classified the source-facing lexical record as a donor candidate so evidence "
+    "cannot be mistaken for a finished contact-language word."
+)
 ACADEMY_SOURCE = "academy_hebrew_online_resources"
 OMEARA_SOURCE = "omeara_delaware_stem_morphology_1990"
 MUNSEE_ATTRIBUTION = (
@@ -153,6 +158,7 @@ def _base_record(
             "domains": domains,
             "tags": tags,
             "creative_anchor": None,
+            "lexical_layer": "donor_candidate",
         },
         "created_at": CREATED_AT,
         "updated_at": updated_at,
@@ -321,11 +327,9 @@ def _render_hebrew(seed: dict[str, Any]) -> dict[str, Any]:
         source_evidence=evidence_items,
         domains=list(seed["domains"]),
         tags=tags,
-        revision=seed.get("revision", 1),
-        updated_at=seed.get("updated_at", CREATED_AT),
-        change_note=seed.get(
-            "change_note", "Created in the bounded, source-reviewed N1 core lexical epoch."
-        ),
+        revision=seed.get("revision", 1) + 1,
+        updated_at=DONOR_UPDATED_AT,
+        change_note=DONOR_CHANGE_NOTE,
     )
 
 
@@ -468,11 +472,9 @@ def _render_munsee(seed: dict[str, Any]) -> dict[str, Any]:
         source_evidence=[evidence],
         domains=list(seed["domains"]),
         tags=tags,
-        revision=seed.get("revision", 1),
-        updated_at=seed.get("updated_at", CREATED_AT),
-        change_note=seed.get(
-            "change_note", "Created in the bounded, source-reviewed N1 core lexical epoch."
-        ),
+        revision=seed.get("revision", 1) + 1,
+        updated_at=DONOR_UPDATED_AT,
+        change_note=DONOR_CHANGE_NOTE,
     )
 
 

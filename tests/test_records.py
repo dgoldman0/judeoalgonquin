@@ -128,6 +128,68 @@ class RecordTests(unittest.TestCase):
         with self.assertRaisesRegex(ValidationError, "unknown fields"):
             validate_records(records)
 
+    def test_lexical_layer_is_typed_and_donor_candidates_block_canon(self) -> None:
+        records = copy.deepcopy(self.records)
+        records[0]["metadata"]["lexical_layer"] = "not-a-layer"
+        with self.assertRaisesRegex(ValidationError, "lexical_layer: invalid value"):
+            validate_records(records)
+
+        records = copy.deepcopy(self.records)
+        record = records[0]
+        record["metadata"]["lexical_layer"] = "donor_candidate"
+        record["metadata"]["tags"] = [
+            tag
+            for tag in record["metadata"]["tags"]
+            if tag not in {"candidate", "noncanonical", "unverified"}
+        ]
+        record["provenance"]["creator_type"] = "human"
+        record["status"] = "canonical"
+        record["review"] = {
+            "reviewer_type": "human",
+            "reviewer_id": "owner",
+            "authority": "project owner",
+            "decision": "canonical",
+            "reviewed_at": "2026-07-12T00:00:00Z",
+            "note": "Negative donor-layer fixture.",
+        }
+        with self.assertRaisesRegex(ValidationError, "donor candidates cannot be canonical"):
+            validate_records(records)
+
+    def test_revision_pinned_contact_overlay_may_share_donor_headword(self) -> None:
+        records = copy.deepcopy(self.records)
+        donor = records[0]
+        donor["metadata"]["lexical_layer"] = "donor_candidate"
+        contact = copy.deepcopy(donor)
+        contact["id"] = "ja.lexeme.test_contact_overlay"
+        contact["senses"][0]["id"] = "ja.lexeme.test_contact_overlay.sense.primary"
+        for evidence in contact["source_evidence"]:
+            evidence["supports_sense_ids"] = [contact["senses"][0]["id"]]
+        contact["metadata"]["lexical_layer"] = "direct_contact_inheritance"
+        contact["relations"]["depends_on"] = [donor["id"]]
+        contact["relations"]["dependency_revisions"] = {
+            donor["id"]: donor["revision"]
+        }
+        validate_records([*records, contact])
+
+        contact["relations"]["depends_on"] = []
+        contact["relations"]["dependency_revisions"] = {}
+        with self.assertRaisesRegex(ValidationError, "duplicate normalized headword"):
+            validate_records([*records, contact])
+
+        contact["relations"]["depends_on"] = [donor["id"]]
+        contact["relations"]["dependency_revisions"] = {
+            donor["id"]: donor["revision"]
+        }
+        second_contact = copy.deepcopy(contact)
+        second_contact["id"] = "ja.lexeme.test_second_contact_overlay"
+        second_contact["senses"][0]["id"] = (
+            "ja.lexeme.test_second_contact_overlay.sense.primary"
+        )
+        for evidence in second_contact["source_evidence"]:
+            evidence["supports_sense_ids"] = [second_contact["senses"][0]["id"]]
+        with self.assertRaisesRegex(ValidationError, "duplicate normalized headword"):
+            validate_records([*records, contact, second_contact])
+
     def test_source_ids_are_checked_against_registry(self) -> None:
         records = copy.deepcopy(self.records)
         records[0]["provenance"]["source_ids"] = ["not_a_real_source"]

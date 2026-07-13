@@ -1,0 +1,105 @@
+{
+  "report_id": "n1-contact-synthesis-2026-07-12",
+  "status": "completed_local_noncanonical",
+  "completed_at": "2026-07-12T20:39:55-04:00",
+  "purpose": "Separate the reviewed donor inventory from actual contact-language proposals, establish a reversible shared script profile, audit every source-facing lexical input, and build a bounded first synthesis probe.",
+  "record_inventory": {
+    "records_total": 107,
+    "donor_candidate_lexemes_or_morphemes": 72,
+    "contact_probe_lexemes": 15,
+    "other_constructions_phrases_sentences": 20,
+    "contact_direct_inheritances": 13,
+    "contact_native_formations": 2,
+    "direct_hebrew_line": 7,
+    "direct_regional_line": 6
+  },
+  "contact_forms": {
+    "hebrew_line": [
+      "adam",
+      "iša",
+      "lexem",
+      "aw",
+      "xalaw",
+      "pri",
+      "katan"
+    ],
+    "regional_line": [
+      "ooteenay",
+      "apiinay",
+      "weentakwiiwan",
+      "wiisakiim",
+      "pakiinčəw",
+      "tiihinčəw"
+    ],
+    "mixed_formations": [
+      {
+        "form": "prinčəw",
+        "segmentation": "pri-nčəw",
+        "meaning": "fruit dish; fruit bowl",
+        "status": "isolated_nonproductive_candidate"
+      },
+      {
+        "form": "lexemiikaan",
+        "segmentation": "lexem-iikaan",
+        "meaning": "bakery; bread house",
+        "status": "isolated_nonproductive_candidate"
+      }
+    ]
+  },
+  "full_source_audit": {
+    "hebrew_decisions": 30,
+    "regional_decisions": 42,
+    "total_decisions": 72,
+    "hebrew_manifest_sha256": "6658eb6b41cc69ded4808445c4b2914d0bb36c409a96811a3054bec0a8ede1d0",
+    "regional_manifest_sha256": "04654c41fae9eb422ce242d032fc2689e9fe57b802beeacbcc70ef4385cc0411",
+    "regional_fixed_word_lexicalizations": 6,
+    "semantic_allocations": [
+      "contact adam is human/person while regional lənəw remains man",
+      "contact iša is wife/female spouse while regional oxkweew remains the donor candidate for woman"
+    ]
+  },
+  "orthography": {
+    "profile_id": "contact_pointed_candidate",
+    "status": "provisional_and_canon_blocking",
+    "pointed_round_trip": true,
+    "unpointed_alias_lossless": false,
+    "contact_profile_tested_combinations": 30657,
+    "contact_profile_tested_combination_failures": 0,
+    "combination_test_scope": "Canonical contact-token sequences through length three after forbidden practical digraph inputs are rejected.",
+    "design_document_sha256": "d258921f64ad438ca116ce946fce43a73ac50c788edca0f8c9b758a304d2934d"
+  },
+  "data_sha256": "29e7e7334ff2d803127d7d5a75f927dc5f055088443a38ec39f1a5da930edb97",
+  "data_file_sha256": {
+    "n1-contact-lexicon.jsonl": "c49ad3fb5459a8814b7bc0749ac6de3a97e127f5a920962339ad4c52a762fbe9",
+    "n1-core-lexicon.jsonl": "152f0bf87e0317930b553b474358bb9567781330c9464bce966ba3ab6f7c106c",
+    "n1-core-regressions.jsonl": "022805a6b2edfe2089b38b8c7ab21ec2721e4b3dafcbc5cd6e52cf30d6a352fc",
+    "n1-pilot.jsonl": "3ec47ffc810274276bf64fc509d958837f61e0ee2e8cd553336e471fa3eaf0a3"
+  },
+  "local_embedding_state": {
+    "model": "text-embedding-3-small",
+    "dimensions": 256,
+    "fresh_stored_vectors": 0,
+    "stale_or_missing_vectors": 107,
+    "reason": "Typing 72 source-facing records as donor candidates changed their fingerprints; revision propagation invalidated all 20 dependent construction, phrase, and sentence probes; and the 15 contact records are new.",
+    "rough_record_input_tokens_for_full_refresh": 64703,
+    "estimated_full_refresh_cost_usd_at_configured_rate": 0.00129406,
+    "refresh_authorized": false
+  },
+  "paid_api": {
+    "embedding_requests": 0,
+    "generative_requests": 0,
+    "api_inputs": 0,
+    "prompt_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "paid_gate_enabled_after_work": false
+  },
+  "limitations": [
+    "Every record remains noncanonical and the contact script profile remains provisional.",
+    "The two mixed formations test traceable synthesis; they do not license a productive pattern.",
+    "The contact probe does not implement nominal paradigms, possession, full verb morphology, ordinary clause grammar, or the narrative engine.",
+    "The local vector freshness count describes the existing local checkpoint database and is not itself a language-quality evaluation.",
+    "No embedding or generative-model call was made, so this checkpoint contains no new semantic-retrieval score."
+  ],
+  "contains_vectors": false,
+  "contains_credentials": false
+}

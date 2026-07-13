@@ -81,6 +81,7 @@
                   "enum": [
                     "source_retained",
                     "provisional_transport",
+                    "contact_adapted",
                     "componentwise",
                     "project_schematic",
                     "unverified"
@@ -91,6 +92,7 @@
                   "enum": [
                     "retained_hebrew",
                     "munsee_source_transport",
+                    "contact_adapted",
                     "componentwise",
                     "project_schematic",
                     "legacy_unverified"
@@ -103,6 +105,7 @@
                     "citation",
                     "surface",
                     "morphophonemic",
+                    "contact_phonemic",
                     "componentwise",
                     "schematic",
                     "unverified"
@@ -131,6 +134,15 @@
                     "script_origin": {"const": "munsee_source_transport"},
                     "input_level": {"enum": ["citation", "surface", "morphophonemic"]},
                     "source_exact": {"type": "string", "minLength": 1},
+                    "reversibility": {"const": "pointed_only"}
+                  }}
+                },
+                {
+                  "if": {"properties": {"status": {"const": "contact_adapted"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "contact_pointed_candidate"},
+                    "script_origin": {"const": "contact_adapted"},
+                    "input_level": {"const": "contact_phonemic"},
                     "reversibility": {"const": "pointed_only"}
                   }}
                 },
@@ -240,6 +252,7 @@
             "blend",
             "compound",
             "derivation",
+            "semantic_reallocation",
             "semantic_extension",
             "new_coinage",
             "mixed"
@@ -276,6 +289,7 @@
                   "combine",
                   "derive",
                   "calque",
+                  "semantic_reallocation",
                   "semantic_extension",
                   "regularize",
                   "other"
@@ -498,7 +512,15 @@
         "registers": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
         "domains": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
         "tags": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
-        "creative_anchor": {"type": ["string", "null"]}
+        "creative_anchor": {"type": ["string", "null"]},
+        "lexical_layer": {
+          "enum": [
+            "donor_candidate",
+            "direct_contact_inheritance",
+            "contact_native_formation",
+            "learned_literary_reborrowing"
+          ]
+        }
       }
     },
     "narrative_analysis": {
@@ -612,6 +634,44 @@
         "required": ["record_type"]
       },
       "then": {"properties": {"construction_spec": {"type": "object"}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {"enum": ["lexeme", "morpheme"]},
+          "forms": {
+            "properties": {
+              "judeo_algonquin": {
+                "properties": {
+                  "orthography": {
+                    "properties": {"status": {"const": "contact_adapted"}},
+                    "required": ["status"]
+                  }
+                },
+                "required": ["orthography"]
+              }
+            },
+            "required": ["judeo_algonquin"]
+          }
+        },
+        "required": ["record_type", "forms"]
+      },
+      "then": {
+        "properties": {
+          "metadata": {
+            "required": ["lexical_layer"],
+            "properties": {
+              "lexical_layer": {
+                "enum": [
+                  "direct_contact_inheritance",
+                  "contact_native_formation",
+                  "learned_literary_reborrowing"
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   ],
   "$defs": {
