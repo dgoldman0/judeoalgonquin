@@ -76,3 +76,9 @@ part of this engine. It establishes transparent inclusive/exclusive participant
 marking in independent affirmative predicates; wayyiqtol-derived foreground
 linking, weqatal-derived recurrence, obviation, and their interactions remain
 separate D1/D2 construction work.
+
+The later ordinary finite-coordination candidate is also outside this engine.
+Its Hebrew-derived `wə-` remains proclitic on the second clause and means only
+ordinary “and.” It cannot supply succession, consequence, recurrence,
+foregrounding, or a discourse-center shift; using it as a substitute for the
+wayyiqtol–weqatal–obviation system is an explicit failed analysis.

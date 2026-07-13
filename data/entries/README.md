@@ -8,8 +8,11 @@ candidates; `n1-core-regressions.jsonl` adds 12 revision-pinned composition
 tests; `n1-contact-lexicon.jsonl` adds the first 15 actual contact-language
 lexeme proposals; and `n1-song-chorus.jsonl` adds 17 manually authored donor,
 contact, construction, and sentence records for the first *We Walk Well*
-chorus tranche. The full 124-record database is explicitly noncanonical and
-remains subject to source and design revision.
+chorus tranche; and `n1-perception-enrichment.jsonl` adds 20 manually authored
+records for sound, class-sensitive perception, an objectful first-plural
+Absolute, ordinary finite coordination, one phrase, and eight sentences. The
+full 144-record database is explicitly noncanonical and remains subject to
+source and design revision.
 
 Every source-facing lexeme or morpheme is typed `donor_candidate`. It preserves
 evidence but cannot itself become language canon. The contact records depend on

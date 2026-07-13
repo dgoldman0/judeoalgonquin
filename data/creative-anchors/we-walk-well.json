@@ -153,10 +153,26 @@
           "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
           "relationship": "donor_lead",
           "coverage": "donor_only",
-          "note": "This bound animate-object stem is a possible source input; it does not yet mean reciprocal listen."
+          "note": "This bound animate-object stem is the source input to the current contact TA hear stem; it does not mean reciprocal listen."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_animate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bound contact TA hear stem; it still requires an animate-class object and does not mean attentive or reciprocal listen."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bound contact TI hear stem; it still requires an inanimate-class object and does not license objectless listen."
         }
       ],
-      "note": "Object class, reciprocity, and first-person number must be designed independently."
+      "note": "Literal class-sensitive contact hear now exists, but hear is not listen and object backgrounding, reciprocity, and lyric compactness remain independent work."
     },
     {
       "surface_form": "וָאפּוּו־",
@@ -171,10 +187,26 @@
           "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
           "relationship": "donor_lead",
           "coverage": "donor_only",
-          "note": "The reviewed inanimate-object stem may supply a future predicate but does not validate the legacy form."
+          "note": "The reviewed inanimate-object stem is the source input to the current contact TI see stem; it does not validate the legacy form."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_animate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_animate.sense.see_animate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bound contact TA see stem; it requires an animate-class object and supplies no reciprocal interpretation."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bound contact TI see stem; it requires an inanimate-class object unless a later object-backgrounding construction is admitted."
         }
       ],
-      "note": "The song also contains recognizable Hebrew רואים; the eventual allocation must be a conscious contact-language decision."
+      "note": "The contact design currently selects the regional TA/TI pair for this motif while preserving the song's recognizable Hebrew רואים as revision history; object selection and any later doublet remain conscious decisions."
     },
     {
       "surface_form": "בְּוִיקְוָאהְמֶנְק",
@@ -281,10 +313,12 @@
       "editable_elements": ["All legacy roots", "coordinator", "reciprocal marking", "person and number endings"],
       "current_record_links": [
         {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "The independently sourced vocal-sing stem preserves the legacy naxkooh shape without licensing ring."},
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an inclusive first-plural vocal-sing clause; softness and coordination remain open."},
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "A bound research lead for hear someone, not listen reciprocally."}
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an inclusive first-plural vocal-sing clause; softness and a compatible mutual-listening clause remain open."},
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "A bound research lead for hear someone, not listen reciprocally."},
+        {"record_id": "ja.lexeme.contact_hear_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal animate-object hear is available, but attentive reciprocity remains unbuilt."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies first-plural objectful perception only; it cannot express one another or suppress the object."}
       ],
-      "gaps": ["softly", "listen", "reciprocal", "coordination of singing and mutual listening"],
+      "gaps": ["softly", "attentive listen extension", "reciprocal object strategy", "coordination of singing and mutual listening"],
       "departure_policy": "Gentle vocal singing and mutual listening are protected; metallic ringing requires a separate honest extension."
     },
     {
@@ -305,9 +339,12 @@
       "current_record_links": [
         {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound inanimate-object see stem."},
         {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed only as road; poetic path extension is not yet licensed."},
-        {"record_id": "ja.lexeme.hebrew_hayom_today", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_hayom_today.sense.today", "relationship": "donor_lead", "coverage": "donor_only", "note": "A time-expression lead, not yet a contact form."}
+        {"record_id": "ja.lexeme.hebrew_hayom_today", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_hayom_today.sense.today", "relationship": "donor_lead", "coverage": "donor_only", "note": "A time-expression lead, not yet a contact form."},
+        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "The contact TI see stem can select admitted inanimate-class road object aanay but is not a complete line; path remains unlicensed."},
+        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact road is available; path and path-of-day extensions remain unlicensed."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an objectful first-plural TI see pattern, but no composed path-of-day sentence has been authored."}
       ],
-      "gaps": ["first-person plural see construction", "path-of-day relation"],
+      "gaps": ["composed see-road clause", "path-of-day relation", "metrical and owner review"],
       "departure_policy": "Seeing, path, and day remain linked even if the exact metaphor is recast."
     },
     {
@@ -399,9 +436,14 @@
       "editable_elements": ["All legacy endings", "object class", "listen versus hear derivation"],
       "current_record_links": [
         {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear-someone donor lead."},
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See-something donor lead."}
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See-something donor lead."},
+        {"record_id": "ja.lexeme.contact_hear_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal inanimate-object hear stem used by the partial chorus candidate; hear is not listen."},
+        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inanimate-object see stem used by the partial chorus candidate."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the two objectful inclusive perception clauses while preserving class selection."},
+        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies ordinary matching-clusivity wə- coordination only, with no narrative-chain meaning."},
+        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial chorus continuity: the candidate preserves hearing before seeing and balanced inclusive first-plural clauses, but it says literal hear with overt sound and light objects rather than objectless attentive listen and see."}
       ],
-      "gaps": ["contact listen", "contact see", "first-person plural", "parallel predicate construction"],
+      "gaps": ["attentive listen extension", "object-backgrounding or objectless perception", "metrical compactness and owner review"],
       "departure_policy": "Listening must precede seeing unless a deliberate songwriting revision is approved."
     },
     {
@@ -423,9 +465,10 @@
       "current_record_links": [
         {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive vocal-sing clause; it does not yet take brightness as an object or result."},
         {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light only; brightness-forward remains constructional work."},
-        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Independent source support for the listed vocal-sing stem."}
+        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Independent source support for the listed vocal-sing stem."},
+        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provides only ordinary proclitic wə- scaffolding once this becomes a complete clause; brightness, direction, and lyric attachment remain unresolved."}
       ],
-      "gaps": ["brightness result or object relation", "forward directional construction", "chorus coordinator"],
+      "gaps": ["brightness result or object relation", "forward directional construction", "complete second-clause realization and metrical attachment"],
       "departure_policy": "The closing lift from collective singing into outward brightness is protected."
     },
     {
@@ -553,9 +596,10 @@
       "current_record_links": [
         {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct vocal-sing coverage."},
         {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the inclusive sing half of the pair."},
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear donor lead only."}
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear donor lead only."},
+        {"record_id": "ja.sentence.anchor_we_hear_and_sing", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial bridge continuity: literal hearing of an overt sound and inclusive singing are joined by ordinary wə- finite-clause coordination; compact object backgrounding and meter remain unresolved."}
       ],
-      "gaps": ["contact hear", "coordinator and balanced first-person-plural realization"],
+      "gaps": ["compact object-backgrounding or lyric revision", "metrical testing and owner review"],
       "departure_policy": "Hearing and singing remain paired."
     },
     {
@@ -576,9 +620,11 @@
       "editable_elements": ["Hebrew-shaped plural presents", "light phrase", "together expression"],
       "current_record_links": [
         {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage."},
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See donor lead only."}
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See donor lead only."},
+        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal TI see is available, but this line requires a locative in-light adjunct rather than treating light as the direct object."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies objectful first-plural see morphology only; it does not license the required locative reading."}
       ],
-      "gaps": ["contact see", "build", "together", "first-person plural"],
+      "gaps": ["locative in-light phrase", "build", "together", "balanced clause coordination"],
       "departure_policy": "The movement from perception to building together must remain."
     },
     {
@@ -836,8 +882,10 @@
         {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
       ],
       "editable_elements": ["Inherited from www.c.03"],
-      "current_record_links": [],
-      "gaps": ["Inherited from www.c.03"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Revision-pins the same partial hearing-before-seeing candidate as www.c.03; literal hear, overt objects, compactness, and owner review carry over unchanged."}
+      ],
+      "gaps": ["Inherited attentive-listen, object-backgrounding, compactness, and owner-review work from www.c.03"],
       "departure_policy": "This segment inherits the accepted revision of www.c.03."
     },
     {
@@ -858,9 +906,10 @@
       "editable_elements": ["Inherited from www.c.04"],
       "current_record_links": [
         {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Must revision-pin the same sing realization as www.c.04 if accepted."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.04."}
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.04."},
+        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Revision-pins the same ordinary finite-coordination scaffolding as www.c.04; brightness, direction, completion, and metrical attachment remain unresolved."}
       ],
-      "gaps": ["Inherited brightness-forward construction from www.c.04"],
+      "gaps": ["Inherited brightness-result, forward-direction, complete-clause, metrical-attachment, and owner-review work from www.c.04"],
       "departure_policy": "This segment inherits the accepted revision of www.c.04."
     }
   ],
@@ -888,7 +937,8 @@
       "segment_ids": ["www.v1.01", "www.v1.02", "www.c.01", "www.c.03", "www.c.04", "www.v2.01", "www.v2.04", "www.b.02", "www.b.03", "www.v3.02"],
       "status": "contact_candidate",
       "current_record_links": [
-        {"record_id": "ja.construction.contact_ai_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_ai_first_plural.sense.independent_affirmative", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Six explicit cells cover walk, be-good, and sing in inclusive and exclusive forms."}
+        {"record_id": "ja.construction.contact_ai_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_ai_first_plural.sense.independent_affirmative", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Six explicit cells cover walk, be-good, and sing in inclusive and exclusive forms."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Twelve explicit cells add inclusive and exclusive first-plural see, hear, and look-at predicates, but only with overt indefinite class-compatible objects."}
       ],
       "requirement": "Establish an explicit first-person-plural predicate strategy and distinguish it from possession and object marking.",
       "acceptance_condition": "At least three unrelated predicates compose without an ad hoc ending, and inclusive or exclusive ambiguity is documented."
@@ -915,7 +965,15 @@
       "status": "partial",
       "current_record_links": [
         {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Vocal-sing contact predicate is available."},
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive sing clause is available; hear/listen and see remain unresolved."},
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive sing clause is available."},
+        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an honest partial chorus pair with literal hearing before seeing, explicit objects, matched inclusive first plural, and ordinary wə- finite-clause coordination."},
+        {"record_id": "ja.sentence.anchor_we_hear_and_sing", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an honest partial bridge pair with an overt sound object; compact song-level object backgrounding remains unbuilt."},
+        {"record_id": "ja.lexeme.contact_hear_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal animate-object contact hear stem; attentive and reciprocal listening remain gaps."},
+        {"record_id": "ja.lexeme.contact_hear_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal inanimate-object contact hear stem; object omission remains blocked."},
+        {"record_id": "ja.lexeme.contact_see_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_animate.sense.see_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Animate-object contact see stem; no reciprocal interpretation is implied."},
+        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inanimate-object contact see stem used by the partial chorus prototype."},
+        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Twelve cells provide objectful inclusive and exclusive hear/see/look-at clauses with explicit object class."},
+        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Ordinary proclitic wə- joins complete matching-clusivity clauses; it supplies no narrative or lyric-register behavior."},
         {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear animate-object lead."},
         {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See inanimate-object lead."}
       ],
@@ -977,7 +1035,7 @@
       "requirement_ids": ["www.req.chorus_walk_well", "www.req.first_plural", "www.req.road_light", "www.req.perception_song"],
       "condition": "A four-line provisional chorus preserves walk-well/good-heart, road-given light, listen-see parallelism, and singing brightness forward with every form dependency explicit.",
       "status": "blocked",
-      "blocker": "The first line, plural system, road/light nouns, and sing clause now exist; listen-see, road-given illumination, brightness-forward, and full metrical review remain."
+      "blocker": "An objectful literal hear-then-see prototype now preserves the chorus order, but attentive/objectless perception, road-given illumination, brightness-forward, compact meter, and owner review remain."
     },
     {
       "test_id": "www.test.final_repeat",
@@ -985,7 +1043,7 @@
       "requirement_ids": ["www.req.chorus_walk_well", "www.req.lyric_register"],
       "condition": "The four final-chorus realizations revision-pin and exactly repeat the accepted first chorus unless a human-approved variation exists.",
       "status": "blocked",
-      "blocker": "No revised chorus realization exists."
+      "blocker": "One partial repeated hear-then-see candidate exists, but no accepted four-line revised chorus exists for exact final repetition."
     },
     {
       "test_id": "www.test.household_warmth",
@@ -1012,6 +1070,6 @@
       "blocker": "The lexicon, grammar, register, and owner decision on the assembly/hearth line are incomplete."
     }
   ],
-  "updated_at": "2026-07-13T07:40:00-04:00",
-  "change_note": "Created the line-complete ledger, linked the first hand-authored chorus candidates, and recorded which protected functions remain unsolved."
+  "updated_at": "2026-07-13T08:39:00-04:00",
+  "change_note": "Linked the hand-authored class-sensitive hear and see stems, objectful first-plural perception construction, ordinary wə- coordination, partial hearing-before-seeing chorus candidate, and hearing-plus-singing bridge while preserving every attentive-listen, object-backgrounding, locative, brightness, compactness, meter, and owner-review gap."
 }

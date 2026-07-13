@@ -21,6 +21,7 @@ DATASETS = (
     ROOT / "data" / "entries" / "n1-core-regressions.jsonl",
     ROOT / "data" / "entries" / "n1-contact-lexicon.jsonl",
     ROOT / "data" / "entries" / "n1-song-chorus.jsonl",
+    ROOT / "data" / "entries" / "n1-perception-enrichment.jsonl",
 )
 
 

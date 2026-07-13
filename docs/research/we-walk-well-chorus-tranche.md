@@ -94,3 +94,16 @@ Those gaps are recorded in the continuity ledger. They are the next construction
 - The songs protect artistic functions and helped set priorities. They do not attest source-language forms or the fictional contact history.
 
 All new mixed forms and contact syntax are candid project design. Their quality must be judged by consistency, expressive usefulness, source-aware plausibility, and later human review—not by pretending they are recovered historical facts.
+
+## Subsequent work
+
+The next manually authored tranche has now built a limited objectful
+first-plural perception Absolute and ordinary finite coordination. The earlier
+open-gap description therefore predates a usable perception Absolute and
+finite-clause coordinator for this line; ordinary nominal coordination already
+existed. Literal
+`kəpəntamohna kol wə-kəneemohna or` now supplies hearing-before-seeing
+parallelism, but it still says hear rather than attentive listen and requires
+an overt object in each perception clause. Object backgrounding, lyric meter,
+brightness-forward, and owner review remain open. See
+[Perception and Ordinary Coordination](perception-and-coordination-tranche.md).

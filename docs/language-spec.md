@@ -86,6 +86,16 @@
 
 **[PROPOSED] Hebrew-derived morphology in ordinary use.** Reviewed Hebrew inflectional and derivational material may remain productive or be transformed by contact across ordinary vocabulary as well as literary registers. Each pattern requires the same full-paradigm and interaction evidence as an Algonquian-derived pattern.
 
+**[PROPOSED] Limited perception Absolute.** The current N1 candidate preserves
+six class-sensitive TA/TI perception stems and supplies inclusive and exclusive
+first-plural cells only. A predicate must precede one overt indefinite admitted
+object: `adam` is animate-class, while `or`, `kol`, and `aanay` are
+inanimate-class in this construction. Contact `a` in the TA cells and `o` in
+the TI cells are explicit project abstractions from two cited source examples,
+not claimed detachable Munsee morphemes. The construction does not license
+object omission, attentive “listen,” other persons, direct/inverse behavior,
+obviation, or narrative morphology.
+
 **[REJECTED] Legacy pseudo-paradigms.** The old `nə-/kə-/wə-` tables, singular/plural collapses, and unattested suffix stacking are not imported as rules.
 
 ## 5. Syntax and discourse
@@ -95,6 +105,12 @@
 **[PROPOSED] Information-structural flexibility.** Constituent order may respond to topic, focus, animacy, and discourse status. “Free word order” is not an adequate rule; constraints must be documented from accepted examples.
 
 **[PROPOSED] Hebrew connectives and subordination.** Reviewed Hebrew-derived conjunctions, relativizers, complementizers, and discourse particles may frame predicates from the adapted Algonquian layer.
+
+**[PROPOSED] Ordinary finite coordination.** Contact proclitic `wə-` may join
+two complete affirmative first-plural clauses when their clusivity agrees. It
+attaches to the second clause and contributes ordinary coordination only. It
+does not contribute sequence, consequence, recurrence, tense, aspect,
+foregrounding, center shift, wayyiqtol, or weqatal behavior.
 
 **[ACCEPTED CAPABILITY] Hybrid narrative engine.** The language must support the combined wayyiqtol–weqatal–obviation behavior defined in [Hybrid Narrative Engine](narrative-engine.md). This is a central expressive requirement rather than an optional ornament or three independent feature ideas.
 

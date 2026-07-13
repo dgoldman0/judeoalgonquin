@@ -20,6 +20,7 @@ from .budget import (
 )
 from .evaluate import (
     evaluate_anchor_chorus_compositions,
+    evaluate_perception_compositions,
     evaluate_pilot_compositions,
     evaluate_semantic_rankings,
     load_semantic_queries,
@@ -69,7 +70,10 @@ N1_CORE_EMBEDDING_REPORT = "docs/reports/n1-core-embedding-evaluation-2026-07-12
 N1_CORE_RECORDS = 92
 N1_CORE_QUERIES = 12
 N1_CORE_LIVE_INPUTS = N1_CORE_RECORDS + N1_CORE_QUERIES
-N1_CORE_MAX_INPUT_BYTES = 8192
+# Keep a conservative byte-level planning guard while allowing a complete
+# twelve-cell construction to remain one retrievable record. Provider limits
+# remain independent of this stricter project planning guard.
+N1_CORE_MAX_INPUT_BYTES = 16384
 SOURCE_REGISTRY = "references/sources.yaml"
 SMOKE_QUERY = "home, dwelling, and the place where people live together"
 
@@ -131,6 +135,7 @@ def command_evaluate(args: argparse.Namespace) -> int:
     findings = [
         *evaluate_pilot_compositions(records),
         *evaluate_anchor_chorus_compositions(records),
+        *evaluate_perception_compositions(records),
     ]
     _print_json(
         {
@@ -336,7 +341,11 @@ def command_smoke(args: argparse.Namespace) -> int:
 
 def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
     records = _records(args.data)
-    findings = evaluate_pilot_compositions(records)
+    findings = [
+        *evaluate_pilot_compositions(records),
+        *evaluate_anchor_chorus_compositions(records),
+        *evaluate_perception_compositions(records),
+    ]
     if findings:
         raise ValueError("pilot composition checks failed: " + "; ".join(findings))
     queries = load_semantic_queries(args.queries)
@@ -506,7 +515,11 @@ def command_n1_core_embedding_evaluation(args: argparse.Namespace) -> int:
     """Plan or consume the single frozen N1 core embedding checkpoint."""
 
     records = _records(args.data)
-    findings = evaluate_pilot_compositions(records)
+    findings = [
+        *evaluate_pilot_compositions(records),
+        *evaluate_anchor_chorus_compositions(records),
+        *evaluate_perception_compositions(records),
+    ]
     if findings:
         raise ValueError("N1 composition checks failed: " + "; ".join(findings))
     queries = load_semantic_queries(args.queries)

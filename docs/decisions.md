@@ -170,6 +170,56 @@ address; the exclusive cell remains available elsewhere.
 metrical review, and the remaining three chorus lines still require independent
 construction work.
 
+### D-021 — Class-sensitive perception and ordinary finite coordination
+
+**Decision:** Retain the reviewed `nee-`, `pənt-`, and `pən-` TA/TI pairs as
+six distinct bound contact stems. For one limited first-plural Absolute, admit
+inclusive and exclusive cells with transparent contact `a` after a TA stem and
+`o` after a TI stem, followed by `-hna` and one overt indefinite
+class-compatible object. The currently admitted objects are animate-class
+`adam` and inanimate-class `or`, `kol`, and `aanay`.
+
+Extend the already revision-pinned ordinary Hebrew-derived proclitic `wə-`
+from nominal coordination to two complete affirmative first-plural clauses
+whose clusivity agrees. Preserve its attachment to the second conjunct.
+
+**Reason:** The design lets regional transitivity and class selection govern
+clauses containing ordinary Hebrew-derived contact nouns, while Hebrew
+coordination remains structurally active. It advances the songs through actual
+co-parent grammar instead of selecting isolated words from two donor lists.
+
+**Boundary:** Contact `a/o` are project constructional abstractions, not a
+claim that O'Meara attests detachable class vowels. `pənt-` remains literal
+hear, not attentive listen. Objects may not be omitted. Ordinary `wə-`
+contributes no sequence, consequence, recurrence, foregrounding, center shift,
+wayyiqtol, or weqatal semantics. All records remain noncanonical, and the song
+prototypes still require semantic, metrical, and owner review.
+
+### D-022 — Manual language construction, deterministic support tooling
+
+**Decision:** Vocabulary, semantic allocation, morphology, constructions,
+phrases, sentences, and revisions are authored through direct language-model
+reasoning and then explicitly reviewed in their structured records. Batch
+scripts do not choose or generate language content. Deterministic code may
+validate schemas and orthography, enforce declared grammatical contracts,
+track dependencies and continuity, format records, estimate cost, and build
+exact or embedding-based retrieval indexes.
+
+**Reason:** A constructed language needs contextual linguistic judgment and
+iterative reconciliation with its design goals and creative anchors. Mechanical
+combination can test a declared rule, but it cannot substitute for making or
+reviewing the language decision.
+
+**Boundary:** Retrieval and validation findings may prompt revision but have no
+normative authority. External generative batch work requires a separate design
+decision and owner approval. Human review remains the only route to canonical
+status.
+
+**Supersession:** This narrows D-006's statement that automation may create
+candidates: deterministic automation may create supporting artifacts and test
+fixtures, but active language candidates require direct linguistic authorship.
+D-006's human-only canon rule remains unchanged.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.
@@ -179,8 +229,9 @@ These do not block documentation, schema work, local fixtures, or an explicitly 
 3. Canonical romanization and the choice among phonemic, etymographic, or morphographic Hebrew running-text spelling, including stress, vowel length, and reduced vowels.
 4. Exact conventions within Modern/common, Biblical, Classical, rabbinic, liturgical, regional, and diaspora Hebrew material, including how contact transforms them.
 5. Exact implementation of the required narrative engine: wayyiqtol- and weqatal-derived forms, participant marking, center shifts, multiple-obviative handling, and interaction with ordinary tense/aspect.
-6. Review and possible revision of the candidate AI inclusive/exclusive system,
-   plus nominal classes, locatives, and direct/inverse paradigms outside that engine.
+6. Review and possible revision of the candidate AI and objectful-perception
+   inclusive/exclusive systems, plus nominal classes, locatives, and
+   direct/inverse paradigms outside that engine.
 7. Source permissions or licenses for any material considered for systematic extraction.
 8. Quantitative coverage thresholds for each proficiency level after initial measured epochs.
 9. Whether any community-specific ceremonial vocabulary is necessary to the project at all.

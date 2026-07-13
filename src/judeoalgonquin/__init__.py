@@ -9,6 +9,7 @@ from .orthography import (
 )
 from .evaluate import (
     evaluate_anchor_chorus_compositions,
+    evaluate_perception_compositions,
     evaluate_pilot_compositions,
     evaluate_semantic_rankings,
     load_semantic_queries,
@@ -18,6 +19,7 @@ from .records import ValidationError, load_records, load_source_registry, valida
 __all__ = [
     "ValidationError",
     "evaluate_anchor_chorus_compositions",
+    "evaluate_perception_compositions",
     "evaluate_pilot_compositions",
     "evaluate_semantic_rankings",
     "assert_transport_round_trip",

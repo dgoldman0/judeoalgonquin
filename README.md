@@ -4,10 +4,11 @@ This repository is the structured knowledge base for an intentionally constructe
 
 Its explicit alternate-history premise imagines that Judea does not fall, that a culturally rich Judean community eventually crosses the Atlantic and settles in the valley, and that long contact produces a pidgin and then a nativized creole—a full community language that continues to elaborate across ordinary life, learning, art, narrative, and public institutions. Hebrew language and culture are preserved and transformed throughout that development. This is worldbuilding, not claimed history or reconstruction, and the project does not represent any real Jewish or Indigenous community's speech.
 
-The project is currently in its **foundation / first creative-anchor
-construction tranche**. The knowledge base now contains 124 records: the prior
-107-record donor/contact foundation plus 17 source, contact, construction, and
-sentence records for the first *We Walk Well* chorus work. Every record remains noncanonical. No legacy
+The project is currently in its **foundation / early creative-anchor
+construction work**. The knowledge base now contains 144 records: the prior
+124-record foundation and first-chorus checkpoint plus 20 manually authored
+source, contact, construction, phrase, and sentence records for perception and
+ordinary coordination. Every record remains noncanonical. No legacy
 translation is canonical. The old fine-tuning-era tree remains recoverable from
 the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
 
@@ -32,6 +33,8 @@ the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
 17. [N1 contact-synthesis report](docs/reports/n1-contact-synthesis-2026-07-12.json)
 18. [First *We Walk Well* chorus tranche](docs/research/we-walk-well-chorus-tranche.md)
 19. [Creative-anchor and chorus checkpoint report](docs/reports/creative-anchor-chorus-2026-07-13.json)
+20. [Perception and ordinary-coordination tranche](docs/research/perception-and-coordination-tranche.md)
+21. [Perception enrichment local checkpoint](docs/reports/perception-enrichment-2026-07-13.json)
 
 ## Core rules
 
@@ -39,10 +42,10 @@ the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
 - Source-facing donor records are evidence ingredients, not language words; contact-language proposals are separate revision-pinned records.
 - Every source-language claim must name the exact language or lect and cite a source.
 - Munsee Delaware is the regional Algonquian anchor. Broader Algonquian sources may fill documented gaps only with exact attribution and review.
-- Modern/common Hebrew is living material for ordinary life; Biblical and Classical Hebrew are important narrative and literary resources. Hebrew may contribute vocabulary, morphology, and discourse in any domain.
+- Modern/common Hebrew is living material for ordinary life; Biblical and Classical Hebrew are important narrative and literary resources. Hebrew may contribute vocabulary, morphology, syntax, and discourse in any domain.
 - A defining expressive target combines an adapted Biblical Hebrew **wayyiqtol** event chain, an adapted **weqatal** consequence/habitual frame, and Algonquian-inspired proximate/obviative participant tracking. The combined behavior is required; its exact morphology must still be sourced and tested.
 - Historical etymology and project formation rationale are separate fields.
-- Automation may propose and check entries; only a human may make an entry canonical.
+- Language decisions are manually authored and reviewed; deterministic tooling validates, retrieves, and checks them. Only a human may make an entry canonical.
 - Development advances by level: vocabulary, then phrases, then sentences, and eventually paragraphs.
 - Every epoch begins with the structured creative-anchor continuity preflight.
 - Paid embedding work is explicit, narrowly capped, recorded, and disabled again after each owner-authorized checkpoint.
@@ -76,7 +79,7 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin search home
 # Show the embedding plan without spending anything.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin embed --data data/entries
 
-# Validate all 124 records, both creative-anchor ledgers, and declared
+# Validate all 144 records, both creative-anchor ledgers, and declared
 # constructions, then inspect the current
 # dry-run embedding envelope without spending.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate --data data/entries

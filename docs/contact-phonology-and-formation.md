@@ -127,7 +127,31 @@ Neither the compound nor the frame is a general productive rule.
 
 See [the full manual analysis](research/we-walk-well-chorus-tranche.md).
 
-## 10. What the first synthesis probe can prove
+## 10. Perception Absolute and ordinary finite coordination
+
+The next contact tranche retains three source-reviewed TA/TI stem pairs rather
+than turning them into loose English-style verbs: `nee-w-`/`nee-m-` see,
+`pənt-aw-`/`pənt-am-` hear, and `pən-aw-`/`pən-am-` look at. All six remain
+bound and require a declared transitive construction. In particular,
+source-reviewed `pənt-` means literal hear; it does not yet mean attentive
+listen, understand, or obey.
+
+The limited first-plural contact Absolute has the careful analytical patterns
+`PERS~TA-STEM~a~hna NP.AN.INDEF` and
+`PERS~TI-STEM~o~hna NP.IN.INDEF`. The `a/o` class vowels are project
+abstractions from the cited first-plural Absolute models. They are not claimed
+as independently attested detachable Munsee morphemes, and the transparent
+contact output does not predict Munsee surface contraction. The only admitted
+objects in this tranche are animate-class `adam` and inanimate-class `or`,
+`kol`, and `aanay`; every object is overt and indefinite.
+
+Ordinary Hebrew-derived `wə-` preserves its proclitic placement on a second
+nominal or finite conjunct. The finite candidate requires two complete
+matching-clusivity clauses. It is not a free particle and contributes no
+narrative sequence or consequence. See the [manual perception and coordination
+analysis](research/perception-and-coordination-tranche.md).
+
+## 11. What the first synthesis probe can prove
 
 The first probe may prove that:
 

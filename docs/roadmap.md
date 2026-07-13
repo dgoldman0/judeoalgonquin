@@ -101,11 +101,35 @@ predicate stems, a six-cell inclusive/exclusive first-plural paradigm, mixed
 evidence also permits the legacy `naxkooh...` song motif to survive as contact
 `naxkoohəmaa-` “sing,” while explicitly leaving metallic “ring” unsupported.
 
-The database now contains 124 noncanonical records. This tranche does not
+At that checkpoint, the database contained 124 noncanonical records. This tranche does not
 complete the chorus: road-given light, bare listen/see, brightness-forward,
 meter, and owner lyric review remain open. See [the construction
 analysis](research/we-walk-well-chorus-tranche.md) and [the completed local
 checkpoint report](reports/creative-anchor-chorus-2026-07-13.json).
+
+## First perception and coordination enrichment
+
+The next manually authored tranche adds 20 records and brings the database to
+144 noncanonical records. It preserves three source-reviewed TA/TI pairs for
+see, hear, and look at; adds Hebrew-derived contact `kol` in the bounded
+physical-sound sense; and builds a twelve-cell inclusive/exclusive
+first-plural contact Absolute with an obligatory overt indefinite object.
+
+The construction deliberately regularizes contact `a` for the admitted TA
+cells and contact `o` for the admitted TI cells. These are project
+constructional vowels abstracted from two cited Absolute examples, not claimed
+detachable Munsee morphemes. The six novice clauses test the pairings with
+contact `adam` as animate and `or`, `kol`, and `aanay` as inanimate. Literal
+`pənt-` remains “hear,” not attentive “listen.”
+
+Ordinary Hebrew-derived proclitic `wə-` now joins two complete
+matching-clusivity clauses without adding sequence, consequence, recurrence,
+foregrounding, or any wayyiqtol/weqatal function. The objectful prototype
+`kəpəntamohna kol wə-kəneemohna or` preserves the chorus's hearing-before-seeing
+parallelism, but the compact lyric still needs an honest attentive-perception
+and object-backgrounding strategy, meter, and owner review. See the [manual
+analysis](research/perception-and-coordination-tranche.md) and [local checkpoint
+report](reports/perception-enrichment-2026-07-13.json).
 
 ## Project proficiency levels
 

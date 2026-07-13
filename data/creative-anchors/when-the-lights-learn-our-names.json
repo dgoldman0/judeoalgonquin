@@ -456,9 +456,10 @@
       ],
       "editable_elements": ["Binary versus reciprocal look", "group laughter", "participant statuses"],
       "current_record_links": [
-        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound look-at-someone stem; no reciprocal or contact paradigm."}
+        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound look-at-someone donor for the current contact TA stem; no third-person, reciprocal, collective, or narrative paradigm is supplied."},
+        {"record_id": "ja.lexeme.contact_look_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_look_animate.sense.look_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial lexical continuity only: the contact TA stem means look at an animate-class entity, but no third-person form, reciprocal or collective construction, foreground-chain integration, or laugh predicate is licensed."}
       ],
-      "gaps": ["contact look", "reciprocal or collective construction", "laugh"],
+      "gaps": ["third-person animate-object look inflection", "reciprocal or collective construction", "foreground-chain integration", "laugh"],
       "departure_policy": "Shared looking and laughter remain the emotional resolution."
     },
     {
@@ -482,9 +483,10 @@
       "current_record_links": [
         {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light noun; plural and tremble predicate remain unresolved."},
         {"record_id": "ja.lexeme.contact_cup", "record_revision": 1, "sense_id": "ja.lexeme.contact_cup.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Cup is the only usable contact candidate in the coda."},
-        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Look-at-someone donor only."}
+        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Look-at-someone donor only."},
+        {"record_id": "ja.lexeme.contact_look_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_look_animate.sense.look_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial lexical continuity only: the animate-object contact stem does not supply third-person inflection, reciprocity, the weqatal-derived recurring frame, participant tracking, or laughter."}
       ],
-      "gaps": ["weqatal-derived frame", "whenever", "lights tremble", "thereafter", "seize", "cup plural and possession", "stand far", "stove", "reciprocal look", "laugh"],
+      "gaps": ["weqatal-derived frame", "whenever", "lights tremble", "thereafter", "seize", "cup plural and possession", "stand far", "stove", "third-person animate-object look inflection", "reciprocal look", "participant tracking", "laugh"],
       "departure_policy": "The event-to-custom transition and its four recurring responses may not be removed or reduced to generic futurity."
     }
   ],
@@ -570,6 +572,7 @@
         {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Source supports vocal singing, not metallic ringing."},
         {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "The contact predicate needs a separate literary inanimate extension before the spoons can use it."},
         {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Look-at-someone donor."},
+        {"record_id": "ja.lexeme.contact_look_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_look_animate.sense.look_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact TA look-at stem only; third-person inflection, reciprocal or collective use, narrative integration, and the laugh predicate remain gaps."},
         {"record_id": "ja.lexeme.munsee_paa_come", "record_revision": 2, "sense_id": "ja.lexeme.munsee_paa_come.sense.come", "relationship": "donor_lead", "coverage": "donor_only", "note": "Come donor."},
         {"record_id": "ja.lexeme.munsee_aa_go", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aa_go.sense.go", "relationship": "donor_lead", "coverage": "donor_only", "note": "Go donor."}
       ],
@@ -629,6 +632,6 @@
       "blocker": "Most lexicon and every defining narrative construction remain incomplete."
     }
   ],
-  "updated_at": "2026-07-13T07:40:00-04:00",
-  "change_note": "Created the line-complete narrative ledger, preserved the three-person recoverability failure, and linked the independently supported sing and light candidates without licensing the spoons' extension."
+  "updated_at": "2026-07-13T08:39:00-04:00",
+  "change_note": "Linked only the animate-object contact look stem to the shared-look scenes while preserving every third-person, reciprocal, participant-tracking, laughter, foreground-chain, and recurring-frame gap; the ringing-spoons extension remains unlicensed."
 }

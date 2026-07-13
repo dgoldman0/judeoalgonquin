@@ -1,0 +1,88 @@
+{
+  "checkpoint": "perception-and-ordinary-coordination-enrichment",
+  "completed_at": "2026-07-13T12:32:00Z",
+  "status": "local_checks_complete_noncanonical",
+  "authoring_boundary": {
+    "language_decisions": "Manually authored through direct Codex linguistic reasoning and explicitly recorded with source and design boundaries.",
+    "automation": "Deterministic code validated schemas, orthography, dependency pins, construction contracts, creative-anchor continuity, and cost estimates; it did not choose or generate the language forms.",
+    "paid_generation_calls": 0,
+    "paid_embedding_calls": 0
+  },
+  "corpus": {
+    "records_total": 144,
+    "records_added": 20,
+    "records_added_by_type": {
+      "construction": 3,
+      "lexeme": 8,
+      "phrase": 1,
+      "sentence": 8
+    },
+    "lifecycle": "candidate",
+    "canonical_records_added": 0,
+    "data_sha256": "cdabf3b68a9a55fa286b34d8722e8cbcf111e8f88cc055ff6f57e7191136a2f4",
+    "tranche_file": "data/entries/n1-perception-enrichment.jsonl",
+    "tranche_file_sha256": "09cdc27d3c8120f4a55b0bf506b6cfbdab4d949d5b6121be04ba0c77000ba706"
+  },
+  "language_result": {
+    "source_facing_construction": "Moraviantown Munsee independent Absolute with obligatory overt indefinite object, bounded to the cited examples.",
+    "contact_lexicon": [
+      "Hebrew-derived kol in the bounded physical-sound sense",
+      "six distinct bound contact TA/TI stems for see, hear, and look at"
+    ],
+    "contact_grammar": [
+      "twelve inclusive/exclusive first-plural perception cells with explicit TA/TI class selection",
+      "ordinary proclitic wə- coordination of two complete matching-clusivity clauses"
+    ],
+    "composed_outputs": [
+      "or wə-kol",
+      "six objectful novice perception clauses",
+      "kəpəntamohna kol wə-kəneemohna or",
+      "kəpəntamohna kol wə-kənaxkoohəmaahna"
+    ],
+    "explicitly_unbuilt": [
+      "attentive listen as an extension of literal hear",
+      "objectless or object-backgrounded perception",
+      "definite objects and persons outside first plural",
+      "direct/inverse and obviative transitive behavior",
+      "road-given light and brightness-forward",
+      "lyric meter and owner-approved final song wording",
+      "wayyiqtol-weqatal-obviation narrative morphology"
+    ]
+  },
+  "creative_anchor_gate": {
+    "anchors": 2,
+    "segments": 41,
+    "requirements": 16,
+    "valid": true,
+    "continuity_result": "The hear-before-see order, hear-plus-sing bridge, and animate-object shared-looking lead are revision-pinned as partial contact continuity while every semantic and narrative gap remains explicit."
+  },
+  "verification": {
+    "tests": 147,
+    "tests_passed": 147,
+    "records_valid": 144,
+    "construction_findings": 0,
+    "compileall": "passed",
+    "diff_check": "passed"
+  },
+  "embedding_refresh_dry_run": {
+    "mode": "dry-run",
+    "model": "text-embedding-3-small",
+    "dimensions": 256,
+    "records": 144,
+    "queries": 12,
+    "api_inputs": 156,
+    "api_requests": 0,
+    "rough_input_token_estimate_with_queries": 91776,
+    "rough_cost_estimate_usd_with_queries": 0.00183552,
+    "record_only_rough_input_token_estimate": 91618,
+    "record_only_rough_cost_estimate_usd": 0.00183236,
+    "new_tranche_rough_input_token_estimate": 14491,
+    "new_tranche_rough_cost_estimate_usd": 0.00028982,
+    "conservative_token_upper_bound_with_queries": 370640,
+    "conservative_cost_upper_bound_usd": 0.0074128,
+    "largest_input_utf8_bytes": 9790,
+    "project_input_byte_cap": 16384,
+    "paid_gate_enabled": false,
+    "interpretation": "This estimates a future refresh only. It made no provider request and does not authorize one."
+  }
+}

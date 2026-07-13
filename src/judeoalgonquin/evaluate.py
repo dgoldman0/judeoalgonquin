@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -30,6 +31,7 @@ EXPECTED_PILOT_CONSTRUCTIONS = {
     "ja.sentence.n1_the_child_walks": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
     "ja.sentence.n1_the_man_walks": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
     "ja.sentence.n1_the_woman_is_good": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
+    "ja.phrase.perception_light_and_sound": {COORDINATION},
 }
 
 ANCHOR_AI_FIRST_PLURAL = "ja.construction.contact_ai_first_plural"
@@ -65,6 +67,96 @@ ANCHOR_SENTENCE_CONTRACTS = {
         "frame": True,
     },
 }
+
+PERCEPTION_ABSOLUTE = "ja.construction.contact_perception_absolute_first_plural"
+FINITE_COORDINATION = "ja.construction.contact_finite_coordination"
+PERCEPTION_NOMINAL_PHRASE = "ja.phrase.perception_light_and_sound"
+PERCEPTION_CELL_FORMS = {
+    ("see", "animate", "inclusive", "first", "plural"): "kəneewahna",
+    ("see", "animate", "exclusive", "first", "plural"): "nəneewahna",
+    ("see", "inanimate", "inclusive", "first", "plural"): "kəneemohna",
+    ("see", "inanimate", "exclusive", "first", "plural"): "nəneemohna",
+    ("hear", "animate", "inclusive", "first", "plural"): "kəpəntawahna",
+    ("hear", "animate", "exclusive", "first", "plural"): "nəpəntawahna",
+    ("hear", "inanimate", "inclusive", "first", "plural"): "kəpəntamohna",
+    ("hear", "inanimate", "exclusive", "first", "plural"): "nəpəntamohna",
+    ("look-at", "animate", "inclusive", "first", "plural"): "kəpənawahna",
+    ("look-at", "animate", "exclusive", "first", "plural"): "nəpənawahna",
+    ("look-at", "inanimate", "inclusive", "first", "plural"): "kəpənamohna",
+    ("look-at", "inanimate", "exclusive", "first", "plural"): "nəpənamohna",
+}
+PERCEPTION_STEMS = {
+    "ja.lexeme.contact_see_animate": ("see", "animate", "neew"),
+    "ja.lexeme.contact_see_inanimate": ("see", "inanimate", "neem"),
+    "ja.lexeme.contact_hear_animate": ("hear", "animate", "pəntaw"),
+    "ja.lexeme.contact_hear_inanimate": ("hear", "inanimate", "pəntam"),
+    "ja.lexeme.contact_look_animate": ("look-at", "animate", "pənaw"),
+    "ja.lexeme.contact_look_inanimate": ("look-at", "inanimate", "pənam"),
+}
+PERCEPTION_OBJECTS = {
+    "ja.lexeme.contact_person": ("animate", "adam"),
+    "ja.lexeme.contact_light": ("inanimate", "or"),
+    "ja.lexeme.contact_sound": ("inanimate", "kol"),
+    "ja.lexeme.contact_road": ("inanimate", "aanay"),
+}
+PERCEPTION_SENTENCE_CONTRACTS = {
+    "ja.sentence.perception_we_see_light": (
+        "ja.lexeme.contact_see_inanimate",
+        "ja.lexeme.contact_light",
+        "kəneemohna or",
+    ),
+    "ja.sentence.perception_we_see_person": (
+        "ja.lexeme.contact_see_animate",
+        "ja.lexeme.contact_person",
+        "kəneewahna adam",
+    ),
+    "ja.sentence.perception_we_hear_sound": (
+        "ja.lexeme.contact_hear_inanimate",
+        "ja.lexeme.contact_sound",
+        "kəpəntamohna kol",
+    ),
+    "ja.sentence.perception_we_hear_person": (
+        "ja.lexeme.contact_hear_animate",
+        "ja.lexeme.contact_person",
+        "kəpəntawahna adam",
+    ),
+    "ja.sentence.perception_we_look_road": (
+        "ja.lexeme.contact_look_inanimate",
+        "ja.lexeme.contact_road",
+        "kəpənamohna aanay",
+    ),
+    "ja.sentence.perception_we_look_person": (
+        "ja.lexeme.contact_look_animate",
+        "ja.lexeme.contact_person",
+        "kəpənawahna adam",
+    ),
+}
+FINITE_COORDINATION_CONTRACTS = {
+    "ja.sentence.anchor_we_hear_and_see": (
+        "ja.sentence.perception_we_hear_sound",
+        "ja.sentence.perception_we_see_light",
+        "kəpəntamohna kol wə-kəneemohna or",
+    ),
+    "ja.sentence.anchor_we_hear_and_sing": (
+        "ja.sentence.perception_we_hear_sound",
+        "ja.sentence.anchor_we_sing_inclusive",
+        "kəpəntamohna kol wə-kənaxkoohəmaahna",
+    ),
+}
+NARRATIVE_FIREWALL_TAGS = {
+    "narrative",
+    "wayyiqtol-derived",
+    "weqatal-derived",
+    "foreground-chain",
+}
+NARRATIVE_SEMANTIC_PATTERNS = (
+    r"\bthen\b",
+    r"\btherefore\b",
+    r"\bsequence\w*\b",
+    r"\bforeground\w*\b",
+    r"\bwayyiqtol\b",
+    r"\bweqatal\b",
+)
 
 
 def _components(record: dict[str, Any]) -> list[dict[str, Any]]:
@@ -351,6 +443,352 @@ def evaluate_anchor_chorus_compositions(
             for item in components
         ):
             findings.append(f"{record_id}: unlicensed goodwill-frame element")
+
+    return findings
+
+
+def _positive_semantic_text(record: dict[str, Any]) -> str:
+    """Collect asserted meanings while excluding notes that document rejected readings."""
+
+    values: list[str] = []
+    forms = record.get("forms")
+    if isinstance(forms, dict):
+        english = forms.get("english")
+        if isinstance(english, list):
+            values.extend(item for item in english if isinstance(item, str))
+    senses = record.get("senses")
+    if isinstance(senses, list):
+        for sense in senses:
+            if not isinstance(sense, dict):
+                continue
+            for key in ("glosses",):
+                items = sense.get(key)
+                if isinstance(items, list):
+                    values.extend(item for item in items if isinstance(item, str))
+            definition = sense.get("definition")
+            if isinstance(definition, str):
+                values.append(definition)
+            translations = sense.get("translations")
+            if isinstance(translations, dict):
+                for items in translations.values():
+                    if isinstance(items, list):
+                        values.extend(item for item in items if isinstance(item, str))
+    return " ".join(values).lower()
+
+
+def _declared_clusivity(record: dict[str, Any]) -> str | None:
+    tags = record.get("metadata", {}).get("tags", [])
+    values = {
+        item
+        for item in tags
+        if isinstance(item, str) and item in {"inclusive", "exclusive"}
+    }
+    return next(iter(values)) if len(values) == 1 else None
+
+
+def _asserts_narrative_chain(value: str) -> bool:
+    return any(re.search(pattern, value) for pattern in NARRATIVE_SEMANTIC_PATTERNS)
+
+
+def evaluate_perception_compositions(
+    records: Sequence[dict[str, Any]],
+) -> list[str]:
+    """Enforce the bounded perception Absolute and ordinary clause coordination."""
+
+    records_by_id = {
+        record["id"]: record
+        for record in records
+        if isinstance(record, dict) and isinstance(record.get("id"), str)
+    }
+    tranche_markers = {
+        PERCEPTION_ABSOLUTE,
+        FINITE_COORDINATION,
+        PERCEPTION_NOMINAL_PHRASE,
+        *PERCEPTION_SENTENCE_CONTRACTS,
+        *FINITE_COORDINATION_CONTRACTS,
+    }
+    if not tranche_markers.intersection(records_by_id):
+        return []
+
+    findings: list[str] = []
+
+    phrase = records_by_id.get(PERCEPTION_NOMINAL_PHRASE)
+    if phrase is None:
+        findings.append(f"{PERCEPTION_NOMINAL_PHRASE}: required perception phrase is missing")
+    else:
+        components = _components(phrase)
+        expected_phrase_components = [
+            ("ja.lexeme.contact_light", "first conjunct", "or"),
+            ("ja.morpheme.hebrew_coord_we", "coordinator", "wə"),
+            ("ja.lexeme.contact_sound", "second conjunct", "kol"),
+        ]
+        actual_phrase_components = [
+            (
+                component.get("record_id"),
+                component.get("role"),
+                component.get("realization"),
+            )
+            for component in components
+        ]
+        surface = phrase.get("forms", {}).get("judeo_algonquin", {}).get(
+            "romanization"
+        )
+        if (
+            _constructions(phrase) != {COORDINATION}
+            or actual_phrase_components != expected_phrase_components
+            or surface != "or wə-kol"
+        ):
+            findings.append(
+                f"{PERCEPTION_NOMINAL_PHRASE}: light and sound must retain proclitic wə- on the second conjunct"
+            )
+
+    construction = records_by_id.get(PERCEPTION_ABSOLUTE)
+    if construction is None:
+        findings.append(f"{PERCEPTION_ABSOLUTE}: required by perception sentences")
+    else:
+        spec = construction.get("construction_spec")
+        if not isinstance(spec, dict) or spec.get("productivity") != "limited":
+            findings.append(
+                f"{PERCEPTION_ABSOLUTE}: the six-stem candidate must remain limited"
+            )
+        paradigm = construction.get("paradigm")
+        cells = paradigm.get("cells", []) if isinstance(paradigm, dict) else []
+        if len(cells) != len(PERCEPTION_CELL_FORMS):
+            findings.append(
+                f"{PERCEPTION_ABSOLUTE}: paradigm must contain exactly twelve cells"
+            )
+        actual_cells: dict[tuple[str, str, str, str, str], dict[str, Any]] = {}
+        expected_feature_names = {
+            "predicate",
+            "object_class",
+            "clusivity",
+            "person",
+            "number",
+        }
+        for cell in cells:
+            if not isinstance(cell, dict) or not isinstance(cell.get("features"), dict):
+                continue
+            features = cell["features"]
+            if set(features) != expected_feature_names:
+                findings.append(
+                    f"{PERCEPTION_ABSOLUTE}: every cell must declare exactly the five licensed features"
+                )
+                continue
+            key = (
+                str(features["predicate"]),
+                str(features["object_class"]),
+                str(features["clusivity"]),
+                str(features["person"]),
+                str(features["number"]),
+            )
+            if key in actual_cells:
+                findings.append(f"{PERCEPTION_ABSOLUTE}: duplicate cell {key!r}")
+            actual_cells[key] = cell
+            if cell.get("status") != "adapted_candidate":
+                findings.append(
+                    f"{PERCEPTION_ABSOLUTE}: {key!r} must remain an adapted candidate"
+                )
+            gloss = str(cell.get("morpheme_gloss", ""))
+            if "INCL" in gloss or "EXCL" in gloss or not gloss.startswith("PERS.PFX~"):
+                findings.append(
+                    f"{PERCEPTION_ABSOLUTE}: {key!r} must not assign clusivity to an isolated prefix"
+                )
+            meaning = str(cell.get("meaning", ""))
+            if (
+                key[2] == "inclusive"
+                and ("including the addressee" not in meaning or "excluding" in meaning)
+            ) or (
+                key[2] == "exclusive"
+                and ("excluding the addressee" not in meaning or "including" in meaning)
+            ):
+                findings.append(
+                    f"{PERCEPTION_ABSOLUTE}: {key!r} clusivity and meaning must agree"
+                )
+        if set(actual_cells) != set(PERCEPTION_CELL_FORMS):
+            findings.append(
+                f"{PERCEPTION_ABSOLUTE}: paradigm contains an unlicensed or missing feature bundle"
+            )
+        for key, expected_surface in PERCEPTION_CELL_FORMS.items():
+            cell = actual_cells.get(key)
+            if cell is not None and cell.get("romanization") != expected_surface:
+                findings.append(
+                    f"{PERCEPTION_ABSOLUTE}: {key!r} surface must be {expected_surface}"
+                )
+
+    for record_id, (stem_id, object_id, expected_surface) in (
+        PERCEPTION_SENTENCE_CONTRACTS.items()
+    ):
+        sentence = records_by_id.get(record_id)
+        if sentence is None:
+            findings.append(f"{record_id}: required perception composition is missing")
+            continue
+        if _constructions(sentence) != {PERCEPTION_ABSOLUTE}:
+            findings.append(
+                f"{record_id}: must declare exactly the limited perception Absolute"
+            )
+        components = _components(sentence)
+        if len(components) != 2:
+            findings.append(
+                f"{record_id}: perception Absolute requires predicate then one overt object"
+            )
+            continue
+        stem_spec = PERCEPTION_STEMS.get(str(components[0].get("record_id")))
+        object_spec = PERCEPTION_OBJECTS.get(str(components[1].get("record_id")))
+        expected_stem_spec = PERCEPTION_STEMS[stem_id]
+        expected_object_spec = PERCEPTION_OBJECTS[object_id]
+        if (
+            components[0].get("record_id") != stem_id
+            or components[0].get("role") != "predicate stem"
+            or components[0].get("realization") != expected_stem_spec[2]
+            or components[1].get("record_id") != object_id
+            or components[1].get("role")
+            != f"indefinite {expected_object_spec[0]} object"
+            or components[1].get("realization") != expected_object_spec[1]
+        ):
+            findings.append(
+                f"{record_id}: predicate/object identities, order, roles, or realizations violate its contract"
+            )
+        if stem_spec is None or object_spec is None or stem_spec[1] != object_spec[0]:
+            findings.append(
+                f"{record_id}: TA/TI predicate class conflicts with the overt object's admitted class"
+            )
+        actual_surface = sentence.get("forms", {}).get("judeo_algonquin", {}).get(
+            "romanization"
+        )
+        if actual_surface != expected_surface:
+            findings.append(
+                f"{record_id}: inclusive perception surface must be {expected_surface}"
+            )
+        tags = sentence.get("metadata", {}).get("tags", [])
+        expected_class_tag = f"object-class:{expected_object_spec[0]}"
+        declared_class_tags = {
+            tag
+            for tag in tags
+            if isinstance(tag, str) and tag.startswith("object-class:")
+        }
+        if (
+            _declared_clusivity(sentence) != "inclusive"
+            or declared_class_tags != {expected_class_tag}
+        ):
+            findings.append(
+                f"{record_id}: structured clusivity and object-class tags must match the clause"
+            )
+
+    hear_records = {
+        "ja.lexeme.contact_hear_animate",
+        "ja.lexeme.contact_hear_inanimate",
+        "ja.sentence.perception_we_hear_sound",
+        "ja.sentence.perception_we_hear_person",
+        *FINITE_COORDINATION_CONTRACTS,
+    }
+    for record_id in hear_records:
+        record = records_by_id.get(record_id)
+        if record is not None and "listen" in _positive_semantic_text(record):
+            findings.append(
+                f"{record_id}: positive semantics may claim literal hear, not listen"
+            )
+
+    finite = records_by_id.get(FINITE_COORDINATION)
+    if finite is None:
+        findings.append(f"{FINITE_COORDINATION}: required by coordinated sentences")
+    else:
+        spec = finite.get("construction_spec")
+        tags = finite.get("metadata", {}).get("tags", [])
+        registers = finite.get("metadata", {}).get("registers", [])
+        if not isinstance(spec, dict) or spec.get("productivity") != "limited":
+            findings.append(f"{FINITE_COORDINATION}: must remain limited")
+        elif "wə-CLAUSE₂" not in str(spec.get("formalism", "")):
+            findings.append(
+                f"{FINITE_COORDINATION}: must preserve proclitic wə- on the second clause"
+            )
+        if "narrative-firewall" not in tags:
+            findings.append(
+                f"{FINITE_COORDINATION}: ordinary coordination requires its narrative firewall"
+            )
+        if "narrative" in registers or NARRATIVE_FIREWALL_TAGS.intersection(tags):
+            findings.append(
+                f"{FINITE_COORDINATION}: ordinary coordination cannot enter the narrative register"
+            )
+
+    if finite is not None:
+        finite_semantic_text = _positive_semantic_text(finite)
+        if _asserts_narrative_chain(finite_semantic_text):
+            findings.append(
+                f"{FINITE_COORDINATION}: positive semantics cannot assert narrative-chain behavior"
+            )
+    for record_id, (first_id, second_id, expected_surface) in (
+        FINITE_COORDINATION_CONTRACTS.items()
+    ):
+        sentence = records_by_id.get(record_id)
+        if sentence is None:
+            findings.append(f"{record_id}: required finite coordination is missing")
+            continue
+        if _constructions(sentence) != {FINITE_COORDINATION}:
+            findings.append(
+                f"{record_id}: must declare exactly ordinary finite coordination"
+            )
+        components = _components(sentence)
+        expected_roles = ["first clause", "coordinator", "second clause"]
+        if len(components) != 3 or [item.get("role") for item in components] != expected_roles:
+            findings.append(
+                f"{record_id}: finite coordination roles must be {expected_roles!r}"
+            )
+            continue
+        first = records_by_id.get(str(components[0].get("record_id")))
+        second = records_by_id.get(str(components[2].get("record_id")))
+        if (
+            components[0].get("record_id") != first_id
+            or components[1].get("record_id") != "ja.morpheme.hebrew_coord_we"
+            or components[1].get("realization") != "wə"
+            or components[2].get("record_id") != second_id
+        ):
+            findings.append(
+                f"{record_id}: clause identities, hearing-first order, or coordinator violate its contract"
+            )
+        for position, host in ((0, first), (2, second)):
+            host_surface = (
+                host.get("forms", {}).get("judeo_algonquin", {}).get("romanization")
+                if isinstance(host, dict)
+                else None
+            )
+            host_tags = host.get("metadata", {}).get("tags", []) if isinstance(host, dict) else []
+            if (
+                not isinstance(host, dict)
+                or host.get("record_type") != "sentence"
+                or "contact-clause" not in host_tags
+                or components[position].get("realization") != host_surface
+            ):
+                findings.append(
+                    f"{record_id}: each conjunct must realize its referenced complete contact sentence"
+                )
+        first_clusivity = _declared_clusivity(first) if isinstance(first, dict) else None
+        second_clusivity = _declared_clusivity(second) if isinstance(second, dict) else None
+        if first_clusivity is None or second_clusivity is None or first_clusivity != second_clusivity:
+            findings.append(
+                f"{record_id}: coordinated clauses must declare matching clusivity"
+            )
+        joined_surface = (
+            f"{components[0].get('realization', '')} "
+            f"{components[1].get('realization', '')}-{components[2].get('realization', '')}"
+        )
+        actual_surface = sentence.get("forms", {}).get("judeo_algonquin", {}).get(
+            "romanization"
+        )
+        if actual_surface != expected_surface or actual_surface != joined_surface:
+            findings.append(
+                f"{record_id}: surface must exactly join its two clauses with wə"
+            )
+        registers = sentence.get("metadata", {}).get("registers", [])
+        sentence_tags = sentence.get("metadata", {}).get("tags", [])
+        semantic_text = _positive_semantic_text(sentence)
+        if (
+            "narrative" in registers
+            or NARRATIVE_FIREWALL_TAGS.intersection(sentence_tags)
+            or _asserts_narrative_chain(semantic_text)
+        ):
+            findings.append(
+                f"{record_id}: ordinary wə- may not assert narrative-chain semantics"
+            )
 
     return findings
 
