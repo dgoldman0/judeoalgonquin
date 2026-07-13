@@ -577,7 +577,9 @@ def _validate_record(
                         )
                     if (
                         status_value == "componentwise"
-                        and "contact-clause" in record.get("metadata", {}).get("tags", [])
+                        and {"contact-clause", "contact-phrase"}.intersection(
+                            record.get("metadata", {}).get("tags", [])
+                        )
                         and normalized_input is not None
                         and hebrew is not None
                     ):

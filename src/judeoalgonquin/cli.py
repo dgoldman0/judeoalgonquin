@@ -22,6 +22,7 @@ from .evaluate import (
     evaluate_anchor_chorus_compositions,
     evaluate_perception_compositions,
     evaluate_pilot_compositions,
+    evaluate_static_place_compositions,
     evaluate_semantic_rankings,
     load_semantic_queries,
 )
@@ -136,6 +137,7 @@ def command_evaluate(args: argparse.Namespace) -> int:
         *evaluate_pilot_compositions(records),
         *evaluate_anchor_chorus_compositions(records),
         *evaluate_perception_compositions(records),
+        *evaluate_static_place_compositions(records),
     ]
     _print_json(
         {
@@ -345,6 +347,7 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
         *evaluate_pilot_compositions(records),
         *evaluate_anchor_chorus_compositions(records),
         *evaluate_perception_compositions(records),
+        *evaluate_static_place_compositions(records),
     ]
     if findings:
         raise ValueError("pilot composition checks failed: " + "; ".join(findings))
@@ -519,6 +522,7 @@ def command_n1_core_embedding_evaluation(args: argparse.Namespace) -> int:
         *evaluate_pilot_compositions(records),
         *evaluate_anchor_chorus_compositions(records),
         *evaluate_perception_compositions(records),
+        *evaluate_static_place_compositions(records),
     ]
     if findings:
         raise ValueError("N1 composition checks failed: " + "; ".join(findings))

@@ -4,13 +4,14 @@ This repository is the structured knowledge base for an intentionally constructe
 
 Its explicit alternate-history premise imagines that Judea does not fall, that a culturally rich Judean community eventually crosses the Atlantic and settles in the valley, and that long contact produces a pidgin and then a nativized creole—a full community language that continues to elaborate across ordinary life, learning, art, narrative, and public institutions. Hebrew language and culture are preserved and transformed throughout that development. This is worldbuilding, not claimed history or reconstruction, and the project does not represent any real Jewish or Indigenous community's speech.
 
-The project is currently in its **foundation / early creative-anchor
-construction work**. The knowledge base now contains 144 records: the prior
-124-record foundation and first-chorus checkpoint plus 20 manually authored
-source, contact, construction, phrase, and sentence records for perception and
-ordinary coordination. Every record remains noncanonical. No legacy
-translation is canonical. The old fine-tuning-era tree remains recoverable from
-the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
+The project is currently in **N1 contact-language construction**. The knowledge
+base now contains 180 records. Its latest 36-record manually authored tranche
+adds a closed static-locative system, an ordinary seven-way participant
+microparadigm for three location and posture predicates, static `where`
+questions, six phrases, and eight sentences. Every record remains noncanonical.
+No legacy translation is canonical. The old fine-tuning-era tree remains
+recoverable from the archival Git tags documented in [the legacy
+audit](docs/legacy-audit.md).
 
 ## Start here
 
@@ -35,6 +36,8 @@ the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
 19. [Creative-anchor and chorus checkpoint report](docs/reports/creative-anchor-chorus-2026-07-13.json)
 20. [Perception and ordinary-coordination tranche](docs/research/perception-and-coordination-tranche.md)
 21. [Perception enrichment local checkpoint](docs/reports/perception-enrichment-2026-07-13.json)
+22. [Static place and posture tranche](docs/research/static-place-and-posture-tranche.md)
+23. [Static place enrichment local checkpoint](docs/reports/static-place-enrichment-2026-07-13.json)
 
 ## Core rules
 
@@ -79,7 +82,7 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin search home
 # Show the embedding plan without spending anything.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin embed --data data/entries
 
-# Validate all 144 records, both creative-anchor ledgers, and declared
+# Validate all 180 records, both creative-anchor ledgers, and declared
 # constructions, then inspect the current
 # dry-run embedding envelope without spending.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate --data data/entries

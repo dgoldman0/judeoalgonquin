@@ -1,0 +1,175 @@
+{
+  "report_id": "static-place-enrichment-2026-07-13",
+  "status": "completed_local_noncanonical",
+  "completed_at": "2026-07-13T09:44:36-04:00",
+  "purpose": "Manually construct the first closed static-location field, a complete ordinary participant microparadigm for three location and posture predicates, static where questions, and mixed Hebrew-regional household clauses.",
+  "manual_language_work": {
+    "authoring_method": "Direct language-model linguistic reasoning over reviewed source evidence, project goals, and both creative-anchor continuity ledgers. No script or external generative model chose the vocabulary, morphology, paradigms, phrases, sentences, or semantic allocations.",
+    "automation_boundary": "Deterministic code validates schema, orthography, source and contact boundaries, dependencies, exact construction contracts, semantic firewalls, continuity links, and cost envelopes.",
+    "external_generative_api_requests": 0
+  },
+  "record_inventory": {
+    "records_total": 180,
+    "prior_records": 144,
+    "new_tranche_records": 36,
+    "new_record_types": {
+      "morpheme": 3,
+      "lexeme": 12,
+      "construction": 7,
+      "phrase": 6,
+      "sentence": 8
+    },
+    "new_tranche_files": {
+      "data/entries/n1-static-place-enrichment.jsonl": 6,
+      "data/entries/n1-static-place-contact.jsonl": 11,
+      "data/entries/n1-static-place-grammar.jsonl": 5,
+      "data/entries/n1-static-place-examples.jsonl": 14
+    },
+    "lifecycle": "candidate",
+    "canonical_records_added": 0
+  },
+  "source_boundary": {
+    "primary_regional_source": "John O'Meara, Delaware Stem Morphology, Moraviantown Munsee variety",
+    "exact_locative_cells": [
+      "aaneenk — on the road",
+      "mohkamiink — on the ice"
+    ],
+    "exact_ai_evidence": [
+      "apii- with apəw /apii-w/, p. 14",
+      "ləmatapii- with ləmatapəw /ləmatapii-w/ and kələmatapiim /kə-ləmatapii-m/, p. 47",
+      "niipaw-ii- with niipawəw /niipaw-ii-w/, p. 133",
+      "seven independent AI person-number patterns with inclusive/exclusive first plural, p. 86 and footnotes 24–25"
+    ],
+    "honesty_boundary": "Source-facing cells freeze the cited analyses and locators. Transparent contact outputs are explicitly regularized candidates, not predicted Munsee surface forms or claims of historical contact speech."
+  },
+  "constructed_language": {
+    "static_locatives": {
+      "cells": 6,
+      "forms": [
+        "aaneenk — on the road",
+        "mohkamiink — on the ice",
+        "apiineenk — at the bed",
+        "bayitənk — in the house",
+        "xederənk — in the room",
+        "šulxanənk — at the table"
+      ],
+      "boundary": "Contact -ənk is limited to these hosts and conveys static/general location only; it supplies no goal, source, route, or direction."
+    },
+    "ordinary_ai_participants": {
+      "licensed_stems": [
+        "apii- — be located; be there",
+        "ləmatapii- — sit",
+        "niipawii- — stand"
+      ],
+      "participants_per_stem": 7,
+      "cells": 21,
+      "distinctions": [
+        "first singular",
+        "second singular",
+        "third singular",
+        "first plural inclusive",
+        "first plural exclusive",
+        "second plural",
+        "third plural"
+      ],
+      "contact_regularization": "First and second singular require -m; full stems remain visible; source R10 insertion, R13 alternation, W-shift, contraction, and deletion are suspended.",
+      "boundary": "The cells contribute participant, number, and clusivity only. They supply no tense, aspect, modality, proximate/obviative distinction, or narrative status."
+    },
+    "mixed_outputs": [
+      "adam apiiw xederənk — A person is in a room.",
+      "yeled ləmatapiiw bayitənk — A child sits in a house.",
+      "kələmatapiihna šulxanənk — We, including you, sit at a table.",
+      "nələmatapiihna bayitənk — We, excluding you, sit in a house.",
+      "efo adam apiiw — Where is a person?",
+      "efo kələmatapiihna — Where do we, including you, sit?"
+    ],
+    "question_boundary": "Hebrew-derived contact efo is lexical integration into the mixed clause design. It asks static location only and does not establish Hebrew-derived question syntax, relative where, where to, or where from."
+  },
+  "coordinator_layer_repair": {
+    "result": "Current contact nominal and finite compositions now depend on a distinct contact wə- candidate, which alone pins the Hebrew donor record.",
+    "revised_records": [
+      "ja.construction.contact_finite_coordination",
+      "ja.phrase.perception_light_and_sound",
+      "ja.sentence.anchor_we_hear_and_see",
+      "ja.sentence.anchor_we_hear_and_sing"
+    ],
+    "surface_change": false,
+    "semantic_change": false,
+    "narrative_boundary": "Ordinary wə- remains separate from wayyiqtol, weqatal, sequencing, consequence, recurrence, foregrounding, obviation, and discourse-center shifts."
+  },
+  "creative_anchor_gate": {
+    "anchors": 2,
+    "segments": 41,
+    "requirements": 16,
+    "valid": true,
+    "continuity_result": "We Walk Well gains contact house, child, static road and dwelling settings, and broader ordinary participant grammar. When the Lights Learn Our Names gains room, table, sit, stand, static questions, and an explicit negative comparison showing that ordinary third-person marking does not solve obviation or narrative participant recovery.",
+    "preserved_gaps": [
+      "plural possessed homes",
+      "directed forward motion",
+      "song meter and final lyric wording",
+      "wayyiqtol-derived foreground chaining",
+      "weqatal-derived consequence or recurring framing",
+      "proximate and multiple-obviative recovery",
+      "discourse-center shifts"
+    ]
+  },
+  "verification": {
+    "tests": 168,
+    "tests_passed": 168,
+    "records_valid": 180,
+    "anchor_ledgers_valid": 2,
+    "construction_findings": 0,
+    "compileall": "passed",
+    "diff_check": "passed",
+    "adversarial_coverage": [
+      "mutated source forms, analyses, locators, affix patterns, and participant meanings",
+      "mutated contact atomic forms and donor dependency pins",
+      "contact nominal and finite coordinator dependencies reverted to donor-facing records",
+      "mutated componentwise Hebrew in contact phrases and clauses",
+      "missing or wrong locative hosts and bogus component realizations",
+      "missing, duplicated, misclassified, or surface-corrupted AI cells",
+      "inclusive/exclusive semantic reversal",
+      "source-rule firewall removal",
+      "wrong clause component identity, role, order, or surface",
+      "directional meaning inserted in translations or definitions",
+      "future, proximate, obviative, or narrative claims inserted in ordinary clauses",
+      "missing TAM, narrative, direction, or applicable obviation firewall tags",
+      "directional efo questions and questions that state their own missing location"
+    ]
+  },
+  "embedding_refresh_dry_run": {
+    "mode": "dry-run",
+    "model": "text-embedding-3-small",
+    "dimensions": 256,
+    "records": 180,
+    "queries": 12,
+    "api_inputs": 192,
+    "api_requests": 0,
+    "rough_input_token_estimate_with_queries": 117737,
+    "price_per_million_input_tokens_usd": 0.02,
+    "rough_cost_estimate_usd_with_queries": 0.00235474,
+    "conservative_token_upper_bound_with_queries": 475652,
+    "conservative_cost_upper_bound_usd": 0.00951304,
+    "largest_input_utf8_bytes": 12252,
+    "project_input_byte_cap": 16384,
+    "data_sha256": "2af1fd2ad2976aea64b9e7a1281b04a3a3fefd5f56b6d07f5ccaa6a7b3c37f60",
+    "paid_gate_enabled": false,
+    "interpretation": "This is a cost and plumbing envelope only. The twelve historical fixed queries are not a semantic evaluation of the new static-place records, and this dry run made no provider request or spending authorization."
+  },
+  "artifact_sha256": {
+    "data/entries/n1-static-place-enrichment.jsonl": "d56f42ca181487db378a1516134f1672f18b5f2560ce05515f9c9fc1d0990a4a",
+    "data/entries/n1-static-place-contact.jsonl": "21608eadf73774a7cb115906c9910142d1d23780b9860c491b38ffbfbe461153",
+    "data/entries/n1-static-place-grammar.jsonl": "bf3f1c0460ca037e1b163112fbaacb737119df04aacda1d784a04e8574fce252",
+    "data/entries/n1-static-place-examples.jsonl": "4e76a4c656574ba5f7cc85afea9eb2e335488bf0adb0a94b6b253ddd02f25329"
+  },
+  "paid_api": {
+    "embedding_requests": 0,
+    "generative_requests": 0,
+    "api_inputs": 0,
+    "prompt_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "paid_gate_enabled_after_work": false
+  },
+  "contains_vectors": false,
+  "contains_credentials": false
+}

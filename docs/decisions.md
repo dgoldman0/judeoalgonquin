@@ -220,6 +220,42 @@ candidates: deterministic automation may create supporting artifacts and test
 fixtures, but active language candidates require direct linguistic authorship.
 D-006's human-only canon rule remains unchanged.
 
+### D-023 — Closed static location and ordinary AI posture system
+
+**Decision:** Admit contact `-ənk` as a static/general locative on exactly six
+hosts. Preserve source `aaneenk` “on the road” and `mohkamiink` “on the ice”;
+admit contact `apiineenk` “at the bed,” `bayitənk` “in the house,” `xederənk`
+“in the room,” and `šulxanənk` “at the table” as explicitly regularized contact
+forms. No directional, goal, source, or path meaning follows from this suffix.
+
+Admit a seven-cell independent AI participant microparadigm for contact `apii-`
+“be located,” `ləmatapii-` “sit,” and `niipawii-` “stand”: first, second, and
+third singular; inclusive and exclusive first plural; second plural; and third
+plural. Require contact `-m` in first and second singular and preserve the full
+stem while suspending source R10 insertion, R13 alternation, W-shift,
+contraction, and deletion. Ordinary location clauses place a finite predicate
+before a listed locative, with a lexical third-person subject before the
+predicate. Clause-initial Hebrew-derived contact `efo` asks static “where?”
+only.
+
+Create a distinct contact `wə-` morpheme and contact nominal-coordination
+construction. Current contact phrases and finite coordinations depend on that
+layer; the contact morpheme in turn pins the Hebrew donor evidence. This
+supersedes D-021's direct-donor dependency architecture without changing its
+surfaces, ordinary coordination semantics, or narrative firewall.
+
+**Reason:** Hebrew-derived household vocabulary and interrogative framing now
+participate inside regional locative and participant morphology. The resulting
+phrases and clauses are inspectable co-parent constructions rather than donor
+items placed side by side. A complete seven-way ordinary microparadigm also
+provides a firmer base for later clause work than isolated first-plural cells.
+
+**Boundary:** The forms remain noncanonical and host-bounded. They supply no
+possession, nominal plural, negation, direction, tense, aspect, modality,
+direct/inverse behavior, obviation, wayyiqtol-derived chaining,
+weqatal-derived framing, or discourse-center tracking. Ordinary third-person
+cells cannot satisfy the narrative participant-recovery requirement.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.

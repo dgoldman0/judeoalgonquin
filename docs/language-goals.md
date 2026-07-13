@@ -125,7 +125,11 @@ The language may be openly designed. A candid formation rationale is a strength,
 
 ## 8. Canon and revision
 
-Canonical status is assigned only by a human reviewer. Models, scripts, similarity searches, and consistency checks may create or recommend candidates, but cannot promote them to canon.
+Canonical status is assigned only by a human reviewer. Active language
+candidates are authored through direct linguistic reasoning and explicit
+review. Scripts, similarity searches, and consistency checks may retrieve,
+validate, test, or recommend revisions, but they do not choose language content
+and cannot promote anything to canon.
 
 Canon is revisioned rather than treated as infallible. When later work reveals a conflict, the project records the correction, its reason, its affected dependents, and any superseded form. Earlier reasoning remains auditable.
 

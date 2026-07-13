@@ -84,7 +84,11 @@
       "surface_form": "מְנוֹקוְויֵין",
       "working_reading": null,
       "function": "Legacy refrain intended to mean 'we walk well.'",
-      "segment_ids": ["www.c.01", "www.b.01", "www.fc.01"],
+      "segment_ids": [
+        "www.c.01",
+        "www.b.01",
+        "www.fc.01"
+      ],
       "disposition": "replace_form_preserve_function",
       "current_record_links": [
         {
@@ -118,7 +122,12 @@
       "surface_form": "נַחְקוֹהוּמ־",
       "working_reading": null,
       "function": "Recurring sing or ring motif joining voices, brightness, hammer sound, and metallic resonance.",
-      "segment_ids": ["www.v1.02", "www.c.04", "www.b.02", "www.fc.04"],
+      "segment_ids": [
+        "www.v1.02",
+        "www.c.04",
+        "www.b.02",
+        "www.fc.04"
+      ],
       "disposition": "regularize_after_research",
       "current_record_links": [
         {
@@ -144,7 +153,12 @@
       "surface_form": "פּוּנְדַאוּו־",
       "working_reading": null,
       "function": "Legacy hear or listen motif.",
-      "segment_ids": ["www.v1.02", "www.c.03", "www.b.02", "www.fc.03"],
+      "segment_ids": [
+        "www.v1.02",
+        "www.c.03",
+        "www.b.02",
+        "www.fc.03"
+      ],
       "disposition": "replace_form_preserve_function",
       "current_record_links": [
         {
@@ -178,7 +192,11 @@
       "surface_form": "וָאפּוּו־",
       "working_reading": null,
       "function": "Legacy see motif in the perception triad.",
-      "segment_ids": ["www.v1.03", "www.c.03", "www.fc.03"],
+      "segment_ids": [
+        "www.v1.03",
+        "www.c.03",
+        "www.fc.03"
+      ],
       "disposition": "replace_form_preserve_function",
       "current_record_links": [
         {
@@ -212,8 +230,11 @@
       "surface_form": "בְּוִיקְוָאהְמֶנְק",
       "working_reading": null,
       "function": "Legacy home locative recurring in domestic lines.",
-      "segment_ids": ["www.v1.01", "www.v3.03"],
-      "disposition": "defer_pending_grammar",
+      "segment_ids": [
+        "www.v1.01",
+        "www.v3.03"
+      ],
+      "disposition": "replace_form_preserve_function",
       "current_record_links": [
         {
           "record_id": "ja.lexeme.hebrew_bayit",
@@ -221,7 +242,7 @@
           "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
           "relationship": "donor_lead",
           "coverage": "donor_only",
-          "note": "A reviewed Hebrew home donor exists, but no contact home or locative construction does."
+          "note": "Reviewed Hebrew dwelling donor underlying the current contact house; donor evidence alone is not usable song language."
         },
         {
           "record_id": "ja.morpheme.munsee_iikaan_dwelling_final",
@@ -230,15 +251,34 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "The bound dwelling final is not a free word or evidence for legacy -menk."
+        },
+        {
+          "record_id": "ja.lexeme.contact_house",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_house.sense.dwelling",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies current contact house or home-as-dwelling vocabulary; plural and possession remain unresolved."
+        },
+        {
+          "record_id": "ja.phrase.static_in_house",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_in_house.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies a static dwelling setting through mixed Hebrew-host and regional locative morphology, but not plural possessed 'our homes.'"
         }
       ],
-      "note": "Do not revive the old Hebrew-preposition plus alleged locative analysis without a sourced and tested contact construction."
+      "note": "Replace the legacy b-...-menk form. Current bayitənk provides a sourced-and-tested static dwelling candidate while plural possession remains open."
     },
     {
       "surface_form": "אֲפוּאָן",
       "working_reading": null,
       "function": "Legacy word used for bread.",
-      "segment_ids": ["www.v1.01", "www.v3.01"],
+      "segment_ids": [
+        "www.v1.01",
+        "www.v3.01"
+      ],
       "disposition": "replace_form_preserve_function",
       "current_record_links": [
         {
@@ -256,7 +296,9 @@
       "surface_form": "מַחְקְשׁוּאֵשׁ",
       "working_reading": null,
       "function": "Legacy little-bear expression.",
-      "segment_ids": ["www.v3.04"],
+      "segment_ids": [
+        "www.v3.04"
+      ],
       "disposition": "defer_pending_grammar",
       "current_record_links": [
         {
@@ -283,16 +325,71 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The opening must establish the shared we.", "human_review": null},
-        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Bread and plural shared homes are a defining opening image.", "human_review": null},
-        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "The final line must use independently supported contact forms and morphology.", "human_review": null}
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "The opening must establish the shared we.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "preserve",
+          "rationale": "Bread and plural shared homes are a defining opening image.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.coparent_texture",
+          "disposition": "adapt",
+          "rationale": "The final line must use independently supported contact forms and morphology.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Eat paradigm", "first-person plural marking", "home lexeme", "possession", "locative realization"],
+      "editable_elements": [
+        "Eat paradigm",
+        "first-person plural marking",
+        "home lexeme",
+        "possession",
+        "locative realization"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct semantic coverage for bread only."},
-        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Research lead for home; not usable contact vocabulary yet."}
+        {
+          "record_id": "ja.lexeme.contact_bread",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bread.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct semantic coverage for bread only."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_bayit",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Research lead for home; not usable contact vocabulary yet."
+        },
+        {
+          "record_id": "ja.lexeme.contact_house",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_house.sense.dwelling",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Usable contact house or home-as-dwelling vocabulary; plural and possession remain unresolved."
+        },
+        {
+          "record_id": "ja.phrase.static_in_house",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_in_house.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies a static dwelling locative, but not plural possessed our homes."
+        }
       ],
-      "gaps": ["eat", "first-person plural", "our homes", "locative"],
+      "gaps": [
+        "eat",
+        "first-person plural",
+        "plural possessed homes"
+      ],
       "departure_policy": "Bread, shared eating, and homes may change wording only with an explicit continuity rationale."
     },
     {
@@ -306,19 +403,79 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Singing and listening are reciprocal communal acts.", "human_review": null},
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "This establishes the auditory half of the recurring triad.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "Balanced sound predicates should survive in grammar the language can actually support.", "human_review": null}
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "Singing and listening are reciprocal communal acts.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "This establishes the auditory half of the recurring triad.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "adapt",
+          "rationale": "Balanced sound predicates should survive in grammar the language can actually support.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["All legacy roots", "coordinator", "reciprocal marking", "person and number endings"],
+      "editable_elements": [
+        "All legacy roots",
+        "coordinator",
+        "reciprocal marking",
+        "person and number endings"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "The independently sourced vocal-sing stem preserves the legacy naxkooh shape without licensing ring."},
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an inclusive first-plural vocal-sing clause; softness and a compatible mutual-listening clause remain open."},
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "A bound research lead for hear someone, not listen reciprocally."},
-        {"record_id": "ja.lexeme.contact_hear_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal animate-object hear is available, but attentive reciprocity remains unbuilt."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies first-plural objectful perception only; it cannot express one another or suppress the object."}
+        {
+          "record_id": "ja.lexeme.contact_sing_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_sing_ai.sense.sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The independently sourced vocal-sing stem preserves the legacy naxkooh shape without licensing ring."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_sing_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies an inclusive first-plural vocal-sing clause; softness and a compatible mutual-listening clause remain open."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "A bound research lead for hear someone, not listen reciprocally."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_animate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Literal animate-object hear is available, but attentive reciprocity remains unbuilt."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies first-plural objectful perception only; it cannot express one another or suppress the object."
+        }
       ],
-      "gaps": ["softly", "attentive listen extension", "reciprocal object strategy", "coordination of singing and mutual listening"],
+      "gaps": [
+        "softly",
+        "attentive listen extension",
+        "reciprocal object strategy",
+        "coordination of singing and mutual listening"
+      ],
       "departure_policy": "Gentle vocal singing and mutual listening are protected; metallic ringing requires a separate honest extension."
     },
     {
@@ -332,19 +489,80 @@
       "identity_priority": "strong",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "The line turns household vision into daily movement along a path.", "human_review": null},
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Seeing must remain part of the recurring triad.", "human_review": null}
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "The line turns household vision into daily movement along a path.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "Seeing must remain part of the recurring triad.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Path versus road wording", "day expression", "predicate source allocation", "construct syntax"],
+      "editable_elements": [
+        "Path versus road wording",
+        "day expression",
+        "predicate source allocation",
+        "construct syntax"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound inanimate-object see stem."},
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed only as road; poetic path extension is not yet licensed."},
-        {"record_id": "ja.lexeme.hebrew_hayom_today", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_hayom_today.sense.today", "relationship": "donor_lead", "coverage": "donor_only", "note": "A time-expression lead, not yet a contact form."},
-        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "The contact TI see stem can select admitted inanimate-class road object aanay but is not a complete line; path remains unlicensed."},
-        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact road is available; path and path-of-day extensions remain unlicensed."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an objectful first-plural TI see pattern, but no composed path-of-day sentence has been authored."}
+        {
+          "record_id": "ja.lexeme.munsee_nee_m_see_inanimate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound inanimate-object see stem."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Reviewed only as road; poetic path extension is not yet licensed."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_hayom_today",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_hayom_today.sense.today",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "A time-expression lead, not yet a contact form."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The contact TI see stem can select admitted inanimate-class road object aanay but is not a complete line; path remains unlicensed."
+        },
+        {
+          "record_id": "ja.lexeme.contact_road",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_road.sense.road",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Contact road is available; path and path-of-day extensions remain unlicensed."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies an objectful first-plural TI see pattern, but no composed path-of-day sentence has been authored."
+        }
       ],
-      "gaps": ["composed see-road clause", "path-of-day relation", "metrical and owner review"],
+      "gaps": [
+        "composed see-road clause",
+        "path-of-day relation",
+        "metrical and owner review"
+      ],
       "departure_policy": "Seeing, path, and day remain linked even if the exact metaphor is recast."
     },
     {
@@ -358,15 +576,59 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "The verse must close with hope carried by a younger generation.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "adapt", "rationale": "The communal voice widens to include those who will continue it.", "human_review": null}
+        {
+          "function_id": "www.fn.generational_tenderness",
+          "disposition": "preserve",
+          "rationale": "The verse must close with hope carried by a younger generation.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "adapt",
+          "rationale": "The communal voice widens to include those who will continue it.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Youth expression", "new", "hope", "inchoative motion", "all legacy syntax"],
+      "editable_elements": [
+        "Youth expression",
+        "new",
+        "hope",
+        "inchoative motion",
+        "all legacy syntax"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.hebrew_yeled_child", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child", "relationship": "donor_lead", "coverage": "donor_only", "note": "Child is only a partial age-domain lead."},
-        {"record_id": "ja.lexeme.contact_small", "record_revision": 1, "sense_id": "ja.lexeme.contact_small.sense.primary", "relationship": "conflict_probe", "coverage": "conflict", "note": "Contact katan is explicitly physical size and must not be silently broadened to young."}
+        {
+          "record_id": "ja.lexeme.hebrew_yeled_child",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Child is only a partial age-domain lead."
+        },
+        {
+          "record_id": "ja.lexeme.contact_small",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_small.sense.primary",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "Contact katan is explicitly physical size and must not be silently broadened to young."
+        },
+        {
+          "record_id": "ja.lexeme.contact_child",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_child.sense.age",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Age-defined contact child is available; young, new, hope, and inchoative movement remain separate."
+        }
       ],
-      "gaps": ["young or youth", "new", "hope", "begin", "inchoative movement"],
+      "gaps": [
+        "young or youth",
+        "new",
+        "hope",
+        "begin",
+        "inchoative movement"
+      ],
       "departure_policy": "Youth and newly moving hope are protected even if the final metaphor changes."
     },
     {
@@ -380,19 +642,76 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "This is the title and ethical thesis of the song.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The hook belongs to an inclusive community voice.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "The revised hook must remain compact and singable after grammar is known.", "human_review": null}
+        {
+          "function_id": "www.fn.chorus_thesis",
+          "disposition": "preserve",
+          "rationale": "This is the title and ethical thesis of the song.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "The hook belongs to an inclusive community voice.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "adapt",
+          "rationale": "The revised hook must remain compact and singable after grammar is known.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Exact predicate formation", "heart construction", "first-person plural morphology"],
+      "editable_elements": [
+        "Exact predicate formation",
+        "heart construction",
+        "first-person plural morphology"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provisional chorus kernel: wəlew kəpəməsiihna."},
-        {"record_id": "ja.lexeme.contact_welew_goodwill", "record_revision": 1, "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Mixed wəl-lew formation supplies benevolent good-heart disposition."},
-        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk stem."},
-        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality stem."},
-        {"record_id": "ja.lexeme.hebrew_lev_heart", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart", "relationship": "donor_lead", "coverage": "donor_only", "note": "Heart donor; no contact heart record yet."}
+        {
+          "record_id": "ja.sentence.anchor_we_walk_with_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provisional chorus kernel: wəlew kəpəməsiihna."
+        },
+        {
+          "record_id": "ja.lexeme.contact_welew_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Mixed wəl-lew formation supplies benevolent good-heart disposition."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pemsii_walk",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound walk stem."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_welesii_good",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound positive-quality stem."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_lev_heart",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Heart donor; no contact heart record yet."
+        }
       ],
-      "gaps": ["metrical testing against the melody", "owner review of the goodwill adaptation before song-level acceptance"],
+      "gaps": [
+        "metrical testing against the melody",
+        "owner review of the goodwill adaptation before song-level acceptance"
+      ],
       "departure_policy": "Any departure from the wording 'we walk well with good hearts' requires owner review."
     },
     {
@@ -406,16 +725,64 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Personified road-given light is the chorus's central image.", "human_review": null},
-        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "Agency and participant marking must emerge from explicit contact grammar, not an animacy stereotype.", "human_review": null}
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "Personified road-given light is the chorus's central image.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.coparent_texture",
+          "disposition": "adapt",
+          "rationale": "Agency and participant marking must emerge from explicit contact grammar, not an animacy stereotype.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Give versus illuminate construction", "road agency", "first-person object", "word order"],
+      "editable_elements": [
+        "Give versus illuminate construction",
+        "road agency",
+        "first-person object",
+        "word order"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Narrow contact road noun; metaphorical path remains unlicensed."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical contact light noun; the road-given metaphor belongs to the future construction."},
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+        {
+          "record_id": "ja.lexeme.contact_road",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_road.sense.road",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Narrow contact road noun; metaphorical path remains unlicensed."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Physical contact light noun; the road-given metaphor belongs to the future construction."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Road donor only."
+        },
+        {
+          "record_id": "ja.phrase.static_on_road",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_on_road.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds a usable static road setting; it deliberately supplies no road agency, illumination, direction, or path metaphor."
+        }
       ],
-      "gaps": ["give or illuminate", "road agency or bearer relation", "first-person plural object"],
+      "gaps": [
+        "give or illuminate",
+        "road agency or bearer relation",
+        "first-person plural object"
+      ],
       "departure_policy": "The road must remain a source or bearer of light, though the exact valency may change."
     },
     {
@@ -429,21 +796,93 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The paired perceptions are a required chorus response.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Two balanced predicates and their order are part of the hook.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Both predicates belong to the shared we.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "The paired perceptions are a required chorus response.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "Two balanced predicates and their order are part of the hook.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "Both predicates belong to the shared we.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["All legacy endings", "object class", "listen versus hear derivation"],
+      "editable_elements": [
+        "All legacy endings",
+        "object class",
+        "listen versus hear derivation"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear-someone donor lead."},
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See-something donor lead."},
-        {"record_id": "ja.lexeme.contact_hear_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal inanimate-object hear stem used by the partial chorus candidate; hear is not listen."},
-        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inanimate-object see stem used by the partial chorus candidate."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the two objectful inclusive perception clauses while preserving class selection."},
-        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies ordinary matching-clusivity wə- coordination only, with no narrative-chain meaning."},
-        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial chorus continuity: the candidate preserves hearing before seeing and balanced inclusive first-plural clauses, but it says literal hear with overt sound and light objects rather than objectless attentive listen and see."}
+        {
+          "record_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Hear-someone donor lead."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_nee_m_see_inanimate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "See-something donor lead."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Literal inanimate-object hear stem used by the partial chorus candidate; hear is not listen."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Inanimate-object see stem used by the partial chorus candidate."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the two objectful inclusive perception clauses while preserving class selection."
+        },
+        {
+          "record_id": "ja.construction.contact_finite_coordination",
+          "record_revision": 2,
+          "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies ordinary matching-clusivity wə- coordination only, with no narrative-chain meaning."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_hear_and_see",
+          "record_revision": 2,
+          "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Partial chorus continuity: the candidate preserves hearing before seeing and balanced inclusive first-plural clauses, but it says literal hear with overt sound and light objects rather than objectless attentive listen and see."
+        }
       ],
-      "gaps": ["attentive listen extension", "object-backgrounding or objectless perception", "metrical compactness and owner review"],
+      "gaps": [
+        "attentive listen extension",
+        "object-backgrounding or objectless perception",
+        "metrical compactness and owner review"
+      ],
       "departure_policy": "Listening must precede seeing unless a deliberate songwriting revision is approved."
     },
     {
@@ -457,18 +896,70 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Singing completes the hear-see-sing triad.", "human_review": null},
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Brightness is carried outward or onward.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "The line should release the chorus forward without hiding direction inside an unparsed form.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "Singing completes the hear-see-sing triad.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "Brightness is carried outward or onward.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "adapt",
+          "rationale": "The line should release the chorus forward without hiding direction inside an unparsed form.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Sing predicate", "brightness expression", "forward or outward direction", "coordinator"],
+      "editable_elements": [
+        "Sing predicate",
+        "brightness expression",
+        "forward or outward direction",
+        "coordinator"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive vocal-sing clause; it does not yet take brightness as an object or result."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light only; brightness-forward remains constructional work."},
-        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Independent source support for the listed vocal-sing stem."},
-        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provides only ordinary proclitic wə- scaffolding once this becomes a complete clause; brightness, direction, and lyric attachment remain unresolved."}
+        {
+          "record_id": "ja.sentence.anchor_we_sing_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Inclusive vocal-sing clause; it does not yet take brightness as an object or result."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Physical light only; brightness-forward remains constructional work."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_naxkoohamaa_sing",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Independent source support for the listed vocal-sing stem."
+        },
+        {
+          "record_id": "ja.construction.contact_finite_coordination",
+          "record_revision": 2,
+          "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provides only ordinary proclitic wə- scaffolding once this becomes a complete clause; brightness, direction, and lyric attachment remain unresolved."
+        }
       ],
-      "gaps": ["brightness result or object relation", "forward directional construction", "complete second-clause realization and metrical attachment"],
+      "gaps": [
+        "brightness result or object relation",
+        "forward directional construction",
+        "complete second-clause realization and metrical attachment"
+      ],
       "departure_policy": "The closing lift from collective singing into outward brightness is protected."
     },
     {
@@ -482,12 +973,32 @@
       "identity_priority": "strong",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Care for tools and craft makes work part of communal identity.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The work belongs to the collective speaker.", "human_review": null}
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "preserve",
+          "rationale": "Care for tools and craft makes work part of communal identity.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "The work belongs to the collective speaker.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Every legacy form", "two-predicate syntax", "tool possession"],
+      "editable_elements": [
+        "Every legacy form",
+        "two-predicate syntax",
+        "tool possession"
+      ],
       "current_record_links": [],
-      "gaps": ["tool", "tend", "shape", "craft", "first-person plural"],
+      "gaps": [
+        "tool",
+        "tend",
+        "shape",
+        "craft",
+        "first-person plural"
+      ],
       "departure_policy": "Care, tools, making, and craft must remain present even if divided across lines."
     },
     {
@@ -501,17 +1012,64 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Fruit moving along a glowing road links nourishment, work, and light.", "human_review": null},
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "adapt", "rationale": "Carrying harvest or food continues the work motif.", "human_review": null}
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "Fruit moving along a glowing road links nourishment, work, and light.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "adapt",
+          "rationale": "Carrying harvest or food continues the work motif.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Agency", "carry predicate", "relative clause", "glow predicate"],
+      "editable_elements": [
+        "Agency",
+        "carry predicate",
+        "relative clause",
+        "glow predicate"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_fruit", "record_revision": 1, "sense_id": "ja.lexeme.contact_fruit.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct semantic coverage for fruit."},
-        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct coverage for literal road in this line."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies physical light; a glow predicate or relative construction is still required."},
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+        {
+          "record_id": "ja.lexeme.contact_fruit",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_fruit.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct semantic coverage for fruit."
+        },
+        {
+          "record_id": "ja.lexeme.contact_road",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_road.sense.road",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct coverage for literal road in this line."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies physical light; a glow predicate or relative construction is still required."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Road donor only."
+        }
       ],
-      "gaps": ["carry", "glow or illuminate predicate", "relative or participial structure"],
+      "gaps": [
+        "carry",
+        "glow or illuminate predicate",
+        "relative or participial structure"
+      ],
       "departure_policy": "The extant Hebrew-shaped nofel does not mean carry; the mismatch must remain visible until rewritten."
     },
     {
@@ -525,15 +1083,50 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Paths beside waters ground movement in remembered landscape.", "human_review": null},
-        {"function_id": "www.fn.civic_expansion", "disposition": "adapt", "rationale": "Shared landscape memory begins the widening from household to peoplehood.", "human_review": null}
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "Paths beside waters ground movement in remembered landscape.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.civic_expansion",
+          "disposition": "adapt",
+          "rationale": "Shared landscape memory begins the widening from household to peoplehood.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Plurality", "beside relation", "remember predicate", "water source allocation"],
+      "editable_elements": [
+        "Plurality",
+        "beside relation",
+        "remember predicate",
+        "water source allocation"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.hebrew_mayim", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_mayim.sense.water", "relationship": "donor_lead", "coverage": "donor_only", "note": "Water donor only."},
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road may not automatically broaden to path."}
+        {
+          "record_id": "ja.lexeme.hebrew_mayim",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_mayim.sense.water",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Water donor only."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Road may not automatically broaden to path."
+        }
       ],
-      "gaps": ["remember", "path", "water contact form", "beside", "first-person plural"],
+      "gaps": [
+        "remember",
+        "path",
+        "water contact form",
+        "beside",
+        "first-person plural"
+      ],
       "departure_policy": "Collective memory, paths, and waters are protected."
     },
     {
@@ -547,12 +1140,32 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Reciprocal help states the song's communal ethic directly.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The line must express aid within the speaking group.", "human_review": null}
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "preserve",
+          "rationale": "Reciprocal help states the song's communal ethic directly.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "The line must express aid within the speaking group.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Lend versus give", "reciprocal morphology", "possessive expression"],
+      "editable_elements": [
+        "Lend versus give",
+        "reciprocal morphology",
+        "possessive expression"
+      ],
       "current_record_links": [],
-      "gaps": ["help", "give or lend", "reciprocal", "our", "first-person plural"],
+      "gaps": [
+        "help",
+        "give or lend",
+        "reciprocal",
+        "our",
+        "first-person plural"
+      ],
       "departure_policy": "Mutual aid may not be reduced to generic generosity without reciprocal force."
     },
     {
@@ -566,16 +1179,53 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "The bridge turns the title thesis into a chant.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Immediate exact repetition is the audience-participation peak.", "human_review": null}
+        {
+          "function_id": "www.fn.chorus_thesis",
+          "disposition": "preserve",
+          "rationale": "The bridge turns the title thesis into a chant.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "Immediate exact repetition is the audience-participation peak.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Revised title form", "punctuation and breath length"],
+      "editable_elements": [
+        "Revised title form",
+        "punctuation and breath length"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the current title-clause candidate; exact repetition still needs metrical and owner review."},
-        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk donor only."},
-        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality donor only."}
+        {
+          "record_id": "ja.sentence.anchor_we_walk_with_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the current title-clause candidate; exact repetition still needs metrical and owner review."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pemsii_walk",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound walk donor only."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_welesii_good",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound positive-quality donor only."
+        }
       ],
-      "gaps": ["metrical realization of the repeated title clause", "owner review of the goodwill adaptation"],
+      "gaps": [
+        "metrical realization of the repeated title clause",
+        "owner review of the goodwill adaptation"
+      ],
       "departure_policy": "The bridge retains exact repetition of the revised title phrase."
     },
     {
@@ -589,17 +1239,62 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The bridge compresses hearing and song into a paired response.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The pair should remain balanced and concise.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "The bridge compresses hearing and song into a paired response.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The pair should remain balanced and concise.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Both predicate forms", "coordinator", "person morphology"],
+      "editable_elements": [
+        "Both predicate forms",
+        "coordinator",
+        "person morphology"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct vocal-sing coverage."},
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the inclusive sing half of the pair."},
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear donor lead only."},
-        {"record_id": "ja.sentence.anchor_we_hear_and_sing", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Partial bridge continuity: literal hearing of an overt sound and inclusive singing are joined by ordinary wə- finite-clause coordination; compact object backgrounding and meter remain unresolved."}
+        {
+          "record_id": "ja.lexeme.contact_sing_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_sing_ai.sense.sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct vocal-sing coverage."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_sing_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the inclusive sing half of the pair."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Hear donor lead only."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_hear_and_sing",
+          "record_revision": 2,
+          "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Partial bridge continuity: literal hearing of an overt sound and inclusive singing are joined by ordinary wə- finite-clause coordination; compact object backgrounding and meter remain unresolved."
+        }
       ],
-      "gaps": ["compact object-backgrounding or lyric revision", "metrical testing and owner review"],
+      "gaps": [
+        "compact object-backgrounding or lyric revision",
+        "metrical testing and owner review"
+      ],
       "departure_policy": "Hearing and singing remain paired."
     },
     {
@@ -613,18 +1308,70 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Seeing moves directly into collective action.", "human_review": null},
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Building together is the bridge's constructive turn.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The two balanced clauses are structurally important.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "Seeing moves directly into collective action.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "preserve",
+          "rationale": "Building together is the bridge's constructive turn.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The two balanced clauses are structurally important.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Hebrew-shaped plural presents", "light phrase", "together expression"],
+      "editable_elements": [
+        "Hebrew-shaped plural presents",
+        "light phrase",
+        "together expression"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage."},
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See donor lead only."},
-        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal TI see is available, but this line requires a locative in-light adjunct rather than treating light as the direct object."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies objectful first-plural see morphology only; it does not license the required locative reading."}
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct physical-light coverage."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_nee_m_see_inanimate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "See donor lead only."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Literal TI see is available, but this line requires a locative in-light adjunct rather than treating light as the direct object."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies objectful first-plural see morphology only; it does not license the required locative reading."
+        }
       ],
-      "gaps": ["locative in-light phrase", "build", "together", "balanced clause coordination"],
+      "gaps": [
+        "locative in-light phrase",
+        "build",
+        "together",
+        "balanced clause coordination"
+      ],
       "departure_policy": "The movement from perception to building together must remain."
     },
     {
@@ -638,16 +1385,54 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Hammer sound joins craft and bodily unity.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Compressed percussive fragments form the bridge climax.", "human_review": null},
-        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "Any sing/ring resonance must be independently sourced or openly coined.", "human_review": null}
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "preserve",
+          "rationale": "Hammer sound joins craft and bodily unity.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "Compressed percussive fragments form the bridge climax.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.coparent_texture",
+          "disposition": "adapt",
+          "rationale": "Any sing/ring resonance must be independently sourced or openly coined.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["The first omitted voice or sound phrase", "compound structure", "numeral agreement"],
+      "editable_elements": [
+        "The first omitted voice or sound phrase",
+        "compound structure",
+        "numeral agreement"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "The contact stem is vocal sing only and cannot currently cover a hammer's ring."},
-        {"record_id": "ja.lexeme.hebrew_ehad_one", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_ehad_one.sense.one", "relationship": "donor_lead", "coverage": "donor_only", "note": "Numeral donor only; no agreement transfers."}
+        {
+          "record_id": "ja.lexeme.contact_sing_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_sing_ai.sense.sing",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The contact stem is vocal sing only and cannot currently cover a hammer's ring."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_ehad_one",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_ehad_one.sense.one",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Numeral donor only; no agreement transfers."
+        }
       ],
-      "gaps": ["hammer", "ring or sound", "breath", "one-as-unity construction"],
+      "gaps": [
+        "hammer",
+        "ring or sound",
+        "breath",
+        "one-as-unity construction"
+      ],
       "departure_policy": "Hammer sound and one shared breath are protected; the omitted first phrase may be restored or deliberately removed."
     },
     {
@@ -661,16 +1446,64 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "Generational continuity becomes domestic and concrete.", "human_review": null},
-        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Bread returns through the child's action.", "human_review": null}
+        {
+          "function_id": "www.fn.generational_tenderness",
+          "disposition": "preserve",
+          "rationale": "Generational continuity becomes domestic and concrete.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "preserve",
+          "rationale": "Bread returns through the child's action.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Child form", "adjective position", "bring predicate", "definiteness and agreement"],
+      "editable_elements": [
+        "Child form",
+        "adjective position",
+        "bring predicate",
+        "definiteness and agreement"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_small", "record_revision": 1, "sense_id": "ja.lexeme.contact_small.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical small is semantically suitable here, pending modifier syntax."},
-        {"record_id": "ja.lexeme.hebrew_yeled_child", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child", "relationship": "donor_lead", "coverage": "donor_only", "note": "Child donor only."},
-        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Bread contact candidate."}
+        {
+          "record_id": "ja.lexeme.contact_small",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_small.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Physical small is semantically suitable here, pending modifier syntax."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_yeled_child",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Child donor only."
+        },
+        {
+          "record_id": "ja.lexeme.contact_bread",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bread.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bread contact candidate."
+        },
+        {
+          "record_id": "ja.lexeme.contact_child",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_child.sense.age",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Usable age-defined contact child; bring, modifier syntax, and the required transitive third-person clause remain gaps."
+        }
       ],
-      "gaps": ["contact child", "bring", "property-word syntax", "third-person agreement"],
+      "gaps": [
+        "bring",
+        "property-word syntax",
+        "transitive third-person agreement"
+      ],
       "departure_policy": "The child bringing bread is protected."
     },
     {
@@ -684,15 +1517,46 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.household_warmth", "disposition": "adapt", "rationale": "Shared food extends from home into travel.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Eating together is a core communal act.", "human_review": null},
-        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "The road remains the place of shared movement.", "human_review": null}
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "adapt",
+          "rationale": "Shared food extends from home into travel.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "Eating together is a core communal act.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "adapt",
+          "rationale": "The road remains the place of shared movement.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Locative", "eat predicate", "together expression"],
+      "editable_elements": [
+        "Locative",
+        "eat predicate",
+        "together expression"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Road donor only."
+        }
       ],
-      "gaps": ["eat", "together", "on the way", "first-person plural"],
+      "gaps": [
+        "eat",
+        "together",
+        "on the way",
+        "first-person plural"
+      ],
       "departure_policy": "Shared eating while traveling remains near the current English meaning."
     },
     {
@@ -706,15 +1570,63 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Home and kindled light return the song to domestic warmth.", "human_review": null},
-        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "Light now originates in home rather than only on the road.", "human_review": null}
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "preserve",
+          "rationale": "Home and kindled light return the song to domestic warmth.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "adapt",
+          "rationale": "Light now originates in home rather than only on the road.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Home word", "locative", "kindle predicate", "person marking"],
+      "editable_elements": [
+        "Home word",
+        "locative",
+        "kindle predicate",
+        "person marking"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage; kindling remains a predicate gap."},
-        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor only."}
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct physical-light coverage; kindling remains a predicate gap."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_bayit",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Home donor only."
+        },
+        {
+          "record_id": "ja.lexeme.contact_house",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_house.sense.dwelling",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Usable contact home only in the dwelling sense."
+        },
+        {
+          "record_id": "ja.phrase.static_in_house",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_in_house.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the static in-home setting; kindling light and first-plural predicate grammar for this line remain unbuilt."
+        }
       ],
-      "gaps": ["contact home", "locative", "kindle", "first-person plural"],
+      "gaps": [
+        "kindle",
+        "first-person plural kindle clause"
+      ],
       "departure_policy": "Home and kindled light remain linked."
     },
     {
@@ -728,15 +1640,51 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "The whimsical little bear is a distinctive memory hook.", "human_review": null},
-        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Shoes and rest keep the image intimate and ordinary.", "human_review": null}
+        {
+          "function_id": "www.fn.generational_tenderness",
+          "disposition": "preserve",
+          "rationale": "The whimsical little bear is a distinctive memory hook.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "preserve",
+          "rationale": "Shoes and rest keep the image intimate and ordinary.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Diminutive", "rest predicate", "shoe plural and possession", "by relation"],
+      "editable_elements": [
+        "Diminutive",
+        "rest predicate",
+        "shoe plural and possession",
+        "by relation"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.munsee_maxkw_bear", "record_revision": 2, "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bear donor only."},
-        {"record_id": "ja.lexeme.munsee_mahksen_shoe", "record_revision": 2, "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe", "relationship": "donor_lead", "coverage": "donor_only", "note": "Shoe donor only."}
+        {
+          "record_id": "ja.lexeme.munsee_maxkw_bear",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bear donor only."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_mahksen_shoe",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Shoe donor only."
+        }
       ],
-      "gaps": ["contact bear", "contact shoe", "diminutive", "rest", "our", "by"],
+      "gaps": [
+        "contact bear",
+        "contact shoe",
+        "diminutive",
+        "rest",
+        "our",
+        "by"
+      ],
       "departure_policy": "Little bear, rest, and proximity to the community's shoes are protected."
     },
     {
@@ -750,15 +1698,47 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "The song widens into modern communal infrastructure and cultivation.", "human_review": null},
-        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "Roofs gather the recurring light motif.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Two balanced visual clauses are a defining shape.", "human_review": null}
+        {
+          "function_id": "www.fn.civic_expansion",
+          "disposition": "preserve",
+          "rationale": "The song widens into modern communal infrastructure and cultivation.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "adapt",
+          "rationale": "Roofs gather the recurring light motif.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "Two balanced visual clauses are a defining shape.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Gather versus catch", "rise versus grow", "all plural morphology"],
+      "editable_elements": [
+        "Gather versus catch",
+        "rise versus grow",
+        "all plural morphology"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage; gathering light remains constructional."}
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Direct physical-light coverage; gathering light remains constructional."
+        }
       ],
-      "gaps": ["roof", "gather light", "garden", "box", "grow or rise"],
+      "gaps": [
+        "roof",
+        "gather light",
+        "garden",
+        "box",
+        "grow or rise"
+      ],
       "departure_policy": "Roof-light and box-garden images remain paired."
     },
     {
@@ -772,11 +1752,27 @@
       "identity_priority": "supporting",
       "disposition": "freely_edit_with_continuity",
       "function_dispositions": [
-        {"function_id": "www.fn.civic_expansion", "disposition": "defer", "rationale": "Community deliberation and balanced shared life are important, but the intended image is semantically unstable and needs owner confirmation.", "human_review": null}
+        {
+          "function_id": "www.fn.civic_expansion",
+          "disposition": "defer",
+          "rationale": "Community deliberation and balanced shared life are important, but the intended image is semantically unstable and needs owner confirmation.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Assembly versus council", "balance versus measure", "hearth versus dwelling", "the entire line wording"],
+      "editable_elements": [
+        "Assembly versus council",
+        "balance versus measure",
+        "hearth versus dwelling",
+        "the entire line wording"
+      ],
       "current_record_links": [],
-      "gaps": ["confirmed intended meaning", "assembly or council", "arrange", "balance", "hearth"],
+      "gaps": [
+        "confirmed intended meaning",
+        "assembly or council",
+        "arrange",
+        "balance",
+        "hearth"
+      ],
       "departure_policy": "A material reinterpretation requires owner confirmation before translation effort."
     },
     {
@@ -790,14 +1786,48 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "Kindness crossing households connects private warmth to public community.", "human_review": null},
-        {"function_id": "www.fn.household_warmth", "disposition": "adapt", "rationale": "The recurring home image becomes distributive and outward-moving.", "human_review": null}
+        {
+          "function_id": "www.fn.civic_expansion",
+          "disposition": "preserve",
+          "rationale": "Kindness crossing households connects private warmth to public community.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.household_warmth",
+          "disposition": "adapt",
+          "rationale": "The recurring home image becomes distributive and outward-moving.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Distributive construction", "call predicate", "kindness lexical source", "home realization"],
+      "editable_elements": [
+        "Distributive construction",
+        "call predicate",
+        "kindness lexical source",
+        "home realization"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor only."}
+        {
+          "record_id": "ja.lexeme.hebrew_bayit",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Home donor only."
+        },
+        {
+          "record_id": "ja.lexeme.contact_house",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_house.sense.dwelling",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "House is now usable contact vocabulary; distributive house-to-house motion and kindness-calls syntax remain absent."
+        }
       ],
-      "gaps": ["contact home", "house-to-house", "kindness", "call"],
+      "gaps": [
+        "house-to-house distributive or path construction",
+        "kindness",
+        "call"
+      ],
       "departure_policy": "House-to-house motion and personified kindness are protected."
     },
     {
@@ -811,17 +1841,64 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "A whole people continuing together completes the widening arc.", "human_review": null},
-        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Hands at work and joined voices unite craft and song.", "human_review": null},
-        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The lyric we becomes an explicitly named people without losing collectivity.", "human_review": null}
+        {
+          "function_id": "www.fn.civic_expansion",
+          "disposition": "preserve",
+          "rationale": "A whole people continuing together completes the widening arc.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.work_mutual_aid",
+          "disposition": "preserve",
+          "rationale": "Hands at work and joined voices unite craft and song.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.communal_voice",
+          "disposition": "preserve",
+          "rationale": "The lyric we becomes an explicitly named people without losing collectivity.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["People or community noun", "go-on predicate", "joined relation", "plural morphology"],
+      "editable_elements": [
+        "People or community noun",
+        "go-on predicate",
+        "joined relation",
+        "plural morphology"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person is not yet a collective people noun or plural construction."},
-        {"record_id": "ja.lexeme.hebrew_yad_upper_limb", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yad_upper_limb.sense.hand", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hand donor only."},
-        {"record_id": "ja.lexeme.munsee_aa_go", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aa_go.sense.go", "relationship": "donor_lead", "coverage": "donor_only", "note": "Deferred bound go stem; not a usable predicate."}
+        {
+          "record_id": "ja.lexeme.contact_person",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_person.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Person is not yet a collective people noun or plural construction."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_yad_upper_limb",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_yad_upper_limb.sense.hand",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Hand donor only."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aa_go",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aa_go.sense.go",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Deferred bound go stem; not a usable predicate."
+        }
       ],
-      "gaps": ["people or community", "go on", "work or deed", "voice", "join"],
+      "gaps": [
+        "people or community",
+        "go on",
+        "work or deed",
+        "voice",
+        "join"
+      ],
       "departure_policy": "People continuing with working hands and joined voices is protected."
     },
     {
@@ -835,14 +1912,35 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "The final chorus returns to the unchanged title thesis.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+        {
+          "function_id": "www.fn.chorus_thesis",
+          "disposition": "preserve",
+          "rationale": "The final chorus returns to the unchanged title thesis.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The revised text must repeat the corresponding chorus line exactly.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Inherited from www.c.01"],
+      "editable_elements": [
+        "Inherited from www.c.01"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Must revision-pin the same realization as www.c.01 if accepted."}
+        {
+          "record_id": "ja.sentence.anchor_we_walk_with_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Must revision-pin the same realization as www.c.01 if accepted."
+        }
       ],
-      "gaps": ["Inherited metrical and owner review from www.c.01"],
+      "gaps": [
+        "Inherited metrical and owner review from www.c.01"
+      ],
       "departure_policy": "This segment inherits the accepted revision of www.c.01."
     },
     {
@@ -856,15 +1954,43 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "The road-light image returns unchanged.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "The road-light image returns unchanged.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The revised text must repeat the corresponding chorus line exactly.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Inherited from www.c.02"],
+      "editable_elements": [
+        "Inherited from www.c.02"
+      ],
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same road candidate as www.c.02."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.02."}
+        {
+          "record_id": "ja.lexeme.contact_road",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_road.sense.road",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Same road candidate as www.c.02."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Same light candidate as www.c.02."
+        }
       ],
-      "gaps": ["Inherited road-light relation from www.c.02"],
+      "gaps": [
+        "Inherited road-light relation from www.c.02"
+      ],
       "departure_policy": "This segment inherits the accepted revision of www.c.02."
     },
     {
@@ -878,14 +2004,35 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The paired perceptions return unchanged.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "The paired perceptions return unchanged.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The revised text must repeat the corresponding chorus line exactly.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Inherited from www.c.03"],
+      "editable_elements": [
+        "Inherited from www.c.03"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Revision-pins the same partial hearing-before-seeing candidate as www.c.03; literal hear, overt objects, compactness, and owner review carry over unchanged."}
+        {
+          "record_id": "ja.sentence.anchor_we_hear_and_see",
+          "record_revision": 2,
+          "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Revision-pins the same partial hearing-before-seeing candidate as www.c.03; literal hear, overt objects, compactness, and owner review carry over unchanged."
+        }
       ],
-      "gaps": ["Inherited attentive-listen, object-backgrounding, compactness, and owner-review work from www.c.03"],
+      "gaps": [
+        "Inherited attentive-listen, object-backgrounding, compactness, and owner-review work from www.c.03"
+      ],
       "departure_policy": "This segment inherits the accepted revision of www.c.03."
     },
     {
@@ -899,17 +2046,57 @@
       "identity_priority": "identity_critical",
       "disposition": "preserve_function_rebuild_form",
       "function_dispositions": [
-        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Singing completes the repeated triad.", "human_review": null},
-        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Brightness moves forward again.", "human_review": null},
-        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+        {
+          "function_id": "www.fn.perception_song",
+          "disposition": "preserve",
+          "rationale": "Singing completes the repeated triad.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.path_light",
+          "disposition": "preserve",
+          "rationale": "Brightness moves forward again.",
+          "human_review": null
+        },
+        {
+          "function_id": "www.fn.lyrical_parallelism",
+          "disposition": "preserve",
+          "rationale": "The revised text must repeat the corresponding chorus line exactly.",
+          "human_review": null
+        }
       ],
-      "editable_elements": ["Inherited from www.c.04"],
+      "editable_elements": [
+        "Inherited from www.c.04"
+      ],
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Must revision-pin the same sing realization as www.c.04 if accepted."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.04."},
-        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Revision-pins the same ordinary finite-coordination scaffolding as www.c.04; brightness, direction, completion, and metrical attachment remain unresolved."}
+        {
+          "record_id": "ja.sentence.anchor_we_sing_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Must revision-pin the same sing realization as www.c.04 if accepted."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Same light candidate as www.c.04."
+        },
+        {
+          "record_id": "ja.construction.contact_finite_coordination",
+          "record_revision": 2,
+          "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Revision-pins the same ordinary finite-coordination scaffolding as www.c.04; brightness, direction, completion, and metrical attachment remain unresolved."
+        }
       ],
-      "gaps": ["Inherited brightness-result, forward-direction, complete-clause, metrical-attachment, and owner-review work from www.c.04"],
+      "gaps": [
+        "Inherited brightness-result, forward-direction, complete-clause, metrical-attachment, and owner-review work from www.c.04"
+      ],
       "departure_policy": "This segment inherits the accepted revision of www.c.04."
     }
   ],
@@ -918,14 +2105,53 @@
       "requirement_id": "www.req.chorus_walk_well",
       "kind": "construction",
       "priority": "immediate_n1",
-      "segment_ids": ["www.c.01", "www.b.01", "www.fc.01"],
+      "segment_ids": [
+        "www.c.01",
+        "www.b.01",
+        "www.fc.01"
+      ],
       "status": "contact_candidate",
       "current_record_links": [
-        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provisional compact clause with explicit literal and idiomatic analyses."},
-        {"record_id": "ja.lexeme.contact_welew_goodwill", "record_revision": 1, "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "New mixed good-heart formation with bounded ethical sense."},
-        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk stem."},
-        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality stem."},
-        {"record_id": "ja.lexeme.hebrew_lev_heart", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart", "relationship": "donor_lead", "coverage": "donor_only", "note": "Heart donor."}
+        {
+          "record_id": "ja.sentence.anchor_we_walk_with_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provisional compact clause with explicit literal and idiomatic analyses."
+        },
+        {
+          "record_id": "ja.lexeme.contact_welew_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "New mixed good-heart formation with bounded ethical sense."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pemsii_walk",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound walk stem."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_welesii_good",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bound positive-quality stem."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_lev_heart",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Heart donor."
+        }
       ],
       "requirement": "Design a compact first-person-plural expression for walking well with good hearts without fusing unlicensed stems.",
       "acceptance_condition": "Every morpheme, valency decision, and semantic relation is explicit; the result remains singable enough for later metrical work."
@@ -934,11 +2160,44 @@
       "requirement_id": "www.req.first_plural",
       "kind": "morphology",
       "priority": "immediate_n1",
-      "segment_ids": ["www.v1.01", "www.v1.02", "www.c.01", "www.c.03", "www.c.04", "www.v2.01", "www.v2.04", "www.b.02", "www.b.03", "www.v3.02"],
+      "segment_ids": [
+        "www.v1.01",
+        "www.v1.02",
+        "www.c.01",
+        "www.c.03",
+        "www.c.04",
+        "www.v2.01",
+        "www.v2.04",
+        "www.b.02",
+        "www.b.03",
+        "www.v3.02"
+      ],
       "status": "contact_candidate",
       "current_record_links": [
-        {"record_id": "ja.construction.contact_ai_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_ai_first_plural.sense.independent_affirmative", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Six explicit cells cover walk, be-good, and sing in inclusive and exclusive forms."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Twelve explicit cells add inclusive and exclusive first-plural see, hear, and look-at predicates, but only with overt indefinite class-compatible objects."}
+        {
+          "record_id": "ja.construction.contact_ai_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_first_plural.sense.independent_affirmative",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Six explicit cells cover walk, be-good, and sing in inclusive and exclusive forms."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Twelve explicit cells add inclusive and exclusive first-plural see, hear, and look-at predicates, but only with overt indefinite class-compatible objects."
+        },
+        {
+          "record_id": "ja.construction.contact_ai_posture_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_posture_independent.sense.ordinary_affirmative",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds inclusive and exclusive first plural inside a full seven-way ordinary AI microparadigm for be-located, sit, and stand."
+        }
       ],
       "requirement": "Establish an explicit first-person-plural predicate strategy and distinguish it from possession and object marking.",
       "acceptance_condition": "At least three unrelated predicates compose without an ad hoc ending, and inclusive or exclusive ambiguity is documented."
@@ -947,12 +2206,48 @@
       "requirement_id": "www.req.road_light",
       "kind": "lexicon",
       "priority": "immediate_n1",
-      "segment_ids": ["www.v1.03", "www.c.02", "www.v2.02", "www.v2.03", "www.v3.02", "www.fc.02"],
+      "segment_ids": [
+        "www.v1.03",
+        "www.c.02",
+        "www.v2.02",
+        "www.v2.03",
+        "www.v3.02",
+        "www.fc.02"
+      ],
       "status": "partial",
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact road is available with a deliberately narrow literal sense."},
-        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact light is available; road-given illumination remains unbuilt."},
-        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor; path extension unresolved."}
+        {
+          "record_id": "ja.lexeme.contact_road",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_road.sense.road",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Contact road is available with a deliberately narrow literal sense."
+        },
+        {
+          "record_id": "ja.lexeme.contact_light",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_light.sense.physical",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Contact light is available; road-given illumination remains unbuilt."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_aanay_road",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_aanay_road.sense.road",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Road donor; path extension unresolved."
+        },
+        {
+          "record_id": "ja.phrase.static_on_road",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_on_road.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds exact-source-grounded aaneenk as a static road setting; poetic light-bearing and direction remain unresolved."
+        }
       ],
       "requirement": "Create contact-language coverage for road or path, light or brightness, glow, and the relation by which the road bears or gives light.",
       "acceptance_condition": "Road and light work both literally and poetically without falsely broadening a source gloss."
@@ -961,21 +2256,114 @@
       "requirement_id": "www.req.perception_song",
       "kind": "lexicon",
       "priority": "immediate_n1",
-      "segment_ids": ["www.v1.02", "www.v1.03", "www.c.03", "www.c.04", "www.b.02", "www.b.03", "www.fc.03", "www.fc.04"],
+      "segment_ids": [
+        "www.v1.02",
+        "www.v1.03",
+        "www.c.03",
+        "www.c.04",
+        "www.b.02",
+        "www.b.03",
+        "www.fc.03",
+        "www.fc.04"
+      ],
       "status": "partial",
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Vocal-sing contact predicate is available."},
-        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive sing clause is available."},
-        {"record_id": "ja.sentence.anchor_we_hear_and_see", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an honest partial chorus pair with literal hearing before seeing, explicit objects, matched inclusive first plural, and ordinary wə- finite-clause coordination."},
-        {"record_id": "ja.sentence.anchor_we_hear_and_sing", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an honest partial bridge pair with an overt sound object; compact song-level object backgrounding remains unbuilt."},
-        {"record_id": "ja.lexeme.contact_hear_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal animate-object contact hear stem; attentive and reciprocal listening remain gaps."},
-        {"record_id": "ja.lexeme.contact_hear_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Literal inanimate-object contact hear stem; object omission remains blocked."},
-        {"record_id": "ja.lexeme.contact_see_animate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_animate.sense.see_animate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Animate-object contact see stem; no reciprocal interpretation is implied."},
-        {"record_id": "ja.lexeme.contact_see_inanimate", "record_revision": 1, "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inanimate-object contact see stem used by the partial chorus prototype."},
-        {"record_id": "ja.construction.contact_perception_absolute_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Twelve cells provide objectful inclusive and exclusive hear/see/look-at clauses with explicit object class."},
-        {"record_id": "ja.construction.contact_finite_coordination", "record_revision": 1, "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Ordinary proclitic wə- joins complete matching-clusivity clauses; it supplies no narrative or lyric-register behavior."},
-        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear animate-object lead."},
-        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See inanimate-object lead."}
+        {
+          "record_id": "ja.lexeme.contact_sing_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_sing_ai.sense.sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Vocal-sing contact predicate is available."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_sing_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Inclusive sing clause is available."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_hear_and_see",
+          "record_revision": 2,
+          "sense_id": "ja.sentence.anchor_we_hear_and_see.sense.parallel_perception",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies an honest partial chorus pair with literal hearing before seeing, explicit objects, matched inclusive first plural, and ordinary wə- finite-clause coordination."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_hear_and_sing",
+          "record_revision": 2,
+          "sense_id": "ja.sentence.anchor_we_hear_and_sing.sense.bridge_pair",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies an honest partial bridge pair with an overt sound object; compact song-level object backgrounding remains unbuilt."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_animate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_animate.sense.hear_animate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Literal animate-object contact hear stem; attentive and reciprocal listening remain gaps."
+        },
+        {
+          "record_id": "ja.lexeme.contact_hear_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_hear_inanimate.sense.hear_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Literal inanimate-object contact hear stem; object omission remains blocked."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_animate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_animate.sense.see_animate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Animate-object contact see stem; no reciprocal interpretation is implied."
+        },
+        {
+          "record_id": "ja.lexeme.contact_see_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_see_inanimate.sense.see_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Inanimate-object contact see stem used by the partial chorus prototype."
+        },
+        {
+          "record_id": "ja.construction.contact_perception_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_perception_absolute_first_plural.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Twelve cells provide objectful inclusive and exclusive hear/see/look-at clauses with explicit object class."
+        },
+        {
+          "record_id": "ja.construction.contact_finite_coordination",
+          "record_revision": 2,
+          "sense_id": "ja.construction.contact_finite_coordination.sense.ordinary_and",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Ordinary proclitic wə- joins complete matching-clusivity clauses; it supplies no narrative or lyric-register behavior."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Hear animate-object lead."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_nee_m_see_inanimate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "See inanimate-object lead."
+        }
       ],
       "requirement": "Build contact predicates for hear or listen, see, and sing, plus a parallel clause strategy and any reciprocal distinction.",
       "acceptance_condition": "The chorus pair and bridge pair are compositional, object-class behavior is explicit, and no legacy ending is inferred from recurrence."
@@ -984,13 +2372,70 @@
       "requirement_id": "www.req.household_core",
       "kind": "lexicon",
       "priority": "immediate_n1",
-      "segment_ids": ["www.v1.01", "www.v3.01", "www.v3.03", "www.v3.04"],
+      "segment_ids": [
+        "www.v1.01",
+        "www.v3.01",
+        "www.v3.03",
+        "www.v3.04"
+      ],
       "status": "partial",
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Bread is the sole usable contact candidate in this requirement."},
-        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor."},
-        {"record_id": "ja.lexeme.munsee_maxkw_bear", "record_revision": 2, "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bear donor."},
-        {"record_id": "ja.lexeme.munsee_mahksen_shoe", "record_revision": 2, "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe", "relationship": "donor_lead", "coverage": "donor_only", "note": "Shoe donor."}
+        {
+          "record_id": "ja.lexeme.contact_bread",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bread.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Bread remains a usable contact candidate alongside the new house and child entries."
+        },
+        {
+          "record_id": "ja.lexeme.hebrew_bayit",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Home donor."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_maxkw_bear",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Bear donor."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_mahksen_shoe",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "Shoe donor."
+        },
+        {
+          "record_id": "ja.lexeme.contact_house",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_house.sense.dwelling",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds usable contact house or dwelling vocabulary while possession and plural remain open."
+        },
+        {
+          "record_id": "ja.lexeme.contact_child",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_child.sense.age",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds age-defined contact child without gendered or relational inheritance."
+        },
+        {
+          "record_id": "ja.phrase.static_in_house",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.static_in_house.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds a static dwelling phrase through mixed Hebrew-host and regional-suffix morphology."
+        }
       ],
       "requirement": "Cover eat, home, possession, location, child, bring, bear, shoe, diminutive, rest, and already-candidate bread.",
       "acceptance_condition": "The household lines can be composed without treating a bound dwelling final as a free home or inventing legacy locatives and diminutives."
@@ -999,7 +2444,13 @@
       "requirement_id": "www.req.work_help",
       "kind": "lexicon",
       "priority": "N2",
-      "segment_ids": ["www.v2.01", "www.v2.04", "www.b.03", "www.b.04", "www.v4.04"],
+      "segment_ids": [
+        "www.v2.01",
+        "www.v2.04",
+        "www.b.03",
+        "www.b.04",
+        "www.v4.04"
+      ],
       "status": "gap",
       "current_record_links": [],
       "requirement": "Cover tools, care, craft, shape, work, build, together, help, reciprocity, hammer, ring, voice, and join.",
@@ -1009,7 +2460,20 @@
       "requirement_id": "www.req.lyric_register",
       "kind": "register",
       "priority": "D1",
-      "segment_ids": ["www.c.01", "www.c.02", "www.c.03", "www.c.04", "www.b.01", "www.b.02", "www.b.03", "www.b.04", "www.fc.01", "www.fc.02", "www.fc.03", "www.fc.04"],
+      "segment_ids": [
+        "www.c.01",
+        "www.c.02",
+        "www.c.03",
+        "www.c.04",
+        "www.b.01",
+        "www.b.02",
+        "www.b.03",
+        "www.b.04",
+        "www.fc.01",
+        "www.fc.02",
+        "www.fc.03",
+        "www.fc.04"
+      ],
       "status": "gap",
       "current_record_links": [],
       "requirement": "Define a lyrical or ritual-style register with parallelism and repetition that does not claim liturgical or ceremonial authenticity.",
@@ -1019,10 +2483,22 @@
       "requirement_id": "www.req.civic_lexicon",
       "kind": "lexicon",
       "priority": "D1",
-      "segment_ids": ["www.v4.01", "www.v4.02", "www.v4.03", "www.v4.04"],
+      "segment_ids": [
+        "www.v4.01",
+        "www.v4.02",
+        "www.v4.03",
+        "www.v4.04"
+      ],
       "status": "partial",
       "current_record_links": [
-        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person does not yet supply collective people or community."}
+        {
+          "record_id": "ja.lexeme.contact_person",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_person.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Person does not yet supply collective people or community."
+        }
       ],
       "requirement": "Cover roofs, light gathering, box gardens, deliberative community, balance, shared hearth, kindness, house-to-house distribution, people, work, and joined voices.",
       "acceptance_condition": "The final verse widens coherently from household life to public community, with the ambiguous assembly line reviewed by the owner."
@@ -1032,7 +2508,12 @@
     {
       "test_id": "www.test.chorus_identity",
       "earliest_level": "N2",
-      "requirement_ids": ["www.req.chorus_walk_well", "www.req.first_plural", "www.req.road_light", "www.req.perception_song"],
+      "requirement_ids": [
+        "www.req.chorus_walk_well",
+        "www.req.first_plural",
+        "www.req.road_light",
+        "www.req.perception_song"
+      ],
       "condition": "A four-line provisional chorus preserves walk-well/good-heart, road-given light, listen-see parallelism, and singing brightness forward with every form dependency explicit.",
       "status": "blocked",
       "blocker": "An objectful literal hear-then-see prototype now preserves the chorus order, but attentive/objectless perception, road-given illumination, brightness-forward, compact meter, and owner review remain."
@@ -1040,7 +2521,10 @@
     {
       "test_id": "www.test.final_repeat",
       "earliest_level": "N2",
-      "requirement_ids": ["www.req.chorus_walk_well", "www.req.lyric_register"],
+      "requirement_ids": [
+        "www.req.chorus_walk_well",
+        "www.req.lyric_register"
+      ],
       "condition": "The four final-chorus realizations revision-pin and exactly repeat the accepted first chorus unless a human-approved variation exists.",
       "status": "blocked",
       "blocker": "One partial repeated hear-then-see candidate exists, but no accepted four-line revised chorus exists for exact final repetition."
@@ -1048,7 +2532,10 @@
     {
       "test_id": "www.test.household_warmth",
       "earliest_level": "N2",
-      "requirement_ids": ["www.req.household_core", "www.req.first_plural"],
+      "requirement_ids": [
+        "www.req.household_core",
+        "www.req.first_plural"
+      ],
       "condition": "At least the opening meal and one child/bear line compose through reviewed dependencies while retaining the song's domestic warmth.",
       "status": "blocked",
       "blocker": "Most household vocabulary and all relevant morphology remain gaps."
@@ -1056,7 +2543,12 @@
     {
       "test_id": "www.test.coparent_texture",
       "earliest_level": "D1",
-      "requirement_ids": ["www.req.chorus_walk_well", "www.req.road_light", "www.req.perception_song", "www.req.work_help"],
+      "requirement_ids": [
+        "www.req.chorus_walk_well",
+        "www.req.road_light",
+        "www.req.perception_song",
+        "www.req.work_help"
+      ],
       "condition": "The revised song demonstrates productive, source-specific contributions from both parents rather than surface token alternation.",
       "status": "blocked",
       "blocker": "Only a small candidate contact lexicon exists, and no song-scale grammar is accepted."
@@ -1064,7 +2556,12 @@
     {
       "test_id": "www.test.full_arc",
       "earliest_level": "R1",
-      "requirement_ids": ["www.req.household_core", "www.req.work_help", "www.req.lyric_register", "www.req.civic_lexicon"],
+      "requirement_ids": [
+        "www.req.household_core",
+        "www.req.work_help",
+        "www.req.lyric_register",
+        "www.req.civic_lexicon"
+      ],
       "condition": "A full revision preserves the movement from home and meal through road, craft, bridge, child/bear tenderness, and civic expansion, with all departures documented.",
       "status": "blocked",
       "blocker": "The lexicon, grammar, register, and owner decision on the assembly/hearth line are incomplete."

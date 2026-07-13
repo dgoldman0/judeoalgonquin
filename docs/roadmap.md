@@ -131,6 +131,31 @@ and object-backgrounding strategy, meter, and owner review. See the [manual
 analysis](research/perception-and-coordination-tranche.md) and [local checkpoint
 report](reports/perception-enrichment-2026-07-13.json).
 
+## Static place and posture enrichment
+
+The next manually authored tranche adds 36 records and brings the current
+database to 180 noncanonical records. Six source-facing records bound the
+evidence for `-ənk`, three location or posture stems, and the seven independent
+AI participant patterns. Eleven contact atoms then place Hebrew-derived house,
+room, table, child, and static `efo` inside a regional contact system rather
+than treating either donor list as finished language.
+
+The contact grammar admits six static locative cells and a 21-cell ordinary AI
+microparadigm: seven participants each for `apii-` “be located,” `ləmatapii-`
+“sit,” and `niipawii-` “stand.” Six phrases and eight sentences test mixed-host
+location, inclusive/exclusive contrasts, third-person subjects, and two static
+`where` questions. Transparent contact forms preserve their full stems and
+explicitly suspend source surface rules; they are contact design, not predicted
+Munsee pronunciations.
+
+The tranche also repairs the ordinary coordinator architecture. Current contact
+phrases and sentences now pin a contact `wə-` layer, while that layer alone
+depends on the Hebrew donor evidence. Surface wording does not change. Static
+`-ənk`, ordinary participant cells, and `wə-` remain firewalled from direction,
+tense/aspect, obviation, wayyiqtol-derived chaining, and weqatal-derived framing.
+See the [manual analysis](research/static-place-and-posture-tranche.md) and
+[local checkpoint report](reports/static-place-enrichment-2026-07-13.json).
+
 ## Project proficiency levels
 
 These are project levels, not CEFR equivalences.

@@ -82,3 +82,10 @@ Its Hebrew-derived `wə-` remains proclitic on the second clause and means only
 ordinary “and.” It cannot supply succession, consequence, recurrence,
 foregrounding, or a discourse-center shift; using it as a substitute for the
 wayyiqtol–weqatal–obviation system is an explicit failed analysis.
+
+The seven-way ordinary AI location/posture microparadigm is outside this engine
+as well. It expands person, number, and clusivity for `apii-`, `ləmatapii-`, and
+`niipawii-`, but its third-person cells do not distinguish proximate from
+obviative participants. It supplies no foreground chain, consequence or
+recurring frame, discourse-center shift, tense, aspect, or participant-recovery
+mechanism.

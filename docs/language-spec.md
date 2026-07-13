@@ -72,9 +72,22 @@
 - counterexamples or restrictions; and
 - at least one reviewed compositional test.
 
-**[PROPOSED] Participant marking.** Person and number marking inspired by the primary Algonquian source is a core goal. Inclusive/exclusive and other source distinctions must be addressed before a paradigm is accepted.
+**[PROPOSED] Ordinary AI participant marking.** The current closed candidate
+retains seven independent-order person-number distinctions on `apii-` “be
+located,” `ləmatapii-` “sit,” and `niipawii-` “stand”: first, second, and third
+singular; inclusive and exclusive first plural; second plural; and third
+plural. It regularizes the contact surfaces transparently, requires `-m` in the
+first- and second-singular cells, and suspends source contraction, insertion,
+W-shift, and deletion rules. This is not yet a general AI paradigm and carries
+no tense, aspect, modality, obviation, or narrative status.
 
-**[PROPOSED] Locative morphology.** Productive nominal locatives are a goal. The suffix inventory, allomorph selection, semantics, and interaction with Hebrew prepositions remain deferred.
+**[PROPOSED] Closed static locative.** Contact `-ənk` is admitted only on six
+listed hosts: regional `aanay`, `mohkaməy`, and `apiinay`, plus Hebrew-derived
+`bayit`, `xeder`, and `šulxan`. Exact-source road and ice contractions are
+preserved; the bed and consonant-final Hebrew-host forms are explicit contact
+regularizations. The construction expresses a general static location and does
+not license goals, sources, paths, direction, attachment to new hosts, or a
+general interaction with Hebrew prepositions.
 
 **[PROPOSED] Nominal classes and animacy.** A source-informed classification system may affect agreement, plural marking, and discourse. Classification cannot be assigned through invented claims such as an object being “alive” unless that is explicitly adopted as a new conlang rule rather than presented as source-language fact.
 
@@ -96,7 +109,10 @@ not claimed detachable Munsee morphemes. The construction does not license
 object omission, attentive “listen,” other persons, direct/inverse behavior,
 obviation, or narrative morphology.
 
-**[REJECTED] Legacy pseudo-paradigms.** The old `nə-/kə-/wə-` tables, singular/plural collapses, and unattested suffix stacking are not imported as rules.
+**[REJECTED] Legacy pseudo-paradigms.** The old uncited `nə-/kə-/wə-` tables,
+singular/plural collapses, and unattested suffix stacking are not imported as
+rules. This does not reject the separately sourced, bounded, seven-cell AI
+candidate above.
 
 ## 5. Syntax and discourse
 
@@ -105,6 +121,19 @@ obviation, or narrative morphology.
 **[PROPOSED] Information-structural flexibility.** Constituent order may respond to topic, focus, animacy, and discourse status. “Free word order” is not an adequate rule; constraints must be documented from accepted examples.
 
 **[PROPOSED] Hebrew connectives and subordination.** Reviewed Hebrew-derived conjunctions, relativizers, complementizers, and discourse particles may frame predicates from the adapted Algonquian layer.
+
+**[PROPOSED] Static location clauses and questions.** An admitted finite AI
+location or posture predicate precedes one of the six listed locative phrases.
+A lexical third-person subject precedes that predicate; indexed first and
+second persons need no independent pronoun in the tested clauses.
+Hebrew-derived contact `efo` occurs clause-initially and asks only static
+“where?” It does not yet license a general interrogative system, relative
+“where,” “wherever,” “where to,” or “where from.”
+
+**[PROPOSED] Ordinary nominal coordination.** Contact proclitic `wə-` attaches
+to the second of two admitted nouns. Current contact phrases use the separate
+contact-layer morpheme and construction, which revision-pin the Hebrew donor
+evidence; the donor record itself is not a finished contact-language word.
 
 **[PROPOSED] Ordinary finite coordination.** Contact proclitic `wə-` may join
 two complete affirmative first-plural clauses when their clusivity agrees. It

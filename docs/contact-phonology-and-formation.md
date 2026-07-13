@@ -1,6 +1,10 @@
 # Contact Phonology and Lexical Formation
 
-**Status:** The architecture and evidence boundaries in this document are accepted for current work. The sound mappings and formation rules are proposed candidates. They may generate noncanonical records and tests; they do not establish canon.
+**Status:** The architecture and evidence boundaries in this document are
+accepted for current work. The sound mappings and formation rules are proposed
+candidates used in manual language authorship. Deterministic tooling may test
+their declared behavior; it does not choose language forms, and no proposal in
+this document establishes canon.
 
 ## 1. What the current records mean
 
@@ -145,13 +149,40 @@ contact output does not predict Munsee surface contraction. The only admitted
 objects in this tranche are animate-class `adam` and inanimate-class `or`,
 `kol`, and `aanay`; every object is overt and indefinite.
 
-Ordinary Hebrew-derived `wə-` preserves its proclitic placement on a second
-nominal or finite conjunct. The finite candidate requires two complete
-matching-clusivity clauses. It is not a free particle and contributes no
-narrative sequence or consequence. See the [manual perception and coordination
+Ordinary Hebrew-derived contact `wə-` preserves its proclitic placement on a
+second nominal or finite conjunct. It is a separate contact morpheme pinned to
+the Hebrew donor record, and current contact compositions depend on this layer
+rather than treating donor evidence as a finished language morpheme. The
+nominal construction joins two nouns; the finite candidate requires two
+complete matching-clusivity clauses. `wə-` is not a free particle and
+contributes no narrative sequence or consequence. Historical pilot records may
+retain their direct donor dependency as frozen architecture tests. See the
+[manual perception and coordination
 analysis](research/perception-and-coordination-tranche.md).
 
-## 11. What the first synthesis probe can prove
+## 11. Static place and posture
+
+The next manually authored tranche admits one closed mixed-host locative. Exact
+source `aaneenk` “on the road” and `mohkamiink` “on the ice” retain their cited
+contractions. Contact `apiineenk` “at the bed,” `bayitənk` “in the house,”
+`xederənk` “in the room,” and `šulxanənk` “at the table” extend the regional
+`-ənk` boundary only to those listed hosts. The suffix is static/general: it
+does not express motion toward, motion from, route, or direction.
+
+Contact `apii-` “be located,” `ləmatapii-` “sit,” and `niipawii-` “stand” use a
+seven-way independent AI microparadigm: first, second, and third singular;
+inclusive and exclusive first plural; second plural; and third plural. The
+careful contact forms preserve full stems, require singular `-m`, and suspend
+source R10 insertion, R13 alternation, W-shift, contraction, and deletion. This
+is an explicit regularization, not a claim about Munsee surface pronunciation.
+
+Finite predicates precede a listed static locative; a lexical third-person
+subject precedes the predicate. Clause-initial Hebrew-derived contact `efo`
+asks static “where?” only. These constructions supply no tense, aspect,
+negation, possession, obviation, or wayyiqtol/weqatal behavior. See the [manual
+static-place and posture analysis](research/static-place-and-posture-tranche.md).
+
+## 12. What the first synthesis probe can prove
 
 The first probe may prove that:
 

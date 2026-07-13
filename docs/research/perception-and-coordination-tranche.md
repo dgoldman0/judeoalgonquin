@@ -109,10 +109,17 @@ questions, commands, dependent order, or narrative-chain morphology.
 
 ## Phrase and sentence outputs
 
-The nominal phrase `or wə-kol` means “light and sound.” It reuses the ordinary
-Hebrew-derived coordinator already tested in nominal coordination, now between
-two contact nouns. The coordinator remains a proclitic on the second conjunct;
-it is not narrative waw.
+The nominal phrase `or wə-kol` means “light and sound.” It uses the ordinary
+Hebrew-derived contact coordinator already tested in nominal coordination, now
+between two contact nouns. The coordinator remains a proclitic on the second
+conjunct; it is not narrative waw.
+
+The later static-place tranche repaired the dependency architecture without
+changing these surfaces or meanings. The phrase and coordinated sentences are
+now revision-2 records: they depend on `ja.morpheme.contact_coord_we` and the
+contact nominal or finite construction, while that contact morpheme alone pins
+the Hebrew donor evidence. Historical pilot records may still exercise the
+donor-facing construction directly.
 
 The basic contact clauses are:
 

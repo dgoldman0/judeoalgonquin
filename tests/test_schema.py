@@ -22,6 +22,10 @@ DATASETS = (
     ROOT / "data" / "entries" / "n1-contact-lexicon.jsonl",
     ROOT / "data" / "entries" / "n1-song-chorus.jsonl",
     ROOT / "data" / "entries" / "n1-perception-enrichment.jsonl",
+    ROOT / "data" / "entries" / "n1-static-place-enrichment.jsonl",
+    ROOT / "data" / "entries" / "n1-static-place-contact.jsonl",
+    ROOT / "data" / "entries" / "n1-static-place-grammar.jsonl",
+    ROOT / "data" / "entries" / "n1-static-place-examples.jsonl",
 )
 
 

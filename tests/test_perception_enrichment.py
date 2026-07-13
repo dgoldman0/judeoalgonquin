@@ -23,6 +23,8 @@ POLICY = ROOT / "config" / "api-budget.json"
 
 PERCEPTION_ABSOLUTE = "ja.construction.contact_perception_absolute_first_plural"
 FINITE_COORDINATION = "ja.construction.contact_finite_coordination"
+CONTACT_COORDINATOR = "ja.morpheme.contact_coord_we"
+CONTACT_NOMINAL_COORDINATION = "ja.construction.contact_nominal_coordination"
 
 EXPECTED_CELLS = {
     ("see", "animate", "inclusive", "first", "plural"): "kəneewahna",
@@ -134,15 +136,24 @@ class PerceptionEnrichmentTests(unittest.TestCase):
                 self.assertEqual(record["provenance"]["creator_type"], "model")
                 self.assertIn("manually", record["provenance"]["generation_note"].lower())
 
-    def test_local_checkpoint_report_matches_tree_and_closed_paid_gate(self) -> None:
+    def test_historical_checkpoint_report_remains_frozen_and_paid_gate_closed(self) -> None:
         report = json.loads(REPORT.read_text(encoding="utf-8"))
-        self.assertEqual(report["corpus"]["records_total"], len(self.records))
-        self.assertEqual(report["corpus"]["records_added"], len(self.tranche_ids))
+        self.assertEqual(report["corpus"]["records_total"], 144)
+        self.assertEqual(report["corpus"]["records_added"], 20)
         self.assertEqual(report["verification"]["tests_passed"], 147)
         self.assertEqual(report["embedding_refresh_dry_run"]["api_requests"], 0)
         self.assertFalse(report["embedding_refresh_dry_run"]["paid_gate_enabled"])
         self.assertFalse(json.loads(POLICY.read_text(encoding="utf-8"))["paid_embeddings_enabled"])
         self.assertEqual(
+            report["corpus"]["tranche_file_sha256"],
+            "09cdc27d3c8120f4a55b0bf506b6cfbdab4d949d5b6121be04ba0c77000ba706",
+        )
+        self.assertEqual(
+            report["corpus"]["data_sha256"],
+            "cdabf3b68a9a55fa286b34d8722e8cbcf111e8f88cc055ff6f57e7191136a2f4",
+        )
+        self.assertGreater(len(self.records), report["corpus"]["records_total"])
+        self.assertNotEqual(
             report["corpus"]["tranche_file_sha256"],
             hashlib.sha256(TRANCHE.read_bytes()).hexdigest(),
         )
@@ -153,7 +164,7 @@ class PerceptionEnrichmentTests(unittest.TestCase):
             aggregate.update(b"\0")
             aggregate.update(candidate.read_bytes())
             aggregate.update(b"\0")
-        self.assertEqual(report["corpus"]["data_sha256"], aggregate.hexdigest())
+        self.assertNotEqual(report["corpus"]["data_sha256"], aggregate.hexdigest())
 
     def test_source_absolute_positive(self) -> None:
         source = self.by_id["ja.construction.munsee_independent_absolute"]
@@ -345,7 +356,7 @@ class PerceptionEnrichmentTests(unittest.TestCase):
         )
         self.assertEqual(
             phrase["composition"]["construction_ids"],
-            ["ja.construction.n1_nominal_coordination"],
+            [CONTACT_NOMINAL_COORDINATION],
         )
         self.assertEqual(
             [
@@ -354,7 +365,7 @@ class PerceptionEnrichmentTests(unittest.TestCase):
             ],
             [
                 ("ja.lexeme.contact_light", "first conjunct", "or"),
-                ("ja.morpheme.hebrew_coord_we", "coordinator", "wə"),
+                (CONTACT_COORDINATOR, "coordinator", "wə"),
                 ("ja.lexeme.contact_sound", "second conjunct", "kol"),
             ],
         )
@@ -363,6 +374,14 @@ class PerceptionEnrichmentTests(unittest.TestCase):
         self.assertEqual(construction["construction_spec"]["productivity"], "limited")
         self.assertIn("narrative-firewall", construction["metadata"]["tags"])
         self.assertIn("wə-CLAUSE₂", construction["construction_spec"]["formalism"])
+        self.assertEqual(
+            construction["relations"]["depends_on"],
+            [CONTACT_COORDINATOR, CONTACT_NOMINAL_COORDINATION],
+        )
+        self.assertEqual(
+            construction["relations"]["dependency_revisions"],
+            {CONTACT_COORDINATOR: 1, CONTACT_NOMINAL_COORDINATION: 1},
+        )
 
         for record_id, (first_id, second_id, surface) in COORDINATED_SENTENCES.items():
             with self.subTest(record=record_id):
@@ -377,7 +396,7 @@ class PerceptionEnrichmentTests(unittest.TestCase):
                 )
                 self.assertEqual(
                     [component["record_id"] for component in components],
-                    [first_id, "ja.morpheme.hebrew_coord_we", second_id],
+                    [first_id, CONTACT_COORDINATOR, second_id],
                 )
                 self.assertEqual(components[1]["realization"], "wə")
                 self.assertEqual(sentence["forms"]["judeo_algonquin"]["romanization"], surface)
@@ -400,6 +419,26 @@ class PerceptionEnrichmentTests(unittest.TestCase):
             "kəpəntamohna kol wə kəneemohna or"
         )
         self._assert_finding(records, "surface must exactly join its two clauses with wə")
+
+        records = copy.deepcopy(self.records)
+        construction = self._record(records, FINITE_COORDINATION)
+        donor_dependencies = [
+            "ja.morpheme.hebrew_coord_we",
+            "ja.construction.n1_nominal_coordination",
+        ]
+        language_inputs = [
+            item
+            for item in construction["formation"]["inputs"]
+            if item["input_type"] == "language_record"
+        ]
+        for item, dependency in zip(language_inputs, donor_dependencies, strict=True):
+            item["input_id"] = dependency
+        construction["relations"]["depends_on"] = donor_dependencies
+        construction["relations"]["dependency_revisions"] = {
+            donor_dependencies[0]: 3,
+            donor_dependencies[1]: 3,
+        }
+        self._assert_finding(records, "exact contact coordinator dependencies")
 
     def test_finite_coordination_clusivity_negative(self) -> None:
         records = copy.deepcopy(self.records)
@@ -457,6 +496,7 @@ class PerceptionEnrichmentTests(unittest.TestCase):
     def test_all_contact_surfaces_round_trip(self) -> None:
         contact_ids = {
             "ja.lexeme.contact_sound",
+            CONTACT_COORDINATOR,
             *LEXICAL_PAIRS,
             "ja.phrase.perception_light_and_sound",
             *SIMPLE_SENTENCES,

@@ -6,13 +6,25 @@ source of truth and must validate against `schema/entry.schema.json`.
 `n1-core-lexicon.jsonl` adds 60 independently sourced lexical/function donor
 candidates; `n1-core-regressions.jsonl` adds 12 revision-pinned composition
 tests; `n1-contact-lexicon.jsonl` adds the first 15 actual contact-language
-lexeme proposals; and `n1-song-chorus.jsonl` adds 17 manually authored donor,
+lexeme proposals; `n1-song-chorus.jsonl` adds 17 manually authored donor,
 contact, construction, and sentence records for the first *We Walk Well*
 chorus tranche; and `n1-perception-enrichment.jsonl` adds 20 manually authored
 records for sound, class-sensitive perception, an objectful first-plural
-Absolute, ordinary finite coordination, one phrase, and eight sentences. The
-full 144-record database is explicitly noncanonical and remains subject to
-source and design revision.
+Absolute, ordinary finite coordination, one phrase, and eight sentences.
+
+The static-place tranche is split by review function:
+
+- `n1-static-place-enrichment.jsonl` preserves six source-facing locative,
+  predicate, and person-pattern records;
+- `n1-static-place-contact.jsonl` adds eleven contact-language atoms, including
+  the separate contact coordinator, mixed-host locative, `efo`, household
+  nouns, and three AI stems;
+- `n1-static-place-grammar.jsonl` adds five contact constructions; and
+- `n1-static-place-examples.jsonl` adds six phrases and eight sentences.
+
+Those four files contribute 36 records: 3 morphemes, 12 lexemes, 7
+constructions, 6 phrases, and 8 sentences. The full 180-record database is
+explicitly noncanonical and remains subject to source and design revision.
 
 Every source-facing lexeme or morpheme is typed `donor_candidate`. It preserves
 evidence but cannot itself become language canon. The contact records depend on

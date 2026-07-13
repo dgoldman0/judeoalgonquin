@@ -98,7 +98,13 @@ The core statuses are:
 - `superseded` — replaced by identified record(s); and
 - `rejected` — considered and excluded, with a reason.
 
-Automation may create `draft` or `candidate` records and attach evaluations. It may not set `canonical`, including when every automated check passes. Canon promotion records the human reviewer and decision.
+Direct linguistic authorship may create `draft` or `candidate` language
+records. Deterministic automation may create non-normative fixtures and
+supporting artifacts, attach evaluations, retrieve neighbors, and check declared
+contracts; it does not select vocabulary, morphology, constructions, or
+translations. Neither a model nor automation may set `canonical`, including
+when every check passes. Canon promotion records the human reviewer and
+decision.
 
 Canonical records are not edited in place without a revision event. Meaningful changes increment the revision, identify affected dependencies, and trigger review and re-indexing.
 
@@ -201,3 +207,10 @@ correctly leave all 107 records stale or missing in the local checkpoint index.
 A dry-run estimates about 64,703 record-input tokens, or roughly $0.00129 at
 the configured embedding rate, for a full refresh; that
 estimate is not authorization.
+
+The later static-place and posture tranche also made no API request. After its
+36 manually authored records and the coordinator-layer repair, all 180 current
+records are treated as stale or missing by a full-tree refresh plan. The dry
+run over those records and 12 fixed queries estimates 117,737 input tokens, or
+about $0.00235 at the configured embedding rate. The committed paid gate
+remains disabled; this estimate is not authorization.
