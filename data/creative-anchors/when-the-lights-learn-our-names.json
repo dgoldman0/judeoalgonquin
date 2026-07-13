@@ -718,6 +718,22 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Bound go donor, not a usable predicate."
+        },
+        {
+          "record_id": "ja.lexeme.contact_door",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_door.sense.door",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies an ordinary door noun only; wrong-door modification, door-place marking, opening, the breaker goal, participant tracking, and narrative chaining remain unresolved."
+        },
+        {
+          "record_id": "ja.construction.contact_spatial_relator_phrase",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_spatial_relator_phrase.sense.spatial_vector",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The closed goal phrase licenses el bayit only and cannot be generalized to 'toward the breaker'; the directional and event-chain work for this scene remains open."
         }
       ],
       "gaps": [
@@ -935,6 +951,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Road donor cannot silently become puddle-path."
+        },
+        {
+          "record_id": "ja.lexeme.contact_derex_route",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_derex_route.sense.route",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "Contact derex marks a listed route along a physical road; it cannot mean across a floor, create a shining puddle-path, or order this narrative sequence."
         }
       ],
       "gaps": [
@@ -1010,6 +1034,30 @@
           "relationship": "conflict_probe",
           "coverage": "conflict",
           "note": "Animate plural is unlicensed on the stone donor."
+        },
+        {
+          "record_id": "ja.lexeme.contact_return_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_return_ai.sense.return",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies only an ordinary animate return or go-back predicate; hurry, the participant identity, obviation, event order, and foreground chaining remain gaps."
+        },
+        {
+          "record_id": "ja.lexeme.contact_find_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_find_inanimate.sense.find_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies a bounded inanimate-object find stem only; it does not license a foot as third-person subject, a nominal 'wet,' or this narrative clause."
+        },
+        {
+          "record_id": "ja.construction.contact_find_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_find_absolute_first_plural.sense.indefinite_object",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The available find construction is explicitly first-person plural with an overt indefinite object, so it cannot realize the third-person foot-finds-wet joke or its narrative tracking."
         }
       ],
       "gaps": [
@@ -1164,6 +1212,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Supplies a static room setting only; reveal syntax, tableaux, and multiple-obviative recovery remain unresolved."
+        },
+        {
+          "record_id": "ja.lexeme.contact_return_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_return_ai.sense.return",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The new return stem selects an animate participant and explicitly excludes power returning; it supplies no solution for this inanimate event or the reveal tableau."
         }
       ],
       "gaps": [
@@ -1378,7 +1434,16 @@
         "wll.12"
       ],
       "status": "gap",
-      "current_record_links": [],
+      "current_record_links": [
+        {
+          "record_id": "ja.construction.contact_ai_motion_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_motion_independent.sense.ordinary_motion",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The ordinary independent motion paradigm explicitly contributes no event ordering, foreground status, wayyiqtol value, obviation, or participant recovery; its existence demonstrates rather than closes this gap."
+        }
+      ],
       "requirement": "Design a wayyiqtol-derived foreground chain that distinguishes advancing events from orientation, result states, depictions, and tableaux.",
       "acceptance_condition": "Short chains pass interruption, negation, background, resumption, and event-order tests before the full song uses them."
     },
@@ -1600,6 +1665,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Water donor."
+        },
+        {
+          "record_id": "ja.lexeme.contact_door",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_door.sense.door",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds a bounded ordinary door noun; wrong-door syntax, opening, location, and the surrounding breaker-and-coat actions remain absent."
         }
       ],
       "requirement": "Cover light, power, phone, candle, match, smoke alarm, breaker, door, coat, lantern, floor, couch, stove, and related actions as ordinary modern vocabulary.",
@@ -1669,6 +1742,30 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Go donor."
+        },
+        {
+          "record_id": "ja.lexeme.contact_return_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_return_ai.sense.return",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds a narrowly ordinary animate return predicate; hurry, event sequencing, obviation, and narrative recurrence remain outside it."
+        },
+        {
+          "record_id": "ja.lexeme.contact_find_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_find_inanimate.sense.find_inanimate",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds class-sensitive successful finding as a lexical ingredient, but not the song's third-person body-part subject or wet-object analysis."
+        },
+        {
+          "record_id": "ja.construction.contact_find_absolute_first_plural",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_find_absolute_first_plural.sense.indefinite_object",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The only admitted find clauses are ordinary first-person-plural Absolutes; they do not supply the song's third-person participant behavior or foreground chain."
         }
       ],
       "requirement": "Build the motion, impact, sound, spill, slip, scatter, gather, look, and laugh predicate inventory with explicit valency and participant behavior.",
@@ -1764,6 +1861,6 @@
       "blocker": "Most lexicon and every defining narrative construction remain incomplete."
     }
   ],
-  "updated_at": "2026-07-13T08:39:00-04:00",
-  "change_note": "Linked only the animate-object contact look stem to the shared-look scenes while preserving every third-person, reciprocal, participant-tracking, laughter, foreground-chain, and recurring-frame gap; the ringing-spoons extension remains unlicensed."
+  "updated_at": "2026-07-13T17:55:00-04:00",
+  "change_note": "Linked the new ordinary return, find, door, and closed directional-route material only as bounded ingredients or explicit conflict probes; hurry, breaker goals, across-floor paths, foot-finds-wet syntax, power return, obviation, participant recovery, wayyiqtol foreground chaining, and weqatal recurrence all remain gaps, and the anchor remains creative influence rather than attestation."
 }

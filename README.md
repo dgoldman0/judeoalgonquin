@@ -5,13 +5,13 @@ This repository is the structured knowledge base for an intentionally constructe
 Its explicit alternate-history premise imagines that Judea does not fall, that a culturally rich Judean community eventually crosses the Atlantic and settles in the valley, and that long contact produces a pidgin and then a nativized creole—a full community language that continues to elaborate across ordinary life, learning, art, narrative, and public institutions. Hebrew language and culture are preserved and transformed throughout that development. This is worldbuilding, not claimed history or reconstruction, and the project does not represent any real Jewish or Indigenous community's speech.
 
 The project is currently in **N1 contact-language construction**. The knowledge
-base now contains 180 records. Its latest 36-record manually authored tranche
-adds a closed static-locative system, an ordinary seven-way participant
-microparadigm for three location and posture predicates, static `where`
-questions, six phrases, and eight sentences. Every record remains noncanonical.
-No legacy translation is canonical. The old fine-tuning-era tree remains
-recoverable from the archival Git tags documented in [the legacy
-audit](docs/legacy-audit.md).
+base now contains 225 records. Its latest 45-record manually authored tranche
+adds 28 ordinary motion cells, seven objectless drink cells, four bounded find
+cells, and exact goal/source/route phrases and clauses. The preceding semantic
+checkpoint covers 180 records; these 45 later records remain unembedded. Every
+record remains noncanonical. No legacy translation is canonical. The old
+fine-tuning-era tree remains recoverable from the archival Git tags documented
+in [the legacy audit](docs/legacy-audit.md).
 
 ## Start here
 
@@ -38,6 +38,9 @@ audit](docs/legacy-audit.md).
 21. [Perception enrichment local checkpoint](docs/reports/perception-enrichment-2026-07-13.json)
 22. [Static place and posture tranche](docs/research/static-place-and-posture-tranche.md)
 23. [Static place enrichment local checkpoint](docs/reports/static-place-enrichment-2026-07-13.json)
+24. [Static-place semantic checkpoint](docs/reports/static-place-semantic-bootstrap-2026-07-13.json)
+25. [Motion and action tranche](docs/research/motion-and-action-tranche.md)
+26. [Motion and action local checkpoint](docs/reports/motion-action-enrichment-2026-07-13.json)
 
 ## Core rules
 
@@ -82,7 +85,7 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin search home
 # Show the embedding plan without spending anything.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin embed --data data/entries
 
-# Validate all 180 records, both creative-anchor ledgers, and declared
+# Validate all 225 records, both creative-anchor ledgers, and declared
 # constructions, then inspect the current
 # dry-run embedding envelope without spending.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate --data data/entries
@@ -95,5 +98,8 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin n1-core-embedding-eval
 Paid embedding and semantic-search paths require both `--live` and an enabled,
 capped authorization in [`config/api-budget.json`](config/api-budget.json). The
 foundation smoke call, architecture-probe sanity call, and first N1 core
-checkpoint have been consumed. The committed policy is disabled, so any further
-paid action requires new owner approval.
+checkpoint have been consumed. The later 180-record static-place semantic
+checkpoint also completed, using 108,422 input tokens at an estimated
+$0.00216844; its 45 successor records have not been embedded. The committed
+policy is disabled, so any embedding refresh, live semantic query, generative
+API call, or other paid action requires new owner approval.

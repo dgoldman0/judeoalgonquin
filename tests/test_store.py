@@ -10,6 +10,7 @@ from judeoalgonquin.store import (
     index_records,
     merge_hybrid_results,
     put_embedding,
+    put_embeddings_atomic,
     search_text,
     search_vectors,
 )
@@ -89,6 +90,16 @@ class StoreTests(unittest.TestCase):
         lexical = search_text(self.connection, "path")
         hybrid = merge_hybrid_results(lexical, semantic, limit=3)
         self.assertEqual(hybrid[0]["id"], "ja.lexeme.legacy_path")
+
+    def test_atomic_embedding_batch_rejects_all_rows_if_one_vector_is_invalid(self) -> None:
+        rows = [
+            (self.records[0]["id"], "fake", 3, "fingerprint-one", [1.0, 0.0, 0.0]),
+            (self.records[1]["id"], "fake", 3, "fingerprint-two", [1.0, 0.0]),
+        ]
+        with self.assertRaisesRegex(ValueError, "expected 3 dimensions"):
+            put_embeddings_atomic(self.connection, rows)
+        count = self.connection.execute("SELECT count(*) FROM embeddings").fetchone()[0]
+        self.assertEqual(count, 0)
 
     def test_changed_record_stale_vector_is_not_searchable(self) -> None:
         from judeoalgonquin.embeddings import record_fingerprint

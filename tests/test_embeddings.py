@@ -1,8 +1,10 @@
 import copy
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 from judeoalgonquin.embeddings import (
     EmbeddingBatch,
@@ -95,6 +97,18 @@ class EmbeddingTests(unittest.TestCase):
         batch = embedder.embed(["test"])
         self.assertEqual(batch.vectors, [[0.0, 1.0, 0.0]])
         self.assertEqual(batch.total_tokens, 4)
+
+    def test_default_openai_client_disables_automatic_retries(self) -> None:
+        captured = {}
+
+        def factory(**kwargs):
+            captured.update(kwargs)
+            return SimpleNamespace(embeddings=SimpleNamespace(create=None))
+
+        fake_module = SimpleNamespace(OpenAI=factory)
+        with patch.dict(sys.modules, {"openai": fake_module}):
+            OpenAIEmbedder(model="fake", dimensions=3)
+        self.assertEqual(captured, {"max_retries": 0})
 
     def test_live_input_cap_is_enforced_before_provider(self) -> None:
         client = SimpleNamespace(

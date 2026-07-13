@@ -10,6 +10,7 @@ from judeoalgonquin.evaluate import (
     evaluate_pilot_compositions,
     evaluate_semantic_rankings,
     load_semantic_queries,
+    load_typed_semantic_queries,
 )
 from judeoalgonquin.records import load_records, load_source_registry, validate_records
 from judeoalgonquin.store import connect, index_records, search_text
@@ -19,6 +20,9 @@ ROOT = Path(__file__).parents[1]
 PILOT = ROOT / "data" / "entries" / "n1-pilot.jsonl"
 SOURCES = ROOT / "references" / "sources.yaml"
 SEMANTIC_QUERIES = ROOT / "tests" / "fixtures" / "n1_pilot_semantic_queries.json"
+TYPED_SEMANTIC_QUERIES = (
+    ROOT / "tests" / "fixtures" / "static_place_semantic_queries.json"
+)
 EMBEDDING_REPORT = ROOT / "docs" / "reports" / "n1-pilot-embedding-evaluation-2026-07-12.json"
 BUDGET_POLICY = ROOT / "config" / "api-budget.json"
 
@@ -258,6 +262,45 @@ class PilotTests(unittest.TestCase):
         self.assertEqual(result["recall_at_1"], 1.0)
         self.assertEqual(result["recall_at_3"], 1.0)
         self.assertEqual(result["mean_reciprocal_rank"], 1.0)
+
+    def test_typed_semantic_queries_have_balanced_group_metrics(self) -> None:
+        queries = load_typed_semantic_queries(TYPED_SEMANTIC_QUERIES)
+        self.assertEqual(len(queries), 16)
+        self.assertEqual(
+            Counter(query["query_type"] for query in queries),
+            Counter({
+                "english": 4,
+                "conlang": 4,
+                "compositional": 4,
+                "contrastive": 4,
+            }),
+        )
+        miniature = [
+            {
+                "id": f"q-{query_type}",
+                "query": query_type,
+                "query_type": query_type,
+                "acceptable_ids": [f"r-{query_type}"],
+                "rationale": "test",
+            }
+            for query_type in ("english", "conlang", "compositional", "contrastive")
+        ]
+        vectors = [
+            [1.0 if column == row else 0.0 for column in range(4)]
+            for row in range(4)
+        ]
+        result = evaluate_semantic_rankings(
+            [f"r-{query['query_type']}" for query in miniature],
+            vectors,
+            miniature,
+            vectors,
+        )
+        self.assertEqual(set(result["by_query_type"]), {
+            "english", "conlang", "compositional", "contrastive"
+        })
+        self.assertTrue(
+            all(group["recall_at_3"] == 1.0 for group in result["by_query_type"].values())
+        )
 
     def test_live_report_preserves_pre_correction_result_and_consumed_gate(self) -> None:
         report = json.loads(EMBEDDING_REPORT.read_text(encoding="utf-8"))

@@ -89,6 +89,20 @@ regularizations. The construction expresses a general static location and does
 not license goals, sources, paths, direction, attachment to new hosts, or a
 general interaction with Hebrew prepositions.
 
+**[PROPOSED] Closed ordinary motion and drink paradigms.** The motion candidate
+admits exactly 28 cells: seven independent-order participant bundles for each
+of `pəməsii-` “walk,” `aləməsii-` “go away,” `kwaxkii-` “return,” and
+`maačii-` “go home.” The objectless drink candidate admits exactly seven cells
+for `mənee-`. Both preserve the complete contact stem and the same transparent
+prefix/suffix architecture used by the bounded AI location and posture work.
+Generic source `aa-` “go” and `paa-` “come” remain class-unresolved and cannot
+enter the motion paradigm. `kwaxkii-` has an animate participant only;
+`maačii-` expresses lexical homeward motion and cannot take `bayit` or
+`bayitənk`; and `mənee-` cannot take an overt beverage. English simple-present
+glosses do not establish tense. None of these cells supplies polarity,
+imperative force, TAM, proximate/obviative status, foregrounding, recurrence,
+consequence, or other narrative value.
+
 **[PROPOSED] Nominal classes and animacy.** A source-informed classification system may affect agreement, plural marking, and discourse. Classification cannot be assigned through invented claims such as an object being “alive” unless that is explicitly adopted as a new conlang rule rather than presented as source-language fact.
 
 **[PROPOSED MECHANICS; ACCEPTED CAPABILITY] Obviation and participant tracking.** A proximate/obviative system is required for the hybrid narrative engine. Its implementation must document marking, agreement, scope, center shifts, and what happens with more than one obviative. One binary marker must not be claimed to uniquely identify several participants by itself.
@@ -109,10 +123,20 @@ not claimed detachable Munsee morphemes. The construction does not license
 object omission, attentive “listen,” other persons, direct/inverse behavior,
 obviation, or narrative morphology.
 
+**[PROPOSED] Limited find Absolute.** Contact `moxkaw-` TA and `moxkam-` TI
+are admitted in exactly four first-plural cells: inclusive and exclusive with
+bare indefinite `adam` for the animate class, and inclusive and exclusive with
+bare indefinite `delet` for the inanimate class. The contact `a`/`o` bridges
+are project abstractions rather than detachable donor morphemes. These local
+object-class admissions do not establish a general noun-class system. The
+object is obligatory and cannot be definite, possessed, plural, omitted, or
+replaced. The construction means literal successful finding, not seeking,
+searching, realization, fact discovery, or intentionality, and it supplies no
+TAM, obviation, direct/inverse, or narrative behavior.
+
 **[REJECTED] Legacy pseudo-paradigms.** The old uncited `nə-/kə-/wə-` tables,
 singular/plural collapses, and unattested suffix stacking are not imported as
-rules. This does not reject the separately sourced, bounded, seven-cell AI
-candidate above.
+rules. This does not reject the separately sourced, bounded candidates above.
 
 ## 5. Syntax and discourse
 
@@ -130,6 +154,19 @@ Hebrew-derived contact `efo` occurs clause-initially and asks only static
 “where?” It does not yet license a general interrogative system, relative
 “where,” “wherever,” “where to,” or “where from.”
 
+**[PROPOSED] Closed directional relator phrases and motion clauses.** Contact
+`el` is an invariant goal relator directly inherited from Biblical Hebrew
+`אֶל`; contact `min` is an invariant physical-source relator directly inherited
+from `מִן`; and contact-native `derex` grammaticalizes the physical-route noun
+`דֶּרֶךְ` rather than pretending that the donor source attests an adposition.
+The phrase construction licenses only `el bayit`, `min bayit`, and
+`derex aanay`. The clause construction licenses only `yeled pəməsiiw el
+bayit`, `yeled aləməsiiw min bayit`, and `adam pəməsiiw derex aanay`; it is not
+a cross-product. Complements are bare. Static `-ənk` cannot express any of
+these roles, so `el bayitənk`, `min bayitənk`, and `derex aaneenk` are invalid,
+and static `efo` cannot ask for goal, source, or route. The distinctions add no
+arrival entailment, TAM, proximate/obviative status, or narrative chaining.
+
 **[PROPOSED] Ordinary nominal coordination.** Contact proclitic `wə-` attaches
 to the second of two admitted nouns. Current contact phrases use the separate
 contact-layer morpheme and construction, which revision-pin the Hebrew donor
@@ -140,6 +177,10 @@ two complete affirmative first-plural clauses when their clusivity agrees. It
 attaches to the second clause and contributes ordinary coordination only. It
 does not contribute sequence, consequence, recurrence, tense, aspect,
 foregrounding, center shift, wayyiqtol, or weqatal behavior.
+
+The complete cell inventories, donor/contact boundary, and compositional
+firewalls for the action expansion are documented in [Motion and Action
+Tranche](research/motion-and-action-tranche.md).
 
 **[ACCEPTED CAPABILITY] Hybrid narrative engine.** The language must support the combined wayyiqtol–weqatal–obviation behavior defined in [Hybrid Narrative Engine](narrative-engine.md). This is a central expressive requirement rather than an optional ornament or three independent feature ideas.
 

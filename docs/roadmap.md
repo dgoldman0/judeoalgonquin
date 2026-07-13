@@ -133,8 +133,8 @@ report](reports/perception-enrichment-2026-07-13.json).
 
 ## Static place and posture enrichment
 
-The next manually authored tranche adds 36 records and brings the current
-database to 180 noncanonical records. Six source-facing records bound the
+The next manually authored tranche adds 36 records and brings the database at
+that checkpoint to 180 noncanonical records. Six source-facing records bound the
 evidence for `-ənk`, three location or posture stems, and the seven independent
 AI participant patterns. Eleven contact atoms then place Hebrew-derived house,
 room, table, child, and static `efo` inside a regional contact system rather
@@ -155,6 +155,53 @@ depends on the Hebrew donor evidence. Surface wording does not change. Static
 tense/aspect, obviation, wayyiqtol-derived chaining, and weqatal-derived framing.
 See the [manual analysis](research/static-place-and-posture-tranche.md) and
 [local checkpoint report](reports/static-place-enrichment-2026-07-13.json).
+
+## Static-place semantic retrieval checkpoint
+
+The owner-authorized living-index bootstrap embedded all 180 records then
+present, together with 16 fixed diagnostic queries. The successful
+`text-embedding-3-small` request used 256 dimensions, 108,422 input tokens, and
+an estimated $0.00216844. Across four English, four contact-language, four
+compositional, and four contrastive queries, it achieved recall@1 of 0.6875,
+recall@3 of 0.9375, and mean reciprocal rank of 0.8177083. The run passed its
+predeclared recall@3 criteria.
+
+This is evidence that the 180-record checkpoint can support useful semantic
+discovery; it is not evidence for a form, a contradiction detector, model
+training, or canon review. The preceding failed network reservation remains
+conservatively counted. Paid access was disabled after the successful call.
+See the [sanitized semantic checkpoint
+report](reports/static-place-semantic-bootstrap-2026-07-13.json).
+
+## Motion and action enrichment
+
+The next directly authored language tranche adds 45 records, bringing the
+structured database to 225 noncanonical records. Its seven new source-facing
+lexemes preserve exact Biblical Hebrew and Moraviantown Munsee facts; ten
+separate contact lexemes state the language's adaptations. Five closed
+constructions then declare 28 motion cells, seven objectless drink cells, four
+first-plural find cells, three spatial-relator phrases, and three complete
+relator clauses. Three phrase records and twenty sentence records exercise
+those decisions. Code checks the declared inventory but did not select or
+generate it.
+
+The action field is a genuine contact synthesis. Regional AI person
+architecture carries walk, go-away, return, go-home, and drink stems. The
+class-sensitive find pair combines with contact `adam` and Hebrew-derived
+`delet`. Hebrew goal `el` and source `min` operate as bounded direct
+inheritances, while contact-native `derex` openly grammaticalizes donor noun
+`derekh` “way; road; path” into a route relator rather than attributing that
+function to the donor source. The three admitted phrase/clause pairs remain
+goal `el bayit`, source `min bayit`, and route `derex aanay`; no cross-product
+is implied.
+
+All cells remain ordinary and host-bounded. They add no TAM, imperatives,
+negation, direct/inverse behavior, proximate/obviative status,
+wayyiqtol-derived foregrounding, weqatal-derived consequence or recurrence, or
+event sequence. Static `-ənk` and static `efo` remain firewalled from goal,
+source, and route. The prior semantic checkpoint has 180 vectors, so these 45
+new records remain unembedded until the owner explicitly authorizes another
+paid refresh. See the [full manual analysis](research/motion-and-action-tranche.md).
 
 ## Project proficiency levels
 
@@ -273,16 +320,22 @@ Reports track at least:
 
 Phase 0 authorized one small paid embedding smoke test. The owner later
 authorized the 20-record architecture-probe evaluation and, after reviewing its
-result, one 92-record N1 core checkpoint. All three are complete, and paid API
-access is disabled again. No paid generative-model work has occurred.
+result, one 92-record N1 core checkpoint. A later explicit authorization
+covered the 180-record static-place semantic bootstrap and its 16 diagnostics.
+All four embedding checkpoints are complete, and paid API access is disabled
+again. No paid generative-model work has occurred.
 
 The results are recorded in
 [`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json),
 [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json),
 and
-[`reports/n1-core-embedding-evaluation-2026-07-12.json`](reports/n1-core-embedding-evaluation-2026-07-12.json).
-The subsequent contact-synthesis work was wholly local and is recorded in
+[`reports/n1-core-embedding-evaluation-2026-07-12.json`](reports/n1-core-embedding-evaluation-2026-07-12.json),
+with the living-index snapshot in
+[`reports/static-place-semantic-bootstrap-2026-07-13.json`](reports/static-place-semantic-bootstrap-2026-07-13.json).
+The earlier contact-synthesis work was wholly local and is recorded in
 [`reports/n1-contact-synthesis-2026-07-12.json`](reports/n1-contact-synthesis-2026-07-12.json).
 Budget scenarios for a substantial first corpus are in [Initial-Build
 Budget](initial-build-budget.md). None of these documents authorizes another
-paid call or the proposed larger spend.
+paid call or the proposed larger spend. The 45 motion-and-action records were
+created after the snapshot and remain unembedded; refreshing them also requires
+new explicit owner approval.

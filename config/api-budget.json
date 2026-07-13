@@ -1,12 +1,20 @@
 {
   "paid_embeddings_enabled": false,
-  "authorization_note": "The owner-authorized frozen N1 core embedding checkpoint completed on 2026-07-12 and paid access was disabled immediately afterward. Any further paid embedding, semantic-search, or generative-model API work requires new explicit approval.",
+  "authorization_note": "The owner-authorized static-place semantic bootstrap completed on 2026-07-13 after one sandbox connection failure and one successful unsandboxed attempt. The successful call used 108422 input tokens (about $0.00216844); the failed 476172-token reservation remains conservatively counted. Together with earlier checkpoints, the committed cumulative accounting baseline is 694040 tokens (about $0.0138808), and paid access is closed. Any new embedding refresh, semantic query, or generative API call requires new explicit approval and a fresh authorization-era ledger.",
+  "authorization_id": "static-place-semantic-bootstrap-2026-07-13-network-retry-1",
+  "authorization_consumed": true,
+  "allowed_run_kinds": [
+    "static-place-embedding-checkpoint"
+  ],
   "allowed_models": ["text-embedding-3-small"],
   "allowed_dimensions": [256],
   "max_inputs_per_run": 128,
   "max_utf8_bytes_per_run": 250000,
-  "max_total_input_tokens": 500000,
-  "max_estimated_cost_usd": 0.01,
+  "max_input_utf8_bytes": 16384,
+  "max_provider_requests_per_checkpoint": 2,
+  "historical_accounted_input_tokens": 694040,
+  "max_total_input_tokens": 1100000,
+  "max_estimated_cost_usd": 0.022,
   "price_per_million_input_tokens_usd": 0.02,
-  "ledger_path": ".local/api-usage-ledger.json"
+  "ledger_path": ".local/api-usage-ledger-next-authorization.json"
 }

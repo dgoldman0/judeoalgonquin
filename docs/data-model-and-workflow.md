@@ -140,6 +140,13 @@ Narrative records using the hybrid engine additionally identify:
 
 If a dependency changes, downstream records become review candidates. They do not silently inherit the new form.
 
+For a construction whose productivity is `limited`, the declared paradigm
+cells and host combinations are exhaustive. Tooling may validate that closed
+inventory but may not fill an apparent Cartesian product, substitute a new
+host, or infer an omitted person, object, relator, or clause. The motion-and-
+action tranche's 28 motion, seven drink, four find, three relator-phrase, and
+three relator-clause cells are the current concrete example of this rule.
+
 [*We Walk Well* and *When the Lights Learn Our Names*](../references/creative-anchors/README.md) are the initial `creative_anchor` sources. Their themes, voice, narrative aims, and existing wording are continuity constraints. A revision may change any individual form after review, but it must retain a link to the anchor, explain material departures, and never overwrite the preserved source text.
 
 The normalized ledgers are a required preflight for every epoch. Donor-only
@@ -166,6 +173,14 @@ Individual English glosses, pointed and unpointed Hebrew, romanization, and decl
 An embedding search document may include the form, sense, gloss, formation rationale, grammar notes, and carefully selected dependency context. It must include the record ID and revision so stale vectors can be detected.
 
 Embeddings are regenerated only for changed records and any derived documents whose content changed. Switching embedding models creates a separately identified index; it does not rewrite language records.
+
+The current living semantic checkpoint contains vectors for exactly the 180
+records present at the static-place checkpoint. The 45 motion-and-action
+records were authored later, so the structured corpus now contains 225 records
+while those 45 have no vector in that snapshot. Retrieval callers must expose
+that coverage boundary: exact structured lookup remains current, but absence
+from semantic results is not evidence against a post-checkpoint record. A
+semantic refresh remains a paid operation requiring explicit owner approval.
 
 Similarity is a discovery signal, not proof of equivalence or conflict. Every suggested duplicate or contradiction must be resolved through structured evidence and review.
 
@@ -196,8 +211,10 @@ noncanonical fixtures. Separately authorized checkpoints then embedded the
 20-record architecture probe with five queries and the 92-record N1 core with
 12 queries. Their committed reports act as persistent consumed markers.
 Further live embedding or semantic-search operations require `--live`, a new
-explicit owner authorization, an enabled `config/api-budget.json`, per-run
-caps, a cumulative token cap, and an ignored local reservation/usage ledger.
+explicit owner authorization, an enabled `config/api-budget.json`, a nonempty
+one-shot authorization ID, an explicit consumed marker, an allowed-run-kind
+list, per-run caps, a cumulative token cap, and an ignored local
+reservation/usage ledger.
 Reservations are written before network access so a crash or uncertain failure
 cannot silently invite an unaccounted retry.
 
@@ -208,9 +225,32 @@ A dry-run estimates about 64,703 record-input tokens, or roughly $0.00129 at
 the configured embedding rate, for a full refresh; that
 estimate is not authorization.
 
-The later static-place and posture tranche also made no API request. After its
-36 manually authored records and the coordinator-layer repair, all 180 current
-records are treated as stale or missing by a full-tree refresh plan. The dry
-run over those records and 12 fixed queries estimates 117,737 input tokens, or
-about $0.00235 at the configured embedding rate. The committed paid gate
-remains disabled; this estimate is not authorization.
+The static-place and posture tranche itself made no API request. After local
+validation, the owner separately authorized one living-index bootstrap over
+the 180 records then present and 16 fixed diagnostics. The successful
+`text-embedding-3-small` request used 256 dimensions, 108,422 input tokens, and
+an estimated $0.00216844. It achieved recall@1 0.6875, recall@3 0.9375, and
+mean reciprocal rank 0.8177083. Those metrics characterize a fixed retrieval
+diagnostic only; they do not evaluate linguistic truth or promote records. One
+failed network reservation remains conservatively counted even though the
+stated cost is the successful provider call's estimate.
+
+The checkout-stable cumulative baseline is 694,040 accounted tokens, or
+$0.0138808 at the configured rate: 109,446 from earlier checkpoints, the
+failed reservation's 476,172-token upper bound, and 108,422 successful input
+tokens. A fresh ledger path is reserved for any future authorization so a
+clean checkout cannot forget the consumed ledger or a continuing checkout
+double-count it. Automatic SDK retries are disabled; a retry is a new visible,
+owner-authorized action.
+
+The local policy lock and consumed marker serialize one shared worktree. An
+enabled authorization file must never be copied to or run concurrently from a
+second checkout or machine; cross-machine authorization would require shared
+external state that this repository intentionally does not claim to provide.
+
+The 45 manually authored motion-and-action records came after that snapshot
+and made no API request. They are therefore missing from the semantic index
+while the earlier 180 vectors remain the last committed living checkpoint.
+Paid access is disabled. Any embedding refresh, live semantic query, or
+generative API call requires a new explicit authorization and the same
+reservation, cap, and reporting controls.

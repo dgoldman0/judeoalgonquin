@@ -1,0 +1,177 @@
+{
+  "report_id": "motion-action-enrichment-2026-07-13",
+  "status": "completed_local_noncanonical",
+  "completed_at": "2026-07-13T18:03:10-04:00",
+  "purpose": "Manually construct a closed ordinary motion and action tranche, integrate Hebrew-derived spatial relations into regional person-marked clauses, and preserve explicit boundaries around static location, valency, TAM, obviation, and the planned narrative system.",
+  "manual_language_work": {
+    "authoring_method": "Direct Codex linguistic reasoning over individually reviewed Munsee and Biblical Hebrew evidence, the language-design goals, the existing contact system, and both creative-anchor continuity ledgers.",
+    "automation_boundary": "Code serialized and validates the declared records, spelling, dependencies, closed cells, compositions, semantic firewalls, continuity links, and retrieval behavior. It did not choose or generate the vocabulary, grammatical allocations, paradigms, phrases, or sentences.",
+    "paid_generative_model_requests": 0
+  },
+  "record_inventory": {
+    "records_total": 225,
+    "prior_records": 180,
+    "new_tranche_records": 45,
+    "new_record_types": {
+      "lexeme": 17,
+      "construction": 5,
+      "phrase": 3,
+      "sentence": 20
+    },
+    "new_tranche_files": {
+      "data/entries/n1-motion-action-source.jsonl": 7,
+      "data/entries/n1-motion-action-contact.jsonl": 10,
+      "data/entries/n1-motion-action-grammar.jsonl": 5,
+      "data/entries/n1-motion-action-examples.jsonl": 23
+    },
+    "lifecycle": "candidate",
+    "canonical_records_added": 0,
+    "current_data_sha256": "406e6087b6b137afc51511523ffb5df4b58e62a959b7f0516d7b35e7fbfb4ca7"
+  },
+  "source_boundary": {
+    "regional_reference": "John O'Meara, Delaware Stem Morphology, Moraviantown Munsee variety",
+    "regional_items": [
+      "aləmsəw; /aləm-əsii-w/ — go away — p. 130, section 2.4.2.1, example 2.80",
+      "/kwaxk-ii-w/ — come/go back — p. 134, section 2.4.2.2, example 2.83b; analyzed form only in the table",
+      "/maač-ii-w/ — go home — p. 134, section 2.4.2.2, example 2.83b; analyzed form only in the table",
+      "məneew; /mən-ee-w/ — drink — p. 140, section 2.4.2.3, example 2.88; segmentation caution retained"
+    ],
+    "biblical_hebrew_items": [
+      "el — goal or motion toward",
+      "min — separation or source",
+      "derekh — physical way or road"
+    ],
+    "honesty_boundary": "Source records distinguish printed surfaces from analyzed-only forms and retain cited meanings, analysis confidence, and locators. Contact fusion and inflection, invariant relator syntax, derex route grammaticalization, and construction-local noun class are explicit project decisions, not claims of attested history."
+  },
+  "constructed_language": {
+    "ordinary_motion": {
+      "predicates": [
+        "pəməsii- — walk",
+        "aləməsii- — go away",
+        "kwaxkii- — animate return",
+        "maačii- — go home"
+      ],
+      "participants_per_predicate": 7,
+      "cells": 28,
+      "participant_bundles": [
+        "first singular",
+        "second singular",
+        "third singular",
+        "first plural inclusive",
+        "first plural exclusive",
+        "second plural",
+        "third plural"
+      ],
+      "boundary": "Generic source aa- 'go' and paa- 'come' remain class-unresolved and have no finite contact cells. Animate kwaxkii- cannot mean restoration of power, and lexical maačii- takes no directional complement in this tranche."
+    },
+    "ordinary_drink": {
+      "predicate": "mənee- — drink",
+      "cells": 7,
+      "boundary": "The first construction is objectless only and makes no claim about beverage objects or transitive valency."
+    },
+    "ordinary_find": {
+      "predicates": [
+        "moxkaw- — find an animate-class object",
+        "moxkam- — find an inanimate-class object"
+      ],
+      "cells": 4,
+      "scope": "Inclusive and exclusive first plural Absolute cells with an overt indefinite object.",
+      "object_hosts": [
+        "adam — person — animate in this construction",
+        "delet — door — locally assigned inanimate in this construction"
+      ],
+      "boundary": "The class allocation of contact delet is project grammar rather than inherited Hebrew gender, and the four cells do not license other persons, object omission, definiteness, direct/inverse behavior, or narrative obviation."
+    },
+    "mixed_spatial_relations": {
+      "phrase_cells": [
+        "el bayit — toward a house",
+        "min bayit — from a house",
+        "derex aanay — along a road"
+      ],
+      "clause_cells": [
+        "yeled pəməsiiw el bayit — A child walks toward a house.",
+        "yeled aləməsiiw min bayit — A child goes away from a house.",
+        "adam pəməsiiw derex aanay — A person walks along a road."
+      ],
+      "boundary": "Each relator is invariant and has one listed bare complement. Static -ənk cannot mark goal, source, or route; efo remains static 'where,' not 'where to' or 'where from.'"
+    },
+    "ordinary_coordination": "kəpəməsiihna wə-kəməneehna names inclusive walking and drinking as parallel ordinary actions. Linear order adds no event sequence, consequence, foreground status, or narrative chain."
+  },
+  "narrative_boundary": {
+    "preserved_goal": "The future narrative system still centers the specific expressive interaction of Biblical Hebrew wayyiqtol and weqatal with Algonquian obviation and discourse tracking.",
+    "not_built_here": [
+      "past, future, aspect, modality, polarity, or habitual marking",
+      "proximate, obviative, or multiple-obviative contrasts",
+      "wayyiqtol-derived foreground chains",
+      "weqatal-derived consequence, continuation, or recurring frames",
+      "participant recovery or discourse-center shifts"
+    ]
+  },
+  "creative_anchor_gate": {
+    "anchors": 2,
+    "segments": 41,
+    "requirements": 16,
+    "valid": true,
+    "continuity_result": "The ledgers now connect ordinary walk, literal along-road motion, animate return, find, and door only where they provide bounded contact ingredients. They use conflict probes where class, valency, path geometry, or narrative function does not match a song line.",
+    "anchor_status": "creative influence and revision constraint, not attestation or canon"
+  },
+  "embedding_bootstrap": {
+    "snapshot_records": 180,
+    "query_count": 16,
+    "model": "text-embedding-3-small",
+    "dimensions": 256,
+    "successful_provider_batches": 2,
+    "successful_input_tokens": 108422,
+    "estimated_successful_cost_usd": 0.00216844,
+    "metrics": {
+      "recall_at_1": 0.6875,
+      "recall_at_3": 0.9375,
+      "mean_reciprocal_rank": 0.8177083333333334,
+      "conlang_recall_at_3": 0.75
+    },
+    "historical_transport_boundary": "The successful run issued two application-level batches under the SDK's then-default retry policy. HTTP attempts were not instrumented, so no stronger transport-attempt count is claimed.",
+    "current_provider_retry_policy": "Automatic SDK retries are now disabled; any retry must be an explicit newly authorized action.",
+    "failed_attempt_accounting": "One sandbox APIConnectionError reservation is retained conservatively. Its 476172-token upper bound and the successful 108422-token usage have been rolled into the committed baseline rather than left only in an ignored local ledger.",
+    "committed_cumulative_accounted_input_tokens": 694040,
+    "committed_cumulative_accounted_cost_usd": 0.0138808,
+    "new_tranche_embedding_state": "The 45 motion-and-action records were authored after the frozen 180-record snapshot and have no stored vectors yet.",
+    "current_refresh_dry_plan": {
+      "records": 225,
+      "historical_queries": 12,
+      "api_inputs": 237,
+      "api_requests": 0,
+      "rough_input_tokens": 152146,
+      "rough_cost_usd": 0.00304292,
+      "conservative_input_token_upper_bound": 614840,
+      "conservative_cost_upper_bound_usd": 0.0122968
+    },
+    "authorization_state": "consumed and closed; no refresh or live semantic query may run without new owner approval",
+    "historical_report": "docs/reports/static-place-semantic-bootstrap-2026-07-13.json"
+  },
+  "verification": {
+    "tests": 193,
+    "tests_passed": 193,
+    "records_valid": 225,
+    "anchor_ledgers_valid": 2,
+    "construction_findings": 0,
+    "adversarial_coverage": [
+      "source form, source analysis, locator, and donor-layer mutations",
+      "contact spelling, script reversibility, donor identity, and revision-pin mutations",
+      "generic go or come promoted despite unresolved class",
+      "missing, duplicated, or surface-corrupted motion, drink, and find cells",
+      "inclusive and exclusive first-plural disagreement",
+      "TA/TI predicate and overt object-class mismatch",
+      "static locative suffix inserted into a directional complement",
+      "TAM, narrative, or obviation claims inserted into ordinary grammar",
+      "missing TAM, narrative, or third-person obviation-deferred firewall tags"
+    ]
+  },
+  "artifact_sha256": {
+    "data/entries/n1-motion-action-source.jsonl": "60c494dff6a62e499f7ad460ca77d0602cd276b5367f6a8ce269ea0d30c16533",
+    "data/entries/n1-motion-action-contact.jsonl": "09f7116c7bf3c8cd2c93284f743bc05f8b056f35fd382b1abd71b8a1f30b3f23",
+    "data/entries/n1-motion-action-grammar.jsonl": "d45814f47be9d7487637dddd58837000607c82f0017b0ed397cbb651928bb121",
+    "data/entries/n1-motion-action-examples.jsonl": "c693c5a06a7ccc545f5a0e4f1358263e6fc3359ceaa7710614471e609234a021"
+  },
+  "contains_vectors": false,
+  "contains_credentials": false
+}

@@ -256,6 +256,71 @@ direct/inverse behavior, obviation, wayyiqtol-derived chaining,
 weqatal-derived framing, or discourse-center tracking. Ordinary third-person
 cells cannot satisfy the narrative participant-recovery requirement.
 
+### D-024 — Static-place semantic retrieval checkpoint
+
+**Decision:** Use the owner-authorized static-place semantic bootstrap as the
+living semantic checkpoint for the 180 records present when it ran. The fixed
+run used `text-embedding-3-small` at 256 dimensions for 180 record documents
+and 16 authored diagnostics. Its successful call consumed 108,422 input tokens
+at an estimated cost of $0.00216844. It achieved recall@1 of 0.6875, recall@3
+of 0.9375, and mean reciprocal rank of 0.8177083, passing the predeclared
+recall@3 thresholds.
+
+**Interpretation:** The four English, four contact-language, four
+compositional, and four contrastive queries provide a useful retrieval
+diagnostic. They are not linguistic evidence, model training, canon review, or
+proof that semantic neighbors are equivalent. The failed network reservation
+preceding the successful request remains conservatively counted in budget
+accounting.
+
+The consumed local ledger has been rolled into a checkout-stable baseline of
+694,040 accounted tokens ($0.0138808 at the configured rate), and future
+authorization must use a fresh ledger epoch. Automatic SDK retries are now
+disabled so an ambiguous response cannot silently exceed the declared logical
+batch envelope; any retry requires a new explicit authorization.
+
+**Boundary:** The authorization is consumed and paid access is disabled. The
+45 motion-and-action records authored later are absent from this vector
+snapshot, so the structured corpus contains 225 records while the checkpoint
+covers 180. No new embedding refresh, live semantic query, or generative API
+call is authorized without explicit owner approval.
+
+### D-025 — Closed ordinary motion and action system
+
+**Decision:** Admit manually authored, noncanonical candidates for exactly 28
+ordinary AI motion cells, seven objectless drink cells, and four first-plural
+Absolute find cells. Motion covers `pəməsii-` “walk,” `aləməsii-` “go away,”
+`kwaxkii-` “return,” and `maačii-` “go home” across the seven declared
+participants. Drink covers the same seven participant bundles with `mənee-`.
+Find admits inclusive/exclusive `moxkaw-` TA with bare indefinite `adam` and
+inclusive/exclusive `moxkam-` TI with bare indefinite `delet`.
+
+Admit three invariant contact relators and their exact compositions: goal `el
+bayit`, source `min bayit`, and route `derex aanay`; then the three clauses
+`yeled pəməsiiw el bayit`, `yeled aləməsiiw min bayit`, and `adam pəməsiiw
+derex aanay`. Contact `el` and `min` are direct inheritances from separately
+recorded Biblical Hebrew donor candidates. Contact-native `derex` is an
+explicit grammaticalization of donor noun `derekh` “way; road; path,” not a
+claim that the donor source attests a route adposition. Regional predicate and
+valency evidence remains separately recorded and exactly attributed.
+
+**Reason:** The project now has a coherent novice action field whose depth can
+support phrase and clause construction. Hebrew relational material, regional
+AI person architecture and predicates, and nouns from both contact ancestries
+operate inside the same bounded grammar rather than as a selected donor-word
+list. Direct linguistic authorship chose every record and declared cell;
+deterministic tooling only validates them.
+
+**Boundary:** The printed cells are exhaustive, not automatically productive.
+Generic source `aa-` “go” and `paa-` “come” remain class-unresolved. Drink
+cannot take an overt beverage; find requires its exact overt indefinite object;
+`kwaxkii-` has an animate participant; and lexical homeward `maačii-` takes no
+`bayit` or `bayitənk` goal. Relator complements are bare, never static
+`-ənk`, and static `efo` cannot ask for direction. No cell establishes tense,
+aspect, modality, negation, imperative force, proximate/obviative status,
+direct/inverse alignment, wayyiqtol-derived foregrounding, weqatal-derived
+consequence or recurrence, event sequence, or discourse-center tracking.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.

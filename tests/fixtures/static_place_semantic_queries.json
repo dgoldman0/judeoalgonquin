@@ -1,0 +1,148 @@
+[
+  {
+    "id": "static-place-english-house",
+    "query": "the bounded contact phrase meaning in or at a house as a static dwelling location",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.phrase.static_in_house"
+    ],
+    "rationale": "Tests an English paraphrase of a mixed Hebrew-noun plus regional-locative phrase."
+  },
+  {
+    "id": "static-place-english-person-room",
+    "query": "an ordinary sentence saying that a person is located in a room",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.sentence.static_person_in_room"
+    ],
+    "rationale": "Tests retrieval of a complete third-person static scene rather than an isolated noun."
+  },
+  {
+    "id": "static-place-english-inclusive-table",
+    "query": "we including you are sitting at a table",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.sentence.static_we_sit_table_inclusive"
+    ],
+    "rationale": "Tests whether the inclusive participant distinction survives an English semantic query."
+  },
+  {
+    "id": "static-place-english-where-person",
+    "query": "where is a person located right now, with no destination or motion meaning",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.sentence.question_where_person"
+    ],
+    "rationale": "Tests the bounded static interrogative and its direction firewall."
+  },
+  {
+    "id": "static-place-conlang-person-room",
+    "query": "adam apiiw xederənk",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.static_person_in_room"
+    ],
+    "rationale": "Tests a complete romanized contact-language clause without an English gloss."
+  },
+  {
+    "id": "static-place-conlang-child-house",
+    "query": "yeled ləmatapiiw bayitənk",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.static_child_sits_house"
+    ],
+    "rationale": "Tests a second complete romanized clause with Hebrew-derived nouns and regional grammar."
+  },
+  {
+    "id": "static-place-conlang-inclusive-table",
+    "query": "kələmatapiihna šulxanənk",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.static_we_sit_table_inclusive"
+    ],
+    "rationale": "Tests a conlang-only participant-and-location form whose person meaning is carried by morphology."
+  },
+  {
+    "id": "static-place-conlang-hebrew-question",
+    "query": "אֶפֹ אַדַם אַפִּיוו",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.question_where_person"
+    ],
+    "rationale": "Tests the pointed Hebrew-script representation without supplying English or romanization."
+  },
+  {
+    "id": "static-place-compositional-locative",
+    "query": "the closed six-host rule that makes static in on or at phrases and explicitly cannot mark toward from or along",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_static_locative"
+    ],
+    "rationale": "Tests retrieval of a construction from its licensed outputs and its principal semantic restriction."
+  },
+  {
+    "id": "static-place-compositional-ai-person",
+    "query": "the seven-cell contact participant pattern for be located sit and stand, including inclusive and exclusive we",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_ai_posture_independent"
+    ],
+    "rationale": "Tests a paradigm-level query rather than any one surface cell."
+  },
+  {
+    "id": "static-place-compositional-clause",
+    "query": "an overt third-person subject before a finite animate-intransitive predicate with a static locative phrase after it",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_static_location_clause"
+    ],
+    "rationale": "Tests retrieval of the contact clause frame by its ordering and argument roles."
+  },
+  {
+    "id": "static-place-compositional-question",
+    "query": "put efo first and leave out the locative phrase to ask for a static location",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_static_where_question"
+    ],
+    "rationale": "Tests the interrogative construction by operation rather than by memorized sentence."
+  },
+  {
+    "id": "static-place-contrast-house-not-goal",
+    "query": "inside the house as a present setting, not into the house and not toward the house",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.phrase.static_in_house",
+      "ja.construction.contact_static_locative"
+    ],
+    "rationale": "Tests whether semantic retrieval respects the explicit static-versus-directional boundary."
+  },
+  {
+    "id": "static-place-contrast-inclusive-not-exclusive",
+    "query": "the speaker and addressee sit at the table; this is inclusive we, not a group excluding you",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.sentence.static_we_sit_table_inclusive"
+    ],
+    "rationale": "Tests a contrast whose distinction is grammatical rather than purely lexical."
+  },
+  {
+    "id": "static-place-contrast-stand-not-walk",
+    "query": "a child is standing on the road in a static scene, not walking along it or moving toward somewhere",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.sentence.static_child_stands_road"
+    ],
+    "rationale": "Tests posture against motion and static location against path."
+  },
+  {
+    "id": "static-place-contrast-where-not-whither",
+    "query": "ask where a person is, but do not ask where the person is going or where the person came from",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.sentence.question_where_person",
+      "ja.construction.contact_static_where_question"
+    ],
+    "rationale": "Tests the strongest question-word boundary before directional questions are added."
+  }
+]

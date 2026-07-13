@@ -60,10 +60,18 @@ dependent compositions after the call. The report preserves both manifests;
 84 current vectors remain fresh and eight are deliberately stale. No paid retry
 was made.
 
-Across all three successful checkpoints, confirmed usage is 61,751 input tokens,
+As of the 2026-07-12 N1 core checkpoint, all three successful checkpoints had
+confirmed usage of 61,751 input tokens,
 or approximately **$0.00123502**. Including the earlier connection failure at
-its full conservative reservation gives a project-wide upper accounting bound
+its full conservative reservation gave that day's upper accounting bound
 of 109,446 tokens, or **$0.00218892**. Paid access is disabled again.
+
+The later 180-record static-place checkpoint added 108,422 confirmed input
+tokens and followed a 476,172-token failed reservation that remains
+conservatively counted. Current checkout-stable accounting is therefore
+694,040 tokens, or **$0.0138808**, across four successful checkpoints and both
+conservatively retained failures. This is accounting, not a claim that every
+failed reservation was billed. Paid access remains disabled.
 
 For 1,500 richer records, initial indexing plus selective re-embedding over two major revision rounds is conservatively modeled as 1.2 million embedding tokens. At the current small-model rate, that is approximately **$0.024**. Even a much heavier 10-million-token embedding workload would be about **$0.20**.
 

@@ -808,10 +808,12 @@ def _declared_clusivity(record: dict[str, Any]) -> str | None:
 
 
 def _asserts_narrative_chain(value: str) -> bool:
+    value = re.sub(r"\b(?:not|no|without|neither)\b[^.;]*(?=$|[.;])", " ", value)
     return any(re.search(pattern, value) for pattern in NARRATIVE_SEMANTIC_PATTERNS)
 
 
 def _asserts_tam_or_obviation(value: str) -> bool:
+    value = re.sub(r"\b(?:not|no|without|neither)\b[^.;]*(?=$|[.;])", " ", value)
     return any(re.search(pattern, value) for pattern in TAM_OBVIATION_SEMANTIC_PATTERNS)
 
 
@@ -1594,14 +1596,556 @@ def evaluate_static_place_compositions(
     return findings
 
 
-def load_semantic_queries(path: str | Path) -> list[dict[str, str]]:
+MOTION_AI = "ja.construction.contact_ai_motion_independent"
+DRINK_AI = "ja.construction.contact_ai_drink_independent"
+FIND_ABSOLUTE = "ja.construction.contact_find_absolute_first_plural"
+RELATOR_CLAUSE = "ja.construction.contact_ai_motion_relator_clause"
+RELATOR_PHRASE = "ja.construction.contact_spatial_relator_phrase"
+
+MOTION_SOURCE_CONTRACTS = {
+    "ja.lexeme.hebrew_el_goal": (
+        "el",
+        "אֶל",
+        "to; toward; motion or direction toward",
+        "Preposition used especially after verbs of motion and direction.",
+        "BDB headword אֵל / אֶל, preposition I; "
+        "https://www.sefaria.org/BDB%2C_%D7%90%D6%B5%D7%9C",
+        "high",
+    ),
+    "ja.lexeme.hebrew_min_source": (
+        "min",
+        "מִן־",
+        "from; out of; away from; separation from",
+        "Preposition of separation and source, including use after motion verbs.",
+        "BDB headword מִן־, preposition; "
+        "https://www.sefaria.org/BDB%2C_%D7%9E%D6%B4%D7%9F%D6%BE.1",
+        "high",
+    ),
+    "ja.lexeme.hebrew_derekh_way": (
+        "derekh",
+        "דֶּרֶךְ",
+        "way; road; path; journey",
+        "Noun with physical and extended senses; only the physical route domain is "
+        "selected here.",
+        "BDB headword דֶּרֶךְ; "
+        "https://www.sefaria.org/BDB%2C_%D7%93%D6%B6%D6%BC%D6%B6%D7%A8%D6%B6%D7%9A%D6%B0",
+        "high",
+    ),
+    "ja.lexeme.munsee_alemesii_go_away": (
+        "aləm-əsii-",
+        "aləmsəw; /aləm-əsii-w/",
+        "he goes away",
+        "AI-final example analyzed as motion away plus AF /-əsii/ plus third person /-w/.",
+        "O'Meara 1990, p. 130, §2.4.2.1, example 2.80",
+        "high",
+    ),
+    "ja.lexeme.munsee_kwaxkii_return": (
+        "kwaxk-ii-",
+        "/kwaxk-ii-w/",
+        "he comes/goes back",
+        "Listed as a stable /-ii/ AI-final stem with third-person /-w/; the table "
+        "supplies an analyzed form rather than a separate surface.",
+        "O'Meara 1990, p. 134, §2.4.2.2, example 2.83b",
+        "high",
+    ),
+    "ja.lexeme.munsee_maachii_go_home": (
+        "maač-ii-",
+        "/maač-ii-w/",
+        "he goes home",
+        "Listed as a stable /-ii/ AI-final stem with third-person /-w/; the table "
+        "supplies an analyzed form rather than a separate surface.",
+        "O'Meara 1990, p. 134, §2.4.2.2, example 2.83b",
+        "high",
+    ),
+    "ja.lexeme.munsee_menee_drink": (
+        "mən-ee-",
+        "məneew; /mən-ee-w/",
+        "he drinks",
+        "AI-final example analyzed as /mən-ee-w/ with interlinear drink-AI-3; the "
+        "passage says segmentation of some examples is uncertain.",
+        "O'Meara 1990, p. 140, §2.4.2.3, example 2.88",
+        "medium",
+    ),
+}
+
+MOTION_CONTACT_CONTRACTS = {
+    "ja.lexeme.contact_el_goal": (
+        "el",
+        "ja.lexeme.hebrew_el_goal",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_min_source": (
+        "min",
+        "ja.lexeme.hebrew_min_source",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_derex_route": (
+        "derex",
+        "ja.lexeme.hebrew_derekh_way",
+        1,
+        "contact_native_formation",
+    ),
+    "ja.lexeme.contact_go_away_ai": (
+        "aləməsii-",
+        "ja.lexeme.munsee_alemesii_go_away",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_return_ai": (
+        "kwaxkii-",
+        "ja.lexeme.munsee_kwaxkii_return",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_go_home_ai": (
+        "maačii-",
+        "ja.lexeme.munsee_maachii_go_home",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_drink_ai": (
+        "mənee-",
+        "ja.lexeme.munsee_menee_drink",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_find_animate": (
+        "moxkaw-",
+        "ja.lexeme.munsee_moxk_aw_find_animate",
+        2,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_find_inanimate": (
+        "moxkam-",
+        "ja.lexeme.munsee_moxk_am_find_inanimate",
+        2,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_door": (
+        "delet",
+        "ja.lexeme.hebrew_delet_door",
+        2,
+        "direct_contact_inheritance",
+    ),
+}
+
+PARTICIPANT_BUNDLES = (
+    ("first", "singular", "not_applicable"),
+    ("second", "singular", "not_applicable"),
+    ("third", "singular", "not_applicable"),
+    ("first", "plural", "inclusive"),
+    ("first", "plural", "exclusive"),
+    ("second", "plural", "not_applicable"),
+    ("third", "plural", "not_applicable"),
+)
+MOTION_CELL_FORMS = {
+    "walk": (
+        "nəpəməsiim",
+        "kəpəməsiim",
+        "pəməsiiw",
+        "kəpəməsiihna",
+        "nəpəməsiihna",
+        "kəpəməsiihmwa",
+        "pəməsiiwak",
+    ),
+    "go_away": (
+        "nəaləməsiim",
+        "kəaləməsiim",
+        "aləməsiiw",
+        "kəaləməsiihna",
+        "nəaləməsiihna",
+        "kəaləməsiihmwa",
+        "aləməsiiwak",
+    ),
+    "return": (
+        "nəkwaxkiim",
+        "kəkwaxkiim",
+        "kwaxkiiw",
+        "kəkwaxkiihna",
+        "nəkwaxkiihna",
+        "kəkwaxkiihmwa",
+        "kwaxkiiwak",
+    ),
+    "go_home": (
+        "nəmaačiim",
+        "kəmaačiim",
+        "maačiiw",
+        "kəmaačiihna",
+        "nəmaačiihna",
+        "kəmaačiihmwa",
+        "maačiiwak",
+    ),
+}
+DRINK_CELL_FORMS = (
+    "nəməneem",
+    "kəməneem",
+    "məneew",
+    "kəməneehna",
+    "nəməneehna",
+    "kəməneehmwa",
+    "məneewak",
+)
+FIND_CELL_FORMS = {
+    ("animate", "inclusive"): "kəmoxkawahna",
+    ("animate", "exclusive"): "nəmoxkawahna",
+    ("inanimate", "inclusive"): "kəmoxkamohna",
+    ("inanimate", "exclusive"): "nəmoxkamohna",
+}
+RELATOR_PHRASE_FORMS = {
+    ("goal", "house"): "el bayit",
+    ("source", "house"): "min bayit",
+    ("route", "road"): "derex aanay",
+}
+RELATOR_CLAUSE_FORMS = {
+    ("goal", "walk", "child", "house"): "yeled pəməsiiw el bayit",
+    ("source", "go_away", "child", "house"): "yeled aləməsiiw min bayit",
+    ("route", "walk", "person", "road"): "adam pəməsiiw derex aanay",
+}
+FIND_SENTENCE_CONTRACTS = {
+    "ja.sentence.action_we_find_person_inclusive": (
+        "ja.lexeme.contact_find_animate",
+        "ja.lexeme.contact_person",
+        "inclusive",
+        "kəmoxkawahna adam",
+    ),
+    "ja.sentence.action_we_find_person_exclusive": (
+        "ja.lexeme.contact_find_animate",
+        "ja.lexeme.contact_person",
+        "exclusive",
+        "nəmoxkawahna adam",
+    ),
+    "ja.sentence.action_we_find_door_inclusive": (
+        "ja.lexeme.contact_find_inanimate",
+        "ja.lexeme.contact_door",
+        "inclusive",
+        "kəmoxkamohna delet",
+    ),
+    "ja.sentence.action_we_find_door_exclusive": (
+        "ja.lexeme.contact_find_inanimate",
+        "ja.lexeme.contact_door",
+        "exclusive",
+        "nəmoxkamohna delet",
+    ),
+}
+
+
+def _cell_map(
+    record: dict[str, Any], feature_names: tuple[str, ...]
+) -> tuple[dict[tuple[str, ...], dict[str, Any]], bool]:
+    paradigm = record.get("paradigm")
+    cells = paradigm.get("cells", []) if isinstance(paradigm, dict) else []
+    result: dict[tuple[str, ...], dict[str, Any]] = {}
+    duplicate = False
+    for cell in cells:
+        if not isinstance(cell, dict) or not isinstance(cell.get("features"), dict):
+            continue
+        key = tuple(str(cell["features"].get(name)) for name in feature_names)
+        duplicate = duplicate or key in result
+        result[key] = cell
+    return result, duplicate
+
+
+def evaluate_motion_action_compositions(
+    records: Sequence[dict[str, Any]],
+) -> list[str]:
+    """Enforce the manually closed motion, action, and directional tranche."""
+
+    records_by_id = {
+        record["id"]: record
+        for record in records
+        if isinstance(record, dict) and isinstance(record.get("id"), str)
+    }
+    if not any(
+        "motion-action-enrichment" in record.get("metadata", {}).get("tags", [])
+        for record in records_by_id.values()
+    ):
+        return []
+
+    findings: list[str] = []
+    for record_id, expected in MOTION_SOURCE_CONTRACTS.items():
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required source record is missing")
+            continue
+        evidence = record.get("source_evidence")
+        item = evidence[0] if isinstance(evidence, list) and len(evidence) == 1 else {}
+        actual = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization"),
+            item.get("source_form"),
+            item.get("source_meaning"),
+            item.get("grammatical_information"),
+            item.get("locator"),
+            item.get("confidence"),
+        )
+        source_exact = (
+            record.get("forms", {})
+            .get("judeo_algonquin", {})
+            .get("orthography", {})
+            .get("source_exact")
+        )
+        if (
+            actual != expected
+            or (
+                record_id.startswith("ja.lexeme.munsee_")
+                and source_exact != item.get("source_form")
+            )
+            or record.get("metadata", {}).get("lexical_layer") != "donor_candidate"
+        ):
+            findings.append(
+                f"{record_id}: cited orthographic source, evidence form, meaning, "
+                "analysis, confidence, locator, and donor layer must remain exact"
+            )
+
+    for record_id, expected in MOTION_CONTACT_CONTRACTS.items():
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required contact record is missing")
+            continue
+        form, dependency, revision, layer = expected
+        actual = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization"),
+            record.get("relations", {}).get("depends_on"),
+            record.get("relations", {}).get("dependency_revisions", {}).get(dependency),
+            record.get("metadata", {}).get("lexical_layer"),
+        )
+        if actual != (form, [dependency], revision, layer):
+            findings.append(
+                f"{record_id}: contact form and revision-pinned ancestry must remain exact"
+            )
+
+    for contact_id in (
+        "ja.lexeme.contact_go_away_ai",
+        "ja.lexeme.contact_return_ai",
+        "ja.lexeme.contact_go_home_ai",
+        "ja.lexeme.contact_drink_ai",
+    ):
+        contact = records_by_id.get(contact_id, {})
+        dependencies = contact.get("relations", {}).get("depends_on", [])
+        donor = records_by_id.get(dependencies[0], {}) if len(dependencies) == 1 else {}
+        contact_evidence = contact.get("source_evidence", [])
+        donor_evidence = donor.get("source_evidence", [])
+        contact_item = contact_evidence[0] if len(contact_evidence) == 1 else {}
+        donor_item = donor_evidence[0] if len(donor_evidence) == 1 else {}
+        evidence_keys = ("source_form", "source_meaning", "confidence", "locator")
+        if tuple(contact_item.get(key) for key in evidence_keys) != tuple(
+            donor_item.get(key) for key in evidence_keys
+        ) or (
+            contact.get("forms", {})
+            .get("judeo_algonquin", {})
+            .get("orthography", {})
+            .get("source_exact")
+            != donor_item.get("source_form")
+        ):
+            findings.append(
+                f"{contact_id}: copied orthographic source, evidence form, meaning, "
+                "confidence, and locator must match its revision-pinned donor"
+            )
+        grammatical_information = contact_item.get("grammatical_information", "")
+        uncertainty = contact_item.get("uncertainty", "")
+        if contact_id in {
+            "ja.lexeme.contact_return_ai",
+            "ja.lexeme.contact_go_home_ai",
+        } and "prints no separate fused surface" not in grammatical_information:
+            findings.append(
+                f"{contact_id}: contact evidence must not present its fused stem as a "
+                "printed donor surface"
+            )
+        if contact_id == "ja.lexeme.contact_drink_ai" and (
+            "flags uncertainty for some segmentations" not in grammatical_information
+            or "segmentation" not in uncertainty
+        ):
+            findings.append(
+                f"{contact_id}: contact evidence must preserve the source segmentation "
+                "caveat"
+            )
+
+    source_drink = records_by_id.get("ja.lexeme.munsee_menee_drink", {})
+    contact_drink = records_by_id.get("ja.lexeme.contact_drink_ai", {})
+    if (
+        source_drink.get("forms", {}).get("judeo_algonquin", {}).get("morpheme_gloss")
+        != "drink-AI"
+        or contact_drink.get("forms", {})
+        .get("judeo_algonquin", {})
+        .get("morpheme_gloss")
+        != "drink-AI"
+    ):
+        findings.append(
+            "ja.lexeme.munsee_menee_drink: source interlinear drink-AI must remain "
+            "explicit in donor and contact records"
+        )
+    derex = records_by_id.get("ja.lexeme.contact_derex_route", {})
+    if derex.get("source_evidence"):
+        findings.append(
+            "ja.lexeme.contact_derex_route: route grammaticalization is project "
+            "design, not direct source evidence"
+        )
+
+    for generic_id in ("ja.lexeme.munsee_aa_go", "ja.lexeme.munsee_paa_come"):
+        generic = records_by_id.get(generic_id, {})
+        tags = set(generic.get("metadata", {}).get("tags", []))
+        if "source-class:unresolved" not in tags:
+            findings.append(f"{generic_id}: generic motion stem must remain class-unresolved")
+        if any(
+            generic_id in _language_record_inputs(record)
+            for record in records_by_id.values()
+            if record.get("record_type") == "construction"
+        ):
+            findings.append(
+                f"{generic_id}: unresolved generic stem may not license a finite construction"
+            )
+
+    motion = records_by_id.get(MOTION_AI)
+    if motion is None:
+        findings.append(f"{MOTION_AI}: required 28-cell motion construction is missing")
+    else:
+        cells, duplicate = _cell_map(
+            motion, ("predicate", "person", "number", "clusivity", "order", "class")
+        )
+        expected_cells = {
+            (predicate, person, number, clusivity, "independent", "AI"): surface
+            for predicate, surfaces in MOTION_CELL_FORMS.items()
+            for (person, number, clusivity), surface in zip(PARTICIPANT_BUNDLES, surfaces)
+        }
+        actual_surfaces = {key: cell.get("romanization") for key, cell in cells.items()}
+        if duplicate or actual_surfaces != expected_cells:
+            findings.append(
+                f"{MOTION_AI}: paradigm must contain exactly the 28 declared motion cells"
+            )
+        for clusivity, expected_surface in (
+            ("inclusive", "kəpəməsiihna"),
+            ("exclusive", "nəpəməsiihna"),
+        ):
+            key = ("walk", "first", "plural", clusivity, "independent", "AI")
+            if actual_surfaces.get(key) != expected_surface:
+                findings.append(f"{MOTION_AI}: {clusivity} walk must match the chorus cell")
+
+    drink = records_by_id.get(DRINK_AI)
+    if drink is None:
+        findings.append(f"{DRINK_AI}: required seven-cell drink construction is missing")
+    else:
+        cells, duplicate = _cell_map(
+            drink, ("predicate", "person", "number", "clusivity", "order", "class")
+        )
+        expected_cells = {
+            ("drink", person, number, clusivity, "independent", "AI"): surface
+            for (person, number, clusivity), surface in zip(PARTICIPANT_BUNDLES, DRINK_CELL_FORMS)
+        }
+        actual_cells = {key: value.get("romanization") for key, value in cells.items()}
+        if duplicate or actual_cells != expected_cells:
+            findings.append(
+                f"{DRINK_AI}: paradigm must contain exactly seven objectless drink cells"
+            )
+
+    find = records_by_id.get(FIND_ABSOLUTE)
+    if find is None:
+        findings.append(f"{FIND_ABSOLUTE}: required four-cell find construction is missing")
+    else:
+        cells, duplicate = _cell_map(
+            find,
+            (
+                "predicate",
+                "object_class",
+                "person",
+                "number",
+                "clusivity",
+                "order",
+                "inflection",
+            ),
+        )
+        expected_cells = {
+            ("find", object_class, "first", "plural", clusivity, "independent", "Absolute"): surface
+            for (object_class, clusivity), surface in FIND_CELL_FORMS.items()
+        }
+        actual_cells = {key: value.get("romanization") for key, value in cells.items()}
+        if duplicate or actual_cells != expected_cells:
+            findings.append(
+                f"{FIND_ABSOLUTE}: paradigm must contain exactly four class-sensitive "
+                "first-plural cells"
+            )
+
+    for construction_id, features, expected_forms in (
+        (RELATOR_PHRASE, ("relation", "complement_host"), RELATOR_PHRASE_FORMS),
+        (
+            RELATOR_CLAUSE,
+            ("relation", "predicate", "subject_host", "complement_host"),
+            RELATOR_CLAUSE_FORMS,
+        ),
+    ):
+        construction = records_by_id.get(construction_id)
+        if construction is None:
+            findings.append(f"{construction_id}: required directional construction is missing")
+            continue
+        cells, duplicate = _cell_map(construction, features)
+        surfaces = {key: value.get("romanization") for key, value in cells.items()}
+        has_static_locative = any("ənk" in str(value) for value in surfaces.values())
+        if duplicate or surfaces != expected_forms or has_static_locative:
+            findings.append(
+                f"{construction_id}: closed relator cells and bare complements "
+                "must remain exact"
+            )
+
+    for record_id, (stem_id, object_id, clusivity, surface) in FIND_SENTENCE_CONTRACTS.items():
+        sentence = records_by_id.get(record_id)
+        if sentence is None:
+            findings.append(f"{record_id}: required find sentence is missing")
+            continue
+        components = _components(sentence)
+        if (
+            _constructions(sentence) != {FIND_ABSOLUTE}
+            or [item.get("record_id") for item in components] != [stem_id, object_id]
+            or sentence.get("forms", {}).get("judeo_algonquin", {}).get("romanization") != surface
+            or _declared_clusivity(sentence) != clusivity
+            or "overt-object" not in sentence.get("metadata", {}).get("tags", [])
+        ):
+            findings.append(
+                f"{record_id}: find stem, object class, clusivity, and surface must agree"
+            )
+
+    for record in records_by_id.values():
+        tags = set(record.get("metadata", {}).get("tags", []))
+        if "motion-action-enrichment" not in tags:
+            continue
+        if record.get("record_type") in {"construction", "phrase", "sentence"}:
+            if not {"tam-firewall", "narrative-firewall"}.issubset(tags):
+                findings.append(
+                    f"{record['id']}: ordinary enriched grammar requires TAM and "
+                    "narrative firewalls"
+                )
+            text = _positive_semantic_text(record)
+            if (
+                _asserts_narrative_chain(text)
+                or _asserts_tam_or_obviation(text)
+                or re.search(
+                    r"\b(?:walked|went|returned|drank|found|will|shall|usually|"
+                    r"often|repeatedly|then|therefore)\b",
+                    text,
+                )
+            ):
+                findings.append(
+                    f"{record['id']}: ordinary enriched grammar may not assert TAM, "
+                    "obviation, or narrative chaining"
+                )
+        third_person = tags.intersection({"third-singular", "third-plural"})
+        if (
+            record.get("record_type") == "sentence"
+            and third_person
+            and "obviation-deferred" not in tags
+        ):
+            findings.append(f"{record['id']}: third-person sentence must defer obviation")
+
+    return findings
+
+
+def load_semantic_queries(path: str | Path) -> list[dict[str, Any]]:
     """Load a frozen retrieval set with enough metadata to explain each target."""
 
     value = json.loads(Path(path).read_text(encoding="utf-8"))
     if not isinstance(value, list) or not value:
         raise ValueError(f"{path}: expected a non-empty JSON array")
     required = {"id", "query", "expected_id", "rationale"}
-    queries: list[dict[str, str]] = []
+    queries: list[dict[str, Any]] = []
     seen: set[str] = set()
     for index, item in enumerate(value):
         if not isinstance(item, dict) or set(item) != required:
@@ -1615,10 +2159,54 @@ def load_semantic_queries(path: str | Path) -> list[dict[str, str]]:
     return queries
 
 
+def load_typed_semantic_queries(path: str | Path) -> list[dict[str, Any]]:
+    """Load a diagnostic set that separates query-language and contrast tests.
+
+    ``acceptable_ids`` deliberately permits a query to retrieve either a concrete
+    example or the construction that licenses it.  That keeps the evaluation from
+    rewarding an arbitrary duplicate when the knowledge base stores both levels.
+    """
+
+    value = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(value, list) or not value:
+        raise ValueError(f"{path}: expected a non-empty JSON array")
+    required = {"id", "query", "query_type", "acceptable_ids", "rationale"}
+    allowed_types = {"english", "conlang", "compositional", "contrastive"}
+    queries: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for index, item in enumerate(value):
+        if not isinstance(item, dict) or set(item) != required:
+            raise ValueError(
+                f"{path}: typed query {index} must contain exactly {sorted(required)}"
+            )
+        for key in ("id", "query", "query_type", "rationale"):
+            if not isinstance(item[key], str) or not item[key].strip():
+                raise ValueError(f"{path}: typed query {index} {key} must be non-empty")
+        acceptable = item["acceptable_ids"]
+        if (
+            not isinstance(acceptable, list)
+            or not acceptable
+            or any(not isinstance(record_id, str) or not record_id for record_id in acceptable)
+            or len(set(acceptable)) != len(acceptable)
+        ):
+            raise ValueError(
+                f"{path}: typed query {index} acceptable_ids must be unique record ids"
+            )
+        if item["query_type"] not in allowed_types:
+            raise ValueError(
+                f"{path}: typed query {index} query_type must be one of {sorted(allowed_types)}"
+            )
+        if item["id"] in seen:
+            raise ValueError(f"{path}: duplicate query id {item['id']}")
+        seen.add(item["id"])
+        queries.append({**item, "acceptable_ids": list(acceptable)})
+    return queries
+
+
 def evaluate_semantic_rankings(
     record_ids: Sequence[str],
     record_vectors: Sequence[Sequence[float]],
-    queries: Sequence[dict[str, str]],
+    queries: Sequence[dict[str, Any]],
     query_vectors: Sequence[Sequence[float]],
 ) -> dict[str, Any]:
     """Compute reproducible recall and ranking details from one vector batch."""
@@ -1632,9 +2220,18 @@ def evaluate_semantic_rankings(
     known = set(record_ids)
     details: list[dict[str, Any]] = []
     for query, query_vector in zip(queries, query_vectors):
-        expected_id = query["expected_id"]
-        if expected_id not in known:
-            raise ValueError(f"query {query['id']} expects unknown record {expected_id}")
+        acceptable_ids = query.get("acceptable_ids")
+        if acceptable_ids is None:
+            acceptable_ids = [query["expected_id"]]
+        if (
+            not isinstance(acceptable_ids, list)
+            or not acceptable_ids
+            or any(not isinstance(record_id, str) for record_id in acceptable_ids)
+        ):
+            raise ValueError(f"query {query['id']} has invalid acceptable ids")
+        unknown = sorted(set(acceptable_ids) - known)
+        if unknown:
+            raise ValueError(f"query {query['id']} expects unknown records {unknown}")
         ranking = sorted(
             (
                 {
@@ -1645,12 +2242,20 @@ def evaluate_semantic_rankings(
             ),
             key=lambda item: (-item["score"], item["id"]),
         )
-        expected_rank = next(
-            index for index, item in enumerate(ranking, start=1) if item["id"] == expected_id
+        acceptable_ranks = {
+            item["id"]: index
+            for index, item in enumerate(ranking, start=1)
+            if item["id"] in acceptable_ids
+        }
+        expected_rank = min(acceptable_ranks.values())
+        matched_id = min(
+            acceptable_ranks,
+            key=lambda record_id: (acceptable_ranks[record_id], record_id),
         )
         details.append(
             {
                 **query,
+                "matched_acceptable_id": matched_id,
                 "expected_rank": expected_rank,
                 "reciprocal_rank": 1.0 / expected_rank,
                 "top_3": ranking[:3],
@@ -1658,10 +2263,26 @@ def evaluate_semantic_rankings(
             }
         )
     count = len(details)
-    return {
+    result = {
         "query_count": count,
         "recall_at_1": sum(item["expected_rank"] <= 1 for item in details) / count,
         "recall_at_3": sum(item["expected_rank"] <= 3 for item in details) / count,
         "mean_reciprocal_rank": sum(item["reciprocal_rank"] for item in details) / count,
         "queries": details,
     }
+    query_types = sorted(
+        {item.get("query_type") for item in details if isinstance(item.get("query_type"), str)}
+    )
+    if query_types:
+        grouped: dict[str, dict[str, float | int]] = {}
+        for query_type in query_types:
+            group = [item for item in details if item.get("query_type") == query_type]
+            grouped[query_type] = {
+                "query_count": len(group),
+                "recall_at_1": sum(item["expected_rank"] <= 1 for item in group) / len(group),
+                "recall_at_3": sum(item["expected_rank"] <= 3 for item in group) / len(group),
+                "mean_reciprocal_rank": sum(item["reciprocal_rank"] for item in group)
+                / len(group),
+            }
+        result["by_query_type"] = grouped
+    return result

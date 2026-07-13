@@ -706,6 +706,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Heart donor; no contact heart record yet."
+        },
+        {
+          "record_id": "ja.construction.contact_ai_motion_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_motion_independent.sense.ordinary_motion",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The closed ordinary motion paradigm preserves kəpəməsiihna as its inclusive walk cell and broadens participant coverage; it does not settle meter, owner acceptance, or narrative morphology."
         }
       ],
       "gaps": [
@@ -953,6 +961,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Provides only ordinary proclitic wə- scaffolding once this becomes a complete clause; brightness, direction, and lyric attachment remain unresolved."
+        },
+        {
+          "record_id": "ja.lexeme.contact_derex_route",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_derex_route.sense.route",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "Contact derex means along or by way of one listed physical road; it cannot mean forward or attach to singing and brightness, so the line's directional gap remains."
         }
       ],
       "gaps": [
@@ -1063,6 +1079,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Road donor only."
+        },
+        {
+          "record_id": "ja.phrase.motion_along_road",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.motion_along_road.sense.route",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies only the closed literal route phrase derex aanay; carrying fruit, first-plural transitive syntax, glow, and the relative clause remain unresolved."
         }
       ],
       "gaps": [
@@ -1220,6 +1244,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Bound positive-quality donor only."
+        },
+        {
+          "record_id": "ja.construction.contact_ai_motion_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_motion_independent.sense.ordinary_motion",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The closed ordinary motion paradigm preserves the inclusive walk form used by the title-clause candidate; exact repetition still needs metrical and owner review."
         }
       ],
       "gaps": [
@@ -1549,6 +1581,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Road donor only."
+        },
+        {
+          "record_id": "ja.phrase.motion_along_road",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.motion_along_road.sense.route",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provides a literal along-road route phrase only; it does not yet express eating, togetherness, generic 'on the way,' or first-person plural predication."
         }
       ],
       "gaps": [
@@ -1821,6 +1861,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "House is now usable contact vocabulary; distributive house-to-house motion and kindness-calls syntax remain absent."
+        },
+        {
+          "record_id": "ja.construction.contact_spatial_relator_phrase",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_spatial_relator_phrase.sense.spatial_vector",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The closed system has separate toward-house and from-house phrases, but expressly lacks a distributive source-to-goal 'house to house' construction."
         }
       ],
       "gaps": [
@@ -1936,6 +1984,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Must revision-pin the same realization as www.c.01 if accepted."
+        },
+        {
+          "record_id": "ja.construction.contact_ai_motion_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_motion_independent.sense.ordinary_motion",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the same inclusive ordinary walk cell linked to www.c.01; it contributes no song-level acceptance or narrative value."
         }
       ],
       "gaps": [
@@ -2151,6 +2207,14 @@
           "relationship": "donor_lead",
           "coverage": "donor_only",
           "note": "Heart donor."
+        },
+        {
+          "record_id": "ja.construction.contact_ai_motion_independent",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_ai_motion_independent.sense.ordinary_motion",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Confirms the chorus walk form inside a closed ordinary participant paradigm; singability and owner acceptance remain separate gates."
         }
       ],
       "requirement": "Design a compact first-person-plural expression for walking well with good hearts without fusing unlicensed stems.",
@@ -2247,6 +2311,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Adds exact-source-grounded aaneenk as a static road setting; poetic light-bearing and direction remain unresolved."
+        },
+        {
+          "record_id": "ja.phrase.motion_along_road",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.motion_along_road.sense.route",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds the distinct literal route phrase derex aanay; it supplies neither poetic path extension nor road-given light or glow."
         }
       ],
       "requirement": "Create contact-language coverage for road or path, light or brightness, glow, and the relation by which the road bears or gives light.",
@@ -2498,6 +2570,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Person does not yet supply collective people or community."
+        },
+        {
+          "record_id": "ja.construction.contact_spatial_relator_phrase",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_spatial_relator_phrase.sense.spatial_vector",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The new closed directional phrases demonstrate goal, source, and route contrasts but do not license distributive house-to-house movement."
         }
       ],
       "requirement": "Cover roofs, light gathering, box gardens, deliberative community, balance, shared hearth, kindness, house-to-house distribution, people, work, and joined voices.",
@@ -2567,6 +2647,6 @@
       "blocker": "The lexicon, grammar, register, and owner decision on the assembly/hearth line are incomplete."
     }
   ],
-  "updated_at": "2026-07-13T08:39:00-04:00",
-  "change_note": "Linked the hand-authored class-sensitive hear and see stems, objectful first-plural perception construction, ordinary wə- coordination, partial hearing-before-seeing chorus candidate, and hearing-plus-singing bridge while preserving every attentive-listen, object-backgrounding, locative, brightness, compactness, meter, and owner-review gap."
+  "updated_at": "2026-07-13T17:55:00-04:00",
+  "change_note": "Linked the closed ordinary walk paradigm and literal route phrase to the chorus, bridge, and road scenes while preserving every meter, owner-review, brightness-forward, carrying, glow, eating, generic-way, and house-to-house gap; the song remains creative influence rather than attestation, and ordinary motion supplies no narrative chaining."
 }

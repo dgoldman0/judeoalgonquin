@@ -143,7 +143,10 @@ class OpenAIEmbedder:
                     "The optional OpenAI SDK is required for a live call. "
                     "Install openai>=2.15,<3 in the active environment."
                 ) from exc
-            client = OpenAI()
+            # Paid checkpoints are explicitly bounded and owner-authorized.
+            # Provider retries must therefore be a new visible authorization,
+            # never an SDK-default replay after an ambiguous response.
+            client = OpenAI(max_retries=0)
         self.client = client
 
     def embed(self, texts: Sequence[str]) -> EmbeddingBatch:

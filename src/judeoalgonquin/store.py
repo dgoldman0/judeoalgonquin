@@ -361,6 +361,7 @@ def _result(
         "record_type": row["record_type"],
         "status": row["status"],
         "level": row["level"],
+        "lexical_layer": record.get("metadata", {}).get("lexical_layer"),
         "english": record["forms"]["english"],
         "hebrew_script": row["hebrew"],
         "romanization": row["romanization"],
@@ -404,6 +405,35 @@ def put_embedding(
                 vector=excluded.vector
             """,
             (record_id, model, dimensions, fingerprint, pack_vector(vector)),
+        )
+
+
+def put_embeddings_atomic(
+    connection: sqlite3.Connection,
+    rows: Sequence[tuple[str, str, int, str, Sequence[float]]],
+) -> None:
+    """Persist a completed checkpoint in one transaction.
+
+    Provider calls finish before this function is entered.  If any vector is
+    malformed, validation fails before the transaction and the index remains
+    untouched rather than becoming a misleading partial checkpoint.
+    """
+
+    packed: list[tuple[str, str, int, str, bytes]] = []
+    for record_id, model, dimensions, fingerprint, vector in rows:
+        if len(vector) != dimensions:
+            raise ValueError(f"expected {dimensions} dimensions, received {len(vector)}")
+        packed.append((record_id, model, dimensions, fingerprint, pack_vector(vector)))
+    with connection:
+        connection.executemany(
+            """
+            INSERT INTO embeddings(record_id, model, dimensions, fingerprint, vector)
+            VALUES (?, ?, ?, ?, ?)
+            ON CONFLICT(record_id, model, dimensions) DO UPDATE SET
+                fingerprint=excluded.fingerprint,
+                vector=excluded.vector
+            """,
+            packed,
         )
 
 

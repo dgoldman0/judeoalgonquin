@@ -23,8 +23,26 @@ The static-place tranche is split by review function:
 - `n1-static-place-examples.jsonl` adds six phrases and eight sentences.
 
 Those four files contribute 36 records: 3 morphemes, 12 lexemes, 7
-constructions, 6 phrases, and 8 sentences. The full 180-record database is
-explicitly noncanonical and remains subject to source and design revision.
+constructions, 6 phrases, and 8 sentences.
+
+The ordinary motion-and-action tranche is likewise split by review function:
+
+- `n1-motion-action-source.jsonl` preserves seven individually reviewed
+  regional and Hebrew source records;
+- `n1-motion-action-contact.jsonl` adds ten bounded contact lexemes for spatial
+  relations, motion, drinking, finding, and door;
+- `n1-motion-action-grammar.jsonl` adds five closed ordinary constructions; and
+- `n1-motion-action-examples.jsonl` adds three spatial phrases and twenty
+  ordinary sentences.
+
+Those four files contribute 45 records: 17 lexemes, 5 constructions, 3
+phrases, and 20 sentences. Their creative-anchor links record bounded influence
+and partial coverage, not canon or source attestation. In particular, ordinary
+motion, route, return, and find clauses supply no wayyiqtol foreground chain,
+weqatal consequence frame, obviation, or narrative participant tracking.
+
+The full 225-record database is explicitly noncanonical and remains subject to
+source and design revision.
 
 Every source-facing lexeme or morpheme is typed `donor_candidate`. It preserves
 evidence but cannot itself become language canon. The contact records depend on
