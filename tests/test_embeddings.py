@@ -58,7 +58,7 @@ class EmbeddingTests(unittest.TestCase):
 
     def test_record_revision_changes_fingerprint(self) -> None:
         changed = copy.deepcopy(self.records[0])
-        changed["revision"] = 2
+        changed["revision"] += 1
         self.assertNotEqual(
             record_fingerprint(self.records[0], "fake", 3),
             record_fingerprint(changed, "fake", 3),
@@ -102,7 +102,7 @@ class EmbeddingTests(unittest.TestCase):
         )
         embedder = OpenAIEmbedder(model="fake", dimensions=3, client=client)
         with self.assertRaisesRegex(ValueError, "cap"):
-            embedder.embed(["x"] * 26)
+            embedder.embed(["x"] * 129)
 
 
 if __name__ == "__main__":

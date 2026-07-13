@@ -156,4 +156,12 @@ Resolution links all affected records and preserves the rejected or superseded r
 
 Every generation or embedding run records its input record revisions, model identifier, parameters, output artifact fingerprint, and failure state. Secrets and raw API credentials are never stored.
 
-The first live embedding operation was limited to one small smoke test over noncanonical fixtures. A second, separately authorized checkpoint embedded the 20-record N1 architecture probe and five frozen queries in one request. Their committed reports act as persistent consumed markers. Further live embedding or semantic-search operations require `--live`, a new explicit owner authorization, an enabled `config/api-budget.json`, per-run caps, a cumulative token cap, and an ignored local reservation/usage ledger. Reservations are written before network access so a crash or uncertain failure cannot silently invite an unaccounted retry.
+The first live embedding operation was limited to one small smoke test over
+noncanonical fixtures. Separately authorized checkpoints then embedded the
+20-record architecture probe with five queries and the 92-record N1 core with
+12 queries. Their committed reports act as persistent consumed markers.
+Further live embedding or semantic-search operations require `--live`, a new
+explicit owner authorization, an enabled `config/api-budget.json`, per-run
+caps, a cumulative token cap, and an ignored local reservation/usage ledger.
+Reservations are written before network access so a crash or uncertain failure
+cannot silently invite an unaccounted retry.

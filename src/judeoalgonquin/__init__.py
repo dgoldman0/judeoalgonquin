@@ -1,6 +1,11 @@
 """Structured knowledge-base tools for the Judeo-Algonquin language project."""
 
 from .normalize import normalize_search, strip_hebrew_marks
+from .orthography import (
+    assert_transport_round_trip,
+    decode_munsee_transport,
+    encode_munsee_transport,
+)
 from .evaluate import (
     evaluate_pilot_compositions,
     evaluate_semantic_rankings,
@@ -12,6 +17,9 @@ __all__ = [
     "ValidationError",
     "evaluate_pilot_compositions",
     "evaluate_semantic_rankings",
+    "assert_transport_round_trip",
+    "decode_munsee_transport",
+    "encode_munsee_transport",
     "load_records",
     "load_semantic_queries",
     "load_source_registry",

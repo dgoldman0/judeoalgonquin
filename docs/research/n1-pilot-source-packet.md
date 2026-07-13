@@ -37,11 +37,20 @@ All locators below refer to O'Meara, *Delaware Stem Morphology* (1990), in the p
 
 ## Provisional script probe
 
-Hebrew-derived candidates retain their cited Hebrew spelling. Munsee-derived candidates receive a **temporary teaching transcription** solely so the required Hebrew-script storage and search paths can be exercised. The source transcription remains authoritative in `source_evidence`; the proposed script never overwrites it.
+Hebrew-derived candidates retain their cited Hebrew spelling. Munsee-derived
+candidates use the reversible pointed analytic transport specified in
+[O'Meara-to-Hebrew Analytic Transport](omeara-hebrew-transport.md). The source
+transcription remains authoritative in `source_evidence`; the transport never
+overwrites or silently repairs it.
 
-The pilot uses only these provisional correspondences: `p` → `פּ`, `m` → `מ`, `s` → `ס`, `l` → `ל`, `n` → `נ`, `k` → `כּ`, `x` → `כ`, `w` → `ו`, short `a` → pataḥ, `ə` → sheva, long `ii` → ḥiriq-yod, and long `ee` → tsere-yod. This is intentionally incomplete and not yet fully reversible. It cannot support canon, automatic conversion, or a systematic lexical epoch.
+This profile supersedes the pilot's incomplete teaching transcription. In
+particular, it uses `k` → `ק`, consonantal `w` → `וו`, and sheva only for
+source `ə`; a consonant with no source vowel is bare. Every affected pilot
+record receives a new revision and machine-readable script provenance.
 
-The architecture probe therefore labels every affected record `provisional-orthography`. A later phonology/orthography decision must revise or supersede these forms before human canon review.
+The analytic transport remains noncanonical. It supports exact storage, search,
+and round-trip validation, but not community-preferred spelling, automatic
+surface realization, or a claim about the language's final phonology.
 
 ## What this packet does not authorize
 

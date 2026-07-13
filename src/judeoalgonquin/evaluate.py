@@ -18,6 +18,18 @@ EXPECTED_PILOT_CONSTRUCTIONS = {
     "ja.phrase.n1_bread_and_water": {COORDINATION},
     "ja.phrase.n1_houses": {CLASS_PLURAL},
     "ja.sentence.n1_the_man_is_good": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
+    "ja.phrase.n1_mother_and_father": {COORDINATION},
+    "ja.phrase.n1_woman_and_child": {COORDINATION},
+    "ja.phrase.n1_bread_and_milk": {COORDINATION},
+    "ja.phrase.n1_fruit_and_water": {COORDINATION},
+    "ja.phrase.n1_the_woman": {DEFINITE},
+    "ja.phrase.n1_the_child": {DEFINITE},
+    "ja.phrase.n1_doors": {CLASS_PLURAL},
+    "ja.phrase.n1_chairs": {CLASS_PLURAL},
+    "ja.sentence.n1_the_woman_walks": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
+    "ja.sentence.n1_the_child_walks": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
+    "ja.sentence.n1_the_man_walks": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
+    "ja.sentence.n1_the_woman_is_good": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
 }
 
 

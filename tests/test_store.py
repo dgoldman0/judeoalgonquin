@@ -110,7 +110,7 @@ class StoreTests(unittest.TestCase):
         )
 
         changed = copy.deepcopy(self.records)
-        changed[0]["revision"] = 2
+        changed[0]["revision"] += 1
         changed[0]["notes"]["design"].append("A material revision invalidates the vector.")
         index_records(self.connection, changed)
         result_ids = {
@@ -147,7 +147,7 @@ class StoreTests(unittest.TestCase):
         )
 
         changed = copy.deepcopy(self.records)
-        changed[0]["revision"] = 2
+        changed[0]["revision"] += 1
         index_records(self.connection, changed)
         downstream_ids = {
             item["id"]

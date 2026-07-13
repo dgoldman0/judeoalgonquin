@@ -55,14 +55,114 @@
         "judeo_algonquin": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["hebrew_script", "romanization"],
+          "required": ["hebrew_script", "romanization", "orthography"],
           "properties": {
             "hebrew_script": {"type": "string", "minLength": 1},
             "unpointed": {"type": "string"},
             "romanization": {"type": "string", "minLength": 1},
             "segmentation": {"type": "string"},
             "morpheme_gloss": {"type": "string"},
-            "variants": {"$ref": "#/$defs/nonemptyStringArrayOptional"}
+            "variants": {"$ref": "#/$defs/nonemptyStringArrayOptional"},
+            "orthography": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "profile_id",
+                "script_origin",
+                "input_system",
+                "input_level",
+                "source_exact",
+                "normalized_input",
+                "reversibility"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "source_retained",
+                    "provisional_transport",
+                    "componentwise",
+                    "project_schematic",
+                    "unverified"
+                  ]
+                },
+                "profile_id": {"type": "string", "minLength": 1},
+                "script_origin": {
+                  "enum": [
+                    "retained_hebrew",
+                    "munsee_source_transport",
+                    "componentwise",
+                    "project_schematic",
+                    "legacy_unverified"
+                  ]
+                },
+                "input_system": {"type": "string", "minLength": 1},
+                "input_level": {
+                  "enum": [
+                    "source_hebrew",
+                    "citation",
+                    "surface",
+                    "morphophonemic",
+                    "componentwise",
+                    "schematic",
+                    "unverified"
+                  ]
+                },
+                "source_exact": {"type": "string"},
+                "normalized_input": {"type": "string", "minLength": 1},
+                "reversibility": {
+                  "enum": ["not_transduced", "pointed_only", "componentwise", "unverified"]
+                }
+              },
+              "allOf": [
+                {
+                  "if": {"properties": {"status": {"const": "source_retained"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "hebrew_source_retained"},
+                    "script_origin": {"const": "retained_hebrew"},
+                    "input_level": {"const": "source_hebrew"},
+                    "reversibility": {"const": "not_transduced"}
+                  }}
+                },
+                {
+                  "if": {"properties": {"status": {"const": "provisional_transport"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "omeara_hebrew_transport"},
+                    "script_origin": {"const": "munsee_source_transport"},
+                    "input_level": {"enum": ["citation", "surface", "morphophonemic"]},
+                    "source_exact": {"type": "string", "minLength": 1},
+                    "reversibility": {"const": "pointed_only"}
+                  }}
+                },
+                {
+                  "if": {"properties": {"status": {"const": "componentwise"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "componentwise_analytic"},
+                    "script_origin": {"const": "componentwise"},
+                    "input_level": {"const": "componentwise"},
+                    "reversibility": {"const": "componentwise"}
+                  }}
+                },
+                {
+                  "if": {"properties": {"status": {"const": "project_schematic"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "project_schematic"},
+                    "script_origin": {"const": "project_schematic"},
+                    "input_level": {"const": "schematic"},
+                    "reversibility": {"const": "not_transduced"}
+                  }}
+                },
+                {
+                  "if": {"properties": {"status": {"const": "unverified"}}},
+                  "then": {"properties": {
+                    "profile_id": {"const": "legacy_unverified"},
+                    "script_origin": {"const": "legacy_unverified"},
+                    "input_level": {"const": "unverified"},
+                    "reversibility": {"const": "unverified"}
+                  }}
+                }
+              ]
+            }
           }
         }
       }

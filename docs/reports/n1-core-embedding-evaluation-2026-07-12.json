@@ -1,0 +1,4877 @@
+{
+  "api_inputs": 104,
+  "api_requests": 1,
+  "authorized_cumulative_cost_cap_usd": 0.01,
+  "completed_at": "2026-07-12T23:49:22.355548+00:00",
+  "conservative_cost_upper_bound_usd": 0.0045232200000000005,
+  "conservative_per_input_byte_cap": 8192,
+  "conservative_token_upper_bound": 226161,
+  "contains_credentials": false,
+  "contains_vectors": false,
+  "data": "data/entries",
+  "data_file_sha256": {
+    "n1-core-lexicon.jsonl": "a512182e48d26b66712e3748ae5bff83dded26fcbb57e047510e7a1eba0e3486",
+    "n1-core-regressions.jsonl": "0cc2b69f5a00c4d9a575018209a91f0f9da9241b9376024332e331c98fa146d4",
+    "n1-pilot.jsonl": "6200fa8856af6891a5c1901efdc8cd9609a1d5550e2595e02c9e697cae36894a"
+  },
+  "data_sha256": "23f897ab6c5455ec0c986b61d0a85743f5c9d92d25dd0df6dfea059d130fbbf1",
+  "dimensions": 256,
+  "estimated_cost_usd": 0.00101844,
+  "evaluation": {
+    "mean_reciprocal_rank": 1.0,
+    "passed": true,
+    "queries": [
+      {
+        "expected_id": "ja.lexeme.hebrew_adam_person",
+        "expected_rank": 1,
+        "id": "n1-core-person",
+        "query": "an ordinary word for a human being or person, not a proper name",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.4695978918086606
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.4178867708522225
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.37970050352961987
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.3787246521832629
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.3708722948942505
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.35614664938217233
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.3524206641191583
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.3462090359431244
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.34514233505501696
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.34486131290512173
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.3446377396547121
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.34453565578900947
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.34383247381515786
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.3438224237924841
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.34047553840318323
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.3361551863809749
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.335528403768439
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.3290207060817822
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.3279180691742104
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.3264372210703705
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.32582030261271566
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.3237894301751
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.32294245773654506
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.3212160556905227
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.31908283942485133
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.31837710343485764
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.3174285592446888
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.31687436371379823
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.31554840148341334
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3153587818343869
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.31483831838846055
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.31361134980210764
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.3130006822061948
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.31247997265837635
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.31220379724344427
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.3114534779350362
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.31132505849948205
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.3087358639307842
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.3079934406692784
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.30692150549466407
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.3060473883825556
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.30571364368723036
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.3056773516879733
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.3051236788299783
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.3039690934069176
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.30377683433793046
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.30271528991729896
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.3007147895273854
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2996083880710878
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.29828260447229415
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.2951632725049201
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.29448957491807476
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.29441259985816126
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.293048628095805
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.29266467589237427
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.291770620191585
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.29020831599173996
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.2892571929500977
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.28898877021772423
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.28879269513229006
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.288086564750381
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.28687364775295643
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.2858931992822607
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.2858136450085511
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.2829699094167
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.2829368874989373
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.2825926903032001
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.2818111186327806
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.2790907207143808
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.27766482284821314
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.27660929970043713
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.27516403589008454
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.27244823355989795
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.2722707519398186
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.2712561535684479
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.26986613482073013
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.2646362322394755
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.26343017455527645
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.2632114445614422
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.2618642417947382
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.2608268777937394
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.26034855643652327
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.2571031803469121
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.2541341272182597
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.24391095541612026
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.24366803584153301
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.2418132836413315
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.24003547255415536
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.21619085238982738
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.21508525516316843
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.21250384552485055
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.178306493479214
+          }
+        ],
+        "rationale": "Tests the narrow human/person sense against other people nouns.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.4695978918086606
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.4178867708522225
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.37970050352961987
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.hebrew_em_mother",
+        "expected_rank": 1,
+        "id": "n1-core-mother",
+        "query": "a female parent, excluding figurative origins or foundations",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.5335413568439865
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.484736086781723
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.4507545075915513
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.44577608699518545
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.43570513637646335
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.42615483945765803
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.42163147797686207
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.40903586918540974
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.3909272120425642
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.38868642023472716
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.38856062758257254
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.38631680459475526
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.3794369967318476
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.3788300231155028
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.3787576889388192
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.3775007018510708
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.37437026011815366
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.3716642887595583
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.3702954345794838
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.37000189382181037
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.3641557393926866
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.3624956834243694
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.3565828115896584
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.35629970296219937
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.3562382970190351
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.3551569812139296
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.3548738090812776
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.3515154029915585
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.34995993433802786
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.34936526911928767
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.34766580128505853
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.34755537219762017
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.3465776733431942
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.34423099901525434
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.34264977526048934
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.34230045624093486
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.34179427663999595
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.3417540051063873
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.3387924051355159
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.3387470684321774
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.3353895671427366
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.3353742293723385
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.33446757486630163
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.3315178325501594
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.33058274991371916
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.32974459079848556
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.3286844004680989
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.3277461887217656
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.32606952411646795
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.32570164497618653
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.3256013264494146
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.3252467767003075
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.32393731387484415
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.3226016815539076
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.3224540953568184
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.32135704724177244
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.3202296007369232
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.31899266201307475
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.316223280208835
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.31463342619089973
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.3138813223970005
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.3115445804827264
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.3113492252946304
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.31004616288224224
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.3097812797126622
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.30917306980386816
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.30812843374664506
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.30745627746628384
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.3063500003669717
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.30498813788419604
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.3041786210629975
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3034208682660926
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.3025896513646493
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.30194580317506337
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.2978073578858875
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.29115517413763015
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.2905236268091184
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.28955188218085787
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.28628127503018386
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.2829511279218719
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.28125640223174414
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.2778142003077506
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.2773778404119136
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.27665902861187847
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.27536163051738194
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.2732059157053304
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.26992236862309904
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2637667264246662
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.2599784731060462
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.25830716484385285
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.23838830653948864
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.22008015736229636
+          }
+        ],
+        "rationale": "Tests a close-kin term with an explicitly narrow sense.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.5335413568439865
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.484736086781723
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.4507545075915513
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.hebrew_kisse_chair",
+        "expected_rank": 1,
+        "id": "n1-core-chair",
+        "query": "a piece of furniture used by one person for sitting",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.33523539905481864
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.27705107525409245
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.2548111455585769
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.22725763588704861
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.2239092810518102
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.2122622206614779
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2022691609511887
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.20105156568061228
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.20065099221400357
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.1959298077538527
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.18821626357846238
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.18768532693586415
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.17968134411424203
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.17852588481588455
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.17656454683349293
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.17653315980866324
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.17575733594963283
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.17433356602454023
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.1735807028728009
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.16885177027623302
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.1673364894496915
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.16573506032180785
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.16526462642105644
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.1636221786269898
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.1624982191175876
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.16173720916558298
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.1599843205084105
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.15486877720934486
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.15271159958616368
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.14917296238501437
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.14909666650787143
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.14869049066439444
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.14799346991523957
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.14716803916745452
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.1467933901875598
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.14507447109953453
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.14415394701122936
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.14376586935850594
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.142776016869282
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.14210979326292586
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.1396567298158927
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.13885978459772172
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.13772323075697912
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.1374068347865109
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.13622147400938522
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.13390403804638903
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.1328825780212477
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.12793279744017919
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.1278131342550516
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.12774984861497138
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.12511292229828705
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.1248397840424301
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.11938388619628056
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.11840360610781922
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.11740489639746521
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.11635013864608372
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.1158892598437268
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.11547348174379311
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.11414694697761142
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.11086851515870612
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.10953083347271948
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.10941697529279863
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.1086618229337387
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.10788613286189588
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.10676571509705456
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.10379404017224939
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.103367234982439
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.10222210074736067
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.09859037126209882
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.09319693315648644
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.09254386108031792
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.08740230947192117
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.08636595023827448
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.08626993346217365
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.08402778757275846
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.08160021657695606
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.08141907567995471
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.07823974924200293
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.07762436265336495
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.07757854110035588
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.07548460590130514
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.07214325455622875
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.07202161953837943
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.06806310560249978
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.06494341124625358
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.06343551789558033
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.058306798230732336
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.05143568163235067
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.04803772834503682
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.045526728510379255
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.041345911939047034
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.037097194353400725
+          }
+        ],
+        "rationale": "Tests an ordinary home furnishing rather than extended throne senses.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.33523539905481864
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.27705107525409245
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.2548111455585769
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.hebrew_lev_heart",
+        "expected_rank": 1,
+        "id": "n1-core-heart",
+        "query": "the anatomical organ that pumps blood, not courage or emotion",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.33793788430548094
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.26005234720603254
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.22989242409253263
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2185281332081091
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.20745746918277003
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.20563204206266308
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.2032272204163506
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.20088302137489972
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.2005124649666386
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.200186626515312
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.19877796407751155
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.18448620483321795
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.18314034745669605
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.18272677316114763
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.18097181557732867
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.17832614247800227
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.1757628335029972
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.17537778366598566
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.17464300899844631
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.17360268994073327
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.172853177185758
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.1726480683187278
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.17172270376559168
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.17132760627269417
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.17063976223075233
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.1697823523325562
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.16954346861384645
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.1667619983462816
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.16081378654239167
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.15965675875803506
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.1596153990440572
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.15764361670401317
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.15531060228065904
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.15317033266148206
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.15308949073568015
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.15201361977593134
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.15054245837447455
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.14972750144335745
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.14700608990450656
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.14563078094904044
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.1434782000081907
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.14293206874769662
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.14232585307714699
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.14173778531118592
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.1408229263096807
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.1393906391959925
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.13852857637803484
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.13752461105980307
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.13739877009607346
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.13341513092018795
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.13330714044749614
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.13219000179794882
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.13166510708021015
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.1303561071360842
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.13025524777465528
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.12944295816123016
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.12802109588331584
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.11941320705081601
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.11802645480574613
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.11751949299717533
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.11068989022081525
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.11023090226234016
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.10938803218578716
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.10656494617394549
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.10649651418426934
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.10222926386373289
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.09831262616104189
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.0973903646049512
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.09412215137389976
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.09357444435071154
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.09136939277794413
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.09091379348460453
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.08986490592771222
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.08886204220950415
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.08691730516042576
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.086415398135518
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.08460592549283764
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.08131027053103013
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.0804935180702189
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.07911688125497322
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.07729141065090371
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.07692889107738125
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.07579211845391641
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.07432724444557746
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.07156897453587345
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.06970507331995013
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.06607169919680174
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.06321486138410659
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.06318374878420886
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.06265027713398248
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.04730928313393513
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.042671469468406956
+          }
+        ],
+        "rationale": "Tests semantic boundary notes on a highly polysemous body word.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.33793788430548094
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.26005234720603254
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.22989242409253263
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.hebrew_mahar_tomorrow",
+        "expected_rank": 1,
+        "id": "n1-core-tomorrow",
+        "query": "the day after today",
+        "ranking": [
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.4015204149187983
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3596954339137746
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.24462043081459053
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.24351013461996357
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.2411262774630097
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.22800076413182765
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.21637022727653552
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.2127963069196196
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.194227227307033
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.19421378538039066
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.18965077461620336
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.18641307051748748
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.1858329441039162
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.18368828294355782
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.18362529073623615
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.18299199554501205
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.18027592399370132
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.17906691479064285
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.1741464719623947
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.1703545374490926
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.16796576511382363
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.16550116436449874
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.16036423164896577
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.16000867648506029
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.15844005977968478
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.1579243041719758
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.15716518085714606
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.15597913971414376
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.15565712678072935
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.15560438937612922
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.1546301714003182
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.15309537470641416
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.153056785048439
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.15297547325500185
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.1510011534774748
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.1494605084912183
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.14682519773306424
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.14552504571444128
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.1450701725740758
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.14390015564788314
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.14210236924217778
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.14125129461813896
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.1403131207523732
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.13969602309024656
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.1386342809424118
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.13327504385418046
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.13291149001619235
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.13281105282864625
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.13209349293110617
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.12996970289663973
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.1299100492548478
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.1268486491392154
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.12518000041830335
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.1248552826460251
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.12388931808222976
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.12117709563981385
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.12061712978159211
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.11956246787127103
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.11864713702107679
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.11853373317896194
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.11836897650079911
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.11795670819809768
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.11670847419249718
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.11434380061318139
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.11330241612501286
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.11283640250522767
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.11197494304540664
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.11097481694543009
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.10624734079202336
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.10584663717480584
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.10476117354075387
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.10321804752700728
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.10236996388911827
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.0990673597519758
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.09902223711326165
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.0986492305168719
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.09839428902190081
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.09834721540180841
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.09762008796403378
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.09741524018119467
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.08709183999526067
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.08292176214471848
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.07931077458796454
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.07907697611181023
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.07747962460047698
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.07571405118300292
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.07499134143989364
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.0744632849441858
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.07230225384270479
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.06759394452248611
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.058385046656014856
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.05156824714441728
+          }
+        ],
+        "rationale": "Tests a basic temporal adverb.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.4015204149187983
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3596954339137746
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.24462043081459053
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.morpheme.hebrew_lo_negation",
+        "expected_rank": 1,
+        "id": "n1-core-negation",
+        "query": "the ordinary free particle meaning not, with syntax still unresolved",
+        "ranking": [
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.4325514354584241
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.4283936601370048
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.42804214493160087
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.4142831474012451
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.4069118308168073
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.4027326312500499
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.40229870583483157
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3988370552059665
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.3980005020922578
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.3976274779377257
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.39421644601969685
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.3896539263522758
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.38838036416333194
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.385875368970839
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.3849670747472501
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.38453972510904333
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.383263768829732
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.3830510511621708
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.3793027712554789
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.3787395854793954
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.3784610468350571
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.3776661427560329
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.3765745377136324
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.37605278115638957
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.3748032920153687
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.3739237164003046
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.37349573584110746
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.37156292782136313
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.3715299538898518
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.371214413257156
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.3712078403126128
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.37087109765736515
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.3687122773458133
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.36809429110647257
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.3653714304593864
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.36158856054236793
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.3612353418544151
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.3597210679746494
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.3588353603142853
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.3578655446562659
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.3562753644501728
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.35591512030292305
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.35452273547903157
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.353129516015036
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.35267054260189573
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.35075398377827494
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.3501535196236341
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.3495808910964177
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.34909479659099524
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.34878423769331085
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.34802523093716575
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.34635812759325263
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.3460463019400171
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.3455172333080342
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.34533547311437024
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.3445417188967141
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.3442958279553831
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.3435654842833498
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.343547728728323
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.3423333813895245
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.34109943246933117
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.33982333581610685
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.3394005230387598
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.3385262729009208
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.33809940760427937
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.3371449405042124
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.3338813225292482
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.3338743483422087
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.3329693842855276
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.33238742982239095
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.33237018303978794
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.3320926785018686
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.33094199171682204
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.33066227594266195
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.3302213843890506
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.32990322549237805
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.32944649001840587
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.3290157557597289
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.3287027948005576
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.3273027824325172
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.3268881979232185
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.3261323335261961
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.32386480755529035
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.32266734690055676
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.31788508766049517
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.3177328832979077
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.31725746090922996
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.3134258576797056
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.3079321952132903
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.2919910168833752
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.288991762518316
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.2779843557725034
+          }
+        ],
+        "rationale": "Tests a function item without pretending its construction is complete.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.4325514354584241
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.4283936601370048
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.42804214493160087
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_mahksen_shoe",
+        "expected_rank": 1,
+        "id": "n1-core-shoe",
+        "query": "ordinary footwear worn on a foot",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.3119036298224121
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2341079135121125
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.19865784546852394
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.19824244803845548
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.1931906440602929
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.18753287779199285
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.1862285831823919
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.17757723114887336
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.17473577539664378
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.17321024134239238
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.16548622796459134
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.16544444068074557
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.16309809165472028
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.16028125649182637
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.1588166250936128
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.15875720274923094
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.15637425794885607
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.15459488344163957
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.1543235030257683
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.15335479986601797
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.15316956861369674
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.148855254952379
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.1479623184880769
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.1467909600296416
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.1467580391882741
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.14619484252032408
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.14468673526563433
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.14248556674788762
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.14146229745956626
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.14096036243095975
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.14061126032126386
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.13913455802449431
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.13882528010399817
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.13862024716092236
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.1380087387270139
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.13763565694485227
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.13640224425709574
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.1362571588458642
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.1347837113193503
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.13416915776697166
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.13351896757937393
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.13234318061222233
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.1293834093246201
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.12914483468748159
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.12912422816389324
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.1258273270992396
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.12531012005979084
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.12387075576131852
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.1232289622659315
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.1231985039307889
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.12154176599789843
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.1211871355469626
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.11861362050239069
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.11591779137052685
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.11224548975839865
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.11172371467235592
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.1112036631653514
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.1111687161714714
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.10780096260449452
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.10706790689844134
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.10600349110892342
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.1055948233133676
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.10455292614173003
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.10270120804894267
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.1012734478745314
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.10063785359717517
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.09956940285131834
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.09877740434550555
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.0984735860347613
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.09812911915158992
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.0972745144418668
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.09644713734043549
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.09615307884126524
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.09495282276421518
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.09487284029843072
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.09041367009513669
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.08844441724452828
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.08464128046113861
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.08346302234624128
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.08130055796291237
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.07688897440663933
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.07626022521794006
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.07434610386468395
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.07354251182192244
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.07127826872911545
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.05744224348197861
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.056346787394244396
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.05488646868101768
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.050493944320404126
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.04066964881442606
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.039304206993396276
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.02788165867062394
+          }
+        ],
+        "rationale": "Tests a regional-source everyday object.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.3119036298224121
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2341079135121125
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.19865784546852394
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_mohkamay_ice",
+        "expected_rank": 1,
+        "id": "n1-core-ice",
+        "query": "frozen water as a substance",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.3892346873317026
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.3575042762515493
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.29008703651600587
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.2797426507855711
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.2579201205650802
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.2533147037981076
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.25216371503094
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2505504062685835
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.23613502528744135
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.23494497652615912
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.23477974521822015
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2225983149699676
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.21398044307936792
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.21192706832392882
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.20525885771234958
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.20378594209936973
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.20330212873039047
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.20105987523119107
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.19886277773813413
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.19735106803540073
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.19698856911864382
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.19458975454962008
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.1943114879914748
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.1936360915163891
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.19135992147365705
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.19025743740784673
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.19012736612457548
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.18587182747605965
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.1849179474462744
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.18404522644866264
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.18374044235840686
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.18315332643716975
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.18022351516360943
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.17831914022529538
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.17655580822700295
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.17543355469191757
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.1752022879294595
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.17518484966853698
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.174948185796597
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.17415025863994962
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.17094169284216212
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.16955820979626807
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.169551407671015
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.16865960958209064
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.1680737448364557
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.16674731307048066
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.16560227452553739
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.16132700139005487
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.16126763082791915
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.15979552846640463
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.1589536622135686
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.15847063775829162
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.15825412520174176
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.15741617452437395
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.15684444211573734
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.1554910582408593
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.1550040310660895
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.1548200897300355
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.15432900102479757
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.15383171303294177
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.15162426439560092
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.15150277724706548
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.15130961896877806
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.1503765656313775
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.1488044335570948
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.14865245786702147
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.14855032951364835
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.14442723643799296
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.13631160895455757
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.13442187838856587
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.1330314071445634
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.12939625436353094
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.12783485343181
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.1275929618799618
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.12738405553347307
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.12491957502903009
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.12461333637742546
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.12206565698799303
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.12195501727172345
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.12134369858681372
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.12043037989960453
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.11983008536824408
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.11908380930032104
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.11858893745392979
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.11695403898180062
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.11660311027640013
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.11033375120962721
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.1089678279926965
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.10662318000375517
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.10567811914847951
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.09984924613225987
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.08119777477622617
+          }
+        ],
+        "rationale": "Tests an animate-class source noun whose English referent may suggest otherwise.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.3892346873317026
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.3575042762515493
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.29008703651600587
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_siipaw_river",
+        "expected_rank": 1,
+        "id": "n1-core-river",
+        "query": "a flowing natural body of water such as a river",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.42566056301782507
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.40238233188688194
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.35442258814993116
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.3133522823805264
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.29008784251435354
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2876830334883235
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.28574759958640583
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.28446628092239024
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.2814395314597653
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.27944498798100426
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.2783158679696519
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.27719522749511466
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.2770672119029599
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.2705992431094983
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.2683041238360422
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.26650609277911835
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.2664467102544328
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.26497349169722273
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.262590292212168
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.26094326230013043
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.26012737491649757
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.2582406387994049
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.2568802201190834
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.2557038547433117
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.2549943765273666
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.25427600815231954
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.253129001113816
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.2528679873342162
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.25258623904213984
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.2521199725662659
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.2480320356026981
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.24683740182226474
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.24515634012807186
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.24356774306354326
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.2400691921789977
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.23940771774819306
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.2383081279837924
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.23738810988550874
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.2316834500553381
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.22928907594420905
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.22874737090129463
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.22768004753477414
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.22581976706444865
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.22546491752128575
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.22376197995933103
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.22372039344834674
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.2236307150742824
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.22322514326076104
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.2214581839735759
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.2205847000826346
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.21834562747772496
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.2180989452308366
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.21628841857644537
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.21597562065277756
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.21395919864220403
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.21280359640404917
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.2106963633946178
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.2084909860020392
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.20819875231587098
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.2054095075121768
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.2043081534794538
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.20416842405199073
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.2033882207882324
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.20302643062087983
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.2026701008986709
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.2019714488391149
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.20174500144492605
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.19891874531372666
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.19840405659824342
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.1976261757449403
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.19737430066257364
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.19344527716002063
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.19257603458067993
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.19153009799505596
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.18867240064797555
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.18642821141689314
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.18277656625443386
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.17607587590310825
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.1749914074033516
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.17484550282357605
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.1732805699124055
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.17284632972605196
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.17257257527653855
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.16839999048744966
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.16369980970874096
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.16061466465230345
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.16036219113590913
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.1521463790106252
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.15064578161848652
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.13986212448883728
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.13591471836928734
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.12983801335419576
+          }
+        ],
+        "rationale": "Tests a regional landscape noun.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.42566056301782507
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.40238233188688194
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.35442258814993116
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+        "expected_rank": 1,
+        "id": "n1-core-hear-someone",
+        "query": "a transitive animate verb stem meaning hear a person or other animate object",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.5529027084669107
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.49566210699067675
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.48140467780162755
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.48116677692734866
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.4705757693615469
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.45268540572539584
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.4344329092825857
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.4334127225795646
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.43195115074841417
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.42902700658818405
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.4284011777435225
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.40371376544678916
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.4012458002710517
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.39349418692658233
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.38773929151586206
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.383676255854261
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.38121842419377056
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.3783053865780507
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.3779082219839619
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.37650052937576267
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.36723941382486486
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.3645573878474141
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.3626434883187736
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.3626005690938484
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.3597553442732299
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.35955441020938345
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.3556094232386799
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.3548448700256682
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.35395572463597214
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.35340858387843127
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.35252432652060245
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.35208260714427375
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.35103003836075236
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.35076958405702796
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.34928202482211146
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.34779436111769274
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.3436958546593481
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.34340676407684045
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.3433145200927352
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.34285913581188293
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.339154225296321
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.3386054460003603
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.33828623544294184
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.3379764949197589
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.33730846502243744
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.33596607412400575
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.3330958451081562
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.3326448843872666
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.33223566846096225
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.3297731421833319
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.3296036867920965
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.3264075091627421
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.32626884419462704
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.3261141382868852
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.32607741806087215
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.3252987468559019
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.3248425215219446
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.32455422409003704
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.32415842802660894
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.3208684306123176
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.32047816328956197
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.31992022481747073
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.3190354872656438
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.31817004302630775
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.31754043935382087
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.3135251370880997
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.3113458234667955
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.3081288431741747
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.3079648860294267
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.3073963125950473
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.30737391164343414
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.30189848891750404
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.301332639831745
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.30128815012779553
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.30058817029775603
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.3001436745151
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.29972599569684427
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.29681424034970116
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.29434334193985473
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.29396540992805653
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.29377582502179933
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.2924715259889307
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.2902931316512583
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.2895474774212182
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.2888679458130693
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.2715051396147396
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.2709421105363455
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.2662577773181513
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.26277661280849285
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.2559958783626282
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.25479927155778365
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.23614724028584405
+          }
+        ],
+        "rationale": "Tests retrieval of the TA member against its TI pair.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.5529027084669107
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.49566210699067675
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.48140467780162755
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_tiihincrew_cup",
+        "expected_rank": 1,
+        "id": "n1-core-cup",
+        "query": "a cup or teacup, a small kitchen vessel used for drinking",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.42569407435392354
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2957872888946851
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.2927989342733828
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.2588646903244439
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.2524037845628999
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.2444130382140849
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.24146141225129547
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.2410428932048867
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.23863715817286602
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.23584373939815975
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.22748889954623358
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.22673490765904886
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.22568446363213399
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.2256182156142816
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.21596960429093115
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.21393806994441344
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.2132080950976728
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.21238914985493154
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.21132563949951746
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.20941981064720835
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.20856980471456432
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.20724306317880237
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.20684164881326395
+          },
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.20661755863894313
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.20621752582317174
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.20452852673100375
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.20403990193626076
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.20246359018045693
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.20174680704816575
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.20130793736370453
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.1969921927487215
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.19671265131229704
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.1960089700725104
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.19512329668560632
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.1940104498706698
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.18969041297505615
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.18938627568409055
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.18761663820732957
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.1871943216206532
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.1865921724252485
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.1845494895554447
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.18413046220353727
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.1828984857532843
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.1815632439160639
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.1815429169091005
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.17947732820099055
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.17858381828214903
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.1756548161435664
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.1753854281326671
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.175335479382717
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.1709705412885853
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.16954993129659537
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.16929131725749455
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.16675850975432505
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.16641399683036884
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.1658245166469575
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.1650378378951668
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.16197708796235205
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.16194262802224177
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.16188482592382086
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.1569261212466346
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.1541376890789377
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.15318207130047815
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.15238371182488156
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.1504080551772926
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.15016247397525095
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.14844696902376045
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.1479357359597745
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.1476342931501289
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.1474150338721611
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.14525551180468946
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.1451130771982935
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.14343005564526937
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.1420505513646665
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.1376984058078116
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.1340926343175901
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.13238851811642063
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.13046105670262392
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.1296474353407586
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.127772593369892
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.12659393669673538
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.12454286105542764
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.12351482124142478
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.12198733554896284
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.11949138849636351
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.11554864220769105
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.11528438540990373
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.11207306984352283
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.10627980211147948
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.0999235933480425
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.09857210546444832
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.09375393592174266
+          }
+        ],
+        "rationale": "Tests a segmented regional-source kitchen noun.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.42569407435392354
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.2957872888946851
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.2927989342733828
+          }
+        ]
+      },
+      {
+        "expected_id": "ja.lexeme.munsee_paa_come",
+        "expected_rank": 1,
+        "id": "n1-core-come",
+        "query": "a motion verb meaning come or move toward the deictic center",
+        "ranking": [
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.48984071169778964
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.4070204200686233
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.3788298518110097
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_aw_look_animate",
+            "score": 0.37188501077088065
+          },
+          {
+            "id": "ja.morpheme.hebrew_definite_ha",
+            "score": 0.3628146080103292
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_w_see_animate",
+            "score": 0.3605206138258656
+          },
+          {
+            "id": "ja.phrase.n1_fruit_and_water",
+            "score": 0.3559499550399637
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_aw_hear_animate",
+            "score": 0.35501712017437903
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_aw_find_animate",
+            "score": 0.35146323737325225
+          },
+          {
+            "id": "ja.morpheme.hebrew_coord_we",
+            "score": 0.3478659196738988
+          },
+          {
+            "id": "ja.morpheme.munsee_iikaan_dwelling_final",
+            "score": 0.34574582623594385
+          },
+          {
+            "id": "ja.lexeme.hebrew_hayom_today",
+            "score": 0.3369450104668424
+          },
+          {
+            "id": "ja.lexeme.munsee_lepak_weep",
+            "score": 0.3349393486915219
+          },
+          {
+            "id": "ja.morpheme.munsee_third_w",
+            "score": 0.3323656380492869
+          },
+          {
+            "id": "ja.lexeme.munsee_aa_go",
+            "score": 0.32701451422917577
+          },
+          {
+            "id": "ja.lexeme.munsee_pent_am_hear_inanimate",
+            "score": 0.32087873035067677
+          },
+          {
+            "id": "ja.lexeme.munsee_pen_am_look_inanimate",
+            "score": 0.3207931425463845
+          },
+          {
+            "id": "ja.construction.n1_nominal_coordination",
+            "score": 0.3114689225959244
+          },
+          {
+            "id": "ja.lexeme.hebrew_eifo_where",
+            "score": 0.3109628907759176
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_milk",
+            "score": 0.308201536035862
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkamay_ice",
+            "score": 0.30800498337631405
+          },
+          {
+            "id": "ja.lexeme.munsee_moxk_am_find_inanimate",
+            "score": 0.30800171023660644
+          },
+          {
+            "id": "ja.lexeme.munsee_aanay_road",
+            "score": 0.30791624190100203
+          },
+          {
+            "id": "ja.sentence.n1_the_child_walks",
+            "score": 0.3076300751787796
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_walks",
+            "score": 0.30679146294328585
+          },
+          {
+            "id": "ja.sentence.n1_the_man_walks",
+            "score": 0.30643521019049996
+          },
+          {
+            "id": "ja.lexeme.hebrew_yad_upper_limb",
+            "score": 0.3035951150204682
+          },
+          {
+            "id": "ja.lexeme.munsee_mohkw_blood",
+            "score": 0.2990758414807741
+          },
+          {
+            "id": "ja.construction.n1_definite_prefix",
+            "score": 0.29701490887677084
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_ak",
+            "score": 0.29501257178560814
+          },
+          {
+            "id": "ja.phrase.n1_woman_and_child",
+            "score": 0.294434138837926
+          },
+          {
+            "id": "ja.lexeme.munsee_siipaw_river",
+            "score": 0.2934445842443061
+          },
+          {
+            "id": "ja.lexeme.hebrew_mahar_tomorrow",
+            "score": 0.2927568478331284
+          },
+          {
+            "id": "ja.phrase.n1_the_child",
+            "score": 0.2866471674788584
+          },
+          {
+            "id": "ja.morpheme.munsee_ncrew_dish_final",
+            "score": 0.2842444148356756
+          },
+          {
+            "id": "ja.lexeme.munsee_tiihincrew_cup",
+            "score": 0.2819021877663698
+          },
+          {
+            "id": "ja.sentence.n1_the_man_is_good",
+            "score": 0.2815997040794439
+          },
+          {
+            "id": "ja.lexeme.munsee_alaankweew_star",
+            "score": 0.2798070475058532
+          },
+          {
+            "id": "ja.lexeme.hebrew_em_mother",
+            "score": 0.27796155656637656
+          },
+          {
+            "id": "ja.lexeme.munsee_ooteenay_town",
+            "score": 0.2762327028810809
+          },
+          {
+            "id": "ja.construction.n1_ai_third_predicate",
+            "score": 0.27615827892928885
+          },
+          {
+            "id": "ja.lexeme.munsee_nee_m_see_inanimate",
+            "score": 0.27569946726024996
+          },
+          {
+            "id": "ja.lexeme.hebrew_lev_heart",
+            "score": 0.27511438631838064
+          },
+          {
+            "id": "ja.lexeme.munsee_cankameekw_small_fish",
+            "score": 0.2743307133846207
+          },
+          {
+            "id": "ja.phrase.n1_mother_and_father",
+            "score": 0.2739353065897526
+          },
+          {
+            "id": "ja.lexeme.hebrew_mayim",
+            "score": 0.27322365972425694
+          },
+          {
+            "id": "ja.phrase.n1_the_woman",
+            "score": 0.2711485774030403
+          },
+          {
+            "id": "ja.lexeme.hebrew_heder_room",
+            "score": 0.26465373429515954
+          },
+          {
+            "id": "ja.lexeme.munsee_wiisakiim_grape",
+            "score": 0.2636170134027727
+          },
+          {
+            "id": "ja.phrase.n1_chairs",
+            "score": 0.26009034611932835
+          },
+          {
+            "id": "ja.lexeme.munsee_apiinay_bed",
+            "score": 0.26000521911663604
+          },
+          {
+            "id": "ja.lexeme.hebrew_ayin_eye",
+            "score": 0.2564344533724771
+          },
+          {
+            "id": "ja.lexeme.munsee_weentakwiiwan_dress_coat",
+            "score": 0.25582689867817976
+          },
+          {
+            "id": "ja.lexeme.hebrew_kisse_chair",
+            "score": 0.2528322698831586
+          },
+          {
+            "id": "ja.lexeme.munsee_amoxkw_beaver",
+            "score": 0.2528214232126798
+          },
+          {
+            "id": "ja.lexeme.hebrew_peh_mouth",
+            "score": 0.2521244906477483
+          },
+          {
+            "id": "ja.lexeme.munsee_pakiincrew_plate",
+            "score": 0.2488450612884463
+          },
+          {
+            "id": "ja.lexeme.munsee_asiiskaw_mud",
+            "score": 0.24834157092638592
+          },
+          {
+            "id": "ja.morpheme.munsee_plural_al",
+            "score": 0.24673965044975946
+          },
+          {
+            "id": "ja.lexeme.hebrew_halav_milk",
+            "score": 0.246665103644583
+          },
+          {
+            "id": "ja.sentence.n1_the_woman_is_good",
+            "score": 0.24530568770086653
+          },
+          {
+            "id": "ja.lexeme.munsee_xwaskwiim_corn",
+            "score": 0.24311055123454997
+          },
+          {
+            "id": "ja.lexeme.hebrew_yeled_child",
+            "score": 0.2415487792448906
+          },
+          {
+            "id": "ja.lexeme.munsee_wesapakwiiwan_cloth",
+            "score": 0.24108513888341976
+          },
+          {
+            "id": "ja.lexeme.hebrew_mah_what",
+            "score": 0.2405860598780675
+          },
+          {
+            "id": "ja.phrase.n1_doors",
+            "score": 0.23325437847242456
+          },
+          {
+            "id": "ja.lexeme.munsee_ponkw_dust",
+            "score": 0.23272660899099326
+          },
+          {
+            "id": "ja.lexeme.munsee_maxkw_bear",
+            "score": 0.23260718003664899
+          },
+          {
+            "id": "ja.construction.n1_class_plural",
+            "score": 0.22980154248105367
+          },
+          {
+            "id": "ja.lexeme.hebrew_peri_fruit",
+            "score": 0.22833061587001058
+          },
+          {
+            "id": "ja.lexeme.munsee_mwaakaneew_dog",
+            "score": 0.2263926287324223
+          },
+          {
+            "id": "ja.lexeme.munsee_welesii_good",
+            "score": 0.22564295551897048
+          },
+          {
+            "id": "ja.phrase.n1_houses",
+            "score": 0.22453386131604747
+          },
+          {
+            "id": "ja.lexeme.munsee_lunew_man",
+            "score": 0.22331119223982376
+          },
+          {
+            "id": "ja.lexeme.hebrew_delet_door",
+            "score": 0.2219256309839199
+          },
+          {
+            "id": "ja.lexeme.hebrew_av_father",
+            "score": 0.219127159173918
+          },
+          {
+            "id": "ja.lexeme.munsee_mahksen_shoe",
+            "score": 0.2172090182603088
+          },
+          {
+            "id": "ja.lexeme.hebrew_bayit",
+            "score": 0.21636755907171198
+          },
+          {
+            "id": "ja.lexeme.munsee_patakwiim_walnut",
+            "score": 0.21060435101726108
+          },
+          {
+            "id": "ja.lexeme.munsee_oxkweew_woman",
+            "score": 0.20888997512493993
+          },
+          {
+            "id": "ja.lexeme.hebrew_rosh_head",
+            "score": 0.20485096560524046
+          },
+          {
+            "id": "ja.lexeme.hebrew_ehad_one",
+            "score": 0.20298465296652463
+          },
+          {
+            "id": "ja.lexeme.hebrew_shulhan_table",
+            "score": 0.20114931896697583
+          },
+          {
+            "id": "ja.lexeme.munsee_asen_stone",
+            "score": 0.19989714242600398
+          },
+          {
+            "id": "ja.lexeme.hebrew_adam_person",
+            "score": 0.1996843056182535
+          },
+          {
+            "id": "ja.lexeme.hebrew_ishah_woman",
+            "score": 0.19293299194289903
+          },
+          {
+            "id": "ja.lexeme.hebrew_gadol_large",
+            "score": 0.19273019857453708
+          },
+          {
+            "id": "ja.lexeme.hebrew_qatan_small",
+            "score": 0.1904379878039709
+          },
+          {
+            "id": "ja.lexeme.hebrew_ahot_sister",
+            "score": 0.18758057671932285
+          },
+          {
+            "id": "ja.lexeme.hebrew_lehem",
+            "score": 0.18467150186289158
+          },
+          {
+            "id": "ja.morpheme.hebrew_lo_negation",
+            "score": 0.18423034564823257
+          },
+          {
+            "id": "ja.construction.n1_contact_subject_predicate",
+            "score": 0.1799040405865479
+          }
+        ],
+        "rationale": "Tests an explicitly narrow motion stem whose subclass remains unstated.",
+        "reciprocal_rank": 1.0,
+        "top_3": [
+          {
+            "id": "ja.lexeme.munsee_paa_come",
+            "score": 0.48984071169778964
+          },
+          {
+            "id": "ja.lexeme.munsee_pemsii_walk",
+            "score": 0.4070204200686233
+          },
+          {
+            "id": "ja.phrase.n1_bread_and_water",
+            "score": 0.3788298518110097
+          }
+        ]
+      }
+    ],
+    "query_count": 12,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0
+  },
+  "evaluation_kind": "bounded_n1_core_retrieval_checkpoint",
+  "interpretation": "A bounded diagnostic of search behavior over noncanonical records; source review and language-design review remain independent gates.",
+  "largest_input_utf8_bytes": 4056,
+  "ledger_run_id": "ff4ff3d35758405abbf856af9c3330fa",
+  "limitations": "Twelve project-authored paraphrases test retrieval plumbing over a bounded candidate set. They are not an independent linguistic benchmark and do not promote any record toward canon.",
+  "metric_resolution": 0.08333333333333333,
+  "mode": "live",
+  "model": "text-embedding-3-small",
+  "predeclared_pass_criteria": {
+    "minimum_recall_at_3": 0.8
+  },
+  "prompt_tokens": 50922,
+  "queries": 12,
+  "query_fixture": "tests/fixtures/n1_core_semantic_queries.json",
+  "query_fixture_sha256": "f63ce8518ea005ff38e068a0d950550922d5afcd00b9313eaf970048fedec3c6",
+  "post_call_source_correction": {
+    "corrected_at": "2026-07-13T00:46:00Z",
+    "current_data_file_sha256": {
+      "n1-core-lexicon.jsonl": "325019776aab9cda1c0a2fd8c0884816d52c2c7be23548fa2275a8c3fc773e5b",
+      "n1-core-regressions.jsonl": "fe4565ed2b2d415bdc551a2ec154bbc7e93b7d1541d65281e686b209924d9d5e",
+      "n1-pilot.jsonl": "6200fa8856af6891a5c1901efdc8cd9609a1d5550e2595e02c9e697cae36894a"
+    },
+    "current_data_sha256": "4eaf273161ab9bd1061c844e17b9ed7af7677c8610bb39fb0d19935f7d1c9618",
+    "current_fresh_vectors": 84,
+    "current_stale_or_missing_vectors": 8,
+    "affected_current_record_ids": [
+      "ja.lexeme.hebrew_ishah_woman",
+      "ja.lexeme.hebrew_mahar_tomorrow",
+      "ja.lexeme.munsee_wesapakwiiwan_cloth",
+      "ja.lexeme.munsee_xwaskwiim_corn",
+      "ja.phrase.n1_woman_and_child",
+      "ja.phrase.n1_the_woman",
+      "ja.sentence.n1_the_woman_walks",
+      "ja.sentence.n1_the_woman_is_good"
+    ],
+    "corrections": [
+      "Restored source š and the cited surface/analysis distinction in the Munsee cloth record.",
+      "Separated the Academy's unpointed temporal-category evidence from BDB's pointed historical headword for tomorrow.",
+      "Added the exact Academy inflection-decision locator for woman.",
+      "Narrowed the Munsee corn locator to the page on which the cited example is printed.",
+      "Refreshed four downstream woman-dependent composition revisions."
+    ],
+    "embedding_call_repeated": false,
+    "live_evaluation_applies_to_data_sha256": "23f897ab6c5455ec0c986b61d0a85743f5c9d92d25dd0df6dfea059d130fbbf1",
+    "interpretation": "The report preserves the exact paid-call result. The final source audit takes precedence, and fingerprint checks correctly withhold the eight affected vectors until a future owner-authorized incremental checkpoint."
+  },
+  "record_revisions": {
+    "ja.construction.n1_ai_third_predicate": 3,
+    "ja.construction.n1_class_plural": 3,
+    "ja.construction.n1_contact_subject_predicate": 3,
+    "ja.construction.n1_definite_prefix": 2,
+    "ja.construction.n1_nominal_coordination": 2,
+    "ja.lexeme.hebrew_adam_person": 1,
+    "ja.lexeme.hebrew_ahot_sister": 1,
+    "ja.lexeme.hebrew_av_father": 1,
+    "ja.lexeme.hebrew_ayin_eye": 1,
+    "ja.lexeme.hebrew_bayit": 2,
+    "ja.lexeme.hebrew_delet_door": 1,
+    "ja.lexeme.hebrew_ehad_one": 1,
+    "ja.lexeme.hebrew_eifo_where": 1,
+    "ja.lexeme.hebrew_em_mother": 1,
+    "ja.lexeme.hebrew_gadol_large": 1,
+    "ja.lexeme.hebrew_halav_milk": 1,
+    "ja.lexeme.hebrew_hayom_today": 1,
+    "ja.lexeme.hebrew_heder_room": 1,
+    "ja.lexeme.hebrew_ishah_woman": 1,
+    "ja.lexeme.hebrew_kisse_chair": 1,
+    "ja.lexeme.hebrew_lehem": 2,
+    "ja.lexeme.hebrew_lev_heart": 1,
+    "ja.lexeme.hebrew_mah_what": 1,
+    "ja.lexeme.hebrew_mahar_tomorrow": 1,
+    "ja.lexeme.hebrew_mayim": 2,
+    "ja.lexeme.hebrew_peh_mouth": 1,
+    "ja.lexeme.hebrew_peri_fruit": 1,
+    "ja.lexeme.hebrew_qatan_small": 1,
+    "ja.lexeme.hebrew_rosh_head": 1,
+    "ja.lexeme.hebrew_shulhan_table": 1,
+    "ja.lexeme.hebrew_yad_upper_limb": 1,
+    "ja.lexeme.hebrew_yeled_child": 1,
+    "ja.lexeme.munsee_aa_go": 1,
+    "ja.lexeme.munsee_aanay_road": 1,
+    "ja.lexeme.munsee_alaankweew_star": 1,
+    "ja.lexeme.munsee_amoxkw_beaver": 1,
+    "ja.lexeme.munsee_apiinay_bed": 1,
+    "ja.lexeme.munsee_asen_stone": 3,
+    "ja.lexeme.munsee_asiiskaw_mud": 1,
+    "ja.lexeme.munsee_cankameekw_small_fish": 1,
+    "ja.lexeme.munsee_lepak_weep": 1,
+    "ja.lexeme.munsee_lunew_man": 3,
+    "ja.lexeme.munsee_mahksen_shoe": 1,
+    "ja.lexeme.munsee_maxkw_bear": 1,
+    "ja.lexeme.munsee_mohkamay_ice": 1,
+    "ja.lexeme.munsee_mohkw_blood": 1,
+    "ja.lexeme.munsee_moxk_am_find_inanimate": 1,
+    "ja.lexeme.munsee_moxk_aw_find_animate": 1,
+    "ja.lexeme.munsee_mwaakaneew_dog": 1,
+    "ja.lexeme.munsee_nee_m_see_inanimate": 1,
+    "ja.lexeme.munsee_nee_w_see_animate": 1,
+    "ja.lexeme.munsee_ooteenay_town": 1,
+    "ja.lexeme.munsee_oxkweew_woman": 1,
+    "ja.lexeme.munsee_paa_come": 1,
+    "ja.lexeme.munsee_pakiincrew_plate": 1,
+    "ja.lexeme.munsee_patakwiim_walnut": 1,
+    "ja.lexeme.munsee_pemsii_walk": 3,
+    "ja.lexeme.munsee_pen_am_look_inanimate": 1,
+    "ja.lexeme.munsee_pen_aw_look_animate": 1,
+    "ja.lexeme.munsee_pent_am_hear_inanimate": 1,
+    "ja.lexeme.munsee_pent_aw_hear_animate": 1,
+    "ja.lexeme.munsee_ponkw_dust": 1,
+    "ja.lexeme.munsee_siipaw_river": 1,
+    "ja.lexeme.munsee_tiihincrew_cup": 1,
+    "ja.lexeme.munsee_weentakwiiwan_dress_coat": 1,
+    "ja.lexeme.munsee_welesii_good": 3,
+    "ja.lexeme.munsee_wesapakwiiwan_cloth": 1,
+    "ja.lexeme.munsee_wiisakiim_grape": 1,
+    "ja.lexeme.munsee_xwaskwiim_corn": 1,
+    "ja.morpheme.hebrew_coord_we": 2,
+    "ja.morpheme.hebrew_definite_ha": 2,
+    "ja.morpheme.hebrew_lo_negation": 1,
+    "ja.morpheme.munsee_iikaan_dwelling_final": 1,
+    "ja.morpheme.munsee_ncrew_dish_final": 1,
+    "ja.morpheme.munsee_plural_ak": 3,
+    "ja.morpheme.munsee_plural_al": 3,
+    "ja.morpheme.munsee_third_w": 3,
+    "ja.phrase.n1_bread_and_milk": 1,
+    "ja.phrase.n1_bread_and_water": 2,
+    "ja.phrase.n1_chairs": 1,
+    "ja.phrase.n1_doors": 1,
+    "ja.phrase.n1_fruit_and_water": 1,
+    "ja.phrase.n1_houses": 3,
+    "ja.phrase.n1_mother_and_father": 1,
+    "ja.phrase.n1_the_child": 1,
+    "ja.phrase.n1_the_woman": 1,
+    "ja.phrase.n1_woman_and_child": 1,
+    "ja.sentence.n1_the_child_walks": 1,
+    "ja.sentence.n1_the_man_is_good": 3,
+    "ja.sentence.n1_the_man_walks": 1,
+    "ja.sentence.n1_the_woman_is_good": 1,
+    "ja.sentence.n1_the_woman_walks": 1
+  },
+  "records": 92,
+  "rough_input_token_estimate": 56033,
+  "total_tokens": 50922,
+  "utf8_bytes": 226161
+}

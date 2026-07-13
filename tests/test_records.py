@@ -234,13 +234,15 @@ class RecordTests(unittest.TestCase):
 
     def test_dependency_revision_mismatch_and_cycle_fail(self) -> None:
         stale = copy.deepcopy(self.records)
-        stale[0]["revision"] = 2
+        stale[0]["revision"] += 1
         with self.assertRaisesRegex(ValidationError, "stale revision"):
             validate_records(stale)
 
         cyclic = copy.deepcopy(self.records)
         cyclic[0]["relations"]["depends_on"] = [cyclic[1]["id"]]
-        cyclic[0]["relations"]["dependency_revisions"] = {cyclic[1]["id"]: 1}
+        cyclic[0]["relations"]["dependency_revisions"] = {
+            cyclic[1]["id"]: cyclic[1]["revision"]
+        }
         with self.assertRaisesRegex(ValidationError, "dependency cycle"):
             validate_records(cyclic)
 
@@ -300,8 +302,8 @@ class RecordTests(unittest.TestCase):
             construction["id"],
         ]
         sentence["relations"]["dependency_revisions"] = {
-            "ja.lexeme.legacy_home": 1,
-            construction["id"]: 1,
+            "ja.lexeme.legacy_home": self.records[0]["revision"],
+            construction["id"]: construction["revision"],
         }
         sentence["composition"]["construction_ids"] = [construction["id"]]
         sentence["narrative_analysis"] = {

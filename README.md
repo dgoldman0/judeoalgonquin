@@ -4,7 +4,12 @@ This repository is the structured knowledge base for an intentionally constructe
 
 Its explicit alternate-history premise imagines that Judea does not fall, that a culturally rich Judean community eventually crosses the Atlantic and settles in the valley, and that long contact produces a pidgin and then a nativized creole—a full community language that continues to elaborate across ordinary life, learning, art, narrative, and public institutions. Hebrew language and culture are preserved and transformed throughout that development. This is worldbuilding, not claimed history or reconstruction, and the project does not represent any real Jewish or Indigenous community's speech.
 
-The project is currently in its **foundation / first architecture-probe** stage. Twenty N1 records now exercise the schema and retrieval workflow, but every one remains a noncanonical candidate. No legacy translation is canonical. The old fine-tuning-era tree remains recoverable from the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
+The project is currently in its **foundation / first N1 lexical epoch**. The
+knowledge base now contains 92 records: a revised 20-record architecture probe,
+60 independently sourced lexical/function candidates, and 12 revision-pinned
+composition regressions. Every record remains noncanonical. No legacy
+translation is canonical. The old fine-tuning-era tree remains recoverable from
+the archival Git tags documented in [the legacy audit](docs/legacy-audit.md).
 
 ## Start here
 
@@ -21,6 +26,9 @@ The project is currently in its **foundation / first architecture-probe** stage.
 11. [Creative anchors](references/creative-anchors/README.md)
 12. [N1 pilot source packet](docs/research/n1-pilot-source-packet.md)
 13. [N1 embedding sanity report](docs/reports/n1-pilot-embedding-evaluation-2026-07-12.json)
+14. [N1 core lexical epoch](docs/research/n1-core-epoch.md)
+15. [O'Meara-to-Hebrew analytic transport](docs/research/omeara-hebrew-transport.md)
+16. [N1 core embedding report](docs/reports/n1-core-embedding-evaluation-2026-07-12.json)
 
 ## Core rules
 
@@ -61,10 +69,15 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin search home
 # Show the embedding plan without spending anything.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin embed --data data/entries
 
-# Validate the N1 pilot's declared constructions, then inspect its fixed
-# 20-record + 5-query single-request embedding evaluation without spending.
-PYTHONPATH=src .venv/bin/python -m judeoalgonquin evaluate
-PYTHONPATH=src .venv/bin/python -m judeoalgonquin pilot-embedding-eval
+# Validate all 92 N1 records and declared constructions, then inspect the frozen
+# 92-record + 12-query checkpoint envelope without spending.
+PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate --data data/entries
+PYTHONPATH=src .venv/bin/python -m judeoalgonquin evaluate --data data/entries
+PYTHONPATH=src .venv/bin/python -m judeoalgonquin n1-core-embedding-eval
 ```
 
-Paid embedding and semantic-search paths require both `--live` and an enabled, capped authorization in [`config/api-budget.json`](config/api-budget.json). The foundation smoke call and first N1 retrieval sanity call have been consumed. The committed policy is disabled, so any further paid action requires new owner approval.
+Paid embedding and semantic-search paths require both `--live` and an enabled,
+capped authorization in [`config/api-budget.json`](config/api-budget.json). The
+foundation smoke call, architecture-probe sanity call, and first N1 core
+checkpoint have been consumed. The committed policy is disabled, so any further
+paid action requires new owner approval.

@@ -1,0 +1,725 @@
+{
+  "schema_version": 1,
+  "packet_id": "n1-core-munsee-seeds",
+  "status": "research_only_noncanonical",
+  "record_count": 35,
+  "source_scope": {
+    "source_id": "omeara_delaware_stem_morphology_1990",
+    "title": "Delaware Stem Morphology",
+    "creator": "John D. W. O'Meara",
+    "language": "Munsee Delaware",
+    "lect": "Moraviantown variety",
+    "license_status": "copyrighted",
+    "reuse_policy": "Per-entry manual research and limited citation only; bulk extraction and systematic source import are not cleared.",
+    "attribution_scope": "O'Meara states that most fieldwork was conducted with Emily Johnson, Ethel Peters, and Beulah Timothy, with lesser amounts of information from Mattie Huff, Enoch Jacobs, Peter Noah, Nellie Noah, and Rebecca Snake. Unmarked forms ordinarily come from O'Meara's field notes, but none of these seed items has item-level speaker attribution.",
+    "orthography_caution": "The exact cited forms use O'Meara's dissertation transcription. Transport normalization is Unicode NFC with citation slashes removed; it is not a canonical spelling, a practical community orthography, or a Judeo-Algonquin form."
+  },
+  "records": [
+    {
+      "id": "ja.seed.munsee.mahksen_shoe",
+      "type": "lexeme",
+      "source_form": "mahksən",
+      "normalized_transport_input": "mahksən",
+      "english_gloss": "shoe",
+      "definition": "The Moraviantown Munsee noun glossed 'shoe' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 318, §5.0.1, example 5.6",
+      "analysis": "Listed as a monomorphemic inanimate noun.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation supplies a short English gloss, not a complete semantic or usage description."
+      },
+      "domains": ["clothing", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.mohkamay_ice",
+      "type": "lexeme",
+      "source_form": "mohkaməy",
+      "normalized_transport_input": "mohkaməy",
+      "english_gloss": "ice",
+      "definition": "The Moraviantown Munsee noun glossed 'ice' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 318, §5.0.1, example 5.6",
+      "analysis": "Listed as a monomorphemic animate noun.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "AN is a printed grammatical category; it must not be reinterpreted as a claim about biological animacy."
+      },
+      "domains": ["weather", "water", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.oxkweew_woman",
+      "type": "lexeme",
+      "source_form": "oxkweew",
+      "normalized_transport_input": "oxkweew",
+      "english_gloss": "woman",
+      "definition": "The Moraviantown Munsee noun glossed 'woman' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15a",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Age range, social usage, and semantic boundaries are not established by the short gloss."
+      },
+      "domains": ["people", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.alaankweew_star",
+      "type": "lexeme",
+      "source_form": "alaankweew",
+      "normalized_transport_input": "alaankweew",
+      "english_gloss": "star",
+      "definition": "The Moraviantown Munsee noun glossed 'star' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15a",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation does not license astronomical, figurative, or ceremonial extensions."
+      },
+      "domains": ["sky", "nature"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.mwaakaneew_dog",
+      "type": "lexeme",
+      "source_form": "mwaakaneew",
+      "normalized_transport_input": "mwaakaneew",
+      "english_gloss": "dog",
+      "definition": "The Moraviantown Munsee noun glossed 'dog' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15a",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation supplies no plural, possession, or usage example."
+      },
+      "domains": ["animals", "home", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.siipaw_river",
+      "type": "lexeme",
+      "source_form": "siipəw",
+      "normalized_transport_input": "siipəw",
+      "english_gloss": "river",
+      "definition": "The Moraviantown Munsee noun glossed 'river' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15b",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The gloss does not establish distinctions among river, stream, and named waterways."
+      },
+      "domains": ["water", "landscape", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.maxkw_bear",
+      "type": "lexeme",
+      "source_form": "maxkw",
+      "normalized_transport_input": "maxkw",
+      "english_gloss": "bear",
+      "definition": "The Moraviantown Munsee noun glossed 'bear' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15c",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Species range and culturally specific senses are not established by the short gloss."
+      },
+      "domains": ["animals", "landscape"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.amoxkw_beaver",
+      "type": "lexeme",
+      "source_form": "amoxkw",
+      "normalized_transport_input": "amoxkw",
+      "english_gloss": "beaver",
+      "definition": "The Moraviantown Munsee noun glossed 'beaver' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15c",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation supplies no inflectional or usage example."
+      },
+      "domains": ["animals", "water", "landscape"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.mohkw_blood",
+      "type": "lexeme",
+      "source_form": "mohkw",
+      "normalized_transport_input": "mohkw",
+      "english_gloss": "blood",
+      "definition": "The Moraviantown Munsee noun glossed 'blood' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15c",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Possession behavior and figurative or ceremonial meanings are not licensed by this citation."
+      },
+      "domains": ["body", "health", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.aanay_road",
+      "type": "lexeme",
+      "source_form": "aanay",
+      "normalized_transport_input": "aanay",
+      "english_gloss": "road",
+      "definition": "The Moraviantown Munsee noun glossed 'road' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 325, §5.1.2, example 5.13b",
+      "analysis": "/aan-ay/; the source does not assign a meaning to the final /-ay/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "O'Meara analyzes nouns containing /-ay/ as listed rather than productively derived."
+      },
+      "domains": ["travel", "places", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.ooteenay_town",
+      "type": "lexeme",
+      "source_form": "ootee-n-ay",
+      "normalized_transport_input": "ootee-n-ay",
+      "english_gloss": "town",
+      "definition": "The Moraviantown Munsee listed noun glossed 'town' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 326, §5.1.2, example 5.14a",
+      "analysis": "ootee-n-ay; visit-nominalizer-final.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "O'Meara says the status of /-n/ is unclear; the printed segmentation must not be treated as a productive rule."
+      },
+      "domains": ["settlement", "places", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem", "analysis-uncertain"]
+    },
+    {
+      "id": "ja.seed.munsee.apiinay_bed",
+      "type": "lexeme",
+      "source_form": "apii-n-ay",
+      "normalized_transport_input": "apii-n-ay",
+      "english_gloss": "bed",
+      "definition": "The Moraviantown Munsee listed noun glossed 'bed' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 326, §5.1.2, example 5.14a",
+      "analysis": "apii-n-ay; be-there-nominalizer-final.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "O'Meara says the status of /-n/ is unclear; the printed segmentation must not be treated as a productive rule."
+      },
+      "domains": ["home", "sleep", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem", "analysis-uncertain"]
+    },
+    {
+      "id": "ja.seed.munsee.wesapakwiiwan_cloth",
+      "type": "lexeme",
+      "revision": 2,
+      "updated_at": "2026-07-13T00:45:00Z",
+      "change_note": "Corrected the cited surface form and analysis to preserve source š after the post-embedding source audit.",
+      "source_form": "wšapakwiiwan",
+      "normalized_transport_input": "wšapakwiiwan",
+      "english_gloss": "cloth",
+      "definition": "The Moraviantown Munsee noun glossed 'cloth' and analyzed as thin-cloth.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 334, §5.2.2.2, example 5.24a",
+      "analysis": "/wəšap-akwiiwan/; thin-cloth.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "/-akwiiwan/ is a bound noun final in this analysis; a historical free form was not accepted by O'Meara's consultants and must not be reconstructed as current."
+      },
+      "domains": ["materials", "clothing", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "bound-final-analysis"]
+    },
+    {
+      "id": "ja.seed.munsee.xwaskwiim_corn",
+      "type": "lexeme",
+      "revision": 2,
+      "updated_at": "2026-07-13T00:45:00Z",
+      "change_note": "Narrowed the locator to the page on which example 5.27a is printed after the post-embedding source audit.",
+      "source_form": "xwaskwiim",
+      "normalized_transport_input": "xwaskwiim",
+      "english_gloss": "corn",
+      "definition": "The Moraviantown Munsee noun glossed 'corn' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 335, §5.2.2.5, example 5.27a",
+      "analysis": "/məx-askw-ii-m/; big-grass-epenthesis-seed.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "O'Meara treats nouns containing /-m/ as listed, not synchronically generated by a productive rule."
+      },
+      "domains": ["food", "plants", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.nee_w_see_animate",
+      "type": "lexeme",
+      "source_form": "/nee-w-/",
+      "normalized_transport_input": "nee-w-",
+      "english_gloss": "see someone",
+      "definition": "A transitive animate stem meaning to see a grammatically animate object.",
+      "part_of_speech": "transitive animate verb stem",
+      "source_category": "TA",
+      "locator": "O'Meara 1990, p. 67, §2.1.1, example 2.6",
+      "analysis": "Root /nee-/ plus TA final /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The English 'someone' reflects the source gloss; TA selection is grammatical animacy, not necessarily human reference."
+      },
+      "domains": ["perception", "actions", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TA", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.nee_m_see_inanimate",
+      "type": "lexeme",
+      "source_form": "/nee-m-/",
+      "normalized_transport_input": "nee-m-",
+      "english_gloss": "see something",
+      "definition": "A transitive inanimate stem meaning to see a grammatically inanimate object.",
+      "part_of_speech": "transitive inanimate verb stem",
+      "source_category": "TI",
+      "locator": "O'Meara 1990, p. 67, §2.1.1, example 2.6",
+      "analysis": "Root /nee-/ plus TI final /-m/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The English 'something' reflects the source gloss; object-class selection requires a separately sourced noun class."
+      },
+      "domains": ["perception", "actions", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TI", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.pen_aw_look_animate",
+      "type": "lexeme",
+      "source_form": "/pən-aw-/",
+      "normalized_transport_input": "pən-aw-",
+      "english_gloss": "look at someone",
+      "definition": "A transitive animate stem meaning to look at a grammatically animate object.",
+      "part_of_speech": "transitive animate verb stem",
+      "source_category": "TA",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /pən-/ plus TA final /-aw/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "No inflected paradigm or semantic contrast with /nee-/ is supplied at this locator."
+      },
+      "domains": ["perception", "attention", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TA", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.pen_am_look_inanimate",
+      "type": "lexeme",
+      "source_form": "/pən-am-/",
+      "normalized_transport_input": "pən-am-",
+      "english_gloss": "look at something",
+      "definition": "A transitive inanimate stem meaning to look at a grammatically inanimate object.",
+      "part_of_speech": "transitive inanimate verb stem",
+      "source_category": "TI",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /pən-/ plus TI theme sign /-am/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Object-class selection requires a separately sourced noun class."
+      },
+      "domains": ["perception", "attention", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TI", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.moxk_aw_find_animate",
+      "type": "lexeme",
+      "source_form": "/moxk-aw-/",
+      "normalized_transport_input": "moxk-aw-",
+      "english_gloss": "find someone",
+      "definition": "A transitive animate stem meaning to find a grammatically animate object.",
+      "part_of_speech": "transitive animate verb stem",
+      "source_category": "TA",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /moxk-/ plus TA final /-aw/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The source supplies stem pairs rather than a complete inflectional paradigm."
+      },
+      "domains": ["search", "actions", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TA", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.moxk_am_find_inanimate",
+      "type": "lexeme",
+      "source_form": "/moxk-am-/",
+      "normalized_transport_input": "moxk-am-",
+      "english_gloss": "find something",
+      "definition": "A transitive inanimate stem meaning to find a grammatically inanimate object.",
+      "part_of_speech": "transitive inanimate verb stem",
+      "source_category": "TI",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /moxk-/ plus TI theme sign /-am/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Object-class selection requires a separately sourced noun class."
+      },
+      "domains": ["search", "actions", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TI", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.pent_aw_hear_animate",
+      "type": "lexeme",
+      "source_form": "/pənt-aw-/",
+      "normalized_transport_input": "pənt-aw-",
+      "english_gloss": "hear someone",
+      "definition": "A transitive animate stem meaning to hear a grammatically animate object.",
+      "part_of_speech": "transitive animate verb stem",
+      "source_category": "TA",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /pənt-/ plus TA final /-aw/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation does not establish extensions such as understand, obey, or learn."
+      },
+      "domains": ["perception", "communication", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TA", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.pent_am_hear_inanimate",
+      "type": "lexeme",
+      "source_form": "/pənt-am-/",
+      "normalized_transport_input": "pənt-am-",
+      "english_gloss": "hear something",
+      "definition": "A transitive inanimate stem meaning to hear a grammatically inanimate object.",
+      "part_of_speech": "transitive inanimate verb stem",
+      "source_category": "TI",
+      "locator": "O'Meara 1990, p. 67, §2.1.2, example 2.7",
+      "analysis": "Root /pənt-/ plus TI theme sign /-am/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation does not establish extensions such as understand, obey, or learn."
+      },
+      "domains": ["perception", "communication", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:TI", "bound-verb-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.iikaan_dwelling_final",
+      "type": "morpheme",
+      "source_form": "/-iikaan/",
+      "normalized_transport_input": "-iikaan",
+      "english_gloss": "dwelling",
+      "definition": "A productive concrete noun final forming semantically compositional dwelling nouns.",
+      "part_of_speech": "bound concrete noun-forming final",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, pp. 328-330, §5.2.1.1; example 5.16 and lexical entry 5.17",
+      "analysis": "The lexical entry specifies [+N, -V], [-animate], and [-M]; nouns formed with it do not take possessive /-əm/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "Productivity is a source-language analysis; this seed does not authorize automatic conlang derivation or a canonical host set."
+      },
+      "domains": ["home", "morphology", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "bound-morpheme", "source-productive"]
+    },
+    {
+      "id": "ja.seed.munsee.asiiskaw_mud",
+      "type": "lexeme",
+      "source_form": "asiiskəw",
+      "normalized_transport_input": "asiiskəw",
+      "english_gloss": "mud",
+      "definition": "The Moraviantown Munsee noun glossed 'mud' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15b",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The source gives no count/mass behavior or distinction among mud, earth, and soil."
+      },
+      "domains": ["materials", "landscape", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.ponkw_dust",
+      "type": "lexeme",
+      "source_form": "ponkw",
+      "normalized_transport_input": "ponkw",
+      "english_gloss": "dust",
+      "definition": "The Moraviantown Munsee noun glossed 'dust' at the cited locator.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 327, §5.1.3, example 5.15c",
+      "analysis": "Presented among apparently monomorphemic noun stems ending in /-w/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The source gives no count/mass behavior or figurative senses."
+      },
+      "domains": ["materials", "home", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.weentakwiiwan_dress_coat",
+      "type": "lexeme",
+      "source_form": "weent-akwiiwan",
+      "normalized_transport_input": "weent-akwiiwan",
+      "english_gloss": "dress; coat",
+      "definition": "The Moraviantown Munsee inanimate noun supplied with the paired source gloss 'dress, coat'.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 334, §5.2.2.2, example 5.24c",
+      "analysis": "Root /weent-/ plus bound cloth final /-akwiiwan/; the source prints the form with a hyphen.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The citation does not separate the dress and coat senses or define their usage range."
+      },
+      "domains": ["clothing", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "bound-final-analysis", "sense-split-needed"]
+    },
+    {
+      "id": "ja.seed.munsee.cankameekw_small_fish",
+      "type": "lexeme",
+      "source_form": "čankameekw",
+      "normalized_transport_input": "čankameekw",
+      "english_gloss": "small fish",
+      "definition": "The Moraviantown Munsee animate noun glossed 'small fish'.",
+      "part_of_speech": "noun",
+      "source_category": "AN",
+      "locator": "O'Meara 1990, p. 334, §5.2.2.3, example 5.25a",
+      "analysis": "/čank-ameekw/; small-fish.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "/-ameekw/ is a bound final; the historical free noun /nameekw/ no longer occurs according to the source and must not be restored."
+      },
+      "domains": ["animals", "food", "water"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:AN", "bound-final-analysis"]
+    },
+    {
+      "id": "ja.seed.munsee.patakwiim_walnut",
+      "type": "lexeme",
+      "source_form": "pətəkwiim",
+      "normalized_transport_input": "pətəkwiim",
+      "english_gloss": "walnut",
+      "definition": "The Moraviantown Munsee inanimate noun glossed 'walnut'.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 336, §5.2.2.5, example 5.27b",
+      "analysis": "/pətəkw-ii-m/; round-epenthesis-seed.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "O'Meara treats nouns containing /-m/ as listed rather than productively derived."
+      },
+      "domains": ["food", "plants", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem"]
+    },
+    {
+      "id": "ja.seed.munsee.wiisakiim_grape",
+      "type": "lexeme",
+      "source_form": "wiisak-ii-m",
+      "normalized_transport_input": "wiisak-ii-m",
+      "english_gloss": "grape",
+      "definition": "The Moraviantown Munsee inanimate noun glossed 'grape'.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 336, §5.2.2.5, example 5.27f",
+      "analysis": "wiisak-ii-m; tender-epenthesis-seed; the source prints the cited form segmented.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "No unsegmented surface form is inferred here; nouns containing /-m/ are analyzed as listed."
+      },
+      "domains": ["food", "plants", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "listed-stem", "printed-segmentation"]
+    },
+    {
+      "id": "ja.seed.munsee.pakiincrew_plate",
+      "type": "lexeme",
+      "source_form": "pak-ii-nčəw",
+      "normalized_transport_input": "pak-ii-nčəw",
+      "english_gloss": "plate",
+      "definition": "The Moraviantown Munsee inanimate noun glossed 'plate'.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 332, §5.2.1.3, example 5.20a",
+      "analysis": "pak-ii-nčəw; flat-epenthesis-dish; the source prints the cited form segmented.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "No unsegmented surface form is inferred; possession and plural forms are not supplied at this locator."
+      },
+      "domains": ["kitchen", "food", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "printed-segmentation"]
+    },
+    {
+      "id": "ja.seed.munsee.tiihincrew_cup",
+      "type": "lexeme",
+      "source_form": "tiih-ii-nčəw",
+      "normalized_transport_input": "tiih-ii-nčəw",
+      "english_gloss": "cup; teacup",
+      "definition": "The Moraviantown Munsee inanimate noun supplied with the paired source gloss 'cup, teacup'.",
+      "part_of_speech": "noun",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, p. 332, §5.2.1.3, example 5.20b",
+      "analysis": "tiih-ii-nčəw; tea-epenthesis-dish; the source prints the cited form segmented.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "No unsegmented surface form is inferred, and the two English glosses require later sense review."
+      },
+      "domains": ["kitchen", "drink", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "printed-segmentation", "sense-split-needed"]
+    },
+    {
+      "id": "ja.seed.munsee.paa_come",
+      "type": "lexeme",
+      "source_form": "/paa-/",
+      "normalized_transport_input": "paa-",
+      "english_gloss": "come",
+      "definition": "A monomorphemic verb stem glossed 'come'.",
+      "part_of_speech": "monomorphemic verb stem",
+      "source_category": null,
+      "locator": "O'Meara 1990, p. 37, §1.6, example 1.33",
+      "analysis": "Listed as internally unsegmentable at this locator.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The locator does not print an AI, II, TA, or TI subclass or an inflected form; none is inferred."
+      },
+      "domains": ["movement", "deixis", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:unresolved", "bound-verb-stem", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.aa_go",
+      "type": "lexeme",
+      "source_form": "/aa-/",
+      "normalized_transport_input": "aa-",
+      "english_gloss": "go",
+      "definition": "A monomorphemic verb stem glossed 'go'.",
+      "part_of_speech": "monomorphemic verb stem",
+      "source_category": null,
+      "locator": "O'Meara 1990, p. 37, §1.6, example 1.33",
+      "analysis": "Listed as internally unsegmentable at this locator.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The locator does not print an AI, II, TA, or TI subclass or an inflected form; none is inferred."
+      },
+      "domains": ["movement", "deixis", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:unresolved", "bound-verb-stem", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.lepak_weep",
+      "type": "lexeme",
+      "source_form": "/ləpak-/",
+      "normalized_transport_input": "ləpak-",
+      "english_gloss": "weep",
+      "definition": "A monomorphemic verb stem glossed 'weep'.",
+      "part_of_speech": "monomorphemic verb stem",
+      "source_category": null,
+      "locator": "O'Meara 1990, p. 37, §1.6, example 1.33",
+      "analysis": "Listed as internally unsegmentable at this locator.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The locator does not print an AI, II, TA, or TI subclass or establish a contrast with other crying predicates."
+      },
+      "domains": ["emotion", "body", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:unresolved", "bound-verb-stem", "monomorphemic"]
+    },
+    {
+      "id": "ja.seed.munsee.ncrew_dish_final",
+      "type": "morpheme",
+      "source_form": "/-nčəw/",
+      "normalized_transport_input": "-nčəw",
+      "english_gloss": "dish; kitchen item",
+      "definition": "A productive concrete noun final forming semantically compositional nouns for dishes and kitchen items.",
+      "part_of_speech": "bound concrete noun-forming final",
+      "source_category": "IN",
+      "locator": "O'Meara 1990, pp. 331-333, §5.2.1.3; example 5.20 and lexical entry 5.22",
+      "analysis": "The lexical entry specifies [+N, -V], [-animate], and [-M]; nouns formed with it do not take possessive /-əm/.",
+      "source": {
+        "source_id": "omeara_delaware_stem_morphology_1990",
+        "copyright": "copyrighted; per-entry manual use; no bulk reuse",
+        "attribution": "Dissertation-wide consultant attribution only; no item-level speaker is identified.",
+        "uncertainty": "The source notes some bound-stem-like behavior; this seed does not authorize free use, automatic conlang derivation, or a canonical host set."
+      },
+      "domains": ["kitchen", "morphology", "ordinary-life"],
+      "tags": ["research-seed", "noncanonical", "munsee-source", "source-class:IN", "bound-morpheme", "source-productive"]
+    }
+  ]
+}

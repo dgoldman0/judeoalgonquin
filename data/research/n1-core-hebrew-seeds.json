@@ -1,0 +1,624 @@
+{
+  "schema_version": 1,
+  "packet_id": "n1-core-hebrew-seeds",
+  "status": "research_seed",
+  "accessed_at": "2026-07-12",
+  "source_id": "academy_hebrew_online_resources",
+  "records": [
+    {
+      "id": "ja.lexeme.hebrew_adam_person",
+      "record_type": "lexeme",
+      "source_form": "אָדָם",
+      "romanization": "adam",
+      "english": {
+        "glosses": ["person", "human"],
+        "definition": "A human being, without importing source-language grammatical gender.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; that gender is not inherited as a conlang class.",
+        "The source plural expression בְּנֵי אָדָם is evidence about Hebrew, not an inherited conlang plural."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%93%D6%B8%D7%9D/",
+        "locator": "Academy headword אָדָם, dictionary section",
+        "source_grammar": "Masculine noun; the listed plural expression is בְּנֵי אָדָם.",
+        "confidence": "high",
+        "uncertainty": "The proper name Adam and nonhuman extensions are outside this seed."
+      },
+      "domains": ["people", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_ishah_woman",
+      "record_type": "lexeme",
+      "revision": 2,
+      "updated_at": "2026-07-13T00:45:00Z",
+      "change_note": "Added the exact Academy inflection-decision locator after the post-embedding source audit.",
+      "source_form": "אִשָּׁה",
+      "romanization": "ishah",
+      "english": {
+        "glosses": ["woman"],
+        "definition": "An adult female human, excluding the separate wife sense.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source noun is feminine with irregular inflection; source gender and plural forms are not inherited.",
+        "The wife sense must remain separate from this woman sense."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B4%D7%A9%D6%BC%D7%81%D6%B8%D7%94/",
+        "locator": "Academy headword אִשָּׁה; Academy inflection decision https://old.hebrew-academy.org.il/meeting/%D7%A8%D7%9C%D7%94/",
+        "source_grammar": "Feminine noun; Hebrew inflection includes construct אֵשֶׁת־ and irregular forms.",
+        "confidence": "high",
+        "uncertainty": "The exact semantic boundary between woman and wife is deliberately not merged."
+      },
+      "domains": ["people", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_yeled_child",
+      "record_type": "lexeme",
+      "source_form": "יֶלֶד",
+      "romanization": "yeled",
+      "english": {
+        "glosses": ["child"],
+        "definition": "A human in the early years of life, without importing the separate relational son sense.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The Hebrew citation form participates in gendered inflection; those forms are source facts only.",
+        "The source also has a relational child or son sense that is not assigned here."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%99%D6%B6%D7%9C%D6%B6%D7%93/",
+        "locator": "Academy headword יֶלֶד, dictionary section",
+        "source_grammar": "Noun with listed feminine and plural forms יַלְדָּה, יְלָדִים, and יְלָדוֹת.",
+        "confidence": "high",
+        "uncertainty": "The contact language's treatment of child gender remains undesigned."
+      },
+      "domains": ["people", "life-stage"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_em_mother",
+      "record_type": "lexeme",
+      "source_form": "אֵם",
+      "romanization": "em",
+      "english": {
+        "glosses": ["mother"],
+        "definition": "A female parent, excluding figurative source and origin senses.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun feminine; that gender is not inherited.",
+        "Source plural variants and the figurative foundation sense are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B5%D7%9D/",
+        "locator": "Academy headword אֵם, dictionary section",
+        "source_grammar": "Feminine noun with multiple listed Hebrew plural variants.",
+        "confidence": "high",
+        "uncertainty": "Only the parent sense is admitted by this seed."
+      },
+      "domains": ["kinship", "people"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_av_father",
+      "record_type": "lexeme",
+      "source_form": "אָב",
+      "romanization": "av",
+      "english": {
+        "glosses": ["father"],
+        "definition": "A male parent, excluding founder, ancestor, clerical, divine, and figurative senses.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; that gender is not inherited.",
+        "The irregular Hebrew plural אָבוֹת is not an inherited conlang plural."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%91/",
+        "locator": "Academy headword אָב, dictionary section",
+        "source_grammar": "Masculine noun; listed plural אָבוֹת and construct variants.",
+        "confidence": "high",
+        "uncertainty": "Only the immediate parent sense is admitted."
+      },
+      "domains": ["kinship", "people"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_ahot_sister",
+      "record_type": "lexeme",
+      "source_form": "אָחוֹת",
+      "romanization": "ahot",
+      "english": {
+        "glosses": ["sister"],
+        "definition": "A female sibling, excluding nurse and religious-title senses.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun feminine; that gender is not inherited.",
+        "Nurse and nun are separate source senses and must not be merged."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B8%D7%97%D7%95%D6%B9%D7%AA/",
+        "locator": "Academy headword אָחוֹת, dictionary section",
+        "source_grammar": "Feminine noun; listed plural אֲחָיוֹת.",
+        "confidence": "high",
+        "uncertainty": "Only the kinship sense is admitted."
+      },
+      "domains": ["kinship", "people"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_delet_door",
+      "record_type": "lexeme",
+      "source_form": "דֶּלֶת",
+      "romanization": "delet",
+      "english": {
+        "glosses": ["door"],
+        "definition": "A movable closure for an opening in a building, room, or similar enclosure.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun feminine; source gender is not inherited.",
+        "Listed Hebrew plural and dual forms are retained only as source notes."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%93%D6%BC%D6%B6%D7%9C%D6%B6%D7%AA/",
+        "locator": "Academy headword דֶּלֶת, dictionary section",
+        "source_grammar": "Feminine noun; listed plural דְּלָתוֹת and dual דְּלָתַיִם.",
+        "confidence": "high",
+        "uncertainty": "No figurative opening or access sense is included."
+      },
+      "domains": ["home", "objects"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_heder_room",
+      "record_type": "lexeme",
+      "source_form": "חֶדֶר",
+      "romanization": "heder",
+      "english": {
+        "glosses": ["room"],
+        "definition": "A wall-enclosed part of a dwelling or other building.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "The specific school sense is excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%97%D6%B6%D7%93%D6%B6%D7%A8/",
+        "locator": "Academy headword חֶדֶר, dictionary section",
+        "source_grammar": "Masculine noun; listed plural חֲדָרִים and construct variants.",
+        "confidence": "high",
+        "uncertainty": "Only the ordinary architectural sense is admitted."
+      },
+      "domains": ["home", "places"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_shulhan_table",
+      "record_type": "lexeme",
+      "source_form": "שֻׁלְחָן",
+      "romanization": "shulhan",
+      "english": {
+        "glosses": ["table"],
+        "definition": "A raised piece of furniture used for eating or ordinary work.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Specialized money-changing and institutional senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A9%D7%81%D6%BB%D7%9C%D6%B0%D7%97%D6%B8%D7%9F/",
+        "locator": "Academy headword שֻׁלְחָן, dictionary section",
+        "source_grammar": "Masculine noun; listed plural שֻׁלְחָנוֹת.",
+        "confidence": "high",
+        "uncertainty": "Only the ordinary furniture sense is admitted."
+      },
+      "domains": ["home", "objects"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_kisse_chair",
+      "record_type": "lexeme",
+      "source_form": "כִּסֵּא",
+      "romanization": "kisse",
+      "english": {
+        "glosses": ["chair"],
+        "definition": "A one-person seat with a back support.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Throne and compound senses are excluded, and source plural vocalization is not imported."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%9B%D6%BC%D6%B4%D7%A1%D6%BC%D6%B5%D7%90/",
+        "locator": "Academy headword כִּסֵּא, dictionary section",
+        "source_grammar": "Masculine noun; Academy lists plural כִּסְאוֹת and notes its prescribed vocalization.",
+        "confidence": "high",
+        "uncertainty": "Only the ordinary chair sense is admitted."
+      },
+      "domains": ["home", "objects"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_halav_milk",
+      "record_type": "lexeme",
+      "source_form": "חָלָב",
+      "romanization": "halav",
+      "english": {
+        "glosses": ["milk"],
+        "definition": "Milk as the ordinary mammalian liquid and food substance.",
+        "part_of_speech": "mass noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Pointing distinguishes חָלָב milk from חֵלֶב fat; the homographs must not be merged."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%97%D6%B8%D7%9C%D6%B8%D7%91/",
+        "locator": "Academy headword חָלָב, dictionary section",
+        "source_grammar": "Masculine mass noun with listed construct variants.",
+        "confidence": "high",
+        "uncertainty": "Count and measure behavior in the contact language remains undesigned."
+      },
+      "domains": ["food", "substances"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_peri_fruit",
+      "record_type": "lexeme",
+      "source_form": "פְּרִי",
+      "romanization": "peri",
+      "english": {
+        "glosses": ["fruit"],
+        "definition": "An edible fruit produced by a plant, excluding figurative result or reward senses.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "The Hebrew plural פֵּרוֹת and figurative extensions are not automatically inherited."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A4%D6%BC%D6%B0%D7%A8%D6%B4%D7%99/",
+        "locator": "Academy headword פְּרִי, dictionary section",
+        "source_grammar": "Masculine noun; listed plural פֵּרוֹת.",
+        "confidence": "high",
+        "uncertainty": "Botanical and culinary category boundaries require later review."
+      },
+      "domains": ["food", "plants"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_yad_upper_limb",
+      "record_type": "lexeme",
+      "source_form": "יָד",
+      "romanization": "yad",
+      "english": {
+        "glosses": ["hand", "upper limb"],
+        "definition": "The upper limb as covered by the Hebrew source meaning, with the hand-versus-arm boundary left explicit.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun feminine and gives a dual; neither feature is inherited.",
+        "The source meaning is broader than English hand, so translation must not erase the hand-arm uncertainty."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%99%D6%B8%D7%93/",
+        "locator": "Academy headword יָד 1, anatomical dictionary sense",
+        "source_grammar": "Feminine noun; listed dual יָדַיִם and construct יְדֵי־.",
+        "confidence": "high",
+        "uncertainty": "The future contact-language boundary between hand and arm is unresolved."
+      },
+      "domains": ["body", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_rosh_head",
+      "record_type": "lexeme",
+      "source_form": "רֹאשׁ",
+      "romanization": "rosh",
+      "english": {
+        "glosses": ["head"],
+        "definition": "The anatomical head of a human or animal.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Top, beginning, chief, counting-unit, and portion senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A8%D6%B9%D7%90%D7%A9%D7%81/",
+        "locator": "Academy headword רֹאשׁ 1, anatomical dictionary sense",
+        "source_grammar": "Masculine noun; listed plural רָאשִׁים.",
+        "confidence": "high",
+        "uncertainty": "Only the anatomical sense is admitted."
+      },
+      "domains": ["body", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_ayin_eye",
+      "record_type": "lexeme",
+      "source_form": "עַיִן",
+      "romanization": "ayin",
+      "english": {
+        "glosses": ["eye"],
+        "definition": "The organ of sight.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun feminine and gives a dual; neither feature is inherited.",
+        "Spring, appearance, bud, loop, aperture, and supervision senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A2%D6%B7%D7%99%D6%B4%D7%9F/",
+        "locator": "Academy headword עַיִן 1, organ-of-sight dictionary sense",
+        "source_grammar": "Feminine noun; listed dual עֵינַיִם.",
+        "confidence": "high",
+        "uncertainty": "Only the anatomical sense is admitted."
+      },
+      "domains": ["body", "perception"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_peh_mouth",
+      "record_type": "lexeme",
+      "source_form": "פֶּה",
+      "romanization": "peh",
+      "english": {
+        "glosses": ["mouth"],
+        "definition": "The bodily opening used for eating and producing speech sounds.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Opening, spokesperson, blade-edge, and numerical multiplier senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A4%D6%BC%D6%B6%D7%94/",
+        "locator": "Academy headword פֶּה, anatomical dictionary sense",
+        "source_grammar": "Masculine noun; listed construct פִּי־ and plural פִּיּוֹת.",
+        "confidence": "high",
+        "uncertainty": "Only the anatomical sense is admitted."
+      },
+      "domains": ["body", "speech"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_lev_heart",
+      "record_type": "lexeme",
+      "source_form": "לֵב",
+      "romanization": "lev",
+      "english": {
+        "glosses": ["heart"],
+        "definition": "The anatomical organ that circulates blood.",
+        "part_of_speech": "noun"
+      },
+      "grammatical_cautions": [
+        "The source labels the noun masculine; source gender is not inherited.",
+        "Center, interior, conscience, thought, emotion, and courage senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%9C%D6%B5%D7%91/",
+        "locator": "Academy headword לֵב, anatomical dictionary sense",
+        "source_grammar": "Masculine noun with multiple listed Hebrew plural forms.",
+        "confidence": "high",
+        "uncertainty": "Metaphorical heart senses require separate records."
+      },
+      "domains": ["body", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_gadol_large",
+      "record_type": "lexeme",
+      "source_form": "גָּדוֹל",
+      "romanization": "gadol",
+      "english": {
+        "glosses": ["large", "big"],
+        "definition": "Relatively large in physical dimensions.",
+        "part_of_speech": "adjective"
+      },
+      "grammatical_cautions": [
+        "Hebrew gender and number agreement are source facts, not inherited conlang morphology.",
+        "Older, great, important, and intensified senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%92%D6%BC%D6%B8%D7%93%D7%95%D6%B9%D7%9C/",
+        "locator": "Academy headword גָּדוֹל, adjective dictionary section",
+        "source_grammar": "Adjective; listed feminine גְּדוֹלָה and construct form גְּדוֹל־.",
+        "confidence": "high",
+        "uncertainty": "Only physical size is admitted."
+      },
+      "domains": ["qualities", "size"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_qatan_small",
+      "record_type": "lexeme",
+      "source_form": "קָטָן",
+      "romanization": "qatan",
+      "english": {
+        "glosses": ["small"],
+        "definition": "Relatively small in physical dimensions.",
+        "part_of_speech": "adjective"
+      },
+      "grammatical_cautions": [
+        "Hebrew gender and number agreement are source facts, not inherited conlang morphology.",
+        "Young, child, insignificant, and contemptuous senses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%A7%D6%B8%D7%98%D6%B8%D7%9F/",
+        "locator": "Academy headword קָטָן, adjective dictionary section",
+        "source_grammar": "Adjective; listed feminine קְטַנָּה and construct form קְטַן־.",
+        "confidence": "high",
+        "uncertainty": "Only physical size is admitted."
+      },
+      "domains": ["qualities", "size"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_hayom_today",
+      "record_type": "lexeme",
+      "source_form": "הַיּוֹם",
+      "romanization": "hayom",
+      "english": {
+        "glosses": ["today"],
+        "definition": "The present day.",
+        "part_of_speech": "temporal adverbial expression"
+      },
+      "grammatical_cautions": [
+        "The Academy presents this as a fixed expression; it is not automatically generated by the conlang definite-prefix rule.",
+        "No tense or aspect value is inherited from the lexical item."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%94%D6%B7%D7%99%D6%BC%D7%95%D6%B9%D7%9D/",
+        "locator": "Academy expression הַיּוֹם, dictionary section",
+        "source_grammar": "Fixed temporal expression glossed as the present day.",
+        "confidence": "high",
+        "uncertainty": "Internal segmentation in the contact language remains undesigned."
+      },
+      "domains": ["time", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_mahar_tomorrow",
+      "record_type": "lexeme",
+      "revision": 2,
+      "updated_at": "2026-07-13T00:45:00Z",
+      "change_note": "Separated the Academy's unpointed category evidence from BDB's pointed historical headword after the post-embedding source audit.",
+      "source_form": "מָחָר",
+      "romanization": "mahar",
+      "english": {
+        "glosses": ["tomorrow"],
+        "definition": "The day after the present day.",
+        "part_of_speech": "temporal adverb"
+      },
+      "grammatical_cautions": [
+        "The Academy identifies מחר as a special temporal adverb; no tense or aspect morphology is implied.",
+        "The pointed form is retained from the manually cross-checked source audit, not generated from spelling rules."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/2020/06/28/%D7%A9%D7%91%D7%95%D7%A2-%D7%94%D7%91%D7%90-%D7%90%D7%95-%D7%91%D7%A9%D7%91%D7%95%D7%A2-%D7%94%D7%91%D7%90/",
+        "locator": "Academy article שבוע הבא או בשבוע הבא?, section identifying מחר and אתמול as temporal adverbs",
+        "displayed_form": "מחר",
+        "source_grammar": "Temporal adverb that does not require a preposition to function adverbially.",
+        "confidence": "medium",
+        "uncertainty": "The Academy article displays the item without pointing; BDB separately supports the pointed historical headword."
+      },
+      "historical_evidence": {
+        "source_id": "bdb_1906_sefaria",
+        "source_form": "מָחָר",
+        "source_meaning": "tomorrow",
+        "locator": "BDB displayed headword מָחָר; https://www.sefaria.org/BDB%2C_%D7%9E%D6%B8%D7%97%D6%B8%D7%A8.1",
+        "confidence": "high",
+        "uncertainty": "Historical pointing evidence does not by itself establish every current usage or a contact-language tense rule."
+      },
+      "domains": ["time", "ordinary-life"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_ehad_one",
+      "record_type": "lexeme",
+      "source_form": "אֶחָד",
+      "romanization": "ehad",
+      "english": {
+        "glosses": ["one"],
+        "definition": "The masculine counting numeral for the quantity one.",
+        "part_of_speech": "numeral"
+      },
+      "grammatical_cautions": [
+        "The source form is masculine; feminine אַחַת and numeral agreement are not inherited automatically.",
+        "Indefinite, emphatic, unique, whole, and pronominal uses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B6%D7%97%D6%B8%D7%93/",
+        "locator": "Academy headword אֶחָד, numeral dictionary sense",
+        "source_grammar": "Masculine cardinal numeral with additional listed grammatical and lexical uses.",
+        "confidence": "high",
+        "uncertainty": "The contact language's numeral placement and agreement system remains undesigned."
+      },
+      "domains": ["quantity", "counting"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_mah_what",
+      "record_type": "lexeme",
+      "source_form": "מָה",
+      "romanization": "mah",
+      "english": {
+        "glosses": ["what"],
+        "definition": "An interrogative asking for the identity or nature of a thing.",
+        "part_of_speech": "interrogative word"
+      },
+      "grammatical_cautions": [
+        "Biblical pointing variants and conditioned forms are not inherited automatically.",
+        "How, why, exclamative, relative, and indefinite uses are excluded."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%9E%D6%B8%D7%94/",
+        "locator": "Academy headword מָה, direct-question dictionary sense",
+        "source_grammar": "Interrogative word; the Academy notes Biblical מַה and additional functions.",
+        "confidence": "high",
+        "uncertainty": "Only direct thing-question use is admitted."
+      },
+      "domains": ["questions", "grammar"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.lexeme.hebrew_eifo_where",
+      "record_type": "lexeme",
+      "source_form": "אֵיפֹה",
+      "romanization": "eifo",
+      "english": {
+        "glosses": ["where"],
+        "definition": "An interrogative asking at what location something is situated.",
+        "part_of_speech": "locative interrogative"
+      },
+      "grammatical_cautions": [
+        "This seed covers static location only.",
+        "Destination and source questions require separate constructions and must not be inferred from this form."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%90%D6%B5%D7%99%D7%A4%D6%B9%D7%94/",
+        "locator": "Academy headword אֵיפֹה, locative question dictionary sense",
+        "source_grammar": "Interrogative word for location; Academy notes standard final stress.",
+        "confidence": "high",
+        "uncertainty": "Whither and whence are outside this seed."
+      },
+      "domains": ["questions", "location"],
+      "tags": ["N1", "hebrew-source-seed"]
+    },
+    {
+      "id": "ja.morpheme.hebrew_lo_negation",
+      "record_type": "morpheme",
+      "source_form": "לֹא",
+      "romanization": "lo",
+      "english": {
+        "glosses": ["not"],
+        "definition": "An ordinary negative particle.",
+        "part_of_speech": "free negative particle"
+      },
+      "grammatical_cautions": [
+        "Scope, constituent position, and interaction with predicate type require a separate construction record.",
+        "No Hebrew negative syntax is inherited merely by retaining this lexical source form."
+      ],
+      "source_evidence": {
+        "url": "https://old.hebrew-academy.org.il/keyword/%D7%9C%D6%B9%D7%90/",
+        "locator": "Academy headword לֹא, dictionary section",
+        "source_grammar": "Negative particle with many listed constructions and fixed expressions.",
+        "confidence": "high",
+        "uncertainty": "Only ordinary sentential or constituent negation is proposed; its syntax is unresolved."
+      },
+      "domains": ["grammar", "negation"],
+      "tags": ["N1", "hebrew-source-seed"]
+    }
+  ]
+}

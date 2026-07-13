@@ -32,7 +32,33 @@ The first probe is deliberately too small to claim N1 coverage. It contains 20 c
 
 The probe demonstrates revision-pinned composition, source-policy enforcement, literal versus idiomatic translations, incomplete paradigms, deterministic positive and negative construction checks, exact alias retrieval, and stale-vector invalidation. A one-request embedding sanity test over the 20 records and five frozen paraphrases achieved recall@1 of 0.8 and recall@3 of 1.0 for approximately $0.000208. A final citation audit then tightened several source descriptions, so content fingerprints correctly mark those live vectors stale; the paid call was not repeated. This is evidence that the retrieval and invalidation pipeline works on the probe, not that the proposed language forms are correct or that semantic similarity detects contradictions.
 
-Before a larger vocabulary epoch, the owner reviews the probe and decides whether to retain its record granularity, embedding projection, 256 dimensions, and source-first workflow. Canonical Munsee-derived orthography remains blocked pending current community-connected guidance.
+The owner reviewed the probe and retained its record granularity, explanatory
+embedding projection, 256 dimensions, and source-first workflow for a bounded
+lexical epoch. Canonical Munsee-derived orthography remains blocked pending
+current community-connected guidance.
+
+## First N1 core lexical checkpoint
+
+The first bounded lexical epoch adds 24 Hebrew lexemes and one free Hebrew
+morpheme, plus 33 Moraviantown Munsee lexemes and two bound noun finals. Twelve
+revision-pinned phrases and sentences exercise only the probe's already declared
+coordination, definiteness, class-number, AI third-person, and contact-clause
+constructions. Together with the revised probe, the database contains 92
+noncanonical records.
+
+A reversible pointed analytic transport now preserves exact O'Meara
+transcription—including `č`, vowel length, and source `ə`—without presenting
+the result as canonical orthography. The 35 regional-source seeds were chosen
+manually and cited per entry; the copyrighted source was not extracted as a
+corpus. The full checkpoint passes 83 local tests.
+
+One owner-authorized embeddings request covered all 92 records and 12 frozen
+queries. It used 50,922 input tokens for an estimated $0.00101844 and achieved
+recall@1 = 1.0, recall@3 = 1.0, and MRR = 1.0. The queries are an authored
+retrieval diagnostic, not a language-quality benchmark. The paid gate is
+disabled again. A final source comparison then corrected four lexical records
+and refreshed four downstream compositions. Their eight vectors are correctly
+stale; the paid call was not repeated.
 
 ## Project proficiency levels
 
@@ -140,6 +166,16 @@ Reports track at least:
 
 ## Spend gate
 
-Phase 0 authorized one small paid embedding smoke test. After reviewing it, the owner authorized one fixed N1 retrieval sanity evaluation containing 20 records and five frozen queries in a single request. Both checkpoints are complete, and paid API access is disabled again. No paid generative-model work has occurred.
+Phase 0 authorized one small paid embedding smoke test. The owner later
+authorized the 20-record architecture-probe evaluation and, after reviewing its
+result, one 92-record N1 core checkpoint. All three are complete, and paid API
+access is disabled again. No paid generative-model work has occurred.
 
-The two results are recorded in [`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json) and [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json). Budget scenarios for a substantial first corpus are in [Initial-Build Budget](initial-build-budget.md). None of these documents authorizes another paid call or the proposed larger spend.
+The results are recorded in
+[`reports/embedding-smoke-2026-07-12.json`](reports/embedding-smoke-2026-07-12.json),
+[`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json),
+and
+[`reports/n1-core-embedding-evaluation-2026-07-12.json`](reports/n1-core-embedding-evaluation-2026-07-12.json).
+Budget scenarios for a substantial first corpus are in [Initial-Build
+Budget](initial-build-budget.md). None of these documents authorizes another
+paid call or the proposed larger spend.

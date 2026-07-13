@@ -47,7 +47,7 @@ class PilotTests(unittest.TestCase):
         self.assertEqual({record["status"] for record in self.records}, {"candidate"})
         self.assertEqual(
             Counter(record["revision"] for record in self.records),
-            Counter({1: 8, 2: 12}),
+            Counter({2: 8, 3: 12}),
         )
         self.assertTrue(
             all("noncanonical" in record["metadata"]["tags"] for record in self.records)
@@ -129,10 +129,17 @@ class PilotTests(unittest.TestCase):
             self.by_id["ja.lexeme.munsee_lunew_man"]["senses"][0]["definition"],
         )
         pemsii = self.by_id["ja.lexeme.munsee_pemsii_walk"]
-        self.assertIn("source verb class is unresolved", pemsii["senses"][0]["definition"])
+        self.assertEqual(
+            pemsii["senses"][0]["part_of_speech"],
+            "animate intransitive verb stem",
+        )
         self.assertEqual(
             pemsii["source_evidence"][0]["source_form"],
-            "/nə-pəmsii/ → mpəmsi",
+            "pəməsəw; /pəm-əsii-w/",
+        )
+        self.assertEqual(
+            pemsii["source_evidence"][0]["locator"],
+            "O'Meara 1990, p. 130, §2.4.2.1, example 2.80",
         )
 
     def test_nominal_coordination_positive(self) -> None:
@@ -256,9 +263,8 @@ class PilotTests(unittest.TestCase):
         report = json.loads(EMBEDDING_REPORT.read_text(encoding="utf-8"))
         current_hash = hashlib.sha256(PILOT.read_bytes()).hexdigest()
         self.assertNotEqual(report["data_sha256"], current_hash)
-        self.assertEqual(
-            report["post_call_source_correction"]["current_data_sha256"],
-            current_hash,
+        self.assertNotEqual(
+            report["post_call_source_correction"]["current_data_sha256"], current_hash
         )
         self.assertEqual(report["successful_requests"], 1)
         self.assertEqual(report["failed_or_unknown_attempts"], 1)

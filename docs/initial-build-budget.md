@@ -44,6 +44,27 @@ One preceding sandboxed attempt ended with `APIConnectionError` and no provider 
 
 The sanitized report, including complete rankings and reproducibility hashes, is committed at [`reports/n1-pilot-embedding-evaluation-2026-07-12.json`](reports/n1-pilot-embedding-evaluation-2026-07-12.json). A final citation audit changed several source-grounding fields after the call; the report preserves both hashes, and the content-fingerprint gate now treats the live vectors as stale. The call was not repeated. Five project-authored queries have coarse 0.2 metric resolution, so this result establishes only that the bounded retrieval and invalidation pipeline behaves sensibly. It is not a language-quality evaluation or an unbiased benchmark.
 
+The next owner-authorized checkpoint embedded the complete first bounded N1
+core: 92 current records plus 12 frozen queries in one request.
+
+- billed input: 50,922 tokens;
+- estimated charge: **$0.00101844**;
+- recall@1: 1.0;
+- recall@3: 1.0; and
+- mean reciprocal rank: 1.0.
+
+The sanitized report is committed at
+[`reports/n1-core-embedding-evaluation-2026-07-12.json`](reports/n1-core-embedding-evaluation-2026-07-12.json).
+The final source comparison corrected four lexical records and refreshed four
+dependent compositions after the call. The report preserves both manifests;
+84 current vectors remain fresh and eight are deliberately stale. No paid retry
+was made.
+
+Across all three successful checkpoints, confirmed usage is 61,751 input tokens,
+or approximately **$0.00123502**. Including the earlier connection failure at
+its full conservative reservation gives a project-wide upper accounting bound
+of 109,446 tokens, or **$0.00218892**. Paid access is disabled again.
+
 For 1,500 richer records, initial indexing plus selective re-embedding over two major revision rounds is conservatively modeled as 1.2 million embedding tokens. At the current small-model rate, that is approximately **$0.024**. Even a much heavier 10-million-token embedding workload would be about **$0.20**.
 
 ## 3. Model-assisted proposal and review estimate

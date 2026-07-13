@@ -9,6 +9,14 @@ from pathlib import Path
 from typing import Any, Iterable, Iterator
 
 from .normalize import is_nfc, normalize_search, strip_hebrew_marks, unsafe_codepoints
+from .orthography import (
+    COMPONENTWISE_PROFILE,
+    HEBREW_RETAINED_PROFILE,
+    LEGACY_UNVERIFIED_PROFILE,
+    MUNSEE_TRANSPORT_PROFILE,
+    PROJECT_SCHEMATIC_PROFILE,
+    assert_transport_round_trip,
+)
 
 
 ID_RE = re.compile(
@@ -348,6 +356,7 @@ def _validate_record(
         errors.append(f"{label}.level: invalid project level")
 
     conlang: dict[str, Any] | None = None
+    orthography: dict[str, Any] | None = None
     forms = _object(
         record.get("forms"),
         f"{label}.forms",
@@ -360,7 +369,7 @@ def _validate_record(
             forms.get("judeo_algonquin"),
             f"{label}.forms.judeo_algonquin",
             errors,
-            required={"hebrew_script", "romanization"},
+            required={"hebrew_script", "romanization", "orthography"},
             optional={"unpointed", "segmentation", "morpheme_gloss", "variants"},
         )
         if conlang is not None:
@@ -389,6 +398,154 @@ def _validate_record(
                     errors.append(
                         f"{label}.forms.judeo_algonquin.unpointed: does not match pointed form"
                     )
+            orthography = _object(
+                conlang.get("orthography"),
+                f"{label}.forms.judeo_algonquin.orthography",
+                errors,
+                required={
+                    "status",
+                    "profile_id",
+                    "script_origin",
+                    "input_system",
+                    "input_level",
+                    "source_exact",
+                    "normalized_input",
+                    "reversibility",
+                },
+            )
+            if orthography is not None:
+                orthography_label = f"{label}.forms.judeo_algonquin.orthography"
+                status_value = orthography.get("status")
+                if status_value not in {
+                    "source_retained",
+                    "provisional_transport",
+                    "componentwise",
+                    "project_schematic",
+                    "unverified",
+                }:
+                    errors.append(f"{orthography_label}.status: invalid value")
+                profile_id = _nonempty_string(
+                    orthography.get("profile_id"), f"{orthography_label}.profile_id", errors
+                )
+                if orthography.get("script_origin") not in {
+                    "retained_hebrew",
+                    "munsee_source_transport",
+                    "componentwise",
+                    "project_schematic",
+                    "legacy_unverified",
+                }:
+                    errors.append(f"{orthography_label}.script_origin: invalid value")
+                _nonempty_string(
+                    orthography.get("input_system"),
+                    f"{orthography_label}.input_system",
+                    errors,
+                )
+                if orthography.get("input_level") not in {
+                    "source_hebrew",
+                    "citation",
+                    "surface",
+                    "morphophonemic",
+                    "componentwise",
+                    "schematic",
+                    "unverified",
+                }:
+                    errors.append(f"{orthography_label}.input_level: invalid value")
+                if not isinstance(orthography.get("source_exact"), str):
+                    errors.append(f"{orthography_label}.source_exact: must be a string")
+                normalized_input = _nonempty_string(
+                    orthography.get("normalized_input"),
+                    f"{orthography_label}.normalized_input",
+                    errors,
+                )
+                if orthography.get("reversibility") not in {
+                    "not_transduced",
+                    "pointed_only",
+                    "componentwise",
+                    "unverified",
+                }:
+                    errors.append(f"{orthography_label}.reversibility: invalid value")
+                profile_contracts = {
+                    "source_retained": (
+                        HEBREW_RETAINED_PROFILE,
+                        "retained_hebrew",
+                        "source_hebrew",
+                        "not_transduced",
+                    ),
+                    "provisional_transport": (
+                        MUNSEE_TRANSPORT_PROFILE,
+                        "munsee_source_transport",
+                        None,
+                        "pointed_only",
+                    ),
+                    "componentwise": (
+                        COMPONENTWISE_PROFILE,
+                        "componentwise",
+                        "componentwise",
+                        "componentwise",
+                    ),
+                    "project_schematic": (
+                        PROJECT_SCHEMATIC_PROFILE,
+                        "project_schematic",
+                        "schematic",
+                        "not_transduced",
+                    ),
+                    "unverified": (
+                        LEGACY_UNVERIFIED_PROFILE,
+                        "legacy_unverified",
+                        "unverified",
+                        "unverified",
+                    ),
+                }
+                contract = profile_contracts.get(status_value)
+                if contract is not None:
+                    expected_profile, expected_origin, expected_level, expected_reversibility = contract
+                    if profile_id != expected_profile:
+                        errors.append(f"{orthography_label}.profile_id: does not match status")
+                    if orthography.get("script_origin") != expected_origin:
+                        errors.append(f"{orthography_label}.script_origin: does not match status")
+                    if expected_level is not None and orthography.get("input_level") != expected_level:
+                        errors.append(f"{orthography_label}.input_level: does not match status")
+                    if orthography.get("reversibility") != expected_reversibility:
+                        errors.append(f"{orthography_label}.reversibility: does not match status")
+
+                if status_value == "provisional_transport":
+                    if orthography.get("input_level") not in {
+                        "citation",
+                        "surface",
+                        "morphophonemic",
+                    }:
+                        errors.append(
+                            f"{orthography_label}.input_level: invalid for provisional transport"
+                        )
+                    _nonempty_string(
+                        orthography.get("source_exact"),
+                        f"{orthography_label}.source_exact",
+                        errors,
+                    )
+                    if normalized_input is not None and conlang.get("romanization") != normalized_input:
+                        errors.append(
+                            f"{orthography_label}.normalized_input: must equal transport romanization"
+                        )
+                    if normalized_input is not None and hebrew is not None:
+                        try:
+                            encoded = assert_transport_round_trip(normalized_input)
+                        except ValueError as exc:
+                            errors.append(f"{orthography_label}: {exc}")
+                        else:
+                            if encoded != hebrew:
+                                errors.append(
+                                    f"{orthography_label}: Hebrew form does not match transport profile"
+                                )
+                elif status_value == "source_retained":
+                    if hebrew is not None and orthography.get("source_exact") != hebrew:
+                        errors.append(
+                            f"{orthography_label}.source_exact: must equal retained Hebrew form"
+                        )
+                elif status_value in {"componentwise", "project_schematic", "unverified"}:
+                    if normalized_input is not None and conlang.get("romanization") != normalized_input:
+                        errors.append(
+                            f"{orthography_label}.normalized_input: must equal record romanization"
+                        )
 
     senses = record.get("senses")
     if not isinstance(senses, list) or not senses:
@@ -1129,6 +1286,12 @@ def _validate_record(
             errors.append(
                 f"{label}.metadata.tags: canon-blocking tags remain: "
                 + ", ".join(blocking_tags)
+            )
+        orthography_status = orthography.get("status") if isinstance(orthography, dict) else None
+        if orthography_status in {"provisional_transport", "project_schematic", "unverified"}:
+            errors.append(
+                f"{label}.forms.judeo_algonquin.orthography.status: "
+                f"{orthography_status} blocks canon"
             )
         unresolved_gaps = sorted(
             {CANON_SOURCE_GAP_TAGS[tag] for tag in tags if tag in CANON_SOURCE_GAP_TAGS}

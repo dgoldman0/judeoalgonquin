@@ -76,6 +76,25 @@ This file records foundation decisions in a compact form. A decision remains act
 
 **Result:** The successful call used 10,407 input tokens, cost approximately $0.000208 at the configured rate, and met its predeclared recall@3 sanity criterion. One preceding sandboxed attempt ended with `APIConnectionError` and no provider response; billing is unknown, so its full reservation remains conservatively counted. The local ledger therefore accounts for at most 58,102 tokens or $0.00116204. This checkpoint does not authorize paid generation, validate the candidate language, or establish an unbiased retrieval benchmark.
 
+### D-017 — First bounded N1 core lexical checkpoint
+
+**Decision:** Retain the source-first record architecture and build one bounded
+candidate slice from 25 manually reviewed Hebrew items and 35 individually
+cited Moraviantown Munsee items. Regional forms use the reversible pointed
+`omeara_hebrew_transport` profile, which is analytic and noncanonical. Add 12
+revision-pinned composition regressions without declaring new productive
+grammar. After all local gates pass, permit one fixed embedding request over the
+resulting 92 records and 12 frozen queries.
+
+**Result:** The request used 50,922 input tokens at an estimated cost of
+$0.00101844. All 12 intended records ranked first. A stricter final source audit
+then corrected four lexical records and refreshed four dependent compositions;
+fingerprint checks mark those eight vectors stale, and the paid call was not
+repeated. The gate is disabled again. This result does not promote any record,
+establish an unbiased benchmark, or authorize another API call. Current
+community-connected guidance remains a blocker for canonical Munsee-derived
+spelling and systematic source extraction.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.

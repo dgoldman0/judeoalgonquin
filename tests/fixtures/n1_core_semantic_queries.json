@@ -1,0 +1,74 @@
+[
+  {
+    "id": "n1-core-person",
+    "query": "an ordinary word for a human being or person, not a proper name",
+    "expected_id": "ja.lexeme.hebrew_adam_person",
+    "rationale": "Tests the narrow human/person sense against other people nouns."
+  },
+  {
+    "id": "n1-core-mother",
+    "query": "a female parent, excluding figurative origins or foundations",
+    "expected_id": "ja.lexeme.hebrew_em_mother",
+    "rationale": "Tests a close-kin term with an explicitly narrow sense."
+  },
+  {
+    "id": "n1-core-chair",
+    "query": "a piece of furniture used by one person for sitting",
+    "expected_id": "ja.lexeme.hebrew_kisse_chair",
+    "rationale": "Tests an ordinary home furnishing rather than extended throne senses."
+  },
+  {
+    "id": "n1-core-heart",
+    "query": "the anatomical organ that pumps blood, not courage or emotion",
+    "expected_id": "ja.lexeme.hebrew_lev_heart",
+    "rationale": "Tests semantic boundary notes on a highly polysemous body word."
+  },
+  {
+    "id": "n1-core-tomorrow",
+    "query": "the day after today",
+    "expected_id": "ja.lexeme.hebrew_mahar_tomorrow",
+    "rationale": "Tests a basic temporal adverb."
+  },
+  {
+    "id": "n1-core-negation",
+    "query": "the ordinary free particle meaning not, with syntax still unresolved",
+    "expected_id": "ja.morpheme.hebrew_lo_negation",
+    "rationale": "Tests a function item without pretending its construction is complete."
+  },
+  {
+    "id": "n1-core-shoe",
+    "query": "ordinary footwear worn on a foot",
+    "expected_id": "ja.lexeme.munsee_mahksen_shoe",
+    "rationale": "Tests a regional-source everyday object."
+  },
+  {
+    "id": "n1-core-ice",
+    "query": "frozen water as a substance",
+    "expected_id": "ja.lexeme.munsee_mohkamay_ice",
+    "rationale": "Tests an animate-class source noun whose English referent may suggest otherwise."
+  },
+  {
+    "id": "n1-core-river",
+    "query": "a flowing natural body of water such as a river",
+    "expected_id": "ja.lexeme.munsee_siipaw_river",
+    "rationale": "Tests a regional landscape noun."
+  },
+  {
+    "id": "n1-core-hear-someone",
+    "query": "a transitive animate verb stem meaning hear a person or other animate object",
+    "expected_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+    "rationale": "Tests retrieval of the TA member against its TI pair."
+  },
+  {
+    "id": "n1-core-cup",
+    "query": "a cup or teacup, a small kitchen vessel used for drinking",
+    "expected_id": "ja.lexeme.munsee_tiihincrew_cup",
+    "rationale": "Tests a segmented regional-source kitchen noun."
+  },
+  {
+    "id": "n1-core-come",
+    "query": "a motion verb meaning come or move toward the deictic center",
+    "expected_id": "ja.lexeme.munsee_paa_come",
+    "rationale": "Tests an explicitly narrow motion stem whose subclass remains unstated."
+  }
+]

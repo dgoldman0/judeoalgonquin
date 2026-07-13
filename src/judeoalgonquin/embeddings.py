@@ -12,7 +12,10 @@ from .store import embedding_fingerprint, put_embedding
 
 DEFAULT_MODEL = "text-embedding-3-small"
 DEFAULT_DIMENSIONS = 256
-MAX_LIVE_INPUTS = 25
+# The provider currently accepts much larger arrays, but an N1 epoch is locally
+# constrained to one inspectable batch. Individual commands may impose a smaller
+# consumed-checkpoint envelope.
+MAX_LIVE_INPUTS = 128
 
 
 @dataclass(frozen=True)
@@ -39,6 +42,7 @@ def embedding_text(record: dict[str, Any]) -> str:
         "English: " + " | ".join(forms["english"]),
         "Judeo-Algonquin: " + conlang["hebrew_script"],
         "Romanization: " + conlang["romanization"],
+        "Orthography: " + canonical_json(conlang["orthography"]),
     ]
     for sense in record["senses"]:
         lines.append(

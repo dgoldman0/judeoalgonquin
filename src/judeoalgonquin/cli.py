@@ -58,6 +58,15 @@ DEFAULT_PILOT_DATA = "data/entries/n1-pilot.jsonl"
 DEFAULT_PILOT_QUERIES = "tests/fixtures/n1_pilot_semantic_queries.json"
 DEFAULT_PILOT_DB = ".local/n1-pilot.sqlite3"
 PILOT_EMBEDDING_REPORT = "docs/reports/n1-pilot-embedding-evaluation-2026-07-12.json"
+PILOT_LIVE_INPUTS = 25
+DEFAULT_N1_CORE_DATA = "data/entries"
+DEFAULT_N1_CORE_QUERIES = "tests/fixtures/n1_core_semantic_queries.json"
+DEFAULT_N1_CORE_DB = ".local/n1-core.sqlite3"
+N1_CORE_EMBEDDING_REPORT = "docs/reports/n1-core-embedding-evaluation-2026-07-12.json"
+N1_CORE_RECORDS = 92
+N1_CORE_QUERIES = 12
+N1_CORE_LIVE_INPUTS = N1_CORE_RECORDS + N1_CORE_QUERIES
+N1_CORE_MAX_INPUT_BYTES = 8192
 SOURCE_REGISTRY = "references/sources.yaml"
 SMOKE_QUERY = "home, dwelling, and the place where people live together"
 
@@ -318,6 +327,11 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
     live_texts = [*projected, *(query["query"] for query in queries)]
     policy = load_policy()
     byte_count = sum(len(text.encode("utf-8")) for text in live_texts)
+    largest_input_bytes = max(len(text.encode("utf-8")) for text in live_texts)
+    if largest_input_bytes > N1_CORE_MAX_INPUT_BYTES:
+        raise ValueError(
+            "an embedding input exceeds the conservative per-input provider safety cap"
+        )
     conservative_tokens = token_upper_bound(live_texts)
     rough_tokens = sum(max(1, (len(text) + 3) // 4) for text in live_texts)
     price = float(policy["price_per_million_input_tokens_usd"])
@@ -331,6 +345,8 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
         "api_inputs": len(live_texts),
         "api_requests": 1 if args.live else 0,
         "utf8_bytes": byte_count,
+        "largest_input_utf8_bytes": largest_input_bytes,
+        "conservative_per_input_byte_cap": N1_CORE_MAX_INPUT_BYTES,
         "rough_input_token_estimate": rough_tokens,
         "conservative_token_upper_bound": conservative_tokens,
         "conservative_cost_upper_bound_usd": conservative_tokens * price / 1_000_000,
@@ -358,7 +374,7 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
         raise ValueError(f"the bounded pilot call is already recorded at {args.report}")
     if args.model != DEFAULT_MODEL or args.dimensions != DEFAULT_DIMENSIONS:
         raise ValueError("live pilot model and dimensions are fixed")
-    if len(records) != 20 or len(queries) != 5 or len(live_texts) != MAX_LIVE_INPUTS:
+    if len(records) != 20 or len(queries) != 5 or len(live_texts) != PILOT_LIVE_INPUTS:
         raise ValueError("live pilot envelope is fixed at 20 records and 5 queries")
 
     reservation = reserve_paid_embedding_run(
@@ -420,6 +436,199 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
         "interpretation": (
             "Diagnostic retrieval results over candidate records; they do not validate "
             "the language forms or promote any record toward canon."
+        ),
+        "contains_vectors": False,
+        "contains_credentials": False,
+    }
+    report_path = Path(args.report)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(
+        json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    _print_json(
+        {
+            **plan,
+            "prompt_tokens": batch.prompt_tokens,
+            "estimated_cost_usd": report["estimated_cost_usd"],
+            "evaluation": evaluation,
+            "report": str(report_path),
+            "database": args.db,
+        }
+    )
+    return 0
+
+
+def _data_tree_manifest(path: str | Path) -> tuple[str, dict[str, str]]:
+    root = Path(path)
+    files = [root] if root.is_file() else sorted(root.rglob("*.jsonl"))
+    if not files:
+        raise ValueError(f"{path}: no JSONL data files found")
+    aggregate = hashlib.sha256()
+    hashes: dict[str, str] = {}
+    for candidate in files:
+        relative = candidate.name if root.is_file() else candidate.relative_to(root).as_posix()
+        content = candidate.read_bytes()
+        digest = hashlib.sha256(content).hexdigest()
+        hashes[relative] = digest
+        aggregate.update(relative.encode("utf-8"))
+        aggregate.update(b"\0")
+        aggregate.update(content)
+        aggregate.update(b"\0")
+    return aggregate.hexdigest(), hashes
+
+
+def command_n1_core_embedding_evaluation(args: argparse.Namespace) -> int:
+    """Plan or consume the single frozen N1 core embedding checkpoint."""
+
+    records = _records(args.data)
+    findings = evaluate_pilot_compositions(records)
+    if findings:
+        raise ValueError("N1 composition checks failed: " + "; ".join(findings))
+    queries = load_semantic_queries(args.queries)
+    record_ids = [record["id"] for record in records]
+    unknown_targets = sorted(
+        {query["expected_id"] for query in queries} - set(record_ids)
+    )
+    if unknown_targets:
+        raise ValueError(f"semantic queries target unknown records: {unknown_targets}")
+
+    projected = [embedding_text(record) for record in records]
+    live_texts = [*projected, *(query["query"] for query in queries)]
+    policy = load_policy()
+    byte_count = sum(len(text.encode("utf-8")) for text in live_texts)
+    largest_input_bytes = max(len(text.encode("utf-8")) for text in live_texts)
+    if largest_input_bytes > N1_CORE_MAX_INPUT_BYTES:
+        raise ValueError(
+            "an embedding input exceeds the conservative per-input provider safety cap"
+        )
+    conservative_tokens = token_upper_bound(live_texts)
+    rough_tokens = sum(max(1, (len(text) + 3) // 4) for text in live_texts)
+    price = float(policy["price_per_million_input_tokens_usd"])
+    data_hash, data_file_hashes = _data_tree_manifest(args.data)
+    query_hash = hashlib.sha256(Path(args.queries).read_bytes()).hexdigest()
+    plan = {
+        "mode": "live" if args.live else "dry-run",
+        "evaluation_kind": "bounded_n1_core_retrieval_checkpoint",
+        "model": args.model,
+        "dimensions": args.dimensions,
+        "records": len(records),
+        "queries": len(queries),
+        "api_inputs": len(live_texts),
+        "api_requests": 1 if args.live else 0,
+        "utf8_bytes": byte_count,
+        "largest_input_utf8_bytes": largest_input_bytes,
+        "conservative_per_input_byte_cap": N1_CORE_MAX_INPUT_BYTES,
+        "rough_input_token_estimate": rough_tokens,
+        "conservative_token_upper_bound": conservative_tokens,
+        "conservative_cost_upper_bound_usd": conservative_tokens * price / 1_000_000,
+        "authorized_cumulative_cost_cap_usd": policy["max_estimated_cost_usd"],
+        "predeclared_pass_criteria": {"minimum_recall_at_3": 0.8},
+        "metric_resolution": 1.0 / len(queries),
+        "data_sha256": data_hash,
+        "data_file_sha256": data_file_hashes,
+        "query_fixture_sha256": query_hash,
+        "limitations": (
+            "Twelve project-authored paraphrases test retrieval plumbing over a bounded "
+            "candidate set. They are not an independent linguistic benchmark and do not "
+            "promote any record toward canon."
+        ),
+    }
+    if not args.live:
+        _print_json(plan)
+        return 0
+
+    fixed_paths = {
+        "data": (Path(args.data).resolve(), Path(DEFAULT_N1_CORE_DATA).resolve()),
+        "queries": (
+            Path(args.queries).resolve(),
+            Path(DEFAULT_N1_CORE_QUERIES).resolve(),
+        ),
+        "report": (
+            Path(args.report).resolve(),
+            Path(N1_CORE_EMBEDDING_REPORT).resolve(),
+        ),
+        "database": (Path(args.db).resolve(), Path(DEFAULT_N1_CORE_DB).resolve()),
+    }
+    for label, (actual, expected) in fixed_paths.items():
+        if actual != expected:
+            raise ValueError(f"live N1 core {label} path is fixed at {expected}")
+    if Path(args.report).exists():
+        raise ValueError(f"the bounded N1 core call is already recorded at {args.report}")
+    if args.model != DEFAULT_MODEL or args.dimensions != DEFAULT_DIMENSIONS:
+        raise ValueError("live N1 core model and dimensions are fixed")
+    if (
+        len(records) != N1_CORE_RECORDS
+        or len(queries) != N1_CORE_QUERIES
+        or len(live_texts) != N1_CORE_LIVE_INPUTS
+    ):
+        raise ValueError(
+            "live N1 core envelope is fixed at 92 records and 12 queries"
+        )
+
+    connection = connect(args.db)
+    try:
+        index_records(connection, records)
+        needed = records_needing_embeddings(
+            connection,
+            records,
+            model=args.model,
+            dimensions=args.dimensions,
+        )
+        if {record["id"] for record in needed} != set(record_ids):
+            raise ValueError(
+                "live N1 core database must begin with every frozen record stale or missing"
+            )
+
+        reservation = reserve_paid_embedding_run(
+            "n1-core-embedding-evaluation",
+            live_texts,
+            model=args.model,
+            dimensions=args.dimensions,
+        )
+        try:
+            embedder = OpenAIEmbedder(model=args.model, dimensions=args.dimensions)
+            batch = embedder.embed(live_texts)
+            complete_paid_embedding_run(reservation, batch.prompt_tokens)
+        except Exception as exc:
+            fail_paid_embedding_run(reservation, type(exc).__name__)
+            raise
+
+        record_vectors = batch.vectors[: len(records)]
+        query_vectors = batch.vectors[len(records) :]
+        evaluation = evaluate_semantic_rankings(
+            record_ids,
+            record_vectors,
+            queries,
+            query_vectors,
+        )
+        evaluation["passed"] = evaluation["recall_at_3"] >= 0.8
+        for record, vector in zip(records, record_vectors):
+            put_embedding(
+                connection,
+                record["id"],
+                args.model,
+                args.dimensions,
+                record_fingerprint(record, args.model, args.dimensions),
+                vector,
+            )
+    finally:
+        connection.close()
+
+    report = {
+        **plan,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+        "data": args.data,
+        "query_fixture": args.queries,
+        "ledger_run_id": reservation.run_id,
+        "prompt_tokens": batch.prompt_tokens,
+        "total_tokens": batch.total_tokens,
+        "estimated_cost_usd": batch.prompt_tokens * price / 1_000_000,
+        "record_revisions": {record["id"]: record["revision"] for record in records},
+        "evaluation": evaluation,
+        "interpretation": (
+            "A bounded diagnostic of search behavior over noncanonical records; source "
+            "review and language-design review remain independent gates."
         ),
         "contains_vectors": False,
         "contains_credentials": False,
@@ -510,6 +719,19 @@ def build_parser() -> argparse.ArgumentParser:
     pilot.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
     pilot.add_argument("--live", action="store_true")
     pilot.set_defaults(func=command_pilot_embedding_evaluation)
+
+    n1_core = subparsers.add_parser(
+        "n1-core-embedding-eval",
+        help="plan or run the frozen one-request N1 core retrieval checkpoint",
+    )
+    n1_core.add_argument("--data", default=DEFAULT_N1_CORE_DATA)
+    n1_core.add_argument("--queries", default=DEFAULT_N1_CORE_QUERIES)
+    n1_core.add_argument("--db", default=DEFAULT_N1_CORE_DB)
+    n1_core.add_argument("--report", default=N1_CORE_EMBEDDING_REPORT)
+    n1_core.add_argument("--model", default=DEFAULT_MODEL)
+    n1_core.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
+    n1_core.add_argument("--live", action="store_true")
+    n1_core.set_defaults(func=command_n1_core_embedding_evaluation)
     return parser
 
 

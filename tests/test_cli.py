@@ -92,7 +92,19 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result["evaluation_kind"], "retrieval_sanity_test")
         self.assertEqual(result["api_requests"], 0)
         self.assertEqual(result["api_inputs"], 25)
-        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.001)
+        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.002)
+
+    def test_n1_core_embedding_evaluation_freezes_one_dry_run_request(self) -> None:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            self.assertEqual(main(["n1-core-embedding-eval"]), 0)
+        result = json.loads(output.getvalue())
+        self.assertEqual(result["mode"], "dry-run")
+        self.assertEqual(result["records"], 92)
+        self.assertEqual(result["queries"], 12)
+        self.assertEqual(result["api_inputs"], 104)
+        self.assertEqual(result["api_requests"], 0)
+        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.005)
 
 
 

@@ -96,6 +96,7 @@ def _record_fields(record: dict[str, Any]) -> dict[str, str | int]:
         record["formation"]["formation_process"],
         record["formation"]["design_alignment"],
         *conlang.get("variants", []),
+        canonical_json(conlang["orthography"]),
         *record["grammatical_features"],
         *(
             value
