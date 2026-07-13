@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/judeoalgonquin/creative-anchor.schema.json",
+  "title": "Judeo-Algonquin creative-anchor continuity ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "anchor_id",
+    "title",
+    "source_file",
+    "source_block",
+    "revision",
+    "status",
+    "authority",
+    "source_honesty",
+    "protected_functions",
+    "identity_invariants",
+    "editable_elements",
+    "legacy_form_inventory",
+    "segments",
+    "requirements",
+    "acceptance_tests",
+    "updated_at",
+    "change_note"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "anchor_id": {
+      "type": "string",
+      "pattern": "^anchor\\.[a-z0-9][a-z0-9_]*$"
+    },
+    "title": {"$ref": "#/$defs/nonemptyString"},
+    "source_file": {
+      "type": "string",
+      "pattern": "^references/creative-anchors/[a-z0-9][a-z0-9-]*\\.md$"
+    },
+    "source_block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_heading", "sha256", "paired_line_count"],
+      "properties": {
+        "start_heading": {"$ref": "#/$defs/nonemptyString"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "paired_line_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"const": "active_design_constraint"},
+    "authority": {"const": "project_owner_direction"},
+    "source_honesty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_status", "preserved_text_verbatim", "note"],
+      "properties": {
+        "claim_status": {"const": "creative_input_not_source_attestation"},
+        "preserved_text_verbatim": {"const": true},
+        "note": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "protected_functions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/protectedFunction"}
+    },
+    "identity_invariants": {"$ref": "#/$defs/nonemptyStringArray"},
+    "editable_elements": {"$ref": "#/$defs/nonemptyStringArray"},
+    "legacy_form_inventory": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/legacyForm"}
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/segment"}
+    },
+    "requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/requirement"}
+    },
+    "acceptance_tests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/acceptanceTest"}
+    },
+    "updated_at": {"type": "string", "format": "date-time"},
+    "change_note": {"$ref": "#/$defs/nonemptyString"}
+  },
+  "$defs": {
+    "nonemptyString": {"type": "string", "minLength": 1},
+    "nonemptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonemptyString"}
+    },
+    "stringArray": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/nonemptyString"}
+    },
+    "recordLink": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_revision",
+        "sense_id",
+        "relationship",
+        "coverage",
+        "note"
+      ],
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*$"
+        },
+        "record_revision": {"type": "integer", "minimum": 1},
+        "sense_id": {
+          "type": "string",
+          "pattern": "^ja\\.(lexeme|morpheme|phrase|sentence|paragraph|construction)\\.[a-z0-9][a-z0-9_-]*\\.sense\\.[a-z0-9][a-z0-9_-]*$"
+        },
+        "relationship": {
+          "enum": ["contact_candidate", "donor_lead", "conflict_probe"]
+        },
+        "coverage": {
+          "enum": [
+            "donor_only",
+            "contact_candidate",
+            "contact_reviewed",
+            "contact_canonical",
+            "conflict"
+          ]
+        },
+        "note": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "protectedFunction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["function_id", "category", "description"],
+      "properties": {
+        "function_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+        },
+        "category": {
+          "enum": ["semantic", "imagery", "voice", "register", "structure", "narrative", "discourse", "humor", "rhythm"]
+        },
+        "description": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "functionDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["function_id", "disposition", "rationale", "human_review"],
+      "properties": {
+        "function_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+        },
+        "disposition": {"enum": ["preserve", "adapt", "defer", "depart"]},
+        "rationale": {"$ref": "#/$defs/nonemptyString"},
+        "human_review": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["reviewer_id", "reviewed_at", "note"],
+              "properties": {
+                "reviewer_id": {"$ref": "#/$defs/nonemptyString"},
+                "reviewed_at": {"type": "string", "format": "date-time"},
+                "note": {"$ref": "#/$defs/nonemptyString"}
+              }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"disposition": {"const": "depart"}}},
+          "then": {"properties": {"human_review": {"type": "object"}}},
+          "else": {"properties": {"human_review": {"type": "null"}}}
+        }
+      ]
+    },
+    "legacyForm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_form",
+        "working_reading",
+        "function",
+        "segment_ids",
+        "disposition",
+        "current_record_links",
+        "note"
+      ],
+      "properties": {
+        "surface_form": {"$ref": "#/$defs/nonemptyString"},
+        "working_reading": {"type": ["string", "null"]},
+        "function": {"$ref": "#/$defs/nonemptyString"},
+        "segment_ids": {"$ref": "#/$defs/nonemptyStringArray"},
+        "disposition": {
+          "enum": [
+            "retain_if_valid",
+            "regularize_after_research",
+            "replace_form_preserve_function",
+            "defer_pending_grammar",
+            "reject_as_analysis"
+          ]
+        },
+        "current_record_links": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/recordLink"}
+        },
+        "note": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "segment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segment_id",
+        "order",
+        "section",
+        "source_locator",
+        "extant_hebrew",
+        "english_quasitranslation",
+        "repeat_of",
+        "identity_priority",
+        "disposition",
+        "function_dispositions",
+        "editable_elements",
+        "current_record_links",
+        "gaps",
+        "departure_policy"
+      ],
+      "properties": {
+        "segment_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9]+)+$"
+        },
+        "order": {"type": "integer", "minimum": 1},
+        "section": {"$ref": "#/$defs/nonemptyString"},
+        "source_locator": {"$ref": "#/$defs/nonemptyString"},
+        "extant_hebrew": {"$ref": "#/$defs/nonemptyString"},
+        "english_quasitranslation": {"$ref": "#/$defs/nonemptyString"},
+        "repeat_of": {"type": ["string", "null"]},
+        "identity_priority": {
+          "enum": ["identity_critical", "strong", "supporting"]
+        },
+        "disposition": {
+          "enum": [
+            "preserve_function_rebuild_form",
+            "retain_if_valid",
+            "freely_edit_with_continuity"
+          ]
+        },
+        "function_dispositions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/functionDisposition"}
+        },
+        "editable_elements": {"$ref": "#/$defs/nonemptyStringArray"},
+        "current_record_links": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/recordLink"}
+        },
+        "gaps": {"$ref": "#/$defs/stringArray"},
+        "departure_policy": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirement_id",
+        "kind",
+        "priority",
+        "segment_ids",
+        "status",
+        "current_record_links",
+        "requirement",
+        "acceptance_condition"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+        },
+        "kind": {
+          "enum": ["lexicon", "morphology", "construction", "discourse", "register", "orthography"]
+        },
+        "priority": {"enum": ["immediate_n1", "N2", "D1", "D2", "R1"]},
+        "segment_ids": {"$ref": "#/$defs/nonemptyStringArray"},
+        "status": {"enum": ["gap", "donor_lead", "contact_candidate", "partial"]},
+        "current_record_links": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/recordLink"}
+        },
+        "requirement": {"$ref": "#/$defs/nonemptyString"},
+        "acceptance_condition": {"$ref": "#/$defs/nonemptyString"}
+      }
+    },
+    "acceptanceTest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_id",
+        "earliest_level",
+        "requirement_ids",
+        "condition",
+        "status",
+        "blocker"
+      ],
+      "properties": {
+        "test_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z0-9_]+)+$"
+        },
+        "earliest_level": {"enum": ["N1", "N2", "D1", "D2", "R1"]},
+        "requirement_ids": {"$ref": "#/$defs/nonemptyStringArray"},
+        "condition": {"$ref": "#/$defs/nonemptyString"},
+        "status": {"enum": ["pending", "blocked", "passing"]},
+        "blocker": {"type": ["string", "null"]},
+        "evidence": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "reference", "note"],
+              "properties": {
+                "kind": {"enum": ["human_review", "evaluation"]},
+                "reference": {"$ref": "#/$defs/nonemptyString"},
+                "note": {"$ref": "#/$defs/nonemptyString"}
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

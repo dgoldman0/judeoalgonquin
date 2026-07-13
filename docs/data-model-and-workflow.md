@@ -32,7 +32,14 @@ Vocabulary, phrase, sentence, and paragraph are not merely different text length
 
 Creative anchors are neither canon nor disposable prompts. Their source wording remains preserved while proposed language revisions become separate, dependency-linked records.
 
-The executable `schema/entry.schema.json` currently covers the language-bearing families `lexeme`, `morpheme`, `construction`, `phrase`, `sentence`, and `paragraph`. The source registry remains in `references/sources.yaml`; foundation decisions remain in Markdown; creative anchors remain preserved Markdown; and evaluations are executable tests or reports. None of those separate stores may be moved into entry JSONL until a dedicated schema and migration are added. This boundary is intentional and prevents the implementation from claiming record support it does not yet provide.
+The executable `schema/entry.schema.json` covers the language-bearing families
+`lexeme`, `morpheme`, `construction`, `phrase`, `sentence`, and `paragraph`.
+`schema/creative-anchor.schema.json` separately covers normalized continuity
+ledgers in `data/creative-anchors/`; each ledger preserves exact source text by
+hash and links protected functions to revision-pinned language records. The
+source registry remains in `references/sources.yaml`, foundation decisions
+remain in Markdown, and evaluations remain executable tests or reports. The
+frozen song Markdown is never overwritten by a ledger or proposed revision.
 
 ## 3. Common record fields
 
@@ -128,6 +135,17 @@ Narrative records using the hybrid engine additionally identify:
 If a dependency changes, downstream records become review candidates. They do not silently inherit the new form.
 
 [*We Walk Well* and *When the Lights Learn Our Names*](../references/creative-anchors/README.md) are the initial `creative_anchor` sources. Their themes, voice, narrative aims, and existing wording are continuity constraints. A revision may change any individual form after review, but it must retain a link to the anchor, explain material departures, and never overwrite the preserved source text.
+
+The normalized ledgers are a required preflight for every epoch. Donor-only
+links describe research leads but do not count as contact-language coverage.
+Contact links pin the exact record revision and sense. An anchor line may remain
+partially covered even when all its nouns exist, because its argument structure,
+register, imagery, or narrative function is still missing.
+
+The legacy scalar `metadata.creative_anchor` remains nullable for older fixture
+compatibility only. It is not continuity authority and must not be used to infer
+exclusive association with one song. The normalized ledgers are the sole
+many-to-many authority for current anchor links.
 
 ## 7. Retrieval and embeddings
 

@@ -11,12 +11,16 @@ from judeoalgonquin.records import load_records
 
 ROOT = Path(__file__).parents[1]
 SCHEMA_PATH = ROOT / "schema" / "entry.schema.json"
+ANCHOR_SCHEMA_PATH = ROOT / "schema" / "creative-anchor.schema.json"
+ANCHOR_DATA = tuple(sorted((ROOT / "data" / "creative-anchors").glob("*.json")))
+CONTACT_DATA = ROOT / "data" / "entries" / "n1-contact-lexicon.jsonl"
 DATASETS = (
     ROOT / "tests" / "fixtures" / "creative_anchor_candidates.jsonl",
     ROOT / "data" / "entries" / "n1-pilot.jsonl",
     ROOT / "data" / "entries" / "n1-core-lexicon.jsonl",
     ROOT / "data" / "entries" / "n1-core-regressions.jsonl",
     ROOT / "data" / "entries" / "n1-contact-lexicon.jsonl",
+    ROOT / "data" / "entries" / "n1-song-chorus.jsonl",
 )
 
 
@@ -31,6 +35,12 @@ class JsonSchemaTests(unittest.TestCase):
         Draft202012Validator.check_schema(cls.schema)
         cls.validator = Draft202012Validator(
             cls.schema,
+            format_checker=FormatChecker(),
+        )
+        cls.anchor_schema = json.loads(ANCHOR_SCHEMA_PATH.read_text(encoding="utf-8"))
+        Draft202012Validator.check_schema(cls.anchor_schema)
+        cls.anchor_validator = Draft202012Validator(
+            cls.anchor_schema,
             format_checker=FormatChecker(),
         )
 
@@ -60,10 +70,15 @@ class JsonSchemaTests(unittest.TestCase):
             self.validator.validate(candidate_with_review)
 
     def test_contact_adapted_lexeme_requires_a_contact_language_layer(self) -> None:
-        contact = public_record(load_records(DATASETS[-1])[0])
+        contact = public_record(load_records(CONTACT_DATA)[0])
         del contact["metadata"]["lexical_layer"]
         with self.assertRaisesRegex(ValidationError, "lexical_layer"):
             self.validator.validate(contact)
+
+    def test_every_creative_anchor_ledger_satisfies_its_public_schema(self) -> None:
+        for path in ANCHOR_DATA:
+            with self.subTest(path=path.name):
+                self.anchor_validator.validate(json.loads(path.read_text(encoding="utf-8")))
 
 
 if __name__ == "__main__":

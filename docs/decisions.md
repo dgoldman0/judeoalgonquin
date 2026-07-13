@@ -126,6 +126,50 @@ or missing and remain behind the paid-work gate.
 orthographic guidance, evidence that a semantic allocation is unnatural, or
 failure of the mixed finals across the required productivity tests.
 
+### D-019 — Operational creative-anchor continuity ledgers
+
+**Decision:** Preserve each song's Markdown source verbatim and maintain a
+separate normalized ledger for every physical line. A ledger records protected
+functions, editable elements, current gaps, acceptance tests, and revision- and
+sense-pinned language-record links. Donor evidence never counts as usable
+contact coverage. Every vocabulary, phrase, sentence, and paragraph epoch must
+consult and update the relevant ledgers.
+
+**Reason:** Merely retaining the songs in the repository did not make them shape
+the first contact lexicon. The ledgers turn owner-directed continuity into an
+auditable design gate while keeping creative material separate from linguistic
+attestation.
+
+**Result:** Two ledgers cover 41 source segments and 16 requirement groups.
+They preserve *We Walk Well*'s communal lyric identity and make the lights
+song's `yo/yowa` three-person recovery failure a machine-readable pending
+negative requirement. It will become executable only when the participant
+evaluator and invalid fixture exist.
+
+### D-020 — First chorus grammar and mixed ethical-disposition word
+
+**Decision:** Admit a noncanonical contact AI first-person-plural candidate with
+inclusive `kə~STEM~hna` and exclusive `nə~STEM~hna` cells. In careful contact
+morphography, preserve the full stem and do not automatically import Munsee
+contraction, deletion, assimilation, or R30 shortening. Test the construction
+on walk, be-good, and sing; keep it separate from TA/TI and the narrative
+engine.
+
+Create `wəlew` “good heart; goodwill” from bounded contact `wəl-` positive
+quality plus Hebrew-derived `lew` inner disposition. License it as a preposed
+ethical-disposition frame only through a separate limited construction. The
+provisional chorus kernel is `wəlew kəpəməsiihna`, literally “goodwill,
+we-including-you walk.”
+
+**Reason:** This produces actual co-parent language at both word and clause
+levels without inventing plural possession, a comitative, a free adjective, or
+false historical attestation. Inclusive `we` reflects the chorus's communal
+address; the exclusive cell remains available elsewhere.
+
+**Boundary:** Every record remains a candidate. The phrase needs owner and
+metrical review, and the remaining three chorus lines still require independent
+construction work.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.
@@ -135,7 +179,8 @@ These do not block documentation, schema work, local fixtures, or an explicitly 
 3. Canonical romanization and the choice among phonemic, etymographic, or morphographic Hebrew running-text spelling, including stress, vowel length, and reduced vowels.
 4. Exact conventions within Modern/common, Biblical, Classical, rabbinic, liturgical, regional, and diaspora Hebrew material, including how contact transforms them.
 5. Exact implementation of the required narrative engine: wayyiqtol- and weqatal-derived forms, participant marking, center shifts, multiple-obviative handling, and interaction with ordinary tense/aspect.
-6. Inclusive/exclusive distinctions, nominal classes, locatives, and direct/inverse paradigms outside that engine.
+6. Review and possible revision of the candidate AI inclusive/exclusive system,
+   plus nominal classes, locatives, and direct/inverse paradigms outside that engine.
 7. Source permissions or licenses for any material considered for systematic extraction.
 8. Quantitative coverage thresholds for each proficiency level after initial measured epochs.
 9. Whether any community-specific ceremonial vocabulary is necessary to the project at all.

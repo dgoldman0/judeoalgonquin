@@ -5,8 +5,10 @@ source of truth and must validate against `schema/entry.schema.json`.
 `n1-pilot.jsonl` contains the revised 20-record architecture probe;
 `n1-core-lexicon.jsonl` adds 60 independently sourced lexical/function donor
 candidates; `n1-core-regressions.jsonl` adds 12 revision-pinned composition
-tests; and `n1-contact-lexicon.jsonl` adds the first 15 actual contact-language
-lexeme proposals. The full 107-record database is explicitly noncanonical and
+tests; `n1-contact-lexicon.jsonl` adds the first 15 actual contact-language
+lexeme proposals; and `n1-song-chorus.jsonl` adds 17 manually authored donor,
+contact, construction, and sentence records for the first *We Walk Well*
+chorus tranche. The full 124-record database is explicitly noncanonical and
 remains subject to source and design revision.
 
 Every source-facing lexeme or morpheme is typed `donor_candidate`. It preserves

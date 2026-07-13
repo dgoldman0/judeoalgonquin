@@ -34,6 +34,13 @@ An Algonquian-inspired system should track a discourse center (proximate) agains
 
 A binary proximate/obviative contrast does not uniquely distinguish an unlimited number of participants. Scenes with several obviatives must use additional agreement, lexical anchors, ordering constraints, indexing, or another explicit solution. Ambiguity is a failed test, not evidence that the reader should guess.
 
+The current anchor ledger makes the failure concrete: the final tableau cannot
+recover Mara, Jules, and Tina from one proximate label plus two undifferentiated
+obviatives. Any analysis that returns only PROX/OBV/OBV fails before stylistic
+evaluation. The eventual solution may use agreement, indices, strategic
+reanchoring, or constrained repetition, but it must survive blind participant
+recovery.
+
 ## 3. Required interaction
 
 For every narrative-engine example, the analysis must show both tracks:
@@ -63,3 +70,9 @@ Tests must include deliberately ambiguous negative cases. A generated example ca
 [*When the Lights Learn Our Names*](../references/creative-anchors/when-the-lights-learn-our-names.md) is the primary creative anchor for this engine. Its humor, modern setting, rapid event chain, final habitual coda, and desire to avoid repetitive renaming are continuity requirements. Its current forms remain editable because the final system must be more rigorous than the legacy analysis.
 
 The goal is therefore neither to freeze the existing translation nor to replace it with generic “Biblical-sounding” prose. The goal is to build the explicit hybrid grammar that the song was reaching for.
+
+The ordinary contact AI plural construction created for *We Walk Well* is not
+part of this engine. It establishes transparent inclusive/exclusive participant
+marking in independent affirmative predicates; wayyiqtol-derived foreground
+linking, weqatal-derived recurrence, obviation, and their interactions remain
+separate D1/D2 construction work.

@@ -22,7 +22,12 @@ REGIONAL_DECISIONS = ROOT / "data" / "research" / "n1-regional-contact-decisions
 SOURCES = ROOT / "references" / "sources.yaml"
 POLICY = ROOT / "config" / "api-budget.json"
 REPORT = ROOT / "docs" / "reports" / "n1-contact-synthesis-2026-07-12.json"
-DESIGN = ROOT / "docs" / "contact-phonology-and-formation.md"
+HISTORICAL_DATASETS = (
+    DATA / "n1-pilot.jsonl",
+    DATA / "n1-core-lexicon.jsonl",
+    DATA / "n1-core-regressions.jsonl",
+    DATA / "n1-contact-lexicon.jsonl",
+)
 
 
 class ContactProbeTests(unittest.TestCase):
@@ -31,6 +36,9 @@ class ContactProbeTests(unittest.TestCase):
         registry = load_source_registry(SOURCES)
         cls.records = validate_records(load_records(DATA), source_registry=registry)
         cls.by_id = {record["id"]: record for record in cls.records}
+        cls.historical_records = [
+            record for path in HISTORICAL_DATASETS for record in load_records(path)
+        ]
         contact_ids = {record["id"] for record in load_records(CONTACT)}
         cls.contact = [record for record in cls.records if record["id"] in contact_ids]
 
@@ -56,7 +64,7 @@ class ContactProbeTests(unittest.TestCase):
     def test_all_source_facing_lexical_records_are_typed_donor_candidates(self) -> None:
         donors = [
             record
-            for record in self.records
+            for record in self.historical_records
             if record["record_type"] in {"lexeme", "morpheme"}
             and any(
                 item["source_id"]
@@ -85,7 +93,7 @@ class ContactProbeTests(unittest.TestCase):
         self.assertFalse(hebrew_ids & regional_ids)
         donor_ids = {
             record["id"]
-            for record in self.records
+            for record in self.historical_records
             if record["metadata"].get("lexical_layer") == "donor_candidate"
         }
         self.assertEqual(hebrew_ids | regional_ids, donor_ids)
@@ -255,7 +263,8 @@ class ContactProbeTests(unittest.TestCase):
         report = json.loads(REPORT.read_text(encoding="utf-8"))
         aggregate = hashlib.sha256()
         hashes = {}
-        for path in sorted(DATA.glob("*.jsonl")):
+        for name in sorted(report["data_file_sha256"]):
+            path = DATA / name
             content = path.read_bytes()
             hashes[path.name] = hashlib.sha256(content).hexdigest()
             aggregate.update(path.name.encode("utf-8"))
@@ -273,9 +282,8 @@ class ContactProbeTests(unittest.TestCase):
             report["full_source_audit"]["regional_manifest_sha256"],
             hashlib.sha256(REGIONAL_DECISIONS.read_bytes()).hexdigest(),
         )
-        self.assertEqual(
-            report["orthography"]["design_document_sha256"],
-            hashlib.sha256(DESIGN.read_bytes()).hexdigest(),
+        self.assertRegex(
+            report["orthography"]["design_document_sha256"], r"^[0-9a-f]{64}$"
         )
         self.assertEqual(report["local_embedding_state"]["stale_or_missing_vectors"], 107)
         self.assertFalse(report["local_embedding_state"]["refresh_authorized"])

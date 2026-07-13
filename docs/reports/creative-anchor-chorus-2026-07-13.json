@@ -1,0 +1,147 @@
+{
+  "report_id": "creative-anchor-chorus-2026-07-13",
+  "status": "completed_local_noncanonical",
+  "completed_at": "2026-07-13T07:45:00-04:00",
+  "purpose": "Turn both preserved songs into operational continuity constraints and manually construct the first source-bounded We Walk Well chorus clause, vocabulary, and first-person-plural grammar.",
+  "manual_language_work": {
+    "authoring_method": "Interactive language-model judgment over reviewed source evidence, project goals, and line-level creative continuity. No script or external model selected the forms, meanings, morphology, semantic allocation, or clause analysis.",
+    "automation_boundary": "Local code validates schema, source-text identity, orthographic reversibility, dependencies, declared construction behavior, and cost gates only.",
+    "external_generative_api_requests": 0
+  },
+  "continuity_ledgers": {
+    "anchors": 2,
+    "physical_segments": 41,
+    "requirement_groups": 16,
+    "we_walk_well_segments": 28,
+    "when_the_lights_learn_our_names_segments": 13,
+    "source_blocks_hash_guarded": true,
+    "ordered_hebrew_english_pairs_enforced": true,
+    "record_links_revision_and_sense_pinned": true,
+    "donor_only_never_counts_as_contact_coverage": true,
+    "passing_acceptance_state_requires_evidence": true
+  },
+  "record_inventory": {
+    "records_total": 124,
+    "prior_records": 107,
+    "new_tranche_records": 17,
+    "new_record_types": {
+      "lexeme": 10,
+      "morpheme": 1,
+      "construction": 3,
+      "sentence": 3
+    },
+    "new_lexical_layers": {
+      "donor_candidate": 3,
+      "direct_contact_inheritance": 6,
+      "contact_native_formation": 2,
+      "nonlexical_construction_or_sentence": 6
+    },
+    "canonical_records": 0
+  },
+  "constructed_language": {
+    "mixed_word": {
+      "form": "wəlew",
+      "hebrew_script": "ווְלֶוו",
+      "segmentation": "wəl-lew",
+      "literal": "good-heart",
+      "meaning": "benevolent or ethically good inner disposition; goodwill",
+      "boundary": "A listed regional-positive plus Hebrew-inner-heart formation with word-specific l-l reduction; it establishes no general compound or reduction rule."
+    },
+    "limited_first_plural_paradigm": {
+      "inclusive_pattern": "kə~STEM~hna",
+      "exclusive_pattern": "nə~STEM~hna",
+      "licensed_stems": [
+        "pəməsii- (walk)",
+        "wələsii- (be good)",
+        "naxkoohəmaa- (sing)"
+      ],
+      "cells": 6,
+      "realization": "careful contact morphography, not a Moraviantown Munsee surface prediction",
+      "tam_boundary": "The construction contributes participant, number, and clusivity only; it supplies no tense, aspect, or modality."
+    },
+    "clauses": [
+      {
+        "form": "kəpəməsiihna",
+        "meaning": "we, including the addressee, walk"
+      },
+      {
+        "form": "kənaxkoohəmaahna",
+        "meaning": "we, including the addressee, sing"
+      },
+      {
+        "form": "wəlew kəpəməsiihna",
+        "literal": "goodwill, we-including-you walk",
+        "continuity_translation": "We walk well, with good hearts.",
+        "status": "provisional chorus kernel pending owner and metrical review"
+      }
+    ],
+    "source_honesty": [
+      "O'Meara supports the listed naxkooh(ə)meew analysis and short gloss he sings; vocal sing is a project semantic allocation and metallic ring remains excluded.",
+      "O'Meara supports the discontinuous AI independent first-plural cells; transparent long-vowel realization is contact design.",
+      "BDB supports the bounded Biblical Hebrew inner-person and moral-character range of לֵב² and physical-light senses 1 and 6 of אוֹר²; it does not attest wəlew or the contact clause.",
+      "The songs guide continuity and priority but never serve as linguistic attestation."
+    ]
+  },
+  "open_construction_gaps": [
+    "road-given illumination and its first-person-plural object relation",
+    "object-class-safe listen and see constructions",
+    "brightness-forward result or directional structure",
+    "ordinary spoken realization, stress, meter, and owner lyric review",
+    "wayyiqtol-derived foreground chaining, weqatal-derived recurrence, obviation, and multiple-obviative recovery remain later narrative work"
+  ],
+  "validation": {
+    "records_valid": 124,
+    "anchor_ledgers_valid": 2,
+    "construction_findings": 0,
+    "local_tests_passed": 129,
+    "python_compileall_passed": true,
+    "diff_check_passed": true,
+    "mutation_coverage": [
+      "source-line reorder and omission",
+      "wrong repeated-line target",
+      "unsafe creative-anchor source path",
+      "duplicate and semantically false coverage links",
+      "unsupported passing acceptance state",
+      "removed chorus construction",
+      "excluded predicate host",
+      "invalid goodwill frame",
+      "inclusive/exclusive mismatch",
+      "nested contact orthography mismatch",
+      "unknown register label"
+    ]
+  },
+  "embedding_dry_run": {
+    "mode": "dry-run",
+    "model": "text-embedding-3-small",
+    "dimensions": 256,
+    "records_total": 124,
+    "records_stale_or_missing": 124,
+    "records_selected_for_estimate": 124,
+    "rough_input_token_estimate": 77127,
+    "price_per_million_input_tokens_usd": 0.02,
+    "estimated_full_refresh_cost_usd": 0.00154254,
+    "api_requests": 0,
+    "refresh_authorized": false
+  },
+  "paid_api": {
+    "embedding_requests": 0,
+    "generative_requests": 0,
+    "api_inputs": 0,
+    "prompt_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "paid_gate_enabled_after_work": false
+  },
+  "artifact_sha256": {
+    "data/entries/n1-song-chorus.jsonl": "2fceb23db4dd9890053d983a08848eb247e392c14ab905629951bb8062f2e575",
+    "data/creative-anchors/we-walk-well.json": "231c007b5ec5c713ab06a2d11e03dbeb33f6541b383e90274cd91552a2e57341",
+    "data/creative-anchors/when-the-lights-learn-our-names.json": "17dc3cb1f41f358fbe5e145b8297610f01e8df5731fcaadeaec948089cc884e8",
+    "schema/creative-anchor.schema.json": "f4322ab6b9c3342c86923ab49811e9e36a9d87d66ee36f9d0e6907befecf7085",
+    "docs/research/we-walk-well-chorus-tranche.md": "31aeee9aa765aaa6fa0978d5b1c73fdaea73d0b6497636730ac4e47571d77b1f",
+    "src/judeoalgonquin/anchors.py": "75f8d30660db92170a44f89ae17674b2789f55dc0488bec978062f923be17eb0",
+    "src/judeoalgonquin/evaluate.py": "0c68aaeb0c8b08dccb35d0f5e76eb50ff99b8337304164ac5b003037d697ff12",
+    "tests/test_anchor_chorus.py": "2b6517051b8dc1c935d5aaffae4af4b11b8270202d61271e4689e160f24347f0",
+    "tests/test_creative_anchors.py": "066a1a3db96aa4f7dcd971afff3ad1237b95bfb72e3d32c7e7db7cb4526c338a"
+  },
+  "contains_vectors": false,
+  "contains_credentials": false
+}

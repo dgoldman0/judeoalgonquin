@@ -40,6 +40,7 @@ STATUSES = {
 }
 REVIEWED_STATUSES = {"reviewed", "canonical", "deprecated", "superseded", "rejected"}
 LEVELS = {"unassigned", "N1", "N2", "D1", "D2", "R1"}
+REGISTER_LABELS = {"ordinary", "careful", "narrative", "literary", "ritual_style"}
 RELATION_KEYS = {
     "depends_on",
     "related_to",
@@ -574,6 +575,22 @@ def _validate_record(
                         errors.append(
                             f"{orthography_label}.normalized_input: must equal record romanization"
                         )
+                    if (
+                        status_value == "componentwise"
+                        and "contact-clause" in record.get("metadata", {}).get("tags", [])
+                        and normalized_input is not None
+                        and hebrew is not None
+                    ):
+                        try:
+                            encoded = assert_contact_round_trip(normalized_input)
+                        except ValueError as exc:
+                            errors.append(f"{orthography_label}: {exc}")
+                        else:
+                            if encoded != hebrew:
+                                errors.append(
+                                    f"{orthography_label}: Hebrew form does not match "
+                                    "componentwise contact encoding"
+                                )
 
     senses = record.get("senses")
     if not isinstance(senses, list) or not senses:
@@ -1144,11 +1161,30 @@ def _validate_record(
                                 errors.append(f"{item_label}.{key}: must be a string")
                         if item.get("status") not in {
                             "attested_source",
+                            "attested_pattern",
                             "adapted_candidate",
                             "reviewed",
                             "canonical",
                         }:
                             errors.append(f"{item_label}.status: invalid value")
+                        if (
+                            item.get("status") == "adapted_candidate"
+                            and "contact-grammar"
+                            in record.get("metadata", {}).get("tags", [])
+                        ):
+                            romanization = item.get("romanization")
+                            hebrew_script = item.get("hebrew_script")
+                            if isinstance(romanization, str) and isinstance(hebrew_script, str):
+                                try:
+                                    encoded = assert_contact_round_trip(romanization)
+                                except ValueError as exc:
+                                    errors.append(f"{item_label}: {exc}")
+                                else:
+                                    if encoded != hebrew_script:
+                                        errors.append(
+                                            f"{item_label}.hebrew_script: does not match "
+                                            "contact encoding"
+                                        )
                     else:
                         _nonempty_string(item.get("reason"), f"{item_label}.reason", errors)
 
@@ -1172,6 +1208,17 @@ def _validate_record(
     if metadata is not None:
         for key in ("registers", "domains", "tags"):
             _list_of_strings(metadata.get(key), f"{label}.metadata.{key}", errors)
+        registers = metadata.get("registers")
+        if isinstance(registers, list):
+            unknown_registers = sorted(
+                value
+                for value in registers
+                if isinstance(value, str) and value not in REGISTER_LABELS
+            )
+            if unknown_registers:
+                errors.append(
+                    f"{label}.metadata.registers: unknown labels {unknown_registers!r}"
+                )
         anchor = metadata.get("creative_anchor")
         if anchor is not None and not isinstance(anchor, str):
             errors.append(f"{label}.metadata.creative_anchor: must be a string or null")

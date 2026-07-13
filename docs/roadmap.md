@@ -86,6 +86,27 @@ leaves all 107 stored vectors stale or missing; refreshing them remains unapprov
 The exact state and a rough refresh estimate are recorded in [the local
 synthesis report](reports/n1-contact-synthesis-2026-07-12.json).
 
+## First creative-anchor construction tranche
+
+The two songs now have line-complete, hash-guarded continuity ledgers covering
+41 physical segments and 16 requirement groups. The ledgers distinguish donor
+leads, usable contact candidates, conflicts, and unresolved functions, and they
+revision-pin every linked language sense.
+
+The first manually authored construction tranche adds 17 records. It establishes
+contact `lew` “heart/inner disposition,” `or` “light,” `aanay` “road,” three AI
+predicate stems, a six-cell inclusive/exclusive first-plural paradigm, mixed
+`wəlew` “good heart; goodwill,” and the provisional chorus kernel
+`wəlew kəpəməsiihna` “goodwill, we-including-you walk.” Independent O'Meara
+evidence also permits the legacy `naxkooh...` song motif to survive as contact
+`naxkoohəmaa-` “sing,” while explicitly leaving metallic “ring” unsupported.
+
+The database now contains 124 noncanonical records. This tranche does not
+complete the chorus: road-given light, bare listen/see, brightness-forward,
+meter, and owner lyric review remain open. See [the construction
+analysis](research/we-walk-well-chorus-tranche.md) and [the completed local
+checkpoint report](reports/creative-anchor-chorus-2026-07-13.json).
+
 ## Project proficiency levels
 
 These are project levels, not CEFR equivalences.
@@ -119,6 +140,15 @@ Level membership is coverage- and competency-based. Word-count targets may be ad
 ## The epoch cycle
 
 Every level follows the same order.
+
+### 0. Continuity preflight
+
+- read every active creative-anchor requirement touched by the proposed domain;
+- distinguish protected meaning or structure from editable legacy form;
+- retrieve both donor leads and existing contact candidates;
+- choose the epoch's anchor gaps deliberately; and
+- update revision-pinned ledger coverage when work fills, conflicts with, or
+  departs from a requirement.
 
 ### 1. Vocabulary epoch
 

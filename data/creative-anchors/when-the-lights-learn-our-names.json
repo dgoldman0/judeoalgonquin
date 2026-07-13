@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "anchor_id": "anchor.when_the_lights_learn_our_names",
+  "title": "When the Lights Learn Our Names",
+  "source_file": "references/creative-anchors/when-the-lights-learn-our-names.md",
+  "source_block": {
+    "start_heading": "## 0. Draft song.",
+    "sha256": "d0688ac133898174859e09daac26f79e2f07e02c9a3dc99cb16bc23dd406f998",
+    "paired_line_count": 13
+  },
+  "revision": 1,
+  "status": "active_design_constraint",
+  "authority": "project_owner_direction",
+  "source_honesty": {
+    "claim_status": "creative_input_not_source_attestation",
+    "preserved_text_verbatim": true,
+    "note": "The text fixes an artistic narrative test. Its Hebrew-shaped verbs, legacy regional-looking forms, obviation markers, and grammatical commentary are not source evidence or accepted contact grammar."
+  },
+  "protected_functions": [
+    {
+      "function_id": "wll.fn.modern_biblical_contrast",
+      "category": "register",
+      "description": "Keep the comic contrast between an ordinary modern blackout and a strongly waw-driven literary narrative cadence."
+    },
+    {
+      "function_id": "wll.fn.named_trio",
+      "category": "narrative",
+      "description": "Introduce Mara, Jules, and Tina as three distinct participants and preserve a coherent arc for all three."
+    },
+    {
+      "function_id": "wll.fn.foreground_pulse",
+      "category": "rhythm",
+      "description": "Preserve the mounting foreground-event pulse, peak congestion, abrupt reveal, short release, and calmer coda."
+    },
+    {
+      "function_id": "wll.fn.participant_tracking",
+      "category": "discourse",
+      "description": "Make every human action recoverable across center shifts and at least two simultaneously salient noncentral third persons."
+    },
+    {
+      "function_id": "wll.fn.light_escalation",
+      "category": "imagery",
+      "description": "Carry the title through failed room light, phone light, match light, lantern light, restored light, and remembered future flickers."
+    },
+    {
+      "function_id": "wll.fn.sound_slapstick",
+      "category": "humor",
+      "description": "Retain the causal escalation of alarm, impact, ringing spoons, lid, pot, spill, slides, scattered objects, and involuntary dance."
+    },
+    {
+      "function_id": "wll.fn.reveal_tableau",
+      "category": "structure",
+      "description": "Preserve the restored-light freeze-frame: one person on the floor, one caught with a coat, one among tools, and the pot hissing."
+    },
+    {
+      "function_id": "wll.fn.shared_laughter",
+      "category": "voice",
+      "description": "Resolve the chaos through affectionate shared looking and laughter rather than blame."
+    },
+    {
+      "function_id": "wll.fn.event_to_custom",
+      "category": "narrative",
+      "description": "Mark the transition from one completed incident to a recurring response or remembered custom through the wayyiqtol-derived and weqatal-derived systems."
+    },
+    {
+      "function_id": "wll.fn.coparent_engine",
+      "category": "discourse",
+      "description": "Make Biblical-Hebrew-derived event framing and source-specific Algonquian participant tracking function together rather than coexist as decoration."
+    }
+  ],
+  "identity_invariants": [
+    "The title remains When the Lights Learn Our Names in English unless the owner makes a separate songwriting decision.",
+    "The story retains a named trio, blackout, escalating improvised lights and slapstick, restored-light tableau, shared laughter, and a recurring coda.",
+    "The main incident and final coda remain grammatically distinct so the one-time fiasco becomes remembered custom.",
+    "Names-once and minimal renaming remain valuable compression targets, but never excuse unrecoverable participants.",
+    "The final grammar must solve multiple-obviative reference rather than treating 'another obviative' as identification."
+  ],
+  "editable_elements": [
+    "Every legacy verb form, exact waw morphology, participant marker, locative, plural, compound analysis, and source attribution may be replaced after research.",
+    "Strategic reanchoring, overt agreement, indexing, or limited noun repetition may be introduced when needed for participant recovery.",
+    "Exact predicate count may change, but the mounting pulse, congestion peak, reveal, short laugh, and calmer recurring coda remain protected.",
+    "The proposed assignment of Mara, Jules, and Tina to individual gags remains a design proposal until reviewed by the owner."
+  ],
+  "legacy_form_inventory": [
+    {
+      "surface_form": "וַיּ־",
+      "working_reading": "wayyiqtol-shaped chain onset",
+      "function": "Rapid foreground-event chaining throughout the one-time incident.",
+      "segment_ids": ["wll.01", "wll.02", "wll.03", "wll.04", "wll.05", "wll.06", "wll.07", "wll.08", "wll.09", "wll.10", "wll.11", "wll.12"],
+      "disposition": "defer_pending_grammar",
+      "current_record_links": [],
+      "note": "Preserve the event-chain function and audible pulse; research Biblical Hebrew and design the contact morphology before retaining any exact form."
+    },
+    {
+      "surface_form": "וְהָיָה … וְאָחֲזוּ … וְעָמְדוּ … וְהִבִּיטוּ … וְצָחֲקוּ",
+      "working_reading": "weqatal-shaped recurring coda",
+      "function": "Shift from the completed incident to a standing response whenever the lights flicker.",
+      "segment_ids": ["wll.13"],
+      "disposition": "defer_pending_grammar",
+      "current_record_links": [],
+      "note": "The structural contrast is protected, but the legacy forms do not prove a sourced Biblical Hebrew analysis or accepted contact paradigm."
+    },
+    {
+      "surface_form": "יוֹ / יוֹוָא",
+      "working_reading": "yo / yowa",
+      "function": "Legacy proximate versus obviative participant labels.",
+      "segment_ids": ["wll.03", "wll.04", "wll.05", "wll.07", "wll.08", "wll.09", "wll.10", "wll.11", "wll.12", "wll.13"],
+      "disposition": "reject_as_analysis",
+      "current_record_links": [],
+      "note": "One proximate and one undifferentiated obviative label cannot recover three people; the reveal itself contains yowa plus another yowa."
+    },
+    {
+      "surface_form": "וִיגְוָאמִינְק",
+      "working_reading": "wigwaam-ink",
+      "function": "Legacy room-place or home locative.",
+      "segment_ids": ["wll.01", "wll.02", "wll.11"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_heder_room", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_heder_room.sense.room", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed room donor; no contact room or locative exists."}
+      ],
+      "note": "The legacy form and -ink analysis remain unverified."
+    },
+    {
+      "surface_form": "לֵנוּוָאק",
+      "working_reading": "lenuwak",
+      "function": "Legacy neutral plural 'people' in the opening.",
+      "segment_ids": ["wll.01"],
+      "disposition": "reject_as_analysis",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_lunew_man", "record_revision": 4, "sense_id": "ja.lexeme.munsee_lunew_man.sense.man", "relationship": "conflict_probe", "coverage": "conflict", "note": "The reviewed source meaning is man, not a neutral person term for this trio."},
+        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact adam covers person but lacks plural morphology."}
+      ],
+      "note": "Do not broaden a source word for man into gender-neutral people."
+    },
+    {
+      "surface_form": "מְבּוּי",
+      "working_reading": "mbuy",
+      "function": "Legacy water word in the spill sequence.",
+      "segment_ids": ["wll.08"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_mayim", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_mayim.sense.water", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed water donor; no actual contact record yet."}
+      ],
+      "note": "No exact lect, source form, or locator currently supports the legacy shape."
+    },
+    {
+      "surface_form": "תְּמָקָאן",
+      "working_reading": "temakaan",
+      "function": "Legacy shining-path word.",
+      "segment_ids": ["wll.08"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed only as road; puddle-path or trail senses are not licensed."}
+      ],
+      "note": "The shining-path image is protected; the legacy word is not."
+    },
+    {
+      "surface_form": "נַחְקוֹהֻמִיּוּ",
+      "working_reading": "legacy naxkoohumeew, compared with sourced naxkooh(ə)meew",
+      "function": "Legacy ring or sing predicate for the spoons.",
+      "segment_ids": ["wll.07"],
+      "disposition": "regularize_after_research",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "O'Meara independently prints naxkooh(ə)meew 'he sings' with analysis /naxkooh-əm-aa-w/."},
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "The contact stem supports vocal singing only; spoons ringing or literary personification remains unlicensed."}
+      ],
+      "note": "The root-level resemblance is now independently supported, but legacy u, the exact ending, and the inanimate ring/sing extension still require replacement or explicit literary grammar."
+    },
+    {
+      "surface_form": "אֲסוּנַאק",
+      "working_reading": "asun-ak",
+      "function": "Legacy plural stones in the scattered-tools simile.",
+      "segment_ids": ["wll.09"],
+      "disposition": "reject_as_analysis",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_asen_stone", "record_revision": 4, "sense_id": "ja.lexeme.munsee_asen_stone.sense.stone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Stone donor has no established source class or plural here."},
+        {"record_id": "ja.morpheme.munsee_plural_ak", "record_revision": 4, "sense_id": "ja.morpheme.munsee_plural_ak.sense.animate_plural", "relationship": "conflict_probe", "coverage": "conflict", "note": "The animate plural cannot be attached to stone without independent class evidence."}
+      ],
+      "note": "The simile may survive, but this plural may not be represented as sourced."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "wll.01",
+      "order": 1,
+      "section": "opening_gathering",
+      "source_locator": "§0 Hebrew paragraph 1 line 1 / Quasitranslation paragraph 1 line 1",
+      "extant_hebrew": "וַיְהִי בְּוִיגְוָאמִינְק שְׁלֹשָׁה לֵנוּוָאק: מָאלָא, ג׳וּלֶס, טִינָא; וַיֵּעָרֶךְ שֻׁלְחָן, וַיֵּשְׁבוּ, וַיִּשְׂאוּ כּוֹסוֹת.",
+      "english_quasitranslation": "And it came to pass in the room-place: three people^pl were there—Mara, Jules, Tina; and a table was set, and sitting happened, and cups were lifted.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.modern_biblical_contrast", "disposition": "preserve", "rationale": "A mock-biblical opening frames an ordinary modern gathering.", "human_review": null},
+        {"function_id": "wll.fn.named_trio", "disposition": "preserve", "rationale": "Mara, Jules, and Tina must enter as three distinct people.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "adapt", "rationale": "Orientation, table setting, sitting, and cup lifting need distinct event roles despite the repeated waw pulse.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "defer", "rationale": "The opening must establish stable participant IDs before the exact marking is designed.", "human_review": null}
+      ],
+      "editable_elements": ["Room word and locative", "numeral construction", "plural morphology", "event-role analysis", "name spelling after owner review"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person only; no plural or trio construction."},
+        {"record_id": "ja.lexeme.contact_cup", "record_revision": 1, "sense_id": "ja.lexeme.contact_cup.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Cup only; plural and possession remain unresolved."},
+        {"record_id": "ja.lexeme.hebrew_heder_room", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_heder_room.sense.room", "relationship": "donor_lead", "coverage": "donor_only", "note": "Room donor only."},
+        {"record_id": "ja.lexeme.hebrew_shulhan_table", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_shulhan_table.sense.table", "relationship": "donor_lead", "coverage": "donor_only", "note": "Table donor only."}
+      ],
+      "gaps": ["three", "contact room", "contact table", "human plural", "sit", "raise or lift", "narrative opener"],
+      "departure_policy": "The trio, gathering, table, and cups are protected; Mara versus extant Maala requires an explicit owner decision."
+    },
+    {
+      "segment_id": "wll.02",
+      "order": 2,
+      "section": "blackout_and_freeze",
+      "source_locator": "§0 Hebrew paragraph 1 line 2 / Quasitranslation paragraph 1 line 2",
+      "extant_hebrew": "וַיִּכְבּוּ הָאוֹרוֹת פִּתְאֹם, וַיֶּחְשַׁךְ הַוִיגְוָאמִינְק, וַיַּעַמְדוּ דּוּם.",
+      "english_quasitranslation": "And the lights went out at once, and the room-place became dark, and standing-still happened.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "The blackout initiates the title's sequence of failed and restored light.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "Light failure, darkness, and group freeze create a sharp three-beat reversal.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The group reaction must identify all three experiencers rather than hide them in an impersonal gloss.", "human_review": null}
+      ],
+      "editable_elements": ["Result-state construction", "collective agreement", "standing-still wording"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light noun; extinguishing, plural, and darkness remain unresolved."},
+        {"record_id": "ja.lexeme.hebrew_heder_room", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_heder_room.sense.room", "relationship": "donor_lead", "coverage": "donor_only", "note": "Room donor only."}
+      ],
+      "gaps": ["light plural", "go out", "suddenly", "dark", "stand still", "group agreement"],
+      "departure_policy": "The sudden blackout and frozen collective reaction are protected."
+    },
+    {
+      "segment_id": "wll.03",
+      "order": 3,
+      "section": "phone_light_collision",
+      "source_locator": "§0 Hebrew paragraph 2 / Quasitranslation paragraph 2",
+      "extant_hebrew": "וַיֵּרָם טֵלֶפּוּן לְאוֹר, וַיַּךְ אוֹר־טֵלֶפּוּן אֶת יוֹוָא; וַיִּמְצְמֵץ, וַיִּדָּחֵף, וַיִּפָּגַע בֶּרֶךְ בַּשֻּׁלְחָן, וַיִּקְפְּצוּ כּוֹסוֹת.",
+      "english_quasitranslation": "And a phone was raised for light, and phone-light struck that-one^o, and blinking happened, and lurching happened, and a knee met the table, and cups jumped.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "The first improvised light immediately makes the room worse.", "human_review": null},
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "Beam, blink, lurch, knee, and jumping cups form the first compact cascade.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The phone holder and struck participant must remain distinguishable through the following zero-subject actions.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "The causal clauses must advance rapidly and in order.", "human_review": null}
+      ],
+      "editable_elements": ["Phone-light compound headedness", "agent of raise", "center shift", "all verb morphology"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light can head a future phone-light formation; that compound is not yet built."},
+        {"record_id": "ja.lexeme.hebrew_shulhan_table", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_shulhan_table.sense.table", "relationship": "donor_lead", "coverage": "donor_only", "note": "Table donor only."},
+        {"record_id": "ja.lexeme.contact_cup", "record_revision": 1, "sense_id": "ja.lexeme.contact_cup.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Cup contact candidate."}
+      ],
+      "gaps": ["phone", "phone-light formation", "raise", "strike", "blink", "lurch", "knee", "jump", "participant agreement"],
+      "departure_policy": "The phone-light causal gag and its sequence are protected."
+    },
+    {
+      "segment_id": "wll.04",
+      "order": 4,
+      "section": "candle_and_alarm",
+      "source_locator": "§0 Hebrew paragraph 3 / Quasitranslation paragraph 3",
+      "extant_hebrew": "וַיְּבַקֵּשׁ יוֹ נֵר, וַיַּךְ גַּפְרוּר, וַתִּזְעַק אַזְעָקַת־עָשָׁן, וַיָּסֹב קוֹלָהּ אֶת כֻּלָּם.",
+      "english_quasitranslation": "And this-one^p sought a candle, and a match was struck, and the smoke alarm cried out, and its cry turned them all.",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.modern_biblical_contrast", "disposition": "preserve", "rationale": "Formal narrative cadence magnifies an ordinary smoke-alarm mishap.", "human_review": null},
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "A practical response creates a louder collective problem.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "Human, alarm, its cry, and collective object must remain distinct arguments.", "human_review": null}
+      ],
+      "editable_elements": ["Candle seeker identity", "passive agent", "alarm personification and noun class"],
+      "current_record_links": [],
+      "gaps": ["candle", "match", "smoke", "alarm", "cry", "turn", "collective object"],
+      "departure_policy": "Candle, match, alarm, and communal reaction are protected."
+    },
+    {
+      "segment_id": "wll.05",
+      "order": 5,
+      "section": "breaker_and_wrong_door",
+      "source_locator": "§0 Hebrew paragraph 4 / Quasitranslation paragraph 4",
+      "extant_hebrew": "וַיָּקָם יוֹ לְעֶזְרָה, וַיֵּלֶךְ אֶל הַמַּפְסֵק, וַיִּפְתַּח דֶּלֶטִינְק שְׁגוּיָה, וַיִּפְּלוּ מְעִילִים עָלָיו, וַיִּלָּחֶם בַּשְּׂרָוָלִים בַּחֹשֶׁךְ.",
+      "english_quasitranslation": "And this-one^p rose to help, and went toward the breaker, and opened the wrong door-place, and coats fell upon this-one^p, and wrestling happened with sleeves in the dark.",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.modern_biblical_contrast", "disposition": "preserve", "rationale": "Heroic cadence collapsing into closet slapstick is central to the tone.", "human_review": null},
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "The breaker attempt must become a coat-and-sleeve struggle.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "An overt center shift should establish the participant who owns the coat arc.", "human_review": null}
+      ],
+      "editable_elements": ["Exact helper identity", "center-shift morphology", "door locative", "coat sense", "all predicates"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_delet_door", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_delet_door.sense.door", "relationship": "donor_lead", "coverage": "donor_only", "note": "Door donor only."},
+        {"record_id": "ja.lexeme.contact_dress_coat", "record_revision": 1, "sense_id": "ja.lexeme.contact_dress_coat.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Dress/coat contact candidate with sense breadth still provisional."},
+        {"record_id": "ja.lexeme.munsee_aa_go", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aa_go.sense.go", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound go donor, not a usable predicate."}
+      ],
+      "gaps": ["rise", "help", "breaker", "go paradigm", "open", "wrong", "fall", "sleeve", "wrestle", "dark"],
+      "departure_policy": "The well-intended breaker attempt and coat struggle are protected."
+    },
+    {
+      "segment_id": "wll.06",
+      "order": 6,
+      "section": "lantern_and_shadows",
+      "source_locator": "§0 Hebrew paragraph 5 / Quasitranslation paragraph 5",
+      "extant_hebrew": "וַיָּבוֹא פָּנַאס, וַיֻּדְלַק, וַיִּבְרַק כְּאַזְהָרָה; וַיִּקְפְּצוּ צְלָלִים, וַיִּרְדְּפוּ פָּנִים נָעִים.",
+      "english_quasitranslation": "And a lantern came, and it was lit, and it flashed like a warning; and shadows leapt, and moving faces chased.",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "Lantern light fragments people into warning flashes and shadows.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "adapt", "rationale": "Arrival, lighting, and flash advance; the chasing image may be a resultant depiction.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "A suppressed lighting agent must remain licensed rather than disappear to avoid tracking.", "human_review": null}
+      ],
+      "editable_elements": ["Lantern source", "passive agent", "who or what chases", "event versus depiction analysis"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_paa_come", "record_revision": 2, "sense_id": "ja.lexeme.munsee_paa_come.sense.come", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound come donor only."}
+      ],
+      "gaps": ["lantern", "light or ignite", "flash", "warning", "shadow", "leap", "face", "move", "chase"],
+      "departure_policy": "Lantern, warning flash, and pursuing-shadow image are protected; exact chaser semantics may be clarified."
+    },
+    {
+      "segment_id": "wll.07",
+      "order": 7,
+      "section": "spoon_and_pot_crescendo",
+      "source_locator": "§0 Hebrew paragraph 6 / Quasitranslation paragraph 6",
+      "extant_hebrew": "וַיָּרָץ יוֹ תַּחַת הָאַזְעָקָה, וַיָּנֵף בְּמַגֶּבֶת, וַיַּךְ בְּמַתְלֵה כַּפּוֹת, וַיִּנַחְקוֹהֻמִיּוּ הַכַּפּוֹת, וַיִּפֹּל מִכְסֶה, וַיִּרְעַם, וַיִּגַּעַשׁ הַסִּיר וַיִּגְּלֹשׁ.",
+      "english_quasitranslation": "And this-one^p ran beneath the alarm, and fanned with a towel, and struck the spoon hanger, and the spoons rang/sang (naxkoohumeew), and a lid fell, and clanging happened, and the pot boiled and spilled.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "This is the eight-beat sonic peak and the spoons' ring/sing is a cross-song motif.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "The causal congestion must remain rapid and cumulative.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The human center must remain recoverable while successive objects become subjects.", "human_review": null},
+        {"function_id": "wll.fn.coparent_engine", "disposition": "defer", "rationale": "A future contact predicate may host the narrative chain, but the legacy hybrid shape proves nothing.", "human_review": null}
+      ],
+      "editable_elements": ["Human participant assignment", "towel source", "ring/sing coinage or borrowing", "all object classes"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Independently attested listed vocal-sing stem; no metallic sound sense."},
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "Usable for vocal singing, but not yet for inanimate spoons or ringing."},
+        {"record_id": "ja.lexeme.munsee_wesapakwiiwan_cloth", "record_revision": 3, "sense_id": "ja.lexeme.munsee_wesapakwiiwan_cloth.sense.cloth", "relationship": "donor_lead", "coverage": "donor_only", "note": "Cloth does not automatically mean towel."}
+      ],
+      "gaps": ["run", "alarm", "fan", "towel", "spoon", "hanger", "resonant-object ring/sing extension", "inanimate subject licensing", "lid", "pot", "boil", "spill"],
+      "departure_policy": "The sound escalation and singing-spoons image are protected; the legacy root is not."
+    },
+    {
+      "segment_id": "wll.08",
+      "order": 8,
+      "section": "shining_path_and_double_slide",
+      "source_locator": "§0 Hebrew paragraph 7 / Quasitranslation paragraph 7",
+      "extant_hebrew": "וַיָּרָץ מְבּוּי עַל הָרִצְפָּה, וַיַּעַשׂ תְּמָקָאן מַבְרִיק; וַיִּדְרֹךְ יוֹוָא בּוֹ, וַיִּגְלַשׁ, וַיֵּשֶׁב קָשֶׁה, וַיִּצְחַק, וַיָּקוּם, וַיִּגְלַשׁ עוֹד.",
+      "english_quasitranslation": "And water (mbúy) ran across the floor, and it made a shining path (tëmakàn); and that-one^o stepped into it, and sliding happened, and hard-sitting happened, and laughter happened, and rising happened, and sliding happened again.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "The spill becomes a glittering path, continuing the title's light motif.", "human_review": null},
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "Hard landing, self-laughter, recovery, and immediate second slide form the comic peak.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The same participant must remain recoverable through both slides.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "The eight actions must retain their quick causal order.", "human_review": null}
+      ],
+      "editable_elements": ["Water and path forms", "participant assignment", "road-to-path extension", "all predicates"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_mayim", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_mayim.sense.water", "relationship": "donor_lead", "coverage": "donor_only", "note": "Water donor only."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor cannot silently become puddle-path."}
+      ],
+      "gaps": ["contact water", "floor", "shining path", "step", "slide", "sit hard", "laugh", "rise", "again"],
+      "departure_policy": "The shining-path metaphor and double slide are nonnegotiable identity elements."
+    },
+    {
+      "segment_id": "wll.09",
+      "order": 9,
+      "section": "coats_wet_and_scattered_tools",
+      "source_locator": "§0 Hebrew paragraph 8 / Quasitranslation paragraph 8",
+      "extant_hebrew": "וַיִּמָּלֵט יוֹ מִן הַמְּעִילִים, וַיָּרָץ חָזָר, וַיִּמְצָא רַגְלוֹ אֶת הַרָטוֹב, וַיַּחְלִיק, וַיָּעֻפוּ כֵּלָיו, וַיִּתְפַּזְּרוּ כַּאֲסוּנַאק.",
+      "english_quasitranslation": "And this-one^p escaped the coats, and hurried back, and a foot found the wet, and slipping happened, and tools flew, and they scattered like stones^pl (asun-ak).",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "The coat plot must collide with the spill and scattered-tool plot.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "This segment must overtly split the coat participant from the later tool participant or revise the final tableau.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "Escape, return, slip, flight, and scatter remain cumulative.", "human_review": null}
+      ],
+      "editable_elements": ["Exact participant split", "tools versus utensils", "stone plural", "simile wording"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_dress_coat", "record_revision": 1, "sense_id": "ja.lexeme.contact_dress_coat.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Coat contact candidate."},
+        {"record_id": "ja.lexeme.munsee_asen_stone", "record_revision": 4, "sense_id": "ja.lexeme.munsee_asen_stone.sense.stone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Stone donor with no established plural here."},
+        {"record_id": "ja.morpheme.munsee_plural_ak", "record_revision": 4, "sense_id": "ja.morpheme.munsee_plural_ak.sense.animate_plural", "relationship": "conflict_probe", "coverage": "conflict", "note": "Animate plural is unlicensed on the stone donor."}
+      ],
+      "gaps": ["escape", "hurry back", "foot", "wet", "slip", "tool", "fly", "scatter", "valid stone plural"],
+      "departure_policy": "The participant discontinuity must be resolved explicitly; the current yo chain is not acceptable."
+    },
+    {
+      "segment_id": "wll.10",
+      "order": 10,
+      "section": "lantern_under_couch",
+      "source_locator": "§0 Hebrew paragraph 9 / Quasitranslation paragraph 9",
+      "extant_hebrew": "וַיִּכְרַע יוֹ לְקַבֵּץ, וַיִּתְגַּלְגֵּל הַפָּנַאס, וַיַּבְרֵק תַּחַת הַסַּפָּה, וַיָּאֶר מִלְּמַטָּה קַרְסֻלַּיִם, וַיִּרְקְדוּ בְּלִי רָצוֹן.",
+      "english_quasitranslation": "And this-one^p knelt to gather, and the lantern rolled, and it flashed under the couch, and it lit ankles from below, and dancing happened without intention.",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "Low lantern light fragments the people one last time before full illumination.", "human_review": null},
+        {"function_id": "wll.fn.sound_slapstick", "disposition": "preserve", "rationale": "The involuntary ankle dance provides a small visual beat before the reveal.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The kneeler and whose ankles dance must be explicit in the event ledger.", "human_review": null}
+      ],
+      "editable_elements": ["Participant assignment", "lantern form", "whose ankles", "event-versus-depiction analysis"],
+      "current_record_links": [],
+      "gaps": ["kneel", "gather", "lantern", "roll", "flash", "couch", "ankle", "below", "dance", "involuntary"],
+      "departure_policy": "The low-angle lantern and involuntary dance are protected."
+    },
+    {
+      "segment_id": "wll.11",
+      "order": 11,
+      "section": "power_return_and_tableau",
+      "source_locator": "§0 Hebrew paragraph 10 line 1 / Quasitranslation paragraph 10 line 1",
+      "extant_hebrew": "וַיָּשָׁב הַכֹּחַ פִּתְאֹם, וַיֵּאֹרוּ הָאוֹרוֹת, וַיִּגָּלוּ בַּוִיגְוָאמִינְק: יוֹוָא עַל הָרִצְפָּה, וְיוֹ אָחוּז בְּמְעִיל, וְעוֹד יוֹוָא כֹּרֵעַ בֵּין כֵּלִים, וְהַסִּיר שׁוֹרֵק מֵעַל הַשָּׂפָה.",
+      "english_quasitranslation": "And the power returned suddenly, and the lights came on, and they were revealed in the room-place: that-one^o on the floor, and this-one^p clutching a coat, and another that-one^o kneeling among tools, and the pot hissing over the edge.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.light_escalation", "disposition": "preserve", "rationale": "Restored light finally reveals whole people rather than fragments.", "human_review": null},
+        {"function_id": "wll.fn.reveal_tableau", "disposition": "preserve", "rationale": "The four-part freeze-frame is the title's payoff.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "A, B, and C must be independently recoverable; PROX/OBV/OBV alone fails.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "adapt", "rationale": "Power and light advance the chain; the colon introduces a resultant tableau rather than four new events.", "human_review": null},
+        {"function_id": "wll.fn.coparent_engine", "disposition": "defer", "rationale": "This is the mandatory integration test for event role and participant status.", "human_review": null}
+      ],
+      "editable_elements": ["Participant markers", "room locative", "tableau clause type", "lexical forms"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light noun; power return, plural, illumination, and reveal syntax remain gaps."},
+        {"record_id": "ja.lexeme.hebrew_heder_room", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_heder_room.sense.room", "relationship": "donor_lead", "coverage": "donor_only", "note": "Room donor only."},
+        {"record_id": "ja.lexeme.contact_dress_coat", "record_revision": 1, "sense_id": "ja.lexeme.contact_dress_coat.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Coat contact candidate."}
+      ],
+      "gaps": ["power", "light plural and illuminate", "return", "reveal", "floor", "clutch", "kneel", "tool", "pot", "hiss", "edge", "multiple-obviative solution"],
+      "departure_policy": "The tableau is nearly invariant at the semantic level and is a mandatory ambiguity-failure test."
+    },
+    {
+      "segment_id": "wll.12",
+      "order": 12,
+      "section": "shared_look_and_laugh",
+      "source_locator": "§0 Hebrew paragraph 10 line 2 / Quasitranslation paragraph 10 line 2",
+      "extant_hebrew": "וַיִּרְאוּ יוֹ בְּיוֹוָא, וַיִּצְחְקוּ.",
+      "english_quasitranslation": "And looking happened—this-one at that-one—and laughter happened.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.shared_laughter", "disposition": "preserve", "rationale": "Two short beats release the accumulated tension through affection.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The revision must decide whether the look is binary, reciprocal, or collective.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "preserve", "rationale": "The short look-and-laugh closure contrasts with the preceding congestion.", "human_review": null}
+      ],
+      "editable_elements": ["Binary versus reciprocal look", "group laughter", "participant statuses"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound look-at-someone stem; no reciprocal or contact paradigm."}
+      ],
+      "gaps": ["contact look", "reciprocal or collective construction", "laugh"],
+      "departure_policy": "Shared looking and laughter remain the emotional resolution."
+    },
+    {
+      "segment_id": "wll.13",
+      "order": 13,
+      "section": "habitual_coda",
+      "source_locator": "§0 Hebrew final paragraph / Quasitranslation final paragraph",
+      "extant_hebrew": "וְהָיָה כָּל־פַּעַם אֲשֶׁר יִרְעֲדוּ הָאוֹרוֹת מִכָּאן וָהָלְאָה—וְאָחֲזוּ כּוֹסוֹתֵיהֶם, וְעָמְדוּ רָחוֹק מִן הַכִּירָה, וְהִבִּיטוּ יוֹ בְּיוֹוָא, וְצָחֲקוּ.",
+      "english_quasitranslation": "And it shall be that whenever the lights tremble thereafter—they shall seize their cups, and they shall stand far from the stove, and they shall look one upon another, and they shall laugh.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "wll.fn.event_to_custom", "disposition": "preserve", "rationale": "This nonnegotiable coda converts the one-time fiasco into remembered custom.", "human_review": null},
+        {"function_id": "wll.fn.shared_laughter", "disposition": "preserve", "rationale": "Cup-grabbing, distance, looking, and laughter become the standing affectionate response.", "human_review": null},
+        {"function_id": "wll.fn.foreground_pulse", "disposition": "adapt", "rationale": "The cadence must become more measured than the main incident.", "human_review": null},
+        {"function_id": "wll.fn.participant_tracking", "disposition": "adapt", "rationale": "The grammar must say whether the trio becomes a collective proximate group or retains individual statuses.", "human_review": null},
+        {"function_id": "wll.fn.coparent_engine", "disposition": "preserve", "rationale": "This is the key wayyiqtol-derived to weqatal-derived plus participant-tracking interaction test.", "human_review": null}
+      ],
+      "editable_elements": ["Exact coda morphology", "collective participant treatment", "whenever construction", "individual predicate forms"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light noun; plural and tremble predicate remain unresolved."},
+        {"record_id": "ja.lexeme.contact_cup", "record_revision": 1, "sense_id": "ja.lexeme.contact_cup.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Cup is the only usable contact candidate in the coda."},
+        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Look-at-someone donor only."}
+      ],
+      "gaps": ["weqatal-derived frame", "whenever", "lights tremble", "thereafter", "seize", "cup plural and possession", "stand far", "stove", "reciprocal look", "laugh"],
+      "departure_policy": "The event-to-custom transition and its four recurring responses may not be removed or reduced to generic futurity."
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "wll.req.foreground_chain",
+      "kind": "construction",
+      "priority": "D1",
+      "segment_ids": ["wll.01", "wll.02", "wll.03", "wll.04", "wll.05", "wll.06", "wll.07", "wll.08", "wll.09", "wll.10", "wll.11", "wll.12"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Design a wayyiqtol-derived foreground chain that distinguishes advancing events from orientation, result states, depictions, and tableaux.",
+      "acceptance_condition": "Short chains pass interruption, negation, background, resumption, and event-order tests before the full song uses them."
+    },
+    {
+      "requirement_id": "wll.req.recurring_frame",
+      "kind": "construction",
+      "priority": "D1",
+      "segment_ids": ["wll.13"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Design a weqatal-derived consequence or recurring frame distinct from ordinary coordination and generic future marking.",
+      "acceptance_condition": "The construction cleanly maps one narrated incident into a triggered recurring response and has negative tests against simple sequence."
+    },
+    {
+      "requirement_id": "wll.req.participant_system",
+      "kind": "discourse",
+      "priority": "D1",
+      "segment_ids": ["wll.01", "wll.03", "wll.04", "wll.05", "wll.06", "wll.07", "wll.08", "wll.09", "wll.10", "wll.11", "wll.12", "wll.13"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Source and adapt proximate/obviative marking, verbal agreement, scope, center shifts, reintroduction, and collective reference.",
+      "acceptance_condition": "Every third-person argument remains recoverable through two-person chains and overt center shifts before three-person work begins."
+    },
+    {
+      "requirement_id": "wll.req.multiple_obviatives",
+      "kind": "discourse",
+      "priority": "D2",
+      "segment_ids": ["wll.09", "wll.10", "wll.11", "wll.12", "wll.13"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Provide agreement, indexing, ordering, strategic reanchors, or another explicit mechanism that distinguishes two simultaneous obviatives.",
+      "acceptance_condition": "A blind participant-recovery test uniquely identifies Mara, Jules, and Tina in the reveal; PROX/OBV/OBV without further information fails."
+    },
+    {
+      "requirement_id": "wll.req.opening_lexicon",
+      "kind": "lexicon",
+      "priority": "immediate_n1",
+      "segment_ids": ["wll.01", "wll.02"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person contact candidate."},
+        {"record_id": "ja.lexeme.contact_cup", "record_revision": 1, "sense_id": "ja.lexeme.contact_cup.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Cup contact candidate."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light contact candidate; blackout predicates remain missing."},
+        {"record_id": "ja.lexeme.hebrew_heder_room", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_heder_room.sense.room", "relationship": "donor_lead", "coverage": "donor_only", "note": "Room donor."},
+        {"record_id": "ja.lexeme.hebrew_shulhan_table", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_shulhan_table.sense.table", "relationship": "donor_lead", "coverage": "donor_only", "note": "Table donor."}
+      ],
+      "requirement": "Cover the ordinary gathering and blackout vocabulary without prematurely forcing the full song into N1 grammar.",
+      "acceptance_condition": "Person, trio, room, table, sit, cup, light, dark, suddenness, and standing can be described through independently reviewed entries."
+    },
+    {
+      "requirement_id": "wll.req.modern_light_lexicon",
+      "kind": "lexicon",
+      "priority": "N2",
+      "segment_ids": ["wll.02", "wll.03", "wll.04", "wll.05", "wll.06", "wll.08", "wll.10", "wll.11", "wll.13"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_dress_coat", "record_revision": 1, "sense_id": "ja.lexeme.contact_dress_coat.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Coat contact candidate."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Ordinary physical light candidate; compounds, sources, and light-event predicates remain incomplete."},
+        {"record_id": "ja.lexeme.hebrew_delet_door", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_delet_door.sense.door", "relationship": "donor_lead", "coverage": "donor_only", "note": "Door donor."},
+        {"record_id": "ja.lexeme.hebrew_mayim", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_mayim.sense.water", "relationship": "donor_lead", "coverage": "donor_only", "note": "Water donor."}
+      ],
+      "requirement": "Cover light, power, phone, candle, match, smoke alarm, breaker, door, coat, lantern, floor, couch, stove, and related actions as ordinary modern vocabulary.",
+      "acceptance_condition": "Modern concepts are transparent contact-language formations or sourced inheritances, never projected into fictional antiquity."
+    },
+    {
+      "requirement_id": "wll.req.slapstick_predicates",
+      "kind": "lexicon",
+      "priority": "D1",
+      "segment_ids": ["wll.03", "wll.04", "wll.05", "wll.06", "wll.07", "wll.08", "wll.09", "wll.10", "wll.12"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Source supports vocal singing, not metallic ringing."},
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "The contact predicate needs a separate literary inanimate extension before the spoons can use it."},
+        {"record_id": "ja.lexeme.munsee_pen_aw_look_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pen_aw_look_animate.sense.look_at_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Look-at-someone donor."},
+        {"record_id": "ja.lexeme.munsee_paa_come", "record_revision": 2, "sense_id": "ja.lexeme.munsee_paa_come.sense.come", "relationship": "donor_lead", "coverage": "donor_only", "note": "Come donor."},
+        {"record_id": "ja.lexeme.munsee_aa_go", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aa_go.sense.go", "relationship": "donor_lead", "coverage": "donor_only", "note": "Go donor."}
+      ],
+      "requirement": "Build the motion, impact, sound, spill, slip, scatter, gather, look, and laugh predicate inventory with explicit valency and participant behavior.",
+      "acceptance_condition": "The causal sequences compose without impersonal glosses hiding unresolved subjects."
+    },
+    {
+      "requirement_id": "wll.req.event_participant_ledger",
+      "kind": "discourse",
+      "priority": "D2",
+      "segment_ids": ["wll.01", "wll.02", "wll.03", "wll.04", "wll.05", "wll.06", "wll.07", "wll.08", "wll.09", "wll.10", "wll.11", "wll.12", "wll.13"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Annotate every clause with event role, arguments, participant identity, discourse status, center shift, and transition function.",
+      "acceptance_condition": "A reviewer can reconstruct the event order and every human participant without consulting the English story."
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "test_id": "wll.test.two_person_chain",
+      "earliest_level": "D1",
+      "requirement_ids": ["wll.req.foreground_chain", "wll.req.participant_system"],
+      "condition": "A short foreground chain with two third persons advances time and preserves agent and patient identities through a center shift.",
+      "status": "blocked",
+      "blocker": "Neither narrative construction nor participant paradigm exists."
+    },
+    {
+      "test_id": "wll.test.three_person_recovery",
+      "earliest_level": "D2",
+      "requirement_ids": ["wll.req.participant_system", "wll.req.multiple_obviatives", "wll.req.event_participant_ledger"],
+      "condition": "A blind recovery test uniquely identifies Mara, Jules, and Tina at every human action and in the final tableau.",
+      "status": "blocked",
+      "blocker": "The legacy binary yo/yowa labels fail this test and no replacement system exists."
+    },
+    {
+      "test_id": "wll.test.event_to_custom",
+      "earliest_level": "D2",
+      "requirement_ids": ["wll.req.foreground_chain", "wll.req.recurring_frame", "wll.req.participant_system"],
+      "condition": "A completed incident transitions into a triggered recurring response without collapsing the chain and frame into ordinary coordination or generic tense.",
+      "status": "blocked",
+      "blocker": "The wayyiqtol-derived and weqatal-derived constructions remain unimplemented."
+    },
+    {
+      "test_id": "wll.test.reveal_negative",
+      "earliest_level": "D2",
+      "requirement_ids": ["wll.req.multiple_obviatives", "wll.req.event_participant_ledger"],
+      "condition": "An analysis that labels the tableau only PROX, OBV, and another OBV is rejected as ambiguous.",
+      "status": "pending",
+      "blocker": "The negative fixture can be formalized before the positive morphology is selected."
+    },
+    {
+      "test_id": "wll.test.full_anchor",
+      "earliest_level": "R1",
+      "requirement_ids": ["wll.req.foreground_chain", "wll.req.recurring_frame", "wll.req.participant_system", "wll.req.multiple_obviatives", "wll.req.opening_lexicon", "wll.req.modern_light_lexicon", "wll.req.slapstick_predicates", "wll.req.event_participant_ledger"],
+      "condition": "A complete revision preserves modern humor, escalating light and sound, rapid event movement, recoverable participants, tableau, laughter, and event-to-custom coda with all dependencies explicit.",
+      "status": "blocked",
+      "blocker": "Most lexicon and every defining narrative construction remain incomplete."
+    }
+  ],
+  "updated_at": "2026-07-13T07:40:00-04:00",
+  "change_note": "Created the line-complete narrative ledger, preserved the three-person recoverability failure, and linked the independently supported sing and light candidates without licensing the spoons' extension."
+}

@@ -88,6 +88,13 @@ This combined capability is an accepted design requirement. The exact affixes, c
 
 Their themes, voice, imagery, narrative ambitions, and existing wording are continuity constraints and revision input. Their individual spellings, translations, analyses, and grammatical forms remain reviewable and are not canonical merely because they predate the structured corpus.
 
+The executable continuity ledgers in `data/creative-anchors/` make this an
+operational requirement. Before an epoch selects vocabulary or grammar, it must
+inspect the relevant song segments and protected functions. After construction,
+it must revision-pin any usable candidates, record remaining gaps, and state why
+an attractive legacy form was retained, adapted, deferred, or rejected. The
+ledger guides design; it never becomes linguistic source evidence.
+
 ## 6. Writing-system goals
 
 Hebrew script is a defining representation of the language. The project will also maintain a canonical romanization and explicit morphological analysis so that neither Hebrew-script fluency nor font behavior is required to inspect a record.

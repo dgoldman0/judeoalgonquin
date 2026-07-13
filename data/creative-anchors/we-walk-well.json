@@ -1,0 +1,1017 @@
+{
+  "schema_version": 1,
+  "anchor_id": "anchor.we_walk_well",
+  "title": "We Walk Well",
+  "source_file": "references/creative-anchors/we-walk-well.md",
+  "source_block": {
+    "start_heading": "## 0. song",
+    "sha256": "c57be5890cd388be616514bda91c8a7bb1db66dd435ce27aa8025c941a9e3aa7",
+    "paired_line_count": 28
+  },
+  "revision": 1,
+  "status": "active_design_constraint",
+  "authority": "project_owner_direction",
+  "source_honesty": {
+    "claim_status": "creative_input_not_source_attestation",
+    "preserved_text_verbatim": true,
+    "note": "The song preserves artistic intent and legacy wording. It does not attest a historical form, donor origin, paradigm, or contact-language rule."
+  },
+  "protected_functions": [
+    {
+      "function_id": "www.fn.communal_voice",
+      "category": "voice",
+      "description": "Sustain a warm first-person-plural voice in which ordinary people eat, travel, work, remember, help, build, and sing together."
+    },
+    {
+      "function_id": "www.fn.chorus_thesis",
+      "category": "semantic",
+      "description": "Preserve the compact title thesis that the community walks well and does so with good hearts."
+    },
+    {
+      "function_id": "www.fn.path_light",
+      "category": "imagery",
+      "description": "Keep road or path and light mutually reinforcing: the way glows, gives light, and carries communal movement."
+    },
+    {
+      "function_id": "www.fn.perception_song",
+      "category": "structure",
+      "description": "Retain the recurring hear or listen, see, and sing triad, including balanced parallel phrases."
+    },
+    {
+      "function_id": "www.fn.household_warmth",
+      "category": "imagery",
+      "description": "Preserve the intimate household field of bread, shared eating, home, kindled light, and tender ordinary detail."
+    },
+    {
+      "function_id": "www.fn.work_mutual_aid",
+      "category": "semantic",
+      "description": "Make care, craft, making, reciprocal help, and collective building central rather than decorative."
+    },
+    {
+      "function_id": "www.fn.generational_tenderness",
+      "category": "imagery",
+      "description": "Keep hope in the young, the child bringing bread, and the little bear resting by the community's shoes."
+    },
+    {
+      "function_id": "www.fn.civic_expansion",
+      "category": "narrative",
+      "description": "Retain the widening movement from homes and roads to gardens, assemblies, house-to-house kindness, and a whole people continuing together."
+    },
+    {
+      "function_id": "www.fn.lyrical_parallelism",
+      "category": "register",
+      "description": "Preserve repetition, parallel breath groups, and a lyrical or ritual-style cadence without claiming an authentic prayer or ceremony."
+    },
+    {
+      "function_id": "www.fn.coparent_texture",
+      "category": "register",
+      "description": "Require substantial Hebrew/Judean and source-specific regional Algonquian contribution across the finished song, not decorative token mixing."
+    }
+  ],
+  "identity_invariants": [
+    "The revised song remains recognizably about a community that walks well through shared food, work, memory, aid, light, and song.",
+    "The four-line chorus remains the identity kernel and the final chorus repeats the accepted revision exactly unless the owner approves a deliberate final variation.",
+    "Bread in homes, fruit on a glowing road, paths beside waters, hammer sound and one breath, the child with bread, the bear by shoes, roof-light, box gardens, and house-to-house kindness remain available as protected images.",
+    "The song retains genuine co-parent texture and does not collapse into Hebrew with decorative regional nouns or regional morphology merely written in Hebrew script."
+  ],
+  "editable_elements": [
+    "Every legacy spelling, segmentation, donor attribution, person marker, locative, diminutive, agreement ending, and word-order analysis may be replaced after review.",
+    "Local English syntax may change for singability or honest grammar when the protected image, voice, and structural function remain accounted for.",
+    "No claimed meter or syllable count is protected until accepted romanization and stress make metrical comparison possible."
+  ],
+  "legacy_form_inventory": [
+    {
+      "surface_form": "מְנוֹקוְויֵין",
+      "working_reading": null,
+      "function": "Legacy refrain intended to mean 'we walk well.'",
+      "segment_ids": ["www.c.01", "www.b.01", "www.fc.01"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.munsee_pemsii_walk",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "The reviewed item is a bound AI stem and does not license this legacy surface or first-person plural."
+        },
+        {
+          "record_id": "ja.lexeme.munsee_welesii_good",
+          "record_revision": 4,
+          "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "The positive-quality stem is a research input, not evidence that walk and good may be fused."
+        },
+        {
+          "record_id": "ja.sentence.anchor_we_walk_with_goodwill",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The provisional replacement is wəlew kəpəməsiihna, literally 'goodwill, we-including-you walk'."
+        }
+      ],
+      "note": "The legacy surface remains unsupported; its protected function now has a separately analyzed contact-language candidate."
+    },
+    {
+      "surface_form": "נַחְקוֹהוּמ־",
+      "working_reading": null,
+      "function": "Recurring sing or ring motif joining voices, brightness, hammer sound, and metallic resonance.",
+      "segment_ids": ["www.v1.02", "www.c.04", "www.b.02", "www.fc.04"],
+      "disposition": "regularize_after_research",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.munsee_naxkoohamaa_sing",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "O'Meara independently attests naxkooh(ə)meew 'he sings' and analyzes /naxkooh-əm-aa-w/ as a listed AI form."
+        },
+        {
+          "record_id": "ja.lexeme.contact_sing_ai",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_sing_ai.sense.sing",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The contact stem naxkoohəmaa- preserves the independently supported vocal-sing continuity."
+        }
+      ],
+      "note": "The recurring root can now survive revision for vocal singing, but the legacy u-vowel, varying endings, and ring/metallic extension remain unsupported."
+    },
+    {
+      "surface_form": "פּוּנְדַאוּו־",
+      "working_reading": null,
+      "function": "Legacy hear or listen motif.",
+      "segment_ids": ["www.v1.02", "www.c.03", "www.b.02", "www.fc.03"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.munsee_pent_aw_hear_animate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "This bound animate-object stem is a possible source input; it does not yet mean reciprocal listen."
+        }
+      ],
+      "note": "Object class, reciprocity, and first-person number must be designed independently."
+    },
+    {
+      "surface_form": "וָאפּוּו־",
+      "working_reading": null,
+      "function": "Legacy see motif in the perception triad.",
+      "segment_ids": ["www.v1.03", "www.c.03", "www.fc.03"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.munsee_nee_m_see_inanimate",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "The reviewed inanimate-object stem may supply a future predicate but does not validate the legacy form."
+        }
+      ],
+      "note": "The song also contains recognizable Hebrew רואים; the eventual allocation must be a conscious contact-language decision."
+    },
+    {
+      "surface_form": "בְּוִיקְוָאהְמֶנְק",
+      "working_reading": null,
+      "function": "Legacy home locative recurring in domestic lines.",
+      "segment_ids": ["www.v1.01", "www.v3.03"],
+      "disposition": "defer_pending_grammar",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.hebrew_bayit",
+          "record_revision": 3,
+          "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "A reviewed Hebrew home donor exists, but no contact home or locative construction does."
+        },
+        {
+          "record_id": "ja.morpheme.munsee_iikaan_dwelling_final",
+          "record_revision": 2,
+          "sense_id": "ja.morpheme.munsee_iikaan_dwelling_final.sense.dwelling",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "The bound dwelling final is not a free word or evidence for legacy -menk."
+        }
+      ],
+      "note": "Do not revive the old Hebrew-preposition plus alleged locative analysis without a sourced and tested contact construction."
+    },
+    {
+      "surface_form": "אֲפוּאָן",
+      "working_reading": null,
+      "function": "Legacy word used for bread.",
+      "segment_ids": ["www.v1.01", "www.v3.01"],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.contact_bread",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bread.sense.primary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Contact lexem is currently the sourced bread candidate; the legacy form remains preserved only as creative input."
+        }
+      ],
+      "note": "The song must keep bread, but this surface receives no grandfathered status."
+    },
+    {
+      "surface_form": "מַחְקְשׁוּאֵשׁ",
+      "working_reading": null,
+      "function": "Legacy little-bear expression.",
+      "segment_ids": ["www.v3.04"],
+      "disposition": "defer_pending_grammar",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.munsee_maxkw_bear",
+          "record_revision": 2,
+          "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear",
+          "relationship": "donor_lead",
+          "coverage": "donor_only",
+          "note": "The bear donor is reviewed, but no diminutive or contact inheritance record exists."
+        }
+      ],
+      "note": "The shape may not be cited as proof of a diminutive suffix."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "www.v1.01",
+      "order": 1,
+      "section": "verse_1",
+      "source_locator": "§0 Hebrew Verse 1 line 1 / English Verse 1 line 1",
+      "extant_hebrew": "נֶמִּיצוּ אֲפוּאָן בְּוִיקְוָאהְמֶנְק,",
+      "english_quasitranslation": "We eat bread within our homes,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The opening must establish the shared we.", "human_review": null},
+        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Bread and plural shared homes are a defining opening image.", "human_review": null},
+        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "The final line must use independently supported contact forms and morphology.", "human_review": null}
+      ],
+      "editable_elements": ["Eat paradigm", "first-person plural marking", "home lexeme", "possession", "locative realization"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct semantic coverage for bread only."},
+        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Research lead for home; not usable contact vocabulary yet."}
+      ],
+      "gaps": ["eat", "first-person plural", "our homes", "locative"],
+      "departure_policy": "Bread, shared eating, and homes may change wording only with an explicit continuity rationale."
+    },
+    {
+      "segment_id": "www.v1.02",
+      "order": 2,
+      "section": "verse_1",
+      "source_locator": "§0 Hebrew Verse 1 line 2 / English Verse 1 line 2",
+      "extant_hebrew": "נוֹקְסוּ נַחְקוֹהוּמִיוּ וְנוֹפּוּנְדַאוּוִין.",
+      "english_quasitranslation": "sing softly and hear one another.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Singing and listening are reciprocal communal acts.", "human_review": null},
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "This establishes the auditory half of the recurring triad.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "Balanced sound predicates should survive in grammar the language can actually support.", "human_review": null}
+      ],
+      "editable_elements": ["All legacy roots", "coordinator", "reciprocal marking", "person and number endings"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "The independently sourced vocal-sing stem preserves the legacy naxkooh shape without licensing ring."},
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies an inclusive first-plural vocal-sing clause; softness and coordination remain open."},
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "A bound research lead for hear someone, not listen reciprocally."}
+      ],
+      "gaps": ["softly", "listen", "reciprocal", "coordination of singing and mutual listening"],
+      "departure_policy": "Gentle vocal singing and mutual listening are protected; metallic ringing requires a separate honest extension."
+    },
+    {
+      "segment_id": "www.v1.03",
+      "order": 3,
+      "section": "verse_1",
+      "source_locator": "§0 Hebrew Verse 1 line 3 / English Verse 1 line 3",
+      "extant_hebrew": "רוֹאִים וָאפּוּוֹא דֶּרֶךְ הַיּוֹם,",
+      "english_quasitranslation": "We see the path of the day,",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "The line turns household vision into daily movement along a path.", "human_review": null},
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Seeing must remain part of the recurring triad.", "human_review": null}
+      ],
+      "editable_elements": ["Path versus road wording", "day expression", "predicate source allocation", "construct syntax"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound inanimate-object see stem."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Reviewed only as road; poetic path extension is not yet licensed."},
+        {"record_id": "ja.lexeme.hebrew_hayom_today", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_hayom_today.sense.today", "relationship": "donor_lead", "coverage": "donor_only", "note": "A time-expression lead, not yet a contact form."}
+      ],
+      "gaps": ["first-person plural see construction", "path-of-day relation"],
+      "departure_policy": "Seeing, path, and day remain linked even if the exact metaphor is recast."
+    },
+    {
+      "segment_id": "www.v1.04",
+      "order": 4,
+      "section": "verse_1",
+      "source_locator": "§0 Hebrew Verse 1 line 4 / English Verse 1 line 4",
+      "extant_hebrew": "וּבְנַעַר ווּסְקְסוּ מַחֲלִים תִּקְוָה.",
+      "english_quasitranslation": "and in the young, new hope begins to move.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "The verse must close with hope carried by a younger generation.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "adapt", "rationale": "The communal voice widens to include those who will continue it.", "human_review": null}
+      ],
+      "editable_elements": ["Youth expression", "new", "hope", "inchoative motion", "all legacy syntax"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_yeled_child", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child", "relationship": "donor_lead", "coverage": "donor_only", "note": "Child is only a partial age-domain lead."},
+        {"record_id": "ja.lexeme.contact_small", "record_revision": 1, "sense_id": "ja.lexeme.contact_small.sense.primary", "relationship": "conflict_probe", "coverage": "conflict", "note": "Contact katan is explicitly physical size and must not be silently broadened to young."}
+      ],
+      "gaps": ["young or youth", "new", "hope", "begin", "inchoative movement"],
+      "departure_policy": "Youth and newly moving hope are protected even if the final metaphor changes."
+    },
+    {
+      "segment_id": "www.c.01",
+      "order": 5,
+      "section": "chorus",
+      "source_locator": "§0 Hebrew Chorus line 1 / English Chorus line 1",
+      "extant_hebrew": "מְנוֹקוְויֵין בְּלֵב־טוֹב,",
+      "english_quasitranslation": "We walk well with good hearts;",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "This is the title and ethical thesis of the song.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The hook belongs to an inclusive community voice.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "The revised hook must remain compact and singable after grammar is known.", "human_review": null}
+      ],
+      "editable_elements": ["Exact predicate formation", "heart construction", "first-person plural morphology"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provisional chorus kernel: wəlew kəpəməsiihna."},
+        {"record_id": "ja.lexeme.contact_welew_goodwill", "record_revision": 1, "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Mixed wəl-lew formation supplies benevolent good-heart disposition."},
+        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk stem."},
+        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality stem."},
+        {"record_id": "ja.lexeme.hebrew_lev_heart", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart", "relationship": "donor_lead", "coverage": "donor_only", "note": "Heart donor; no contact heart record yet."}
+      ],
+      "gaps": ["metrical testing against the melody", "owner review of the goodwill adaptation before song-level acceptance"],
+      "departure_policy": "Any departure from the wording 'we walk well with good hearts' requires owner review."
+    },
+    {
+      "segment_id": "www.c.02",
+      "order": 6,
+      "section": "chorus",
+      "source_locator": "§0 Hebrew Chorus line 2 / English Chorus line 2",
+      "extant_hebrew": "לָנַוּ תְּפַקְסְנִיוּ אוֹר־דֶּרֶךְ.",
+      "english_quasitranslation": "the road itself gives us light.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Personified road-given light is the chorus's central image.", "human_review": null},
+        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "Agency and participant marking must emerge from explicit contact grammar, not an animacy stereotype.", "human_review": null}
+      ],
+      "editable_elements": ["Give versus illuminate construction", "road agency", "first-person object", "word order"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Narrow contact road noun; metaphorical path remains unlicensed."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical contact light noun; the road-given metaphor belongs to the future construction."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+      ],
+      "gaps": ["give or illuminate", "road agency or bearer relation", "first-person plural object"],
+      "departure_policy": "The road must remain a source or bearer of light, though the exact valency may change."
+    },
+    {
+      "segment_id": "www.c.03",
+      "order": 7,
+      "section": "chorus",
+      "source_locator": "§0 Hebrew Chorus line 3 / English Chorus line 3",
+      "extant_hebrew": "פּוּנְדַאוּוֵינָה, וָאפּוּוֵינָה,",
+      "english_quasitranslation": "We listen, we see,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The paired perceptions are a required chorus response.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Two balanced predicates and their order are part of the hook.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Both predicates belong to the shared we.", "human_review": null}
+      ],
+      "editable_elements": ["All legacy endings", "object class", "listen versus hear derivation"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear-someone donor lead."},
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See-something donor lead."}
+      ],
+      "gaps": ["contact listen", "contact see", "first-person plural", "parallel predicate construction"],
+      "departure_policy": "Listening must precede seeing unless a deliberate songwriting revision is approved."
+    },
+    {
+      "segment_id": "www.c.04",
+      "order": 8,
+      "section": "chorus",
+      "source_locator": "§0 Hebrew Chorus line 4 / English Chorus line 4",
+      "extant_hebrew": "וְאָנוּ נַחְקוֹהוּמֵינָה אוֹר.",
+      "english_quasitranslation": "and we sing brightness forward.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Singing completes the hear-see-sing triad.", "human_review": null},
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Brightness is carried outward or onward.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "adapt", "rationale": "The line should release the chorus forward without hiding direction inside an unparsed form.", "human_review": null}
+      ],
+      "editable_elements": ["Sing predicate", "brightness expression", "forward or outward direction", "coordinator"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive vocal-sing clause; it does not yet take brightness as an object or result."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical light only; brightness-forward remains constructional work."},
+        {"record_id": "ja.lexeme.munsee_naxkoohamaa_sing", "record_revision": 1, "sense_id": "ja.lexeme.munsee_naxkoohamaa_sing.sense.sing", "relationship": "donor_lead", "coverage": "donor_only", "note": "Independent source support for the listed vocal-sing stem."}
+      ],
+      "gaps": ["brightness result or object relation", "forward directional construction", "chorus coordinator"],
+      "departure_policy": "The closing lift from collective singing into outward brightness is protected."
+    },
+    {
+      "segment_id": "www.v2.01",
+      "order": 9,
+      "section": "verse_2",
+      "source_locator": "§0 Hebrew Verse 2 line 1 / English Verse 2 line 1",
+      "extant_hebrew": "נִיקְהִי כֵּלִים קוּלְמַלַאהְקַאנִין,",
+      "english_quasitranslation": "We tend our tools and shape our craft,",
+      "repeat_of": null,
+      "identity_priority": "strong",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Care for tools and craft makes work part of communal identity.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The work belongs to the collective speaker.", "human_review": null}
+      ],
+      "editable_elements": ["Every legacy form", "two-predicate syntax", "tool possession"],
+      "current_record_links": [],
+      "gaps": ["tool", "tend", "shape", "craft", "first-person plural"],
+      "departure_policy": "Care, tools, making, and craft must remain present even if divided across lines."
+    },
+    {
+      "segment_id": "www.v2.02",
+      "order": 10,
+      "section": "verse_2",
+      "source_locator": "§0 Hebrew Verse 2 line 2 / English Verse 2 line 2",
+      "extant_hebrew": "נוֹפֵל פְּרִי בַּדֶּרֶךְ מֵאִיר אוֹר.",
+      "english_quasitranslation": "carry fruit along the road that glows.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Fruit moving along a glowing road links nourishment, work, and light.", "human_review": null},
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "adapt", "rationale": "Carrying harvest or food continues the work motif.", "human_review": null}
+      ],
+      "editable_elements": ["Agency", "carry predicate", "relative clause", "glow predicate"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_fruit", "record_revision": 1, "sense_id": "ja.lexeme.contact_fruit.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct semantic coverage for fruit."},
+        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct coverage for literal road in this line."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies physical light; a glow predicate or relative construction is still required."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+      ],
+      "gaps": ["carry", "glow or illuminate predicate", "relative or participial structure"],
+      "departure_policy": "The extant Hebrew-shaped nofel does not mean carry; the mismatch must remain visible until rewritten."
+    },
+    {
+      "segment_id": "www.v2.03",
+      "order": 11,
+      "section": "verse_2",
+      "source_locator": "§0 Hebrew Verse 2 line 3 / English Verse 2 line 3",
+      "extant_hebrew": "זוֹכְרִים לְשֶׁוִית סְוַאנְאֶנְק,",
+      "english_quasitranslation": "We remember the paths beside the waters,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Paths beside waters ground movement in remembered landscape.", "human_review": null},
+        {"function_id": "www.fn.civic_expansion", "disposition": "adapt", "rationale": "Shared landscape memory begins the widening from household to peoplehood.", "human_review": null}
+      ],
+      "editable_elements": ["Plurality", "beside relation", "remember predicate", "water source allocation"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_mayim", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_mayim.sense.water", "relationship": "donor_lead", "coverage": "donor_only", "note": "Water donor only."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road may not automatically broaden to path."}
+      ],
+      "gaps": ["remember", "path", "water contact form", "beside", "first-person plural"],
+      "departure_policy": "Collective memory, paths, and waters are protected."
+    },
+    {
+      "segment_id": "www.v2.04",
+      "order": 12,
+      "section": "verse_2",
+      "source_locator": "§0 Hebrew Verse 2 line 4 / English Verse 2 line 4",
+      "extant_hebrew": "וּנוֹתְנִים עֶזְרָה בְּפַּחְקְוֵינָה.",
+      "english_quasitranslation": "and we lend one another our help.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Reciprocal help states the song's communal ethic directly.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The line must express aid within the speaking group.", "human_review": null}
+      ],
+      "editable_elements": ["Lend versus give", "reciprocal morphology", "possessive expression"],
+      "current_record_links": [],
+      "gaps": ["help", "give or lend", "reciprocal", "our", "first-person plural"],
+      "departure_policy": "Mutual aid may not be reduced to generic generosity without reciprocal force."
+    },
+    {
+      "segment_id": "www.b.01",
+      "order": 13,
+      "section": "bridge",
+      "source_locator": "§0 Hebrew Bridge line 1 / English Bridge line 1",
+      "extant_hebrew": "מְנוֹקוְויֵין, מְנוֹקוְויֵין,",
+      "english_quasitranslation": "We walk well, we walk well—",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "The bridge turns the title thesis into a chant.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Immediate exact repetition is the audience-participation peak.", "human_review": null}
+      ],
+      "editable_elements": ["Revised title form", "punctuation and breath length"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the current title-clause candidate; exact repetition still needs metrical and owner review."},
+        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk donor only."},
+        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality donor only."}
+      ],
+      "gaps": ["metrical realization of the repeated title clause", "owner review of the goodwill adaptation"],
+      "departure_policy": "The bridge retains exact repetition of the revised title phrase."
+    },
+    {
+      "segment_id": "www.b.02",
+      "order": 14,
+      "section": "bridge",
+      "source_locator": "§0 Hebrew Bridge line 2 / English Bridge line 2",
+      "extant_hebrew": "פּוּנְדַאוּוֵינָה וְנַחְקוֹהוּמֵינָה.",
+      "english_quasitranslation": "we hear and we sing.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The bridge compresses hearing and song into a paired response.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The pair should remain balanced and concise.", "human_review": null}
+      ],
+      "editable_elements": ["Both predicate forms", "coordinator", "person morphology"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct vocal-sing coverage."},
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Supplies the inclusive sing half of the pair."},
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear donor lead only."}
+      ],
+      "gaps": ["contact hear", "coordinator and balanced first-person-plural realization"],
+      "departure_policy": "Hearing and singing remain paired."
+    },
+    {
+      "segment_id": "www.b.03",
+      "order": 15,
+      "section": "bridge",
+      "source_locator": "§0 Hebrew Bridge line 3 / English Bridge line 3",
+      "extant_hebrew": "רוֹאִים בְּאוֹר, בּוֹנִים בְּיַחַד,",
+      "english_quasitranslation": "We see in the light, we build together,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Seeing moves directly into collective action.", "human_review": null},
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Building together is the bridge's constructive turn.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The two balanced clauses are structurally important.", "human_review": null}
+      ],
+      "editable_elements": ["Hebrew-shaped plural presents", "light phrase", "together expression"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage."},
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See donor lead only."}
+      ],
+      "gaps": ["contact see", "build", "together", "first-person plural"],
+      "departure_policy": "The movement from perception to building together must remain."
+    },
+    {
+      "segment_id": "www.b.04",
+      "order": 16,
+      "section": "bridge",
+      "source_locator": "§0 Hebrew Bridge line 4 / English Bridge line 4",
+      "extant_hebrew": "שְׁמַע־קוֹל, מַכָּה־פַּטִּישׁ, נְשִׁימָה אֶחָת.",
+      "english_quasitranslation": "hammer’s ring, breath as one.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Hammer sound joins craft and bodily unity.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Compressed percussive fragments form the bridge climax.", "human_review": null},
+        {"function_id": "www.fn.coparent_texture", "disposition": "adapt", "rationale": "Any sing/ring resonance must be independently sourced or openly coined.", "human_review": null}
+      ],
+      "editable_elements": ["The first omitted voice or sound phrase", "compound structure", "numeral agreement"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "conflict_probe", "coverage": "conflict", "note": "The contact stem is vocal sing only and cannot currently cover a hammer's ring."},
+        {"record_id": "ja.lexeme.hebrew_ehad_one", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_ehad_one.sense.one", "relationship": "donor_lead", "coverage": "donor_only", "note": "Numeral donor only; no agreement transfers."}
+      ],
+      "gaps": ["hammer", "ring or sound", "breath", "one-as-unity construction"],
+      "departure_policy": "Hammer sound and one shared breath are protected; the omitted first phrase may be restored or deliberately removed."
+    },
+    {
+      "segment_id": "www.v3.01",
+      "order": 17,
+      "section": "verse_3",
+      "source_locator": "§0 Hebrew Verse 3 line 1 / English Verse 3 line 1",
+      "extant_hebrew": "וּסְקְסוּ הַקָּטָן מֵבִיא אֲפוּאָן,",
+      "english_quasitranslation": "The small child brings bread,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "Generational continuity becomes domestic and concrete.", "human_review": null},
+        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Bread returns through the child's action.", "human_review": null}
+      ],
+      "editable_elements": ["Child form", "adjective position", "bring predicate", "definiteness and agreement"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_small", "record_revision": 1, "sense_id": "ja.lexeme.contact_small.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Physical small is semantically suitable here, pending modifier syntax."},
+        {"record_id": "ja.lexeme.hebrew_yeled_child", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yeled_child.sense.child", "relationship": "donor_lead", "coverage": "donor_only", "note": "Child donor only."},
+        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Bread contact candidate."}
+      ],
+      "gaps": ["contact child", "bring", "property-word syntax", "third-person agreement"],
+      "departure_policy": "The child bringing bread is protected."
+    },
+    {
+      "segment_id": "www.v3.02",
+      "order": 18,
+      "section": "verse_3",
+      "source_locator": "§0 Hebrew Verse 3 line 2 / English Verse 3 line 2",
+      "extant_hebrew": "נֶמִּיצוּ בַּדֶּרֶךְ יַחַד.",
+      "english_quasitranslation": "we eat together on the way.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.household_warmth", "disposition": "adapt", "rationale": "Shared food extends from home into travel.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "Eating together is a core communal act.", "human_review": null},
+        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "The road remains the place of shared movement.", "human_review": null}
+      ],
+      "editable_elements": ["Locative", "eat predicate", "together expression"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor only."}
+      ],
+      "gaps": ["eat", "together", "on the way", "first-person plural"],
+      "departure_policy": "Shared eating while traveling remains near the current English meaning."
+    },
+    {
+      "segment_id": "www.v3.03",
+      "order": 19,
+      "section": "verse_3",
+      "source_locator": "§0 Hebrew Verse 3 line 3 / English Verse 3 line 3",
+      "extant_hebrew": "בְּוִיקְוָאהְמֶנְק מַדְלִיקִים אוֹר,",
+      "english_quasitranslation": "In the home we kindle light,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Home and kindled light return the song to domestic warmth.", "human_review": null},
+        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "Light now originates in home rather than only on the road.", "human_review": null}
+      ],
+      "editable_elements": ["Home word", "locative", "kindle predicate", "person marking"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage; kindling remains a predicate gap."},
+        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor only."}
+      ],
+      "gaps": ["contact home", "locative", "kindle", "first-person plural"],
+      "departure_policy": "Home and kindled light remain linked."
+    },
+    {
+      "segment_id": "www.v3.04",
+      "order": 20,
+      "section": "verse_3",
+      "source_locator": "§0 Hebrew Verse 3 line 4 / English Verse 3 line 4",
+      "extant_hebrew": "וּמַחְקְשׁוּאֵשׁ נוֹחַ עַל־נַעַלֵינוּ.",
+      "english_quasitranslation": "and a little bear rests by our shoes.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.generational_tenderness", "disposition": "preserve", "rationale": "The whimsical little bear is a distinctive memory hook.", "human_review": null},
+        {"function_id": "www.fn.household_warmth", "disposition": "preserve", "rationale": "Shoes and rest keep the image intimate and ordinary.", "human_review": null}
+      ],
+      "editable_elements": ["Diminutive", "rest predicate", "shoe plural and possession", "by relation"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.munsee_maxkw_bear", "record_revision": 2, "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bear donor only."},
+        {"record_id": "ja.lexeme.munsee_mahksen_shoe", "record_revision": 2, "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe", "relationship": "donor_lead", "coverage": "donor_only", "note": "Shoe donor only."}
+      ],
+      "gaps": ["contact bear", "contact shoe", "diminutive", "rest", "our", "by"],
+      "departure_policy": "Little bear, rest, and proximity to the community's shoes are protected."
+    },
+    {
+      "segment_id": "www.v4.01",
+      "order": 21,
+      "section": "verse_4",
+      "source_locator": "§0 Hebrew Verse 4 line 1 / English Verse 4 line 1",
+      "extant_hebrew": "גַּגִּים לוֹכְדִים אוֹר, גַּנִּים בְּאַרְגַּזִּין צוֹמְחִים,",
+      "english_quasitranslation": "Roofs gather light, gardens rise from boxes,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "The song widens into modern communal infrastructure and cultivation.", "human_review": null},
+        {"function_id": "www.fn.path_light", "disposition": "adapt", "rationale": "Roofs gather the recurring light motif.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "Two balanced visual clauses are a defining shape.", "human_review": null}
+      ],
+      "editable_elements": ["Gather versus catch", "rise versus grow", "all plural morphology"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Direct physical-light coverage; gathering light remains constructional."}
+      ],
+      "gaps": ["roof", "gather light", "garden", "box", "grow or rise"],
+      "departure_policy": "Roof-light and box-garden images remain paired."
+    },
+    {
+      "segment_id": "www.v4.02",
+      "order": 22,
+      "section": "verse_4",
+      "source_locator": "§0 Hebrew Verse 4 line 2 / English Verse 4 line 2",
+      "extant_hebrew": "עֲצוֹת מְסַדְּרוֹת מִדָּה לְמַדּוּר.",
+      "english_quasitranslation": "assemblies arrange balance for the hearth.",
+      "repeat_of": null,
+      "identity_priority": "supporting",
+      "disposition": "freely_edit_with_continuity",
+      "function_dispositions": [
+        {"function_id": "www.fn.civic_expansion", "disposition": "defer", "rationale": "Community deliberation and balanced shared life are important, but the intended image is semantically unstable and needs owner confirmation.", "human_review": null}
+      ],
+      "editable_elements": ["Assembly versus council", "balance versus measure", "hearth versus dwelling", "the entire line wording"],
+      "current_record_links": [],
+      "gaps": ["confirmed intended meaning", "assembly or council", "arrange", "balance", "hearth"],
+      "departure_policy": "A material reinterpretation requires owner confirmation before translation effort."
+    },
+    {
+      "segment_id": "www.v4.03",
+      "order": 23,
+      "section": "verse_4",
+      "source_locator": "§0 Hebrew Verse 4 line 3 / English Verse 4 line 3",
+      "extant_hebrew": "בֵּין וִיקְוָאהְמֶנְק לְוִיקְוָאהְמֶנְק קוֹלֵא חֶסֶד,",
+      "english_quasitranslation": "From house to house kindness calls,",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "Kindness crossing households connects private warmth to public community.", "human_review": null},
+        {"function_id": "www.fn.household_warmth", "disposition": "adapt", "rationale": "The recurring home image becomes distributive and outward-moving.", "human_review": null}
+      ],
+      "editable_elements": ["Distributive construction", "call predicate", "kindness lexical source", "home realization"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor only."}
+      ],
+      "gaps": ["contact home", "house-to-house", "kindness", "call"],
+      "departure_policy": "House-to-house motion and personified kindness are protected."
+    },
+    {
+      "segment_id": "www.v4.04",
+      "order": 24,
+      "section": "verse_4",
+      "source_locator": "§0 Hebrew Verse 4 line 4 / English Verse 4 line 4",
+      "extant_hebrew": "וְהָעָם הוֹלֵךְ בְּמַעֲשֵׂה יָדַיִם וְקוֹלוֹת.",
+      "english_quasitranslation": "and the people go on—hands at work, voices joined.",
+      "repeat_of": null,
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.civic_expansion", "disposition": "preserve", "rationale": "A whole people continuing together completes the widening arc.", "human_review": null},
+        {"function_id": "www.fn.work_mutual_aid", "disposition": "preserve", "rationale": "Hands at work and joined voices unite craft and song.", "human_review": null},
+        {"function_id": "www.fn.communal_voice", "disposition": "preserve", "rationale": "The lyric we becomes an explicitly named people without losing collectivity.", "human_review": null}
+      ],
+      "editable_elements": ["People or community noun", "go-on predicate", "joined relation", "plural morphology"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person is not yet a collective people noun or plural construction."},
+        {"record_id": "ja.lexeme.hebrew_yad_upper_limb", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_yad_upper_limb.sense.hand", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hand donor only."},
+        {"record_id": "ja.lexeme.munsee_aa_go", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aa_go.sense.go", "relationship": "donor_lead", "coverage": "donor_only", "note": "Deferred bound go stem; not a usable predicate."}
+      ],
+      "gaps": ["people or community", "go on", "work or deed", "voice", "join"],
+      "departure_policy": "People continuing with working hands and joined voices is protected."
+    },
+    {
+      "segment_id": "www.fc.01",
+      "order": 25,
+      "section": "final_chorus",
+      "source_locator": "§0 Hebrew Final Chorus line 1 / English Final Chorus line 1",
+      "extant_hebrew": "מְנוֹקוְויֵין בְּלֵב־טוֹב,",
+      "english_quasitranslation": "We walk well with good hearts;",
+      "repeat_of": "www.c.01",
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.chorus_thesis", "disposition": "preserve", "rationale": "The final chorus returns to the unchanged title thesis.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+      ],
+      "editable_elements": ["Inherited from www.c.01"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Must revision-pin the same realization as www.c.01 if accepted."}
+      ],
+      "gaps": ["Inherited metrical and owner review from www.c.01"],
+      "departure_policy": "This segment inherits the accepted revision of www.c.01."
+    },
+    {
+      "segment_id": "www.fc.02",
+      "order": 26,
+      "section": "final_chorus",
+      "source_locator": "§0 Hebrew Final Chorus line 2 / English Final Chorus line 2",
+      "extant_hebrew": "לָנַוּ תְּפַקְסְנִיוּ אוֹר־דֶּרֶךְ.",
+      "english_quasitranslation": "the road itself gives us light.",
+      "repeat_of": "www.c.02",
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "The road-light image returns unchanged.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+      ],
+      "editable_elements": ["Inherited from www.c.02"],
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same road candidate as www.c.02."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.02."}
+      ],
+      "gaps": ["Inherited road-light relation from www.c.02"],
+      "departure_policy": "This segment inherits the accepted revision of www.c.02."
+    },
+    {
+      "segment_id": "www.fc.03",
+      "order": 27,
+      "section": "final_chorus",
+      "source_locator": "§0 Hebrew Final Chorus line 3 / English Final Chorus line 3",
+      "extant_hebrew": "פּוּנְדַאוּוֵינָה, וָאפּוּוֵינָה,",
+      "english_quasitranslation": "We listen, we see,",
+      "repeat_of": "www.c.03",
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "The paired perceptions return unchanged.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+      ],
+      "editable_elements": ["Inherited from www.c.03"],
+      "current_record_links": [],
+      "gaps": ["Inherited from www.c.03"],
+      "departure_policy": "This segment inherits the accepted revision of www.c.03."
+    },
+    {
+      "segment_id": "www.fc.04",
+      "order": 28,
+      "section": "final_chorus",
+      "source_locator": "§0 Hebrew Final Chorus line 4 / English Final Chorus line 4",
+      "extant_hebrew": "וְאָנוּ נַחְקוֹהוּמֵינָה אוֹר.",
+      "english_quasitranslation": "and we sing brightness forward.",
+      "repeat_of": "www.c.04",
+      "identity_priority": "identity_critical",
+      "disposition": "preserve_function_rebuild_form",
+      "function_dispositions": [
+        {"function_id": "www.fn.perception_song", "disposition": "preserve", "rationale": "Singing completes the repeated triad.", "human_review": null},
+        {"function_id": "www.fn.path_light", "disposition": "preserve", "rationale": "Brightness moves forward again.", "human_review": null},
+        {"function_id": "www.fn.lyrical_parallelism", "disposition": "preserve", "rationale": "The revised text must repeat the corresponding chorus line exactly.", "human_review": null}
+      ],
+      "editable_elements": ["Inherited from www.c.04"],
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Must revision-pin the same sing realization as www.c.04 if accepted."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Same light candidate as www.c.04."}
+      ],
+      "gaps": ["Inherited brightness-forward construction from www.c.04"],
+      "departure_policy": "This segment inherits the accepted revision of www.c.04."
+    }
+  ],
+  "requirements": [
+    {
+      "requirement_id": "www.req.chorus_walk_well",
+      "kind": "construction",
+      "priority": "immediate_n1",
+      "segment_ids": ["www.c.01", "www.b.01", "www.fc.01"],
+      "status": "contact_candidate",
+      "current_record_links": [
+        {"record_id": "ja.sentence.anchor_we_walk_with_goodwill", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_walk_with_goodwill.sense.chorus_kernel", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Provisional compact clause with explicit literal and idiomatic analyses."},
+        {"record_id": "ja.lexeme.contact_welew_goodwill", "record_revision": 1, "sense_id": "ja.lexeme.contact_welew_goodwill.sense.goodwill", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "New mixed good-heart formation with bounded ethical sense."},
+        {"record_id": "ja.lexeme.munsee_pemsii_walk", "record_revision": 4, "sense_id": "ja.lexeme.munsee_pemsii_walk.sense.walk", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound walk stem."},
+        {"record_id": "ja.lexeme.munsee_welesii_good", "record_revision": 4, "sense_id": "ja.lexeme.munsee_welesii_good.sense.positive_quality", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bound positive-quality stem."},
+        {"record_id": "ja.lexeme.hebrew_lev_heart", "record_revision": 2, "sense_id": "ja.lexeme.hebrew_lev_heart.sense.heart", "relationship": "donor_lead", "coverage": "donor_only", "note": "Heart donor."}
+      ],
+      "requirement": "Design a compact first-person-plural expression for walking well with good hearts without fusing unlicensed stems.",
+      "acceptance_condition": "Every morpheme, valency decision, and semantic relation is explicit; the result remains singable enough for later metrical work."
+    },
+    {
+      "requirement_id": "www.req.first_plural",
+      "kind": "morphology",
+      "priority": "immediate_n1",
+      "segment_ids": ["www.v1.01", "www.v1.02", "www.c.01", "www.c.03", "www.c.04", "www.v2.01", "www.v2.04", "www.b.02", "www.b.03", "www.v3.02"],
+      "status": "contact_candidate",
+      "current_record_links": [
+        {"record_id": "ja.construction.contact_ai_first_plural", "record_revision": 1, "sense_id": "ja.construction.contact_ai_first_plural.sense.independent_affirmative", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Six explicit cells cover walk, be-good, and sing in inclusive and exclusive forms."}
+      ],
+      "requirement": "Establish an explicit first-person-plural predicate strategy and distinguish it from possession and object marking.",
+      "acceptance_condition": "At least three unrelated predicates compose without an ad hoc ending, and inclusive or exclusive ambiguity is documented."
+    },
+    {
+      "requirement_id": "www.req.road_light",
+      "kind": "lexicon",
+      "priority": "immediate_n1",
+      "segment_ids": ["www.v1.03", "www.c.02", "www.v2.02", "www.v2.03", "www.v3.02", "www.fc.02"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_road", "record_revision": 1, "sense_id": "ja.lexeme.contact_road.sense.road", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact road is available with a deliberately narrow literal sense."},
+        {"record_id": "ja.lexeme.contact_light", "record_revision": 1, "sense_id": "ja.lexeme.contact_light.sense.physical", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Contact light is available; road-given illumination remains unbuilt."},
+        {"record_id": "ja.lexeme.munsee_aanay_road", "record_revision": 2, "sense_id": "ja.lexeme.munsee_aanay_road.sense.road", "relationship": "donor_lead", "coverage": "donor_only", "note": "Road donor; path extension unresolved."}
+      ],
+      "requirement": "Create contact-language coverage for road or path, light or brightness, glow, and the relation by which the road bears or gives light.",
+      "acceptance_condition": "Road and light work both literally and poetically without falsely broadening a source gloss."
+    },
+    {
+      "requirement_id": "www.req.perception_song",
+      "kind": "lexicon",
+      "priority": "immediate_n1",
+      "segment_ids": ["www.v1.02", "www.v1.03", "www.c.03", "www.c.04", "www.b.02", "www.b.03", "www.fc.03", "www.fc.04"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_sing_ai", "record_revision": 1, "sense_id": "ja.lexeme.contact_sing_ai.sense.sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Vocal-sing contact predicate is available."},
+        {"record_id": "ja.sentence.anchor_we_sing_inclusive", "record_revision": 1, "sense_id": "ja.sentence.anchor_we_sing_inclusive.sense.we_sing", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Inclusive sing clause is available; hear/listen and see remain unresolved."},
+        {"record_id": "ja.lexeme.munsee_pent_aw_hear_animate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_pent_aw_hear_animate.sense.hear_someone", "relationship": "donor_lead", "coverage": "donor_only", "note": "Hear animate-object lead."},
+        {"record_id": "ja.lexeme.munsee_nee_m_see_inanimate", "record_revision": 2, "sense_id": "ja.lexeme.munsee_nee_m_see_inanimate.sense.see_something", "relationship": "donor_lead", "coverage": "donor_only", "note": "See inanimate-object lead."}
+      ],
+      "requirement": "Build contact predicates for hear or listen, see, and sing, plus a parallel clause strategy and any reciprocal distinction.",
+      "acceptance_condition": "The chorus pair and bridge pair are compositional, object-class behavior is explicit, and no legacy ending is inferred from recurrence."
+    },
+    {
+      "requirement_id": "www.req.household_core",
+      "kind": "lexicon",
+      "priority": "immediate_n1",
+      "segment_ids": ["www.v1.01", "www.v3.01", "www.v3.03", "www.v3.04"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_bread", "record_revision": 1, "sense_id": "ja.lexeme.contact_bread.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Bread is the sole usable contact candidate in this requirement."},
+        {"record_id": "ja.lexeme.hebrew_bayit", "record_revision": 3, "sense_id": "ja.lexeme.hebrew_bayit.sense.dwelling", "relationship": "donor_lead", "coverage": "donor_only", "note": "Home donor."},
+        {"record_id": "ja.lexeme.munsee_maxkw_bear", "record_revision": 2, "sense_id": "ja.lexeme.munsee_maxkw_bear.sense.bear", "relationship": "donor_lead", "coverage": "donor_only", "note": "Bear donor."},
+        {"record_id": "ja.lexeme.munsee_mahksen_shoe", "record_revision": 2, "sense_id": "ja.lexeme.munsee_mahksen_shoe.sense.shoe", "relationship": "donor_lead", "coverage": "donor_only", "note": "Shoe donor."}
+      ],
+      "requirement": "Cover eat, home, possession, location, child, bring, bear, shoe, diminutive, rest, and already-candidate bread.",
+      "acceptance_condition": "The household lines can be composed without treating a bound dwelling final as a free home or inventing legacy locatives and diminutives."
+    },
+    {
+      "requirement_id": "www.req.work_help",
+      "kind": "lexicon",
+      "priority": "N2",
+      "segment_ids": ["www.v2.01", "www.v2.04", "www.b.03", "www.b.04", "www.v4.04"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Cover tools, care, craft, shape, work, build, together, help, reciprocity, hammer, ring, voice, and join.",
+      "acceptance_condition": "Work and aid remain ordinary communal language rather than an elevated semantic silo."
+    },
+    {
+      "requirement_id": "www.req.lyric_register",
+      "kind": "register",
+      "priority": "D1",
+      "segment_ids": ["www.c.01", "www.c.02", "www.c.03", "www.c.04", "www.b.01", "www.b.02", "www.b.03", "www.b.04", "www.fc.01", "www.fc.02", "www.fc.03", "www.fc.04"],
+      "status": "gap",
+      "current_record_links": [],
+      "requirement": "Define a lyrical or ritual-style register with parallelism and repetition that does not claim liturgical or ceremonial authenticity.",
+      "acceptance_condition": "The register licenses the song's compressed fragments and parallel clauses while remaining explicitly constructed and culturally honest."
+    },
+    {
+      "requirement_id": "www.req.civic_lexicon",
+      "kind": "lexicon",
+      "priority": "D1",
+      "segment_ids": ["www.v4.01", "www.v4.02", "www.v4.03", "www.v4.04"],
+      "status": "partial",
+      "current_record_links": [
+        {"record_id": "ja.lexeme.contact_person", "record_revision": 1, "sense_id": "ja.lexeme.contact_person.sense.primary", "relationship": "contact_candidate", "coverage": "contact_candidate", "note": "Person does not yet supply collective people or community."}
+      ],
+      "requirement": "Cover roofs, light gathering, box gardens, deliberative community, balance, shared hearth, kindness, house-to-house distribution, people, work, and joined voices.",
+      "acceptance_condition": "The final verse widens coherently from household life to public community, with the ambiguous assembly line reviewed by the owner."
+    }
+  ],
+  "acceptance_tests": [
+    {
+      "test_id": "www.test.chorus_identity",
+      "earliest_level": "N2",
+      "requirement_ids": ["www.req.chorus_walk_well", "www.req.first_plural", "www.req.road_light", "www.req.perception_song"],
+      "condition": "A four-line provisional chorus preserves walk-well/good-heart, road-given light, listen-see parallelism, and singing brightness forward with every form dependency explicit.",
+      "status": "blocked",
+      "blocker": "The first line, plural system, road/light nouns, and sing clause now exist; listen-see, road-given illumination, brightness-forward, and full metrical review remain."
+    },
+    {
+      "test_id": "www.test.final_repeat",
+      "earliest_level": "N2",
+      "requirement_ids": ["www.req.chorus_walk_well", "www.req.lyric_register"],
+      "condition": "The four final-chorus realizations revision-pin and exactly repeat the accepted first chorus unless a human-approved variation exists.",
+      "status": "blocked",
+      "blocker": "No revised chorus realization exists."
+    },
+    {
+      "test_id": "www.test.household_warmth",
+      "earliest_level": "N2",
+      "requirement_ids": ["www.req.household_core", "www.req.first_plural"],
+      "condition": "At least the opening meal and one child/bear line compose through reviewed dependencies while retaining the song's domestic warmth.",
+      "status": "blocked",
+      "blocker": "Most household vocabulary and all relevant morphology remain gaps."
+    },
+    {
+      "test_id": "www.test.coparent_texture",
+      "earliest_level": "D1",
+      "requirement_ids": ["www.req.chorus_walk_well", "www.req.road_light", "www.req.perception_song", "www.req.work_help"],
+      "condition": "The revised song demonstrates productive, source-specific contributions from both parents rather than surface token alternation.",
+      "status": "blocked",
+      "blocker": "Only a small candidate contact lexicon exists, and no song-scale grammar is accepted."
+    },
+    {
+      "test_id": "www.test.full_arc",
+      "earliest_level": "R1",
+      "requirement_ids": ["www.req.household_core", "www.req.work_help", "www.req.lyric_register", "www.req.civic_lexicon"],
+      "condition": "A full revision preserves the movement from home and meal through road, craft, bridge, child/bear tenderness, and civic expansion, with all departures documented.",
+      "status": "blocked",
+      "blocker": "The lexicon, grammar, register, and owner decision on the assembly/hearth line are incomplete."
+    }
+  ],
+  "updated_at": "2026-07-13T07:40:00-04:00",
+  "change_note": "Created the line-complete ledger, linked the first hand-authored chorus candidates, and recorded which protected functions remain unsolved."
+}

@@ -26,13 +26,22 @@ SOURCES = ROOT / "references" / "sources.yaml"
 QUERIES = ROOT / "tests" / "fixtures" / "n1_core_semantic_queries.json"
 REPORT = ROOT / "docs" / "reports" / "n1-core-embedding-evaluation-2026-07-12.json"
 POLICY = ROOT / "config" / "api-budget.json"
+HISTORICAL_DATASETS = (
+    DATA / "n1-pilot.jsonl",
+    DATA / "n1-core-lexicon.jsonl",
+    DATA / "n1-core-regressions.jsonl",
+    DATA / "n1-contact-lexicon.jsonl",
+)
 
 
 class N1CoreTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         registry = load_source_registry(SOURCES)
-        cls.records = validate_records(load_records(DATA), source_registry=registry)
+        cls.records = validate_records(
+            [record for path in HISTORICAL_DATASETS for record in load_records(path)],
+            source_registry=registry,
+        )
         cls.by_id = {record["id"]: record for record in cls.records}
         cls.lexicon = validate_records(load_records(LEXICON), source_registry=registry)
         contact_ids = {record["id"] for record in load_records(CONTACT)}

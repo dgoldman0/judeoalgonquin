@@ -10,6 +10,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
+from .anchors import load_anchor_ledgers, validate_anchor_ledgers
 from .budget import (
     complete_paid_embedding_run,
     fail_paid_embedding_run,
@@ -18,6 +19,7 @@ from .budget import (
     token_upper_bound,
 )
 from .evaluate import (
+    evaluate_anchor_chorus_compositions,
     evaluate_pilot_compositions,
     evaluate_semantic_rankings,
     load_semantic_queries,
@@ -49,6 +51,7 @@ from .store import (
 
 
 DEFAULT_DATA = "data/entries"
+DEFAULT_ANCHORS = "data/creative-anchors"
 DEFAULT_DB = ".local/judeoalgonquin.sqlite3"
 DEFAULT_FIXTURE = "tests/fixtures/creative_anchor_candidates.jsonl"
 DEFAULT_SMOKE_DB = ".local/embedding-smoke.sqlite3"
@@ -94,6 +97,24 @@ def command_validate(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_validate_anchors(args: argparse.Namespace) -> int:
+    records = _records(args.data)
+    anchors = validate_anchor_ledgers(load_anchor_ledgers(args.anchors), records)
+    segment_count = sum(len(anchor["segments"]) for anchor in anchors)
+    requirement_count = sum(len(anchor["requirements"]) for anchor in anchors)
+    _print_json(
+        {
+            "valid": True,
+            "anchors": len(anchors),
+            "segments": segment_count,
+            "requirements": requirement_count,
+            "anchor_data": args.anchors,
+            "language_data": args.data,
+        }
+    )
+    return 0
+
+
 def command_build(args: argparse.Namespace) -> int:
     records = _records(args.data)
     connection = connect(args.db)
@@ -107,7 +128,10 @@ def command_build(args: argparse.Namespace) -> int:
 
 def command_evaluate(args: argparse.Namespace) -> int:
     records = _records(args.data)
-    findings = evaluate_pilot_compositions(records)
+    findings = [
+        *evaluate_pilot_compositions(records),
+        *evaluate_anchor_chorus_compositions(records),
+    ]
     _print_json(
         {
             "valid": not findings,
@@ -662,6 +686,14 @@ def build_parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate", help="validate canonical JSONL")
     validate.add_argument("--data", default=DEFAULT_DATA)
     validate.set_defaults(func=command_validate)
+
+    validate_anchors = subparsers.add_parser(
+        "validate-anchors",
+        help="validate creative-anchor continuity ledgers and language-record links",
+    )
+    validate_anchors.add_argument("--anchors", default=DEFAULT_ANCHORS)
+    validate_anchors.add_argument("--data", default=DEFAULT_DATA)
+    validate_anchors.set_defaults(func=command_validate_anchors)
 
     build = subparsers.add_parser("build", help="build or refresh the local SQLite index")
     build.add_argument("--data", default=DEFAULT_DATA)

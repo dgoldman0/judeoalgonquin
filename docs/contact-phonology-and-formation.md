@@ -102,7 +102,32 @@ The ordinary contact filter does not define the wayyiqtol–weqatal–obviation 
 
 Ordinary coordination must remain distinct from foreground-chain and consequence-frame linkers. A sound rule may not erase participant marking or the stress/morphology needed to distinguish the two Biblical-Hebrew-derived narrative constructions. The engine remains governed by [Hybrid Narrative Engine](narrative-engine.md).
 
-## 9. What the first synthesis probe can prove
+## 9. First anchor-driven morphology and synthesis
+
+The first chorus construction tranche adapts O'Meara's AI independent-order
+first-person-plural cells as transparent contact morphography:
+
+- inclusive `kə~STEM~hna`, including the addressee;
+- exclusive `nə~STEM~hna`, excluding the addressee.
+
+The careful contact candidates preserve source schwa and stem `ii` or `aa`
+before `-hna`. This is an explicit contact regularization: it does not import
+Munsee contraction, deletion, assimilation, or R30 shortening and is not a
+claim about Munsee surface pronunciation. Six cells currently cover `pəməsii-`
+walk, `wələsii-` be-good, and the listed stem `naxkoohəmaa-` sing. TA, TI,
+negation, dependent order, and narrative linking are excluded.
+
+The same tranche creates mixed `wəlew` “good heart; goodwill” from bounded
+regional-line `wəl-` positive-quality plus Hebrew-derived contact `lew` inner
+disposition. Boundary `/l-l/` reduces only in this listed word. A separate,
+lexically restricted clause frame licenses `wəlew` before one of the tested
+finite first-person-plural AI predicates,
+yielding provisional `wəlew kəpəməsiihna` “goodwill, we-including-you walk.”
+Neither the compound nor the frame is a general productive rule.
+
+See [the full manual analysis](research/we-walk-well-chorus-tranche.md).
+
+## 10. What the first synthesis probe can prove
 
 The first probe may prove that:
 

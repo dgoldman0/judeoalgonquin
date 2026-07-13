@@ -32,6 +32,40 @@ EXPECTED_PILOT_CONSTRUCTIONS = {
     "ja.sentence.n1_the_woman_is_good": {DEFINITE, AI_THIRD, CONTACT_CLAUSE},
 }
 
+ANCHOR_AI_FIRST_PLURAL = "ja.construction.contact_ai_first_plural"
+ANCHOR_GOODWILL_FRAME = "ja.construction.contact_goodwill_manner_frame"
+ANCHOR_CELL_FORMS = {
+    ("walk", "inclusive"): "kəpəməsiihna",
+    ("walk", "exclusive"): "nəpəməsiihna",
+    ("be-good", "inclusive"): "kəwələsiihna",
+    ("be-good", "exclusive"): "nəwələsiihna",
+    ("sing", "inclusive"): "kənaxkoohəmaahna",
+    ("sing", "exclusive"): "nənaxkoohəmaahna",
+}
+ANCHOR_SENTENCE_CONTRACTS = {
+    "ja.sentence.anchor_we_walk_inclusive": {
+        "predicate": "walk",
+        "stem_id": "ja.lexeme.contact_walk_ai",
+        "constructions": {ANCHOR_AI_FIRST_PLURAL},
+        "surface": "kəpəməsiihna",
+        "frame": False,
+    },
+    "ja.sentence.anchor_we_sing_inclusive": {
+        "predicate": "sing",
+        "stem_id": "ja.lexeme.contact_sing_ai",
+        "constructions": {ANCHOR_AI_FIRST_PLURAL},
+        "surface": "kənaxkoohəmaahna",
+        "frame": False,
+    },
+    "ja.sentence.anchor_we_walk_with_goodwill": {
+        "predicate": "walk",
+        "stem_id": "ja.lexeme.contact_walk_ai",
+        "constructions": {ANCHOR_AI_FIRST_PLURAL, ANCHOR_GOODWILL_FRAME},
+        "surface": "wəlew kəpəməsiihna",
+        "frame": True,
+    },
+}
+
 
 def _components(record: dict[str, Any]) -> list[dict[str, Any]]:
     composition = record.get("composition")
@@ -187,6 +221,136 @@ def evaluate_pilot_compositions(records: Sequence[dict[str, Any]]) -> list[str]:
                     findings.append(
                         f"{record_id}: pilot contact clause requires subject before predicate"
                     )
+
+    return findings
+
+
+def evaluate_anchor_chorus_compositions(
+    records: Sequence[dict[str, Any]],
+) -> list[str]:
+    """Enforce the bounded six-cell chorus paradigm and its three composed clauses."""
+
+    records_by_id = {
+        record["id"]: record
+        for record in records
+        if isinstance(record, dict) and isinstance(record.get("id"), str)
+    }
+    findings: list[str] = []
+    construction = records_by_id.get(ANCHOR_AI_FIRST_PLURAL)
+    if construction is None:
+        if any(record_id in records_by_id for record_id in ANCHOR_SENTENCE_CONTRACTS):
+            findings.append(f"{ANCHOR_AI_FIRST_PLURAL}: required by chorus sentences")
+        return findings
+
+    spec = construction.get("construction_spec")
+    if not isinstance(spec, dict) or spec.get("productivity") != "limited":
+        findings.append(
+            f"{ANCHOR_AI_FIRST_PLURAL}: the three-host candidate must remain limited"
+        )
+    paradigm = construction.get("paradigm")
+    cells = paradigm.get("cells", []) if isinstance(paradigm, dict) else []
+    actual_cells: dict[tuple[str, str], dict[str, Any]] = {}
+    for cell in cells:
+        if not isinstance(cell, dict) or not isinstance(cell.get("features"), dict):
+            continue
+        features = cell["features"]
+        key = (str(features.get("predicate")), str(features.get("clusivity")))
+        actual_cells[key] = cell
+        gloss = str(cell.get("morpheme_gloss", ""))
+        if "INCL" in gloss or "EXCL" in gloss or not gloss.startswith("PERS.PFX~"):
+            findings.append(
+                f"{ANCHOR_AI_FIRST_PLURAL}: {key!r} must not assign clusivity "
+                "to an isolated prefix"
+            )
+        meaning = str(cell.get("meaning", ""))
+        clusivity = key[1]
+        if (
+            clusivity == "inclusive"
+            and ("including the addressee" not in meaning or "excluding" in meaning)
+        ) or (
+            clusivity == "exclusive"
+            and ("excluding the addressee" not in meaning or "including" in meaning)
+        ):
+            findings.append(
+                f"{ANCHOR_AI_FIRST_PLURAL}: {key!r} clusivity and meaning must agree"
+            )
+    if set(actual_cells) != set(ANCHOR_CELL_FORMS):
+        findings.append(
+            f"{ANCHOR_AI_FIRST_PLURAL}: paradigm must contain exactly the six licensed cells"
+        )
+    for key, expected_surface in ANCHOR_CELL_FORMS.items():
+        cell = actual_cells.get(key)
+        if cell is not None and cell.get("romanization") != expected_surface:
+            findings.append(
+                f"{ANCHOR_AI_FIRST_PLURAL}: {key!r} surface must be {expected_surface}"
+            )
+
+    for record_id, contract in ANCHOR_SENTENCE_CONTRACTS.items():
+        sentence = records_by_id.get(record_id)
+        if sentence is None:
+            findings.append(f"{record_id}: required chorus composition is missing")
+            continue
+        constructions = _constructions(sentence)
+        expected_constructions = contract["constructions"]
+        if constructions != expected_constructions:
+            findings.append(
+                f"{record_id}: chorus construction declaration mismatch; "
+                f"expected={sorted(expected_constructions)!r}, actual={sorted(constructions)!r}"
+            )
+        components = _components(sentence)
+        stem_id = contract["stem_id"]
+        stem_components = [item for item in components if item.get("record_id") == stem_id]
+        if len(stem_components) != 1:
+            findings.append(
+                f"{record_id}: must contain exactly the licensed predicate stem {stem_id}"
+            )
+        surface = sentence.get("forms", {}).get("judeo_algonquin", {}).get("romanization")
+        if surface != contract["surface"]:
+            findings.append(
+                f"{record_id}: inclusive chorus surface must be {contract['surface']}"
+            )
+        expected_cell = ANCHOR_CELL_FORMS[(str(contract["predicate"]), "inclusive")]
+        if expected_cell not in str(surface):
+            findings.append(
+                f"{record_id}: selected predicate must realize the declared inclusive cell"
+            )
+        sense_text = " ".join(
+            str(value)
+            for sense in sentence.get("senses", [])
+            if isinstance(sense, dict)
+            for value in [
+                sense.get("definition", ""),
+                *sense.get("translations", {}).get("literal", []),
+            ]
+        )
+        if "excluding" in sense_text or not (
+            "includes the addressee" in sense_text or "including.you" in sense_text
+        ):
+            findings.append(
+                f"{record_id}: inclusive surface and participant meaning must agree"
+            )
+
+        if contract["frame"]:
+            frame_components = [
+                item
+                for item in components
+                if item.get("record_id") == "ja.lexeme.contact_welew_goodwill"
+            ]
+            if (
+                len(components) != 2
+                or len(frame_components) != 1
+                or components[0].get("record_id")
+                != "ja.lexeme.contact_welew_goodwill"
+                or components[0].get("realization") != "wəlew"
+            ):
+                findings.append(
+                    f"{record_id}: wəlew must be the sole first goodwill-frame element"
+                )
+        elif any(
+            item.get("record_id") == "ja.lexeme.contact_welew_goodwill"
+            for item in components
+        ):
+            findings.append(f"{record_id}: unlicensed goodwill-frame element")
 
     return findings
 

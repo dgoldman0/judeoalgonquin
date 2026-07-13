@@ -486,7 +486,7 @@
               "segmentation": {"type": "string"},
               "morpheme_gloss": {"type": "string"},
               "meaning": {"type": "string", "minLength": 1},
-              "status": {"enum": ["attested_source", "adapted_candidate", "reviewed", "canonical"]}
+              "status": {"enum": ["attested_source", "attested_pattern", "adapted_candidate", "reviewed", "canonical"]}
             }
           }
         },
