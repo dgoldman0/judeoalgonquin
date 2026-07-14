@@ -134,6 +134,26 @@ replaced. The construction means literal successful finding, not seeking,
 searching, realization, fact discovery, or intentionality, and it supplies no
 TAM, obviation, direct/inverse, or narrative behavior.
 
+**[PROPOSED] Limited domestic Absolute.** Contact `miičii-` “eat an admitted
+food,” TA `peešəw-` “bring an admitted animate-class entity,” and TI `peel-`
+“bring an admitted inanimate-class entity” each have exactly three ordinary
+cells: third singular, first-plural inclusive, and first-plural exclusive.
+Third singular requires an overt bare subject before the predicate; first
+plural has no independent pronoun. Every clause requires a following bare,
+nondefinite, class-compatible object. Eat admits `lexem` and `pri`; TA bring
+admits `adam` and `yeled`; TI bring admits `lexem`, `pri`, and `tiihinčəw`.
+Admitted count objects are singular and no object has plural marking.
+
+The contact class bridges are `a` for TA and `o` for TI. Before `o`, final
+`ii` of `miičii-` deletes while remaining visible in analytical segmentation:
+`miičii~o~w` surfaces as `miičow`; the inclusive and exclusive cells are
+`kəmiičohna` and `nəmiičohna`. The bring cells are `peešəwaw`,
+`kəpeešəwahna`, `nəpeešəwahna` and `peelow`, `kəpeelohna`, `nəpeelohna`.
+These bridges and the deletion are contact design, not detachable donor
+morphemes or predicted Munsee surfaces. Bring means accompanied transfer
+toward a contextual destination, not carry, give, fetch, take away, or encode
+a recipient, goal, source, or route.
+
 **[REJECTED] Legacy pseudo-paradigms.** The old uncited `nə-/kə-/wə-` tables,
 singular/plural collapses, and unattested suffix stacking are not imported as
 rules. This does not reject the separately sourced, bounded candidates above.
@@ -178,9 +198,35 @@ attaches to the second clause and contributes ordinary coordination only. It
 does not contribute sequence, consequence, recurrence, tense, aspect,
 foregrounding, center shift, wayyiqtol, or weqatal behavior.
 
+**[PROPOSED] Closed domestic phrases and clause extensions.** Exact `yeled
+katan` means one physically small child with noun before an invariant property
+word. It establishes neither a general adjective system nor definiteness,
+plurality, possession, comparison, agreement, youth, or affection. Exact
+`em wə-yeled` uses the existing nominal coordinator for “a mother and a child.”
+
+Postclausal Hebrew-derived `yaxad` marks joint participation by an already
+indexed first-plural subject in exactly four complete hosts: inclusive and
+exclusive eating of bread, and inclusive and exclusive eating of fruit. It
+does not introduce a comitative participant, reciprocity, simultaneity alone,
+ordinary coordination, TAM, or narrative linkage. A separate static-setting
+construction licenses exactly four combinations: child-eats-bread in a house,
+inclusive and exclusive eat-bread in a house, and inclusive eat-bread at a
+table. The setting follows the complete predicate-object clause and adds no
+possession, plurality, direction, arrival, duration, or event sequence.
+
+The ordinary coordination system now also joins complete domestic clauses, as
+in `kələmatapiihna šulxanənk wə-kəmiičohna lexem` “we including you sit at a
+table and eat bread” and `kəmiičohna lexem wə-kəməneehna` “we including you eat
+bread and drink.” Eating remains objectful and drinking objectless. Linear
+order contributes no “then,” “therefore,” habitual, foreground, or consequence
+reading.
+
 The complete cell inventories, donor/contact boundary, and compositional
 firewalls for the action expansion are documented in [Motion and Action
 Tranche](research/motion-and-action-tranche.md).
+
+The domestic cells, source/contact boundary, and exact host inventories are
+documented in [Domestic Action Tranche](research/domestic-action-tranche.md).
 
 **[ACCEPTED CAPABILITY] Hybrid narrative engine.** The language must support the combined wayyiqtol–weqatal–obviation behavior defined in [Hybrid Narrative Engine](narrative-engine.md). This is a central expressive requirement rather than an optional ornament or three independent feature ideas.
 

@@ -203,6 +203,42 @@ source, and route. The prior semantic checkpoint has 180 vectors, so these 45
 new records remain unembedded until the owner explicitly authorizes another
 paid refresh. See the [full manual analysis](research/motion-and-action-tranche.md).
 
+## Domestic action enrichment
+
+The next directly authored tranche adds 39 records, bringing the structured
+database to 264 noncanonical records. Five source-facing records preserve the
+Moraviantown Munsee suppletive eat and bring pairs and Biblical Hebrew
+`יַ֫חַד`; five separate contact records state the language's adaptations and
+semantic narrowing. Four closed constructions then support a nine-cell
+eat/bring Absolute, exact `yeled katan`, four `yaxad` coactivity hosts, and four
+static domestic event settings. Two phrases and twenty-three sentences
+exercise every declared host, plus richer ordinary clause coordination.
+
+This tranche strengthens structural co-parentage. Regional TA/TI suppletion,
+Absolute participant architecture, and class selection govern Hebrew-derived
+food, family, and person vocabulary. Hebrew-derived `yaxad` scopes over
+regionally inflected inclusive or exclusive activity, while existing static
+locatives and ordinary `wə-` coordination build complete domestic scenes.
+`miičii-` undergoes one explicit contact boundary repair before TI `o`, yielding
+`miičow`, `kəmiičohna`, and `nəmiičohna` while keeping the full stem visible in
+analysis.
+
+The continuity ledger now recognizes exact candidate substrates for eating in
+a house, a small child bringing bread, and eating together. It preserves the
+remaining gaps: a house is not plural possessed “our homes”; bring is not
+carry; `yeled katan` is bare rather than the legacy definite phrase; and the
+route construction cannot yet place eating “on the way.” All cells remain
+ordinary and supply no TAM, direct/inverse system, obviation, wayyiqtol chain,
+weqatal frame, or narrative event sequence. See the [manual
+analysis](research/domestic-action-tranche.md) and [local checkpoint
+report](reports/domestic-action-enrichment-2026-07-13.json).
+
+No API call was made. The 180-vector checkpoint therefore lacks the 45 motion
+records and all 39 domestic records. A new dry-only command safely plans the
+historical 45-record motion increment and twelve diagnostics, but a current
+living-index refresh must also account for the domestic tranche and requires
+explicit owner approval.
+
 ## Project proficiency levels
 
 These are project levels, not CEFR equivalences.
@@ -336,6 +372,9 @@ The earlier contact-synthesis work was wholly local and is recorded in
 [`reports/n1-contact-synthesis-2026-07-12.json`](reports/n1-contact-synthesis-2026-07-12.json).
 Budget scenarios for a substantial first corpus are in [Initial-Build
 Budget](initial-build-budget.md). None of these documents authorizes another
-paid call or the proposed larger spend. The 45 motion-and-action records were
-created after the snapshot and remain unembedded; refreshing them also requires
-new explicit owner approval.
+paid call or the proposed larger spend. The 45 motion-and-action and 39
+domestic-action records were created after the snapshot and remain unembedded.
+The frozen motion-only dry plan estimates one 57-input request at about
+$0.000694, with a conservative $0.002807 ceiling; it excludes the newer
+domestic records and is not authorization. Any refresh still requires new
+explicit owner approval.

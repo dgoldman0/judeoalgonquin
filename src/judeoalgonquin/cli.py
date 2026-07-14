@@ -6,7 +6,9 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
@@ -23,6 +25,7 @@ from .budget import (
 )
 from .evaluate import (
     evaluate_anchor_chorus_compositions,
+    evaluate_domestic_action_compositions,
     evaluate_motion_action_compositions,
     evaluate_perception_compositions,
     evaluate_pilot_compositions,
@@ -42,12 +45,14 @@ from .embeddings import (
 )
 from .records import (
     ValidationError,
+    canonical_json,
     load_records,
     load_source_registry,
     validate_records,
 )
 from .store import (
     connect,
+    connect_read_only,
     count_fresh_embeddings,
     index_records,
     merge_hybrid_results,
@@ -55,6 +60,7 @@ from .store import (
     put_embeddings_atomic,
     search_text,
     search_vectors,
+    unpack_vector,
 )
 
 
@@ -94,7 +100,48 @@ STATIC_PLACE_EXPECTED_DATA_SHA256 = (
 STATIC_PLACE_EXPECTED_QUERY_SHA256 = (
     "6c3931808546a0e7d5f7939b8a09ff41ad36bd46b2ecdafded9dfe79c2f4e181"
 )
+STATIC_PLACE_EXPECTED_DATABASE_CONTENT_SHA256 = (
+    "dd05344036862956887a6763a54906476de52aea4aa279154de22e91797edf87"
+)
 STATIC_PLACE_RUN_KIND = "static-place-embedding-checkpoint"
+STATIC_PLACE_DATA_FILES = (
+    "n1-contact-lexicon.jsonl",
+    "n1-core-lexicon.jsonl",
+    "n1-core-regressions.jsonl",
+    "n1-perception-enrichment.jsonl",
+    "n1-pilot.jsonl",
+    "n1-song-chorus.jsonl",
+    "n1-static-place-contact.jsonl",
+    "n1-static-place-enrichment.jsonl",
+    "n1-static-place-examples.jsonl",
+    "n1-static-place-grammar.jsonl",
+)
+DEFAULT_MOTION_ACTION_QUERIES = "tests/fixtures/motion_action_semantic_queries.json"
+MOTION_ACTION_EMBEDDING_REPORT = (
+    "docs/reports/motion-action-semantic-checkpoint-2026-07-13.json"
+)
+MOTION_ACTION_RUN_KIND = "motion-action-embedding-checkpoint"
+MOTION_ACTION_DATA_FILES = (
+    "n1-motion-action-contact.jsonl",
+    "n1-motion-action-examples.jsonl",
+    "n1-motion-action-grammar.jsonl",
+    "n1-motion-action-source.jsonl",
+)
+MOTION_ACTION_BASE_RECORDS = 180
+MOTION_ACTION_INCREMENTAL_RECORDS = 45
+MOTION_ACTION_FULL_RECORDS = 225
+MOTION_ACTION_QUERIES = 12
+MOTION_ACTION_LIVE_INPUTS = MOTION_ACTION_INCREMENTAL_RECORDS + MOTION_ACTION_QUERIES
+MOTION_ACTION_EXPECTED_DATA_SHA256 = (
+    "c53eeaff06c3aa5c992b94271e04f83511965d3101889ee450a99dbbe454cdb9"
+)
+MOTION_ACTION_EXPECTED_RECORD_REVISIONS_SHA256 = (
+    "28929da4cda4851757ae1f6a70d622445b9480371647d33004643f4195bee35c"
+)
+MOTION_ACTION_EXPECTED_QUERY_SHA256 = (
+    "88070c9ff46e38d3f47b5308442db33985c4e57f29967105253ea4da2b9f9f12"
+)
+MOTION_ACTION_RECOVERY_METADATA_KEY = "motion_action_checkpoint_recovery_report"
 SOURCE_REGISTRY = "references/sources.yaml"
 SMOKE_QUERY = "home, dwelling, and the place where people live together"
 
@@ -102,6 +149,17 @@ SMOKE_QUERY = "home, dwelling, and the place where people live together"
 def _records(path: str) -> list[dict[str, Any]]:
     source_registry = load_source_registry(SOURCE_REGISTRY)
     return validate_records(load_records(path), source_registry=source_registry)
+
+
+def _records_from_named_files(
+    root: str | Path, relative_names: Sequence[str]
+) -> list[dict[str, Any]]:
+    loaded: list[dict[str, Any]] = []
+    directory = Path(root)
+    for relative_name in relative_names:
+        loaded.extend(load_records(directory / relative_name))
+    source_registry = load_source_registry(SOURCE_REGISTRY)
+    return validate_records(loaded, source_registry=source_registry)
 
 
 def _statuses(value: str) -> tuple[str, ...]:
@@ -203,6 +261,7 @@ def command_evaluate(args: argparse.Namespace) -> int:
         *evaluate_perception_compositions(records),
         *evaluate_static_place_compositions(records),
         *evaluate_motion_action_compositions(records),
+        *evaluate_domestic_action_compositions(records),
     ]
     _print_json(
         {
@@ -427,6 +486,7 @@ def command_pilot_embedding_evaluation(args: argparse.Namespace) -> int:
         *evaluate_perception_compositions(records),
         *evaluate_static_place_compositions(records),
         *evaluate_motion_action_compositions(records),
+        *evaluate_domestic_action_compositions(records),
     ]
     if findings:
         raise ValueError("pilot composition checks failed: " + "; ".join(findings))
@@ -593,6 +653,396 @@ def _data_tree_manifest(path: str | Path) -> tuple[str, dict[str, str]]:
     return aggregate.hexdigest(), hashes
 
 
+def _named_data_manifest(
+    root: str | Path, relative_names: Sequence[str]
+) -> tuple[str, dict[str, str]]:
+    """Hash an explicit ordered set of data files using the tree-manifest format."""
+
+    directory = Path(root)
+    names = sorted(relative_names)
+    if not names or len(names) != len(set(names)):
+        raise ValueError("a frozen data manifest requires distinct file names")
+    aggregate = hashlib.sha256()
+    hashes: dict[str, str] = {}
+    for name in names:
+        candidate = directory / name
+        if not candidate.is_file():
+            raise ValueError(f"frozen data file is missing: {candidate}")
+        content = candidate.read_bytes()
+        hashes[name] = hashlib.sha256(content).hexdigest()
+        aggregate.update(name.encode("utf-8"))
+        aggregate.update(b"\0")
+        aggregate.update(content)
+        aggregate.update(b"\0")
+    return aggregate.hexdigest(), hashes
+
+
+def _record_revision_manifest(records: Sequence[dict[str, Any]]) -> str:
+    aggregate = hashlib.sha256()
+    for record in sorted(records, key=lambda value: value["id"]):
+        aggregate.update(record["id"].encode("utf-8"))
+        aggregate.update(b"\0")
+        aggregate.update(str(record["revision"]).encode("ascii"))
+        aggregate.update(b"\0")
+    return aggregate.hexdigest()
+
+
+def _frozen_motion_action_split(
+    data_path: str | Path, records: Sequence[dict[str, Any]]
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    str,
+    dict[str, str],
+    str,
+    dict[str, str],
+    str,
+]:
+    """Return the frozen 180-record base and exact 45-record incremental tranche."""
+
+    root = Path(data_path)
+    if not root.is_dir():
+        raise ValueError("the motion/action checkpoint data path must be a directory")
+    if set(STATIC_PLACE_DATA_FILES) & set(MOTION_ACTION_DATA_FILES):
+        raise RuntimeError("the frozen base and incremental file sets overlap")
+    motion_data_hash, motion_file_hashes = _named_data_manifest(
+        root, MOTION_ACTION_DATA_FILES
+    )
+    if motion_data_hash != MOTION_ACTION_EXPECTED_DATA_SHA256:
+        raise ValueError("motion/action data hash no longer matches the frozen tranche")
+    base_data_hash, base_file_hashes = _named_data_manifest(
+        root, STATIC_PLACE_DATA_FILES
+    )
+    if base_data_hash != STATIC_PLACE_EXPECTED_DATA_SHA256:
+        raise ValueError("the 180-record base no longer matches the frozen bootstrap corpus")
+
+    raw_motion_records: list[dict[str, Any]] = []
+    for relative_name in MOTION_ACTION_DATA_FILES:
+        raw_motion_records.extend(load_records(root / relative_name))
+    motion_ids = [record.get("id") for record in raw_motion_records]
+    if (
+        len(motion_ids) != MOTION_ACTION_INCREMENTAL_RECORDS
+        or any(not isinstance(record_id, str) for record_id in motion_ids)
+        or len(set(motion_ids)) != MOTION_ACTION_INCREMENTAL_RECORDS
+    ):
+        raise ValueError("the motion/action tranche must contain 45 distinct record IDs")
+
+    records_by_id = {record["id"]: record for record in records}
+    if len(records_by_id) != len(records) or any(
+        record_id not in records_by_id for record_id in motion_ids
+    ):
+        raise ValueError("the validated corpus does not contain the frozen motion/action IDs")
+    motion_records = [records_by_id[record_id] for record_id in motion_ids]
+    base_records = [record for record in records if record["id"] not in set(motion_ids)]
+    revision_hash = _record_revision_manifest(motion_records)
+    if revision_hash != MOTION_ACTION_EXPECTED_RECORD_REVISIONS_SHA256:
+        raise ValueError("motion/action record IDs or revisions no longer match the frozen tranche")
+    if (
+        len(records) != MOTION_ACTION_FULL_RECORDS
+        or len(base_records) != MOTION_ACTION_BASE_RECORDS
+        or len(motion_records) != MOTION_ACTION_INCREMENTAL_RECORDS
+    ):
+        raise ValueError("the checkpoint envelope is fixed at 180 base plus 45 new records")
+    return (
+        base_records,
+        motion_records,
+        base_data_hash,
+        base_file_hashes,
+        motion_data_hash,
+        motion_file_hashes,
+        revision_hash,
+    )
+
+
+def _verify_frozen_base_vectors(
+    db_path: str | Path,
+    base_records: Sequence[dict[str, Any]],
+    *,
+    model: str,
+    dimensions: int,
+) -> tuple[dict[str, list[float]], str]:
+    """Verify and load the immutable 180-vector base through a read-only connection."""
+
+    database_hash = hashlib.sha256(Path(db_path).read_bytes()).hexdigest()
+    expected_ids = {record["id"] for record in base_records}
+    connection = connect_read_only(db_path)
+    try:
+        semantic_hash = hashlib.sha256()
+        for table_name, query in (
+            ("records", "SELECT id, record_json FROM records ORDER BY id"),
+            (
+                "embeddings",
+                "SELECT record_id, model, dimensions, fingerprint, vector "
+                "FROM embeddings ORDER BY record_id, model, dimensions",
+            ),
+            ("metadata", "SELECT key, value FROM metadata ORDER BY key"),
+        ):
+            semantic_hash.update(table_name.encode("utf-8"))
+            for row in connection.execute(query):
+                for value in row:
+                    payload = (
+                        bytes(value)
+                        if isinstance(value, (bytes, bytearray, memoryview))
+                        else str(value).encode("utf-8")
+                    )
+                    semantic_hash.update(len(payload).to_bytes(8, "big"))
+                    semantic_hash.update(payload)
+        if semantic_hash.hexdigest() != STATIC_PLACE_EXPECTED_DATABASE_CONTENT_SHA256:
+            raise ValueError(
+                "the semantic bootstrap database content no longer matches the "
+                "frozen checkpoint"
+            )
+        stored_records = {
+            str(row["id"]): str(row["record_json"])
+            for row in connection.execute("SELECT id, record_json FROM records")
+        }
+        if set(stored_records) != expected_ids:
+            raise ValueError(
+                "the semantic bootstrap database does not contain the exact 180-record base"
+            )
+        mismatched_records = [
+            record["id"]
+            for record in base_records
+            if stored_records.get(record["id"]) != canonical_json(record)
+        ]
+        if mismatched_records:
+            raise ValueError(
+                "the semantic bootstrap database record snapshot is stale: "
+                + ", ".join(mismatched_records[:5])
+            )
+        embedding_rows = list(
+            connection.execute(
+                """
+                SELECT record_id, vector FROM embeddings
+                WHERE model=? AND dimensions=?
+                """,
+                (model, dimensions),
+            )
+        )
+        if {str(row["record_id"]) for row in embedding_rows} != expected_ids:
+            raise ValueError(
+                "the semantic bootstrap database does not have exact 180-vector coverage"
+            )
+        stale = records_needing_embeddings(
+            connection,
+            base_records,
+            model=model,
+            dimensions=dimensions,
+        )
+        if stale:
+            raise ValueError(
+                "the 180-vector semantic base is stale: "
+                + ", ".join(record["id"] for record in stale[:5])
+            )
+        fresh_count = count_fresh_embeddings(
+            connection, model=model, dimensions=dimensions
+        )
+        if fresh_count != MOTION_ACTION_BASE_RECORDS:
+            raise ValueError("the semantic bootstrap database does not have 180 fresh vectors")
+        vectors = {
+            str(row["record_id"]): list(unpack_vector(row["vector"], dimensions))
+            for row in embedding_rows
+        }
+    finally:
+        connection.close()
+    return vectors, database_hash
+
+
+def _sanitize_semantic_evaluation(evaluation: dict[str, Any]) -> dict[str, Any]:
+    """Keep reproducible metrics while excluding query text and full rankings."""
+
+    return {
+        "recall_at_1": evaluation["recall_at_1"],
+        "recall_at_3": evaluation["recall_at_3"],
+        "mean_reciprocal_rank": evaluation["mean_reciprocal_rank"],
+        "passed": evaluation["passed"],
+        "by_query_type": evaluation.get("by_query_type", {}),
+        "diagnostics": [
+            {
+                "id": item["id"],
+                "query_type": item.get("query_type"),
+                "expected_rank": item["expected_rank"],
+                "matched_acceptable_id": item.get("matched_acceptable_id"),
+            }
+            for item in evaluation.get("queries", [])
+        ],
+    }
+
+
+def _replace_motion_action_database(
+    db_path: str | Path,
+    records: Sequence[dict[str, Any]],
+    base_records: Sequence[dict[str, Any]],
+    motion_records: Sequence[dict[str, Any]],
+    motion_vectors: Sequence[Sequence[float]],
+    recovery_report: dict[str, Any],
+    *,
+    model: str,
+    dimensions: int,
+) -> tuple[int, str]:
+    """Stage a complete index and atomically replace the living database."""
+
+    destination = Path(db_path)
+    descriptor, temporary_name = tempfile.mkstemp(
+        prefix=f".{destination.name}.motion-action-",
+        suffix=".tmp",
+        dir=destination.parent,
+    )
+    os.close(descriptor)
+    temporary = Path(temporary_name)
+    try:
+        shutil.copy2(destination, temporary)
+        connection = connect(temporary)
+        try:
+            index_records(connection, records)
+            stale_base = records_needing_embeddings(
+                connection,
+                base_records,
+                model=model,
+                dimensions=dimensions,
+            )
+            if stale_base:
+                raise RuntimeError("staging invalidated the frozen semantic base")
+            before_ids = {
+                str(row[0])
+                for row in connection.execute(
+                    "SELECT record_id FROM embeddings WHERE model=? AND dimensions=?",
+                    (model, dimensions),
+                )
+            }
+            if before_ids != {record["id"] for record in base_records}:
+                raise RuntimeError("staging database did not preserve exact base-vector coverage")
+            put_embeddings_atomic(
+                connection,
+                [
+                    (
+                        record["id"],
+                        model,
+                        dimensions,
+                        record_fingerprint(record, model, dimensions),
+                        vector,
+                    )
+                    for record, vector in zip(motion_records, motion_vectors, strict=True)
+                ],
+            )
+            if records_needing_embeddings(
+                connection, records, model=model, dimensions=dimensions
+            ):
+                raise RuntimeError("staged checkpoint contains stale or missing record vectors")
+            after_ids = {
+                str(row[0])
+                for row in connection.execute(
+                    "SELECT record_id FROM embeddings WHERE model=? AND dimensions=?",
+                    (model, dimensions),
+                )
+            }
+            if after_ids != {record["id"] for record in records}:
+                raise RuntimeError("staged checkpoint contains unexpected vector rows")
+            fresh_count = count_fresh_embeddings(
+                connection, model=model, dimensions=dimensions
+            )
+            if fresh_count != MOTION_ACTION_FULL_RECORDS:
+                raise RuntimeError("staged checkpoint did not produce 225 fresh vectors")
+            with connection:
+                connection.execute(
+                    "INSERT OR REPLACE INTO metadata(key, value) VALUES (?, ?)",
+                    (
+                        MOTION_ACTION_RECOVERY_METADATA_KEY,
+                        json.dumps(
+                            recovery_report,
+                            ensure_ascii=False,
+                            sort_keys=True,
+                            separators=(",", ":"),
+                        ),
+                    ),
+                )
+        finally:
+            connection.close()
+        database_hash = hashlib.sha256(temporary.read_bytes()).hexdigest()
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return fresh_count, database_hash
+
+
+def _recover_motion_action_report(
+    db_path: str | Path,
+    report_path: str | Path,
+    *,
+    model: str,
+    dimensions: int,
+) -> bool:
+    """Recover a sanitized report after a crash between DB and report replacement."""
+
+    destination = Path(report_path)
+    if destination.exists():
+        return False
+    connection = connect_read_only(db_path)
+    try:
+        row = connection.execute(
+            "SELECT value FROM metadata WHERE key=?",
+            (MOTION_ACTION_RECOVERY_METADATA_KEY,),
+        ).fetchone()
+        if row is None:
+            return False
+        try:
+            report = json.loads(str(row[0]))
+        except json.JSONDecodeError as exc:
+            raise ValueError("motion/action recovery metadata is malformed") from exc
+        expected = {
+            "evaluation_kind": "incremental_motion_action_living_index_checkpoint",
+            "model": model,
+            "dimensions": dimensions,
+            "base_records": MOTION_ACTION_BASE_RECORDS,
+            "incremental_records": MOTION_ACTION_INCREMENTAL_RECORDS,
+            "full_evaluation_records": MOTION_ACTION_FULL_RECORDS,
+            "queries": MOTION_ACTION_QUERIES,
+            "motion_action_data_sha256": MOTION_ACTION_EXPECTED_DATA_SHA256,
+            "query_fixture_sha256": MOTION_ACTION_EXPECTED_QUERY_SHA256,
+            "fresh_record_vectors": MOTION_ACTION_FULL_RECORDS,
+            "new_record_vectors": MOTION_ACTION_INCREMENTAL_RECORDS,
+            "persisted_query_vectors": 0,
+            "contains_vectors": False,
+            "contains_credentials": False,
+            "contains_query_texts": False,
+            "contains_full_rankings": False,
+        }
+        if (
+            not isinstance(report, dict)
+            or any(report.get(key) != value for key, value in expected.items())
+            or not report.get("completed_at")
+            or not report.get("ledger_run_id")
+            or not isinstance(report.get("evaluation"), dict)
+        ):
+            raise ValueError("motion/action recovery metadata does not match its envelope")
+        record_count = int(connection.execute("SELECT count(*) FROM records").fetchone()[0])
+        embedding_count = int(
+            connection.execute(
+                "SELECT count(*) FROM embeddings WHERE model=? AND dimensions=?",
+                (model, dimensions),
+            ).fetchone()[0]
+        )
+        fresh_count = count_fresh_embeddings(
+            connection, model=model, dimensions=dimensions
+        )
+        if (
+            record_count != MOTION_ACTION_FULL_RECORDS
+            or embedding_count != MOTION_ACTION_FULL_RECORDS
+            or fresh_count != MOTION_ACTION_FULL_RECORDS
+        ):
+            raise ValueError("motion/action recovery database is incomplete or stale")
+    finally:
+        connection.close()
+
+    report["database_sha256_after"] = hashlib.sha256(Path(db_path).read_bytes()).hexdigest()
+    report["report_recovered_at"] = datetime.now(timezone.utc).isoformat()
+    try:
+        _write_json_atomic(destination, report)
+    except OSError as exc:
+        raise ValueError("motion/action report recovery could not write its destination") from exc
+    return True
+
+
 def command_n1_core_embedding_evaluation(args: argparse.Namespace) -> int:
     """Plan or consume the single frozen N1 core embedding checkpoint."""
 
@@ -603,6 +1053,7 @@ def command_n1_core_embedding_evaluation(args: argparse.Namespace) -> int:
         *evaluate_perception_compositions(records),
         *evaluate_static_place_compositions(records),
         *evaluate_motion_action_compositions(records),
+        *evaluate_domestic_action_compositions(records),
     ]
     if findings:
         raise ValueError("N1 composition checks failed: " + "; ".join(findings))
@@ -899,6 +1350,7 @@ def command_static_place_embedding_evaluation(args: argparse.Namespace) -> int:
         *evaluate_perception_compositions(records),
         *evaluate_static_place_compositions(records),
         *evaluate_motion_action_compositions(records),
+        *evaluate_domestic_action_compositions(records),
     ]
     if findings:
         raise ValueError("static-place composition checks failed: " + "; ".join(findings))
@@ -1139,6 +1591,384 @@ def command_static_place_embedding_evaluation(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_motion_action_embedding_evaluation(args: argparse.Namespace) -> int:
+    """Plan or consume the one-request incremental motion/action checkpoint."""
+
+    fixed_paths = {
+        "data": (Path(args.data).resolve(), Path(DEFAULT_N1_CORE_DATA).resolve()),
+        "queries": (
+            Path(args.queries).resolve(),
+            Path(DEFAULT_MOTION_ACTION_QUERIES).resolve(),
+        ),
+        "report": (
+            Path(args.report).resolve(),
+            Path(MOTION_ACTION_EMBEDDING_REPORT).resolve(),
+        ),
+        "database": (
+            Path(args.db).resolve(),
+            Path(DEFAULT_STATIC_PLACE_DB).resolve(),
+        ),
+    }
+    for label, (actual, expected) in fixed_paths.items():
+        if actual != expected:
+            raise ValueError(f"motion/action checkpoint {label} path is fixed at {expected}")
+    if args.model != DEFAULT_MODEL or args.dimensions != DEFAULT_DIMENSIONS:
+        raise ValueError("motion/action checkpoint model and dimensions are fixed")
+
+    report_path = Path(args.report)
+    if not report_path.exists():
+        _recover_motion_action_report(
+            args.db,
+            report_path,
+            model=args.model,
+            dimensions=args.dimensions,
+        )
+    if report_path.exists():
+        if args.live:
+            raise ValueError(
+                "the motion/action checkpoint is already recorded; a second provider "
+                f"call is prohibited by {args.report}"
+            )
+        historical = json.loads(report_path.read_text(encoding="utf-8"))
+        evaluation = historical.get("evaluation") if isinstance(historical, dict) else None
+        expected = {
+            "evaluation_kind": "incremental_motion_action_living_index_checkpoint",
+            "base_records": MOTION_ACTION_BASE_RECORDS,
+            "incremental_records": MOTION_ACTION_INCREMENTAL_RECORDS,
+            "full_evaluation_records": MOTION_ACTION_FULL_RECORDS,
+            "queries": MOTION_ACTION_QUERIES,
+            "motion_action_data_sha256": MOTION_ACTION_EXPECTED_DATA_SHA256,
+            "query_fixture_sha256": MOTION_ACTION_EXPECTED_QUERY_SHA256,
+        }
+        safe_fields = (
+            "completed_at",
+            "evaluation_kind",
+            "model",
+            "dimensions",
+            "base_records",
+            "incremental_records",
+            "full_evaluation_records",
+            "queries",
+            "api_inputs",
+            "prompt_tokens",
+            "estimated_new_cost_usd",
+            "fresh_record_vectors",
+            "motion_action_data_sha256",
+            "query_fixture_sha256",
+            "contains_vectors",
+            "contains_credentials",
+        )
+        metric_fields = (
+            "recall_at_1",
+            "recall_at_3",
+            "mean_reciprocal_rank",
+        )
+        historical_type_metrics = (
+            evaluation.get("by_query_type") if isinstance(evaluation, dict) else None
+        )
+        historical_query_types = {
+            "english",
+            "conlang",
+            "compositional",
+            "contrastive",
+        }
+        if (
+            not isinstance(historical, dict)
+            or any(historical.get(key) != value for key, value in expected.items())
+            or any(key not in historical for key in safe_fields)
+            or not historical.get("completed_at")
+            or not historical.get("ledger_run_id")
+            or historical.get("contains_vectors") is not False
+            or historical.get("contains_credentials") is not False
+            or not isinstance(evaluation, dict)
+            or not isinstance(evaluation.get("passed"), bool)
+            or any(
+                not isinstance(evaluation.get(key), (int, float))
+                for key in metric_fields
+            )
+            or not isinstance(historical_type_metrics, dict)
+            or set(historical_type_metrics) != historical_query_types
+            or any(
+                not isinstance(metrics, dict)
+                or any(
+                    not isinstance(metrics.get(key), (int, float))
+                    for key in (*metric_fields, "query_count")
+                )
+                for metrics in (
+                    historical_type_metrics.values()
+                    if isinstance(historical_type_metrics, dict)
+                    else []
+                )
+            )
+        ):
+            raise ValueError("the recorded motion/action checkpoint is malformed")
+        _print_json(
+            {
+                "mode": "historical-report",
+                "checkpoint_status": "consumed",
+                "api_requests": 0,
+                "report": str(report_path),
+                "historical_checkpoint": {
+                    **{key: historical[key] for key in safe_fields},
+                    "evaluation": {
+                        **{key: evaluation[key] for key in metric_fields},
+                        "passed": evaluation["passed"],
+                        "by_query_type": {
+                            query_type: {
+                                key: historical_type_metrics[query_type][key]
+                                for key in (*metric_fields, "query_count")
+                            }
+                            for query_type in sorted(historical_query_types)
+                        },
+                    },
+                },
+            }
+        )
+        return 0
+
+    frozen_files = (*STATIC_PLACE_DATA_FILES, *MOTION_ACTION_DATA_FILES)
+    records = _records_from_named_files(args.data, frozen_files)
+    findings = [
+        *evaluate_pilot_compositions(records),
+        *evaluate_anchor_chorus_compositions(records),
+        *evaluate_perception_compositions(records),
+        *evaluate_static_place_compositions(records),
+        *evaluate_motion_action_compositions(records),
+        *evaluate_domestic_action_compositions(records),
+    ]
+    if findings:
+        raise ValueError("motion/action composition checks failed: " + "; ".join(findings))
+    (
+        base_records,
+        motion_records,
+        base_data_hash,
+        base_file_hashes,
+        motion_data_hash,
+        motion_file_hashes,
+        motion_revision_hash,
+    ) = _frozen_motion_action_split(args.data, records)
+
+    queries = load_typed_semantic_queries(args.queries)
+    query_hash = hashlib.sha256(Path(args.queries).read_bytes()).hexdigest()
+    if query_hash != MOTION_ACTION_EXPECTED_QUERY_SHA256:
+        raise ValueError("motion/action query hash no longer matches the frozen fixture")
+    query_types = {"english", "conlang", "compositional", "contrastive"}
+    type_counts = {
+        query_type: sum(query["query_type"] == query_type for query in queries)
+        for query_type in sorted(query_types)
+    }
+    if len(queries) != MOTION_ACTION_QUERIES or any(
+        type_counts[query_type] != 3 for query_type in query_types
+    ):
+        raise ValueError("the query fixture must contain three diagnostics of each type")
+    motion_ids = {record["id"] for record in motion_records}
+    unknown_targets = sorted(
+        {
+            target
+            for query in queries
+            for target in query["acceptable_ids"]
+            if target not in motion_ids
+        }
+    )
+    if unknown_targets:
+        raise ValueError(
+            "motion/action diagnostics target records outside the frozen tranche: "
+            + ", ".join(unknown_targets)
+        )
+
+    base_vectors, database_hash_before = _verify_frozen_base_vectors(
+        args.db,
+        base_records,
+        model=args.model,
+        dimensions=args.dimensions,
+    )
+    projected_records = [embedding_text(record) for record in motion_records]
+    query_texts = [query["query"] for query in queries]
+    live_texts = [*projected_records, *query_texts]
+    if len(live_texts) != MOTION_ACTION_LIVE_INPUTS:
+        raise ValueError("the live envelope is fixed at 45 records plus 12 queries")
+    policy = load_policy()
+    batches = _chunk_embedding_inputs(
+        live_texts,
+        max_inputs=policy["max_inputs_per_run"],
+        max_utf8_bytes=policy["max_utf8_bytes_per_run"],
+        max_input_utf8_bytes=policy.get(
+            "max_input_utf8_bytes", N1_CORE_MAX_INPUT_BYTES
+        ),
+    )
+    if len(batches) != 1 or len(batches[0]) != MOTION_ACTION_LIVE_INPUTS:
+        raise ValueError("the incremental checkpoint must fit one provider request")
+    conservative_tokens = token_upper_bound(live_texts)
+    rough_tokens = sum(max(1, (len(value) + 3) // 4) for value in live_texts)
+    largest_input = max(len(value.encode("utf-8")) for value in live_texts)
+    price = float(policy["price_per_million_input_tokens_usd"])
+    accounting = budget_snapshot()
+    projected_cumulative = (
+        int(accounting["cumulative_accounted_input_tokens"]) + conservative_tokens
+    )
+    full_data_hash, full_file_hashes = _named_data_manifest(args.data, frozen_files)
+    plan = {
+        "mode": "live" if args.live else "dry-run",
+        "evaluation_kind": "incremental_motion_action_living_index_checkpoint",
+        "incremental_only": True,
+        "run_kind": MOTION_ACTION_RUN_KIND,
+        "model": args.model,
+        "dimensions": args.dimensions,
+        "base_records": len(base_records),
+        "base_fresh_record_vectors": len(base_vectors),
+        "incremental_records": len(motion_records),
+        "full_evaluation_records": len(records),
+        "queries": len(queries),
+        "query_types": type_counts,
+        "api_inputs": len(live_texts),
+        "api_requests": 1 if args.live else 0,
+        "planned_provider_requests": 1,
+        "logical_provider_batches": 1,
+        "provider_max_retries": 0,
+        "utf8_bytes": conservative_tokens,
+        "largest_input_utf8_bytes": largest_input,
+        "rough_input_token_estimate": rough_tokens,
+        "conservative_token_upper_bound": conservative_tokens,
+        "new_checkpoint_conservative_cost_upper_bound_usd": conservative_tokens
+        * price
+        / 1_000_000,
+        "historical_budget_accounting": accounting,
+        "projected_cumulative_conservative_tokens": projected_cumulative,
+        "projected_cumulative_conservative_cost_usd": projected_cumulative
+        * price
+        / 1_000_000,
+        "authorized_cumulative_token_cap": policy["max_total_input_tokens"],
+        "authorized_cumulative_cost_cap_usd": policy["max_estimated_cost_usd"],
+        "paid_access_enabled": policy["paid_embeddings_enabled"],
+        "authorization_consumed": policy.get("authorization_consumed"),
+        "run_kind_currently_authorized": (
+            policy["paid_embeddings_enabled"]
+            and not policy.get("authorization_consumed", False)
+            and MOTION_ACTION_RUN_KIND in policy.get("allowed_run_kinds", [])
+        ),
+        "predeclared_pass_criteria": {
+            "minimum_overall_recall_at_3": 0.75,
+            "minimum_each_query_type_recall_at_3": 2.0 / 3.0,
+        },
+        "base_data_sha256": base_data_hash,
+        "base_file_sha256": base_file_hashes,
+        "motion_action_data_sha256": motion_data_hash,
+        "motion_action_file_sha256": motion_file_hashes,
+        "motion_action_record_revisions_sha256": motion_revision_hash,
+        "full_data_sha256": full_data_hash,
+        "full_file_sha256": full_file_hashes,
+        "query_fixture_sha256": query_hash,
+        "database_sha256_before": database_hash_before,
+        "dry_run_database_access": "read-only",
+        "limitations": (
+            "Twelve project-authored diagnostics assess retrieval over all 225 "
+            "noncanonical records. They do not train the embedding model, supply "
+            "linguistic evidence, or replace manual language-design review."
+        ),
+    }
+    if not args.live:
+        _print_json(plan)
+        return 0
+
+    reservation = reserve_paid_embedding_checkpoint(
+        MOTION_ACTION_RUN_KIND,
+        batches,
+        model=args.model,
+        dimensions=args.dimensions,
+    )
+    try:
+        embedder = OpenAIEmbedder(model=args.model, dimensions=args.dimensions)
+        batch = embedder.embed(batches[0])
+        complete_paid_embedding_run(reservation, batch.prompt_tokens)
+    except Exception as exc:
+        fail_paid_embedding_run(reservation, type(exc).__name__)
+        raise
+
+    motion_vectors = batch.vectors[: len(motion_records)]
+    query_vectors = batch.vectors[len(motion_records) :]
+    if (
+        len(motion_vectors) != MOTION_ACTION_INCREMENTAL_RECORDS
+        or len(query_vectors) != MOTION_ACTION_QUERIES
+    ):
+        raise RuntimeError("motion/action provider response could not be reassembled")
+    all_vectors = dict(base_vectors)
+    all_vectors.update(
+        {
+            record["id"]: vector
+            for record, vector in zip(motion_records, motion_vectors, strict=True)
+        }
+    )
+    record_ids = [record["id"] for record in records]
+    if set(all_vectors) != set(record_ids):
+        raise RuntimeError("full-corpus evaluation vector coverage is incomplete")
+    evaluation = evaluate_semantic_rankings(
+        record_ids,
+        [all_vectors[record_id] for record_id in record_ids],
+        queries,
+        query_vectors,
+    )
+    by_type = evaluation.get("by_query_type", {})
+    evaluation["passed"] = (
+        evaluation["recall_at_3"] >= 0.75
+        and set(by_type) == query_types
+        and all(metrics["recall_at_3"] >= 2.0 / 3.0 for metrics in by_type.values())
+    )
+    sanitized_evaluation = _sanitize_semantic_evaluation(evaluation)
+    report = {
+        **plan,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+        "data": args.data,
+        "query_fixture": args.queries,
+        "ledger_run_id": reservation.run_id,
+        "ledger_authorization_id": reservation.authorization_id,
+        "prompt_tokens": batch.prompt_tokens,
+        "total_tokens": batch.total_tokens,
+        "estimated_new_cost_usd": batch.prompt_tokens * price / 1_000_000,
+        "record_revisions": {
+            record["id"]: record["revision"] for record in motion_records
+        },
+        "evaluation": sanitized_evaluation,
+        "new_record_vectors": len(motion_vectors),
+        "persisted_query_vectors": 0,
+        "fresh_record_vectors": MOTION_ACTION_FULL_RECORDS,
+        "interpretation": (
+            "A one-request incremental diagnostic and local-search refresh over "
+            "noncanonical records; manual source and language-design review remain decisive."
+        ),
+        "contains_vectors": False,
+        "contains_credentials": False,
+        "contains_query_texts": False,
+        "contains_full_rankings": False,
+    }
+    fresh_count, database_hash_after = _replace_motion_action_database(
+        args.db,
+        records,
+        base_records,
+        motion_records,
+        motion_vectors,
+        report,
+        model=args.model,
+        dimensions=args.dimensions,
+    )
+    report["fresh_record_vectors"] = fresh_count
+    report["database_sha256_after"] = database_hash_after
+    _write_json_atomic(args.report, report)
+    _print_json(
+        {
+            **plan,
+            "prompt_tokens": batch.prompt_tokens,
+            "estimated_new_cost_usd": report["estimated_new_cost_usd"],
+            "evaluation": sanitized_evaluation,
+            "new_record_vectors": len(motion_vectors),
+            "fresh_record_vectors": fresh_count,
+            "report": args.report,
+            "database": args.db,
+            "database_sha256_after": database_hash_after,
+        }
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="judeoalgonquin",
@@ -1240,6 +2070,19 @@ def build_parser() -> argparse.ArgumentParser:
     static_place.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
     static_place.add_argument("--live", action="store_true")
     static_place.set_defaults(func=command_static_place_embedding_evaluation)
+
+    motion_action = subparsers.add_parser(
+        "motion-action-embedding-eval",
+        help="plan or run the frozen one-request incremental motion/action checkpoint",
+    )
+    motion_action.add_argument("--data", default=DEFAULT_N1_CORE_DATA)
+    motion_action.add_argument("--queries", default=DEFAULT_MOTION_ACTION_QUERIES)
+    motion_action.add_argument("--db", default=DEFAULT_STATIC_PLACE_DB)
+    motion_action.add_argument("--report", default=MOTION_ACTION_EMBEDDING_REPORT)
+    motion_action.add_argument("--model", default=DEFAULT_MODEL)
+    motion_action.add_argument("--dimensions", type=int, default=DEFAULT_DIMENSIONS)
+    motion_action.add_argument("--live", action="store_true")
+    motion_action.set_defaults(func=command_motion_action_embedding_evaluation)
     return parser
 
 

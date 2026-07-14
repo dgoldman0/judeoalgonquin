@@ -82,6 +82,18 @@ def connect(path: str | Path) -> sqlite3.Connection:
     return connection
 
 
+def connect_read_only(path: str | Path) -> sqlite3.Connection:
+    """Open an existing derived index without any schema or filesystem writes."""
+
+    resolved = Path(path).resolve()
+    if not resolved.is_file():
+        raise FileNotFoundError(resolved)
+    connection = sqlite3.connect(f"{resolved.as_uri()}?mode=ro", uri=True)
+    connection.row_factory = sqlite3.Row
+    connection.execute("PRAGMA query_only = ON")
+    return connection
+
+
 def _record_fields(record: dict[str, Any]) -> dict[str, str | int]:
     forms = record["forms"]
     conlang = forms["judeo_algonquin"]

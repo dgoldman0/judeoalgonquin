@@ -8,7 +8,7 @@
     "sha256": "c57be5890cd388be616514bda91c8a7bb1db66dd435ce27aa8025c941a9e3aa7",
     "paired_line_count": 28
   },
-  "revision": 1,
+  "revision": 2,
   "status": "active_design_constraint",
   "authority": "project_owner_direction",
   "source_honesty": {
@@ -293,6 +293,72 @@
       "note": "The song must keep bread, but this surface receives no grandfathered status."
     },
     {
+      "surface_form": "נֶמִּיצוּ",
+      "working_reading": null,
+      "function": "Recurring legacy first-person-plural eat predicate.",
+      "segment_ids": [
+        "www.v1.01",
+        "www.v3.02"
+      ],
+      "disposition": "replace_form_preserve_function",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.contact_eat_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_eat_inanimate.sense.consume_food",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "The reviewed contact TI stem preserves the act of eating food but does not validate the legacy surface or its ending."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_inclusive.sense.ordinary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies one explicit inclusive first-plural eat-bread replacement; it does not settle clusivity for either song line."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_exclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_exclusive.sense.ordinary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the explicit exclusive counterpart so legacy recurrence cannot be misread as evidence for an undifferentiated we-form."
+        }
+      ],
+      "note": "The recurring creative form motivated continuity work but did not establish person morphology. Replace it with the selected inclusive or exclusive contact cell after owner and metrical review."
+    },
+    {
+      "surface_form": "יַחַד",
+      "working_reading": null,
+      "function": "Recurring legacy together motif for shared work and shared eating.",
+      "segment_ids": [
+        "www.v2.04",
+        "www.v3.02"
+      ],
+      "disposition": "regularize_after_research",
+      "current_record_links": [
+        {
+          "record_id": "ja.lexeme.contact_together",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_together.sense.coactivity",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Contact yaxad now has the narrow sense of joint participation in one declared activity; it does not license reciprocity, mere co-location, or arbitrary together constructions."
+        },
+        {
+          "record_id": "ja.construction.contact_coactivity_yaxad",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_coactivity_yaxad.sense.joint_action",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Pins the first usable placement to a complete first-plural eat clause rather than treating the recurring song word as proof of general syntax."
+        }
+      ],
+      "note": "The preserved Hebrew-shaped item now has sourced contact continuity, but each predicate domain and attachment remains subject to construction-specific licensing."
+    },
+    {
       "surface_form": "מַחְקְשׁוּאֵשׁ",
       "working_reading": null,
       "function": "Legacy little-bear expression.",
@@ -383,12 +449,28 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Supplies a static dwelling locative, but not plural possessed our homes."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_inclusive.sense.ordinary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the inclusive first-plural eat-bread core with a mandatory bare bread object; clusivity remains an owner choice."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_house_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_house_inclusive.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Composes the opening meal in one static house, explicitly falling short of definite plural possessed 'our homes.'"
         }
       ],
       "gaps": [
-        "eat",
-        "first-person plural",
-        "plural possessed homes"
+        "inclusive or exclusive owner decision",
+        "definite plural possessed homes",
+        "metrical, owner, and human lyric review"
       ],
       "departure_policy": "Bread, shared eating, and homes may change wording only with an explicit continuity rationale."
     },
@@ -1087,6 +1169,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Supplies only the closed literal route phrase derex aanay; carrying fruit, first-plural transitive syntax, glow, and the relative clause remain unresolved."
+        },
+        {
+          "record_id": "ja.lexeme.contact_bring_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bring_inanimate.sense.transfer_object",
+          "relationship": "conflict_probe",
+          "coverage": "conflict",
+          "note": "The new peel- stem means bring an admitted inanimate object toward a contextual destination and explicitly excludes carry as a posture; it therefore cannot fill this line's carry slot or take the route phrase."
         }
       ],
       "gaps": [
@@ -1528,13 +1618,37 @@
           "sense_id": "ja.lexeme.contact_child.sense.age",
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
-          "note": "Usable age-defined contact child; bring, modifier syntax, and the required transitive third-person clause remain gaps."
+          "note": "Usable age-defined contact child; the exact following phrase and sentence records now license only the bounded song-facing use."
+        },
+        {
+          "record_id": "ja.phrase.domestic_small_child",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.domestic_small_child.sense.physical_size",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Pins the order yeled katan and its physical-size reading without licensing general adjective agreement or definiteness."
+        },
+        {
+          "record_id": "ja.lexeme.contact_bring_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bring_inanimate.sense.transfer_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the inanimate-object bring stem selected by bread; it is not a general carry, give, take-away, or delivery predicate."
+        },
+        {
+          "record_id": "ja.sentence.domestic_small_child_brings_bread",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_small_child_brings_bread.sense.ordinary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provides a complete indefinite literal substrate for the protected line, while explicitly leaving definiteness, tense/aspect, meter, and lyric acceptance unresolved."
         }
       ],
       "gaps": [
-        "bring",
-        "property-word syntax",
-        "transitive third-person agreement"
+        "definiteness",
+        "metrical and owner review",
+        "human lyric review"
       ],
       "departure_policy": "The child bringing bread is protected."
     },
@@ -1588,14 +1702,46 @@
           "sense_id": "ja.phrase.motion_along_road.sense.route",
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
-          "note": "Provides a literal along-road route phrase only; it does not yet express eating, togetherness, generic 'on the way,' or first-person plural predication."
+          "note": "Provides a literal along-road route phrase only; its construction licenses motion predicates and cannot yet attach generic 'on the way' to eating."
+        },
+        {
+          "record_id": "ja.lexeme.contact_together",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_together.sense.coactivity",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies narrow joint participation in the declared eating activity, not mere simultaneity, co-location, reciprocity, or route meaning."
+        },
+        {
+          "record_id": "ja.construction.contact_coactivity_yaxad",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_coactivity_yaxad.sense.joint_action",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Licenses postposed yaxad only after a complete first-plural eat clause with an overt object."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_together_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_together_inclusive.sense.coactivity",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provides the inclusive shared-eating core with overt bread; it neither licenses objectless eat nor supplies the on-the-way setting."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_together_exclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_together_exclusive.sense.coactivity",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Provides the corresponding exclusive shared-eating core so the song's unmarked we remains an explicit owner choice."
         }
       ],
       "gaps": [
-        "eat",
-        "together",
-        "on the way",
-        "first-person plural"
+        "object backgrounding or owner-approved retained bread",
+        "generic on-the-way attachment to a nonmotion eat clause",
+        "inclusive or exclusive owner decision",
+        "metrical, owner, and human lyric review"
       ],
       "departure_policy": "Shared eating while traveling remains near the current English meaning."
     },
@@ -2261,6 +2407,14 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Adds inclusive and exclusive first plural inside a full seven-way ordinary AI microparadigm for be-located, sit, and stand."
+        },
+        {
+          "record_id": "ja.construction.contact_domestic_absolute_subset",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_domestic_absolute_subset.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds revision-pinned inclusive and exclusive first-plural cells for eat, bring an animate entity, and bring an inanimate entity, always with an overt class-compatible object."
         }
       ],
       "requirement": "Establish an explicit first-person-plural predicate strategy and distinguish it from possession and object marking.",
@@ -2507,6 +2661,54 @@
           "relationship": "contact_candidate",
           "coverage": "contact_candidate",
           "note": "Adds a static dwelling phrase through mixed Hebrew-host and regional-suffix morphology."
+        },
+        {
+          "record_id": "ja.lexeme.contact_eat_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_eat_inanimate.sense.consume_food",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds the bounded food-eating predicate required by the opening meal, with overt admitted objects only."
+        },
+        {
+          "record_id": "ja.lexeme.contact_bring_inanimate",
+          "record_revision": 1,
+          "sense_id": "ja.lexeme.contact_bring_inanimate.sense.transfer_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Adds the inanimate-object bring predicate selected by bread without broadening it to carry, give, or take away."
+        },
+        {
+          "record_id": "ja.construction.contact_domestic_absolute_subset",
+          "record_revision": 1,
+          "sense_id": "ja.construction.contact_domestic_absolute_subset.sense.indefinite_object",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies the closed third-singular and first-plural transitive cells needed by the two newly composed household lines."
+        },
+        {
+          "record_id": "ja.phrase.domestic_small_child",
+          "record_revision": 1,
+          "sense_id": "ja.phrase.domestic_small_child.sense.physical_size",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Supplies only the exact indefinite physical-size phrase yeled katan; general property syntax and definiteness remain unresolved."
+        },
+        {
+          "record_id": "ja.sentence.domestic_we_eat_bread_house_inclusive",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_we_eat_bread_house_inclusive.sense.setting",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Composes an inclusive eat-bread event in one unpossessed house, preserving the opening's core warmth while leaving 'our homes' unbuilt."
+        },
+        {
+          "record_id": "ja.sentence.domestic_small_child_brings_bread",
+          "record_revision": 1,
+          "sense_id": "ja.sentence.domestic_small_child_brings_bread.sense.ordinary",
+          "relationship": "contact_candidate",
+          "coverage": "contact_candidate",
+          "note": "Composes the protected small-child-brings-bread image as an indefinite literal substrate, not an accepted lyric line."
         }
       ],
       "requirement": "Cover eat, home, possession, location, child, bring, bear, shoe, diminutive, rest, and already-candidate bread.",
@@ -2618,7 +2820,7 @@
       ],
       "condition": "At least the opening meal and one child/bear line compose through reviewed dependencies while retaining the song's domestic warmth.",
       "status": "blocked",
-      "blocker": "Most household vocabulary and all relevant morphology remain gaps."
+      "blocker": "An inclusive eat-bread-in-a-house substrate and an indefinite small-child-brings-bread sentence now compose through pinned dependencies, but plural possessed 'our homes,' definiteness, clusivity choice, meter, owner acceptance, and human lyric review remain unresolved."
     },
     {
       "test_id": "www.test.coparent_texture",
@@ -2647,6 +2849,6 @@
       "blocker": "The lexicon, grammar, register, and owner decision on the assembly/hearth line are incomplete."
     }
   ],
-  "updated_at": "2026-07-13T17:55:00-04:00",
-  "change_note": "Linked the closed ordinary walk paradigm and literal route phrase to the chorus, bridge, and road scenes while preserving every meter, owner-review, brightness-forward, carrying, glow, eating, generic-way, and house-to-house gap; the song remains creative influence rather than attestation, and ordinary motion supplies no narrative chaining."
+  "updated_at": "2026-07-13T19:36:48-04:00",
+  "change_note": "Integrated the bounded domestic-action tranche as continuity evidence: the opening meal and small-child-brings-bread image now have explicit literal substrates, while shared eating has inclusive and exclusive coactivity candidates. Preserved the song's unresolved possession, plural, definiteness, object-backgrounding, on-the-way attachment, carry-versus-bring conflict, meter, owner decision, and human lyric review gates; recurring legacy forms remain creative prompts rather than morphological attestation."
 }

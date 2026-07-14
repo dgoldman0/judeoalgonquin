@@ -321,6 +321,62 @@ aspect, modality, negation, imperative force, proximate/obviative status,
 direct/inverse alignment, wayyiqtol-derived foregrounding, weqatal-derived
 consequence or recurrence, event sequence, or discourse-center tracking.
 
+### D-026 — Closed domestic action and coactivity system
+
+**Decision:** Admit three manually reviewed contact stems inside one closed
+nine-cell ordinary Absolute: TI `miičii-` “eat an admitted food,” TA `peešəw-`
+“bring an admitted animate-class entity,” and TI `peel-` “bring an admitted
+inanimate-class entity.” Each has third-singular, first-plural inclusive, and
+first-plural exclusive cells. Third singular requires an overt bare lexical
+subject; all cells require a following bare, nondefinite, class-compatible
+object. Eat admits `lexem` and `pri`; TA bring admits `adam` and `yeled`; TI
+bring admits `lexem`, `pri`, and `tiihinčəw`.
+
+Retain contact `a` as the local TA bridge and `o` as the local TI bridge. Delete
+final `ii` of `miičii-` immediately before that contact `o`, so underlying
+`miičii~o~w` surfaces as `miičow` and the plural cells surface as
+`kəmiičohna` and `nəmiičohna`. Preserve `miičii` in analytical segmentation.
+This repair is limited to the three declared eat cells.
+
+Admit exact `yeled katan` for one physically small child, with noun before an
+invariant property word. Admit Hebrew-derived contact `yaxad` after exactly
+four complete first-plural eat clauses: inclusive and exclusive bread, and
+inclusive and exclusive fruit. Admit exactly four static event settings: a
+child eats bread in a house, inclusive and exclusive groups eat bread in a
+house, and an inclusive group eats bread at a table. Existing ordinary `wə-`
+may coordinate complete matching-clusivity domestic clauses while preserving
+each predicate's valency.
+
+**Reason:** Regional suppletion, class selection, participant architecture, and
+locative morphology now actively organize Hebrew-derived food, family, person,
+and communal material. Hebrew `yaxad` in turn contributes real clause-level
+coactivity rather than serving as an ornamental translation note. Complete
+host coverage and direct linguistic authorship make this a usable, inspectable
+contact-language slice rather than an automatically permuted donor word list.
+
+**Continuity:** The system provides honest candidate substrates for eating in
+a house, a small child bringing bread, and eating together in *We Walk Well*.
+It does not erase the remaining differences: bare `yeled katan` is not the
+legacy definite phrase; one house is not plural possessed “our homes”; bring is
+not carry; and no current rule attaches the route meaning “on the way” to an
+eating clause. The song remains active revision input, not attestation.
+
+**Boundary:** Bring means accompanied transfer toward a contextual destination,
+not carry, give, fetch, invite, take away, or encode a recipient or path.
+`Yaxad` is coactivity, not ordinary coordination, a comitative, reciprocity,
+simultaneity alone, or a narrative linker. `Yeled katan` does not establish a
+general adjective system. No record supplies definiteness, possession,
+nominal plural, object incorporation, general class assignment, TAM,
+direct/inverse alignment, obviation, wayyiqtol foregrounding, weqatal
+consequence or recurrence, event sequence, or participant tracking. All 39
+records remain noncanonical.
+
+**Retrieval state:** No API call was made. Exact structured lookup covers all
+264 records, while the living semantic snapshot still covers 180. The 45
+motion records and 39 domestic records remain unembedded. A dry-only frozen
+motion checkpoint is implemented but not authorized to run live; it does not
+claim coverage of the newer domestic tranche.
+
 ## Open decisions
 
 These do not block documentation, schema work, local fixtures, or an explicitly authorized bounded retrieval checkpoint. They do block canonical content that depends on them.

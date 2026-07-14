@@ -129,11 +129,11 @@ class CliTests(unittest.TestCase):
             self.assertEqual(main(["n1-core-embedding-eval"]), 0)
         result = json.loads(output.getvalue())
         self.assertEqual(result["mode"], "dry-run")
-        self.assertEqual(result["records"], 225)
+        self.assertEqual(result["records"], 264)
         self.assertEqual(result["queries"], 12)
-        self.assertEqual(result["api_inputs"], 237)
+        self.assertEqual(result["api_inputs"], 276)
         self.assertEqual(result["api_requests"], 0)
-        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.013)
+        self.assertLess(result["conservative_cost_upper_bound_usd"], 0.015)
 
     def test_static_place_bootstrap_reports_consumed_historical_checkpoint(self) -> None:
         output = io.StringIO()
@@ -143,7 +143,7 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result["mode"], "historical-report")
         self.assertEqual(result["checkpoint_status"], "consumed")
         self.assertEqual(result["api_requests"], 0)
-        self.assertEqual(result["current_records"], 225)
+        self.assertEqual(result["current_records"], 264)
         historical = result["historical_checkpoint"]
         self.assertEqual(historical["mode"], "live")
         self.assertEqual(historical["records"], 180)

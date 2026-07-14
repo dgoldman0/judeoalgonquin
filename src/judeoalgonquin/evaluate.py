@@ -1831,6 +1831,590 @@ FIND_SENTENCE_CONTRACTS = {
 }
 
 
+DOMESTIC_ABSOLUTE = "ja.construction.contact_domestic_absolute_subset"
+DOMESTIC_SMALL_CHILD = "ja.construction.contact_small_child_phrase"
+DOMESTIC_COACTIVITY = "ja.construction.contact_coactivity_yaxad"
+DOMESTIC_EVENT_SETTING = "ja.construction.contact_domestic_event_setting"
+
+DOMESTIC_SOURCE_CONTRACTS = {
+    "ja.lexeme.munsee_mweh_w_eat_animate": (
+        "mwəh-w-",
+        "/mwəh-w-/; nəmohaaw /nə-mwəhw-aa-w/",
+        "eat someone; I eat him",
+        "TA member of a suppletive TA/TI eat pair; the finite example is first "
+        "singular subject with third singular object.",
+        "O'Meara 1990, p. 66, §2.1.1, example 2.6; p. 81, §2.1.5, example 2.33a",
+        "high",
+    ),
+    "ja.lexeme.munsee_miichii_eat_inanimate": (
+        "miičii-",
+        "/miičii-/; nəmiičiin /nə-miičii-n/",
+        "eat something; I eat it",
+        "TI member of a suppletive TA/TI eat pair; the finite example is first "
+        "singular with an Objective ending.",
+        "O'Meara 1990, p. 66, §2.1.1, example 2.6; p. 81, §2.1.5, example 2.33a",
+        "high",
+    ),
+    "ja.lexeme.munsee_peeshew_bring_animate": (
+        "peešəw-",
+        "mpeešəwaaw; /nə-peešəw-aa-w/",
+        "I bring him",
+        "TA member of a suppletive TA/TI pair; first singular subject and third "
+        "singular object.",
+        "O'Meara 1990, pp. 81-82, §2.1.5, example 2.33c",
+        "high",
+    ),
+    "ja.lexeme.munsee_peel_bring_inanimate": (
+        "peel-",
+        "mpeeloon; /nə-peel-oo-n/",
+        "I bring it",
+        "TI2 member of a suppletive TA/TI pair; /peel-/ is the analyzed stem and "
+        "/-oo-/ the displayed TI2 material.",
+        "O'Meara 1990, p. 82, §2.1.5, example 2.33c",
+        "high",
+    ),
+    "ja.lexeme.hebrew_yahad_together": (
+        "yaḥad",
+        "יַ֫חַד",
+        "unitedness; in union; together",
+        "Noun used adverbially, including together in community of action, place, "
+        "or time.",
+        "BDB headword יַ֫חַד, senses 1-2a; "
+        "https://www.sefaria.org/BDB%2C_%D7%99%D6%B7%D6%AB%D7%97%D6%B7%D7%93",
+        "high",
+    ),
+}
+
+DOMESTIC_CONTACT_CONTRACTS = {
+    "ja.lexeme.contact_eat_inanimate": (
+        "miičii-",
+        "ja.lexeme.munsee_miichii_eat_inanimate",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_bring_animate": (
+        "peešəw-",
+        "ja.lexeme.munsee_peeshew_bring_animate",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_bring_inanimate": (
+        "peel-",
+        "ja.lexeme.munsee_peel_bring_inanimate",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_together": (
+        "yaxad",
+        "ja.lexeme.hebrew_yahad_together",
+        1,
+        "direct_contact_inheritance",
+    ),
+    "ja.lexeme.contact_mother": (
+        "em",
+        "ja.lexeme.hebrew_em_mother",
+        2,
+        "direct_contact_inheritance",
+    ),
+}
+
+DOMESTIC_CONTACT_EVIDENCE_CONTRACTS = {
+    "ja.lexeme.contact_eat_inanimate": (
+        "/miičii-/; nəmiičiin /nə-miičii-n/",
+        "eat something; I eat it",
+        "TI member of a suppletive pair; the contact Absolute is not "
+        "source-attested by this lexical record.",
+        "O'Meara 1990, p. 66, §2.1.1, example 2.6; p. 81, §2.1.5, example 2.33a",
+        "high",
+        "Contact truncation before the inanimate bridge and the bread/fruit "
+        "inventory are project choices.",
+    ),
+    "ja.lexeme.contact_bring_animate": (
+        "mpeešəwaaw; /nə-peešəw-aa-w/",
+        "I bring him",
+        "TA member of a suppletive bring pair.",
+        "O'Meara 1990, pp. 81-82, §2.1.5, example 2.33c",
+        "high",
+        "The bare stem comes from analysis; contact cells and objects are new "
+        "project grammar.",
+    ),
+    "ja.lexeme.contact_bring_inanimate": (
+        "mpeeloon; /nə-peel-oo-n/",
+        "I bring it",
+        "TI2 member of a suppletive bring pair; the source finite form contains "
+        "/-oo-/ after /peel-/.",
+        "O'Meara 1990, p. 82, §2.1.5, example 2.33c",
+        "high",
+        "Contact o is a constructional class bridge, not a claim that source "
+        "TI2 /-oo-/ transfers unchanged.",
+    ),
+    "ja.lexeme.contact_together": (
+        "יַ֫חַד",
+        "unitedness; together",
+        "Noun used adverbially, including community in action.",
+        "BDB headword יַ֫חַד, senses 1-2a; "
+        "https://www.sefaria.org/BDB%2C_%D7%99%D6%B7%D6%AB%D7%97%D6%B7%D7%93",
+        "high",
+        "The postclausal position and plural-subject restriction are contact design.",
+    ),
+}
+
+DOMESTIC_CONTACT_HISTORY_CLAIMS = {
+    "ja.lexeme.contact_eat_inanimate":
+        "O'Meara supports /miičii-/ as the TI member of a suppletive eat pair; "
+        "all contact distribution and morphophonemics are project design.",
+    "ja.lexeme.contact_bring_animate":
+        "O'Meara supports analyzed /peešəw-/ in a printed TA bring form; every "
+        "contact surface is an adapted candidate.",
+    "ja.lexeme.contact_bring_inanimate":
+        "O'Meara supports analyzed /peel-/ in a printed TI2 bring form; the "
+        "contact bridge is not imported from that TI2 ending.",
+    "ja.lexeme.contact_together":
+        "BDB supports Hebrew yaḥad 'together'; contact x and the narrow "
+        "postclausal coactivity distribution are project design.",
+    "ja.lexeme.contact_mother":
+        "The existing donor record supports Hebrew אֵם; the short-e contact "
+        "realization and bounded syntax are project choices.",
+}
+
+DOMESTIC_CELL_FORMS = {
+    ("eat_inanimate", "third_singular", "independent", "Absolute"): "miičow",
+    ("eat_inanimate", "first_plural_inclusive", "independent", "Absolute"):
+        "kəmiičohna",
+    ("eat_inanimate", "first_plural_exclusive", "independent", "Absolute"):
+        "nəmiičohna",
+    ("bring_animate", "third_singular", "independent", "Absolute"): "peešəwaw",
+    ("bring_animate", "first_plural_inclusive", "independent", "Absolute"):
+        "kəpeešəwahna",
+    ("bring_animate", "first_plural_exclusive", "independent", "Absolute"):
+        "nəpeešəwahna",
+    ("bring_inanimate", "third_singular", "independent", "Absolute"): "peelow",
+    ("bring_inanimate", "first_plural_inclusive", "independent", "Absolute"):
+        "kəpeelohna",
+    ("bring_inanimate", "first_plural_exclusive", "independent", "Absolute"):
+        "nəpeelohna",
+}
+
+DOMESTIC_CELL_DETAILS = {
+    ("eat_inanimate", "third_singular", "independent", "Absolute"): (
+        "miičow", "מִיצֹ׳וו", "miičii~o~w", "eat.TI~ABS.IN~3",
+    ),
+    ("eat_inanimate", "first_plural_inclusive", "independent", "Absolute"): (
+        "kəmiičohna", "קְמִיצֹ׳הנַ", "kə~miičii~o~hna",
+        "PERS.PFX~eat.TI~ABS.IN~1PL",
+    ),
+    ("eat_inanimate", "first_plural_exclusive", "independent", "Absolute"): (
+        "nəmiičohna", "נְמִיצֹ׳הנַ", "nə~miičii~o~hna",
+        "PERS.PFX~eat.TI~ABS.IN~1PL",
+    ),
+    ("bring_animate", "third_singular", "independent", "Absolute"): (
+        "peešəwaw", "פֵּישְׁווַוו", "peešəw~a~w", "bring.TA~ABS.AN~3",
+    ),
+    ("bring_animate", "first_plural_inclusive", "independent", "Absolute"): (
+        "kəpeešəwahna", "קְפֵּישְׁווַהנַ", "kə~peešəw~a~hna",
+        "PERS.PFX~bring.TA~ABS.AN~1PL",
+    ),
+    ("bring_animate", "first_plural_exclusive", "independent", "Absolute"): (
+        "nəpeešəwahna", "נְפֵּישְׁווַהנַ", "nə~peešəw~a~hna",
+        "PERS.PFX~bring.TA~ABS.AN~1PL",
+    ),
+    ("bring_inanimate", "third_singular", "independent", "Absolute"): (
+        "peelow", "פֵּילֹוו", "peel~o~w", "bring.TI~ABS.IN~3",
+    ),
+    ("bring_inanimate", "first_plural_inclusive", "independent", "Absolute"): (
+        "kəpeelohna", "קְפֵּילֹהנַ", "kə~peel~o~hna",
+        "PERS.PFX~bring.TI~ABS.IN~1PL",
+    ),
+    ("bring_inanimate", "first_plural_exclusive", "independent", "Absolute"): (
+        "nəpeelohna", "נְפֵּילֹהנַ", "nə~peel~o~hna",
+        "PERS.PFX~bring.TI~ABS.IN~1PL",
+    ),
+}
+
+DOMESTIC_CONSTRUCTION_SPECS = {
+    DOMESTIC_ABSOLUTE: {
+        "host_classes": (
+            "miičii- plus bare lexem or pri",
+            "peešəw- plus bare adam or yeled",
+            "peel- plus bare lexem, pri, or tiihinčəw",
+        ),
+        "ordering": (
+            "overt lexical subject only in third-singular clauses",
+            "finite predicate",
+            "overt bare indefinite object",
+        ),
+        "allomorphy": (
+            "TA uses contact a; TI uses contact o.",
+            "miičii loses final ii before o: miičii-o becomes miičo.",
+            "peešəw-a and peel-o concatenate without further change.",
+        ),
+        "restrictions": (
+            "Exactly nine finite cells.",
+            "Third-singular subjects are limited to bare adam, yeled, or em "
+            "and cannot be omitted.",
+            "Objects are mandatory, bare, nondefinite, and selected by the "
+            "declared stem class; admitted count objects are singular.",
+            "No definite, plural, possessed, incorporated, omitted, recipient, "
+            "goal, source, or route object is licensed.",
+            "No tense, aspect, modality, polarity, imperative, direct/inverse, "
+            "proximate/obviative, wayyiqtol, weqatal, foreground, consequence, "
+            "or center-shift value is supplied.",
+        ),
+        "counterexamples": (
+            "miičii with adam or yeled is outside this tranche.",
+            "peešəw with lexem and peel with yeled are class mismatches.",
+            "Untruncated miičiio forms are invalid in this construction.",
+            "Two third-person animate participants remain recoverable only "
+            "through overt noun order; this is not narrative participant tracking.",
+        ),
+    },
+    DOMESTIC_SMALL_CHILD: {
+        "host_classes": ("exact pair: contact child plus contact small",),
+        "ordering": ("noun", "postposed property word"),
+        "allomorphy": ("katan remains invariant.",),
+        "restrictions": (
+            "No other noun or property word is licensed.",
+            "No definiteness, plurality, possession, comparison, intensity, "
+            "or predicate use.",
+        ),
+        "counterexamples": (
+            "katan yeled is invalid in this construction.",
+            "Interpreting small as young or dear is invalid.",
+        ),
+    },
+    DOMESTIC_COACTIVITY: {
+        "host_classes": (
+            "inclusive eat-bread clause",
+            "exclusive eat-bread clause",
+            "inclusive eat-fruit clause",
+            "exclusive eat-fruit clause",
+        ),
+        "ordering": ("complete predicate-object clause", "postposed yaxad"),
+        "allomorphy": ("Invariant yaxad.",),
+        "restrictions": (
+            "Exactly four host clauses.",
+            "No separate comitative NP, reciprocal reading, clause coordination, "
+            "simultaneity-only reading, TAM, or narrative relation.",
+        ),
+        "counterexamples": (
+            "yaxad cannot replace wə- between clauses.",
+            "A singular clause cannot host yaxad here.",
+            "Yaxad before the predicate is outside the construction.",
+        ),
+    },
+    DOMESTIC_EVENT_SETTING: {
+        "host_classes": (
+            "yeled miičow lexem plus bayitənk",
+            "kəmiičohna lexem plus bayitənk",
+            "nəmiičohna lexem plus bayitənk",
+            "kəmiičohna lexem plus šulxanənk",
+        ),
+        "ordering": (
+            "finite predicate with any required lexical subject",
+            "overt food object",
+            "static setting phrase",
+        ),
+        "allomorphy": ("No additional allomorphy.",),
+        "restrictions": (
+            "Exactly four complete combinations.",
+            "The setting is not possessed, plural, directional, definite, or "
+            "incorporated.",
+            "No arrival, source, path, duration, habituality, tense, or narrative "
+            "sequence is contributed.",
+        ),
+        "counterexamples": (
+            "bayitənk cannot replace the food object.",
+            "el bayit and min bayit are not static settings here.",
+            "The construction does not express our homes.",
+        ),
+    },
+}
+
+DOMESTIC_CORE_SENTENCE_CONTRACTS = {
+    "ja.sentence.domestic_child_eats_bread": (
+        ("ja.lexeme.contact_child", "ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_bread"),
+        "yeled miičow lexem",
+        None,
+    ),
+    "ja.sentence.domestic_mother_eats_fruit": (
+        ("ja.lexeme.contact_mother", "ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_fruit"),
+        "em miičow pri",
+        None,
+    ),
+    "ja.sentence.domestic_we_eat_bread_inclusive": (
+        ("ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_bread"),
+        "kəmiičohna lexem",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_exclusive": (
+        ("ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_bread"),
+        "nəmiičohna lexem",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_we_eat_fruit_inclusive": (
+        ("ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_fruit"),
+        "kəmiičohna pri",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_fruit_exclusive": (
+        ("ja.lexeme.contact_eat_inanimate", "ja.lexeme.contact_fruit"),
+        "nəmiičohna pri",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_child_brings_bread": (
+        ("ja.lexeme.contact_child", "ja.lexeme.contact_bring_inanimate", "ja.lexeme.contact_bread"),
+        "yeled peelow lexem",
+        None,
+    ),
+    "ja.sentence.domestic_child_brings_cup": (
+        ("ja.lexeme.contact_child", "ja.lexeme.contact_bring_inanimate", "ja.lexeme.contact_cup"),
+        "yeled peelow tiihinčəw",
+        None,
+    ),
+    "ja.sentence.domestic_mother_brings_fruit": (
+        (
+            "ja.lexeme.contact_mother",
+            "ja.lexeme.contact_bring_inanimate",
+            "ja.lexeme.contact_fruit",
+        ),
+        "em peelow pri",
+        None,
+    ),
+    "ja.sentence.domestic_we_bring_child_inclusive": (
+        ("ja.lexeme.contact_bring_animate", "ja.lexeme.contact_child"),
+        "kəpeešəwahna yeled",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_bring_person_exclusive": (
+        ("ja.lexeme.contact_bring_animate", "ja.lexeme.contact_person"),
+        "nəpeešəwahna adam",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_mother_brings_child": (
+        ("ja.lexeme.contact_mother", "ja.lexeme.contact_bring_animate", "ja.lexeme.contact_child"),
+        "em peešəwaw yeled",
+        None,
+    ),
+}
+
+DOMESTIC_DERIVED_SENTENCE_CONTRACTS = {
+    "ja.sentence.domestic_small_child_brings_bread": (
+        (
+            "ja.phrase.domestic_small_child",
+            "ja.lexeme.contact_bring_inanimate",
+            "ja.lexeme.contact_bread",
+        ),
+        (DOMESTIC_ABSOLUTE,),
+        "yeled katan peelow lexem",
+        None,
+    ),
+    "ja.sentence.domestic_we_eat_bread_together_inclusive": (
+        ("ja.sentence.domestic_we_eat_bread_inclusive", "ja.lexeme.contact_together"),
+        (DOMESTIC_COACTIVITY,),
+        "kəmiičohna lexem yaxad",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_together_exclusive": (
+        ("ja.sentence.domestic_we_eat_bread_exclusive", "ja.lexeme.contact_together"),
+        (DOMESTIC_COACTIVITY,),
+        "nəmiičohna lexem yaxad",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_we_eat_fruit_together_inclusive": (
+        ("ja.sentence.domestic_we_eat_fruit_inclusive", "ja.lexeme.contact_together"),
+        (DOMESTIC_COACTIVITY,),
+        "kəmiičohna pri yaxad",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_fruit_together_exclusive": (
+        ("ja.sentence.domestic_we_eat_fruit_exclusive", "ja.lexeme.contact_together"),
+        (DOMESTIC_COACTIVITY,),
+        "nəmiičohna pri yaxad",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_house_inclusive": (
+        ("ja.sentence.domestic_we_eat_bread_inclusive", "ja.phrase.static_in_house"),
+        (DOMESTIC_EVENT_SETTING,),
+        "kəmiičohna lexem bayitənk",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_house_exclusive": (
+        ("ja.sentence.domestic_we_eat_bread_exclusive", "ja.phrase.static_in_house"),
+        (DOMESTIC_EVENT_SETTING,),
+        "nəmiičohna lexem bayitənk",
+        "exclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_table_inclusive": (
+        ("ja.sentence.domestic_we_eat_bread_inclusive", "ja.phrase.static_at_table"),
+        (DOMESTIC_EVENT_SETTING,),
+        "kəmiičohna lexem šulxanənk",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_child_eats_bread_house": (
+        ("ja.sentence.domestic_child_eats_bread", "ja.phrase.static_in_house"),
+        (DOMESTIC_EVENT_SETTING,),
+        "yeled miičow lexem bayitənk",
+        None,
+    ),
+    "ja.sentence.domestic_we_sit_table_and_eat_bread_inclusive": (
+        (
+            "ja.sentence.static_we_sit_table_inclusive",
+            "ja.morpheme.contact_coord_we",
+            "ja.sentence.domestic_we_eat_bread_inclusive",
+        ),
+        ("ja.construction.contact_finite_coordination",),
+        "kələmatapiihna šulxanənk wə-kəmiičohna lexem",
+        "inclusive",
+    ),
+    "ja.sentence.domestic_we_eat_bread_and_drink_inclusive": (
+        (
+            "ja.sentence.domestic_we_eat_bread_inclusive",
+            "ja.morpheme.contact_coord_we",
+            "ja.sentence.action_we_drink_inclusive",
+        ),
+        ("ja.construction.contact_finite_coordination",),
+        "kəmiičohna lexem wə-kəməneehna",
+        "inclusive",
+    ),
+}
+
+DOMESTIC_EXAMPLE_CONTRACTS = {
+    "ja.phrase.domestic_small_child": (
+        "a small child",
+        (("nominal head", "yeled"), ("postposed physical-size property", "katan")),
+    ),
+    "ja.phrase.domestic_mother_and_child": (
+        "mother and child",
+        (("first conjunct", "em"), ("coordinator", "wə"),
+         ("second conjunct", "yeled")),
+    ),
+    "ja.sentence.domestic_child_eats_bread": (
+        "a child eats bread",
+        (("overt third-singular subject", "yeled"),
+         ("third-singular TI Absolute predicate", "miičow"),
+         ("overt bare inanimate-class object", "lexem")),
+    ),
+    "ja.sentence.domestic_mother_eats_fruit": (
+        "a mother eats fruit",
+        (("overt third-singular subject", "em"),
+         ("third-singular TI Absolute predicate", "miičow"),
+         ("overt bare inanimate-class object", "pri")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_inclusive": (
+        "we including you eat bread",
+        (("inclusive first-plural TI Absolute predicate", "kəmiičohna"),
+         ("overt bare inanimate-class object", "lexem")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_exclusive": (
+        "we excluding you eat bread",
+        (("exclusive first-plural TI Absolute predicate", "nəmiičohna"),
+         ("overt bare inanimate-class object", "lexem")),
+    ),
+    "ja.sentence.domestic_we_eat_fruit_inclusive": (
+        "we including you eat fruit",
+        (("inclusive first-plural TI Absolute predicate", "kəmiičohna"),
+         ("overt bare inanimate-class object", "pri")),
+    ),
+    "ja.sentence.domestic_we_eat_fruit_exclusive": (
+        "we excluding you eat fruit",
+        (("exclusive first-plural TI Absolute predicate", "nəmiičohna"),
+         ("overt bare inanimate-class object", "pri")),
+    ),
+    "ja.sentence.domestic_child_brings_bread": (
+        "a child brings bread",
+        (("overt third-singular subject", "yeled"),
+         ("third-singular TI Absolute predicate", "peelow"),
+         ("overt bare inanimate-class object", "lexem")),
+    ),
+    "ja.sentence.domestic_child_brings_cup": (
+        "a child brings a cup",
+        (("overt subject", "yeled"),
+         ("third-singular TI Absolute predicate", "peelow"),
+         ("overt bare inanimate-class object", "tiihinčəw")),
+    ),
+    "ja.sentence.domestic_mother_brings_fruit": (
+        "a mother brings fruit",
+        (("overt subject", "em"),
+         ("third-singular TI Absolute predicate", "peelow"),
+         ("overt bare object", "pri")),
+    ),
+    "ja.sentence.domestic_we_bring_child_inclusive": (
+        "we including you bring a child",
+        (("inclusive first-plural TA Absolute predicate", "kəpeešəwahna"),
+         ("overt bare animate-class object", "yeled")),
+    ),
+    "ja.sentence.domestic_we_bring_person_exclusive": (
+        "we excluding you bring a person",
+        (("exclusive first-plural TA Absolute predicate", "nəpeešəwahna"),
+         ("overt bare animate-class object", "adam")),
+    ),
+    "ja.sentence.domestic_mother_brings_child": (
+        "a mother brings a child",
+        (("overt third-singular animate subject", "em"),
+         ("third-singular TA Absolute predicate", "peešəwaw"),
+         ("overt bare animate-class object", "yeled")),
+    ),
+    "ja.sentence.domestic_small_child_brings_bread": (
+        "a small child brings bread",
+        (("overt third-singular subject phrase", "yeled katan"),
+         ("third-singular TI Absolute predicate", "peelow"),
+         ("overt bare object", "lexem")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_together_inclusive": (
+        "we including you eat bread together",
+        (("complete inclusive host clause", "kəmiičohna lexem"),
+         ("postposed coactivity frame", "yaxad")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_together_exclusive": (
+        "we excluding you eat bread together",
+        (("complete exclusive host clause", "nəmiičohna lexem"),
+         ("postposed coactivity frame", "yaxad")),
+    ),
+    "ja.sentence.domestic_we_eat_fruit_together_inclusive": (
+        "we including you eat fruit together",
+        (("complete inclusive host clause", "kəmiičohna pri"),
+         ("postposed coactivity frame", "yaxad")),
+    ),
+    "ja.sentence.domestic_we_eat_fruit_together_exclusive": (
+        "we excluding you eat fruit together",
+        (("complete exclusive host clause", "nəmiičohna pri"),
+         ("postposed coactivity frame", "yaxad")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_house_inclusive": (
+        "we including you eat bread in a house",
+        (("complete inclusive core clause", "kəmiičohna lexem"),
+         ("static event setting", "bayitənk")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_house_exclusive": (
+        "we excluding you eat bread in a house",
+        (("complete exclusive core clause", "nəmiičohna lexem"),
+         ("static event setting", "bayitənk")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_table_inclusive": (
+        "we including you eat bread at a table",
+        (("complete inclusive core clause", "kəmiičohna lexem"),
+         ("static event setting", "šulxanənk")),
+    ),
+    "ja.sentence.domestic_child_eats_bread_house": (
+        "a child eats bread in a house",
+        (("complete third-singular core clause", "yeled miičow lexem"),
+         ("static event setting", "bayitənk")),
+    ),
+    "ja.sentence.domestic_we_sit_table_and_eat_bread_inclusive": (
+        "we including you sit at a table and eat bread",
+        (("first complete inclusive clause", "kələmatapiihna šulxanənk"),
+         ("coordinator", "wə"),
+         ("second complete inclusive clause", "kəmiičohna lexem")),
+    ),
+    "ja.sentence.domestic_we_eat_bread_and_drink_inclusive": (
+        "we including you eat bread and drink",
+        (("first complete inclusive clause", "kəmiičohna lexem"),
+         ("coordinator", "wə"),
+         ("second complete inclusive clause", "kəməneehna")),
+    ),
+}
+
+
 def _cell_map(
     record: dict[str, Any], feature_names: tuple[str, ...]
 ) -> tuple[dict[tuple[str, ...], dict[str, Any]], bool]:
@@ -2134,6 +2718,392 @@ def evaluate_motion_action_compositions(
             and "obviation-deferred" not in tags
         ):
             findings.append(f"{record['id']}: third-person sentence must defer obviation")
+
+    return findings
+
+
+def evaluate_domestic_action_compositions(
+    records: Sequence[dict[str, Any]],
+) -> list[str]:
+    """Enforce the manually authored, deliberately closed domestic-action tranche."""
+
+    records_by_id = {
+        record["id"]: record
+        for record in records
+        if isinstance(record, dict) and isinstance(record.get("id"), str)
+    }
+    required_ids = {
+        *DOMESTIC_SOURCE_CONTRACTS,
+        *DOMESTIC_CONTACT_CONTRACTS,
+        DOMESTIC_ABSOLUTE,
+        DOMESTIC_SMALL_CHILD,
+        DOMESTIC_COACTIVITY,
+        DOMESTIC_EVENT_SETTING,
+        *DOMESTIC_CORE_SENTENCE_CONTRACTS,
+        *DOMESTIC_DERIVED_SENTENCE_CONTRACTS,
+        "ja.phrase.domestic_small_child",
+        "ja.phrase.domestic_mother_and_child",
+    }
+    if not required_ids.intersection(records_by_id):
+        return []
+
+    findings: list[str] = []
+    for record_id, expected in DOMESTIC_SOURCE_CONTRACTS.items():
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required domestic source record is missing")
+            continue
+        evidence = record.get("source_evidence")
+        item = evidence[0] if isinstance(evidence, list) and len(evidence) == 1 else {}
+        actual = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization"),
+            item.get("source_form"),
+            item.get("source_meaning"),
+            item.get("grammatical_information"),
+            item.get("locator"),
+            item.get("confidence"),
+        )
+        source_exact = (
+            record.get("forms", {})
+            .get("judeo_algonquin", {})
+            .get("orthography", {})
+            .get("source_exact")
+        )
+        if (
+            actual != expected
+            or source_exact != item.get("source_form")
+            or record.get("metadata", {}).get("lexical_layer") != "donor_candidate"
+        ):
+            findings.append(
+                f"{record_id}: cited form, printed/analyzed boundary, meaning, "
+                "analysis, locator, confidence, and donor layer must remain exact"
+            )
+
+    for record_id, expected in DOMESTIC_CONTACT_CONTRACTS.items():
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required domestic contact record is missing")
+            continue
+        form, dependency, revision, layer = expected
+        actual = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization"),
+            record.get("relations", {}).get("depends_on"),
+            record.get("relations", {}).get("dependency_revisions", {}).get(dependency),
+            record.get("metadata", {}).get("lexical_layer"),
+        )
+        if actual != (form, [dependency], revision, layer):
+            findings.append(
+                f"{record_id}: contact form and revision-pinned ancestry must remain exact"
+            )
+            continue
+        history = record.get("formation", {}).get("historical_etymology", [])
+        history_claim = (
+            history[0].get("claim")
+            if isinstance(history, list)
+            and len(history) == 1
+            and isinstance(history[0], dict)
+            else None
+        )
+        if history_claim != DOMESTIC_CONTACT_HISTORY_CLAIMS[record_id]:
+            findings.append(
+                f"{record_id}: contact formation must preserve its exact "
+                "source-versus-project boundary"
+            )
+        if record_id == "ja.lexeme.contact_mother":
+            if record.get("source_evidence"):
+                findings.append(
+                    f"{record_id}: reused contact mother must not invent new source evidence"
+                )
+            continue
+        contact_evidence = record.get("source_evidence", [])
+        contact_item = contact_evidence[0] if len(contact_evidence) == 1 else {}
+        evidence_keys = (
+            "source_form",
+            "source_meaning",
+            "grammatical_information",
+            "locator",
+            "confidence",
+            "uncertainty",
+        )
+        if tuple(contact_item.get(key) for key in evidence_keys) != (
+            DOMESTIC_CONTACT_EVIDENCE_CONTRACTS[record_id]
+        ):
+            findings.append(
+                f"{record_id}: contact evidence and its adaptation caution must "
+                "remain exact"
+            )
+
+    absolute = records_by_id.get(DOMESTIC_ABSOLUTE)
+    if absolute is None:
+        findings.append(f"{DOMESTIC_ABSOLUTE}: required nine-cell construction is missing")
+    else:
+        cells, duplicate = _cell_map(
+            absolute, ("predicate", "person_bundle", "order", "inflection")
+        )
+        cell_details = {
+            key: (
+                value.get("romanization"),
+                value.get("hebrew_script"),
+                value.get("segmentation"),
+                value.get("morpheme_gloss"),
+            )
+            for key, value in cells.items()
+        }
+        if duplicate or cell_details != DOMESTIC_CELL_DETAILS:
+            findings.append(
+                f"{DOMESTIC_ABSOLUTE}: paradigm must contain exactly the nine declared "
+                "class-sensitive cells with their script, analysis, and gloss"
+            )
+        eat_cells = [
+            cell
+            for key, cell in cells.items()
+            if key[0] == "eat_inanimate"
+        ]
+        operations = absolute.get("formation", {}).get("operations", [])
+        adaptation_text = " ".join(
+            str(item.get("description", "")).lower()
+            for item in operations
+            if isinstance(item, dict)
+            and item.get("operation") == "phonological_adaptation"
+        )
+        if (
+            len(eat_cells) != 3
+            or any("miičii~o" not in str(cell.get("segmentation")) for cell in eat_cells)
+            or any("miičii-o" in str(cell.get("romanization")) for cell in eat_cells)
+            or "delete stem-final ii" not in adaptation_text
+        ):
+            findings.append(
+                f"{DOMESTIC_ABSOLUTE}: miičii must preserve its analyzed stem in "
+                "segmentation and delete final ii before contact o on the surface"
+            )
+
+    phrase_contracts = {
+        "ja.phrase.domestic_small_child": (
+            ("ja.lexeme.contact_child", "ja.lexeme.contact_small"),
+            {DOMESTIC_SMALL_CHILD},
+            "yeled katan",
+        ),
+        "ja.phrase.domestic_mother_and_child": (
+            (
+                "ja.lexeme.contact_mother",
+                "ja.morpheme.contact_coord_we",
+                "ja.lexeme.contact_child",
+            ),
+            {"ja.construction.contact_nominal_coordination"},
+            "em wə-yeled",
+        ),
+    }
+    for record_id, (component_ids, constructions, surface) in phrase_contracts.items():
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required domestic phrase is missing")
+            continue
+        actual_ids = tuple(item.get("record_id") for item in _components(record))
+        actual_surface = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization")
+        )
+        if (
+            actual_ids != component_ids
+            or _constructions(record) != constructions
+            or actual_surface != surface
+        ):
+            findings.append(
+                f"{record_id}: exact components, order, construction, and surface "
+                "must remain closed"
+            )
+
+    for record_id, (component_ids, surface, clusivity) in (
+        DOMESTIC_CORE_SENTENCE_CONTRACTS.items()
+    ):
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required domestic core sentence is missing")
+            continue
+        actual_ids = tuple(item.get("record_id") for item in _components(record))
+        actual_surface = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization")
+        )
+        if (
+            actual_ids != component_ids
+            or _constructions(record) != {DOMESTIC_ABSOLUTE}
+            or actual_surface != surface
+            or (clusivity is not None and _declared_clusivity(record) != clusivity)
+        ):
+            findings.append(
+                f"{record_id}: subject, predicate class, overt object, clusivity, "
+                "construction, and surface must agree"
+            )
+
+    for record_id, contract in DOMESTIC_DERIVED_SENTENCE_CONTRACTS.items():
+        component_ids, construction_ids, surface, clusivity = contract
+        record = records_by_id.get(record_id)
+        if record is None:
+            findings.append(f"{record_id}: required derived domestic sentence is missing")
+            continue
+        actual_ids = tuple(item.get("record_id") for item in _components(record))
+        actual_surface = (
+            record.get("forms", {}).get("judeo_algonquin", {}).get("romanization")
+        )
+        if (
+            actual_ids != component_ids
+            or _constructions(record) != set(construction_ids)
+            or actual_surface != surface
+            or (clusivity is not None and _declared_clusivity(record) != clusivity)
+        ):
+            findings.append(
+                f"{record_id}: derived host, boundary, clusivity, construction, and "
+                "surface must remain exact"
+            )
+
+    for construction_id, expected_spec in DOMESTIC_CONSTRUCTION_SPECS.items():
+        construction = records_by_id.get(construction_id, {})
+        construction_spec = construction.get("construction_spec", {})
+        if any(
+            tuple(construction_spec.get(field, [])) != expected
+            for field, expected in expected_spec.items()
+        ):
+            findings.append(
+                f"{construction_id}: closed hosts, order, allomorphy, restrictions, "
+                "and counterexamples must remain exact"
+            )
+
+    for record_id, (expected_english, expected_details) in (
+        DOMESTIC_EXAMPLE_CONTRACTS.items()
+    ):
+        record = records_by_id.get(record_id, {})
+        english = record.get("forms", {}).get("english", [])
+        senses = record.get("senses", [])
+        sense = senses[0] if isinstance(senses, list) and len(senses) == 1 else {}
+        idiomatic = sense.get("translations", {}).get("idiomatic", [])
+        normalized_idiomatic = (
+            re.sub(r"[^a-z]+", " ", idiomatic[0].lower()).strip()
+            if isinstance(idiomatic, list)
+            and len(idiomatic) == 1
+            and isinstance(idiomatic[0], str)
+            else None
+        )
+        normalized_expected = re.sub(
+            r"[^a-z]+", " ", expected_english.lower()
+        ).strip()
+        actual_details = tuple(
+            (item.get("role"), item.get("realization"))
+            for item in _components(record)
+        )
+        definition = str(sense.get("definition", "")).lower()
+        required_definition_pattern = (
+            r"(?:physically small)"
+            if record_id == "ja.phrase.domestic_small_child"
+            else r"(?:joined|coordina)"
+            if record_id == "ja.phrase.domestic_mother_and_child"
+            else r"(?:jointly|joint participation)"
+            if "together" in record_id
+            else r"(?:accompan|causes)"
+            if "bring" in record_id
+            else r"(?:eat|consum)"
+            if "eat" in record_id
+            else r".+"
+        )
+        if (
+            english != [expected_english]
+            or normalized_idiomatic != normalized_expected
+            or actual_details != expected_details
+            or not re.search(required_definition_pattern, definition)
+        ):
+            findings.append(
+                f"{record_id}: English meaning, sense, component roles, and "
+                "component realizations must match the declared composition"
+            )
+
+    for record in records_by_id.values():
+        tags = set(record.get("metadata", {}).get("tags", []))
+        if "domestic-action-enrichment" not in tags:
+            continue
+        if record.get("record_type") in {"construction", "phrase", "sentence"} and (
+            record.get("source_evidence")
+        ):
+            findings.append(
+                f"{record['id']}: constructed domestic records must not invent "
+                "direct source evidence"
+            )
+        if record.get("record_type") in {"construction", "sentence"}:
+            semantic_text = _positive_semantic_text(record)
+            if (
+                _asserts_narrative_chain(semantic_text)
+                or _asserts_tam_or_obviation(semantic_text)
+                or re.search(
+                    r"\b(?:ate|brought|sat|drank|will|shall|usually|often|"
+                    r"repeatedly|then|therefore|consequently)\b",
+                    semantic_text,
+                )
+            ):
+                findings.append(
+                    f"{record['id']}: domestic grammar may not assert TAM, "
+                    "obviation, or narrative chaining"
+                )
+        if record.get("record_type") == "sentence" and not {
+            "tam-firewall",
+            "narrative-firewall",
+        }.issubset(tags):
+            findings.append(
+                f"{record['id']}: domestic sentences require TAM and narrative firewalls"
+            )
+        if record.get("record_type") == "sentence" and not {
+            "contact-clause",
+            "componentwise-orthography",
+        }.issubset(tags):
+            findings.append(
+                f"{record['id']}: domestic sentences require contact-clause and "
+                "componentwise-orthography tags"
+            )
+
+    for record_id in required_ids:
+        record = records_by_id.get(record_id)
+        if record is not None and "domestic-action-enrichment" not in set(
+            record.get("metadata", {}).get("tags", [])
+        ):
+            findings.append(
+                f"{record_id}: required domestic record must retain its tranche tag"
+            )
+
+    expected_participants = {
+        record_id: (
+            {"first-plural", clusivity}
+            if clusivity is not None
+            else {"third-singular"}
+        )
+        for record_id, (_, _, clusivity) in DOMESTIC_CORE_SENTENCE_CONTRACTS.items()
+    }
+    expected_participants.update(
+        {
+            record_id: (
+                {"first-plural", clusivity}
+                if clusivity is not None
+                else {"third-singular"}
+            )
+            for record_id, (_, _, _, clusivity) in (
+                DOMESTIC_DERIVED_SENTENCE_CONTRACTS.items()
+            )
+        }
+    )
+    for record_id, expected_tags in expected_participants.items():
+        record = records_by_id.get(record_id, {})
+        if _participant_tags(record) != expected_tags:
+            findings.append(
+                f"{record_id}: participant and clusivity tags must match the "
+                "declared finite cell"
+            )
+
+    for record_id in {
+        "ja.sentence.domestic_we_bring_child_inclusive",
+        "ja.sentence.domestic_we_bring_person_exclusive",
+        "ja.sentence.domestic_mother_brings_child",
+    }:
+        tags = set(records_by_id.get(record_id, {}).get("metadata", {}).get("tags", []))
+        if not {"direct-inverse-deferred", "obviation-deferred"}.issubset(tags):
+            findings.append(
+                f"{record_id}: animate-object clauses must defer direct/inverse "
+                "and obviation"
+            )
 
     return findings
 

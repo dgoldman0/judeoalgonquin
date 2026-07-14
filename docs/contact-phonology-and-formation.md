@@ -182,7 +182,31 @@ asks static “where?” only. These constructions supply no tense, aspect,
 negation, possession, obviation, or wayyiqtol/weqatal behavior. See the [manual
 static-place and posture analysis](research/static-place-and-posture-tranche.md).
 
-## 12. What the first synthesis probe can prove
+## 12. Domestic class bridges and the `miičii-o` boundary
+
+The domestic Absolute reuses contact `a` for three declared TA bring cells and
+contact `o` for three TI bring cells plus three TI eat cells. This is a closed
+constructional abstraction informed by the source Absolute architecture; it is
+not a detachable donor suffix and does not transfer the source TI2 `/oo/`
+ending unchanged. Every cell has a mandatory overt class-compatible object.
+
+The complete inherited eat stem is `miičii-`. Immediately before the newly
+supplied contact `o`, final `ii` deletes, so underlying
+`miičii~o~w`, `kə~miičii~o~hna`, and `nə~miičii~o~hna` surface as `miičow`,
+`kəmiičohna`, and `nəmiičohna`. Analytical segmentation retains `miičii` to
+show the lexical input and the exact repair site. No rule deletes final `ii`
+elsewhere, and no general vowel-coalescence process follows from these three
+cells.
+
+The contact adaptation of Biblical Hebrew `יַ֫חַד` is `yaxad`, with source
+`ḥ` mapped to contact `x`. Its postclausal coactivity distribution is syntax,
+not a sound change or inherited Hebrew word-order claim. Exact `yeled katan`
+likewise preserves the two independently reviewed contact words; its noun-first
+order and invariant property use are a one-host construction, not a productive
+formation rule. See [Domestic Action
+Tranche](research/domestic-action-tranche.md).
+
+## 13. What the first synthesis probe can prove
 
 The first probe may prove that:
 

@@ -41,7 +41,22 @@ and partial coverage, not canon or source attestation. In particular, ordinary
 motion, route, return, and find clauses supply no wayyiqtol foreground chain,
 weqatal consequence frame, obviation, or narrative participant tracking.
 
-The full 225-record database is explicitly noncanonical and remains subject to
+The domestic-action tranche is split by the same evidence and review boundary:
+
+- `n1-domestic-action-source.jsonl` preserves five source-facing eat, bring,
+  and Hebrew togetherness records;
+- `n1-domestic-action-contact.jsonl` adds five bounded contact lexemes;
+- `n1-domestic-action-grammar.jsonl` adds four closed constructions; and
+- `n1-domestic-action-examples.jsonl` adds two phrases and twenty-three
+  manually composed sentences.
+
+Those four files contribute 39 records: 10 lexemes, 4 constructions, 2
+phrases, and 23 sentences. They complete every declared coactivity and domestic
+event-setting host while preserving explicit boundaries around object class,
+definiteness, possession, direction, TAM, direct/inverse alignment, obviation,
+and narrative linking.
+
+The full 264-record database is explicitly noncanonical and remains subject to
 source and design revision.
 
 Every source-facing lexeme or morpheme is typed `donor_candidate`. It preserves

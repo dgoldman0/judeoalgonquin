@@ -73,6 +73,17 @@ conservatively counted. Current checkout-stable accounting is therefore
 conservatively retained failures. This is accounting, not a claim that every
 failed reservation was billed. Paid access remains disabled.
 
+The structured corpus has since grown to 264 records, but the living semantic
+snapshot remains at 180. No paid request was made while manually authoring the
+45 motion/action or 39 domestic-action records. A dedicated frozen incremental
+plan for the earlier motion tranche would embed 45 records plus 12 diagnostics
+in one request. It estimates 34,692 input tokens, about **$0.00069384**, with a
+deliberately conservative 140,321-token ceiling of **$0.00280642**. The 39
+domestic embedding documents add about 103,940 UTF-8 bytes, roughly 25,985
+tokens or **$0.00051970** before their own diagnostics. These figures show that
+retrieval cost remains small; neither plan is spending authorization, and the
+motion-only plan would still leave the newer domestic records absent.
+
 For 1,500 richer records, initial indexing plus selective re-embedding over two major revision rounds is conservatively modeled as 1.2 million embedding tokens. At the current small-model rate, that is approximately **$0.024**. Even a much heavier 10-million-token embedding workload would be about **$0.20**.
 
 ## 3. Model-assisted proposal and review estimate

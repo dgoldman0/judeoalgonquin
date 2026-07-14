@@ -1,0 +1,190 @@
+{
+  "report_id": "domestic-action-enrichment-2026-07-13",
+  "status": "completed_local_noncanonical",
+  "completed_at": "2026-07-13T21:45:00-04:00",
+  "purpose": "Manually construct and review a bounded domestic-action language tranche that integrates regional valency and person architecture with Hebrew-derived ordinary-life and communal material while preserving the future narrative system's boundaries.",
+  "manual_language_work": {
+    "authoring_method": "Direct Codex linguistic reasoning over individually reviewed Moraviantown Munsee and Biblical Hebrew evidence, the existing contact grammar, local exact and semantic retrieval, and the We Walk Well continuity ledger.",
+    "automation_boundary": "Code validates the manually declared source boundaries, contact forms, nine finite cells, host inventories, semantics, component roles, orthography, dependencies, firewalls, and continuity links. It did not choose or generate the language records.",
+    "paid_generative_model_requests": 0
+  },
+  "record_inventory": {
+    "records_total": 264,
+    "prior_records": 225,
+    "new_tranche_records": 39,
+    "current_record_types": {
+      "lexeme": 136,
+      "morpheme": 12,
+      "construction": 27,
+      "phrase": 22,
+      "sentence": 67
+    },
+    "new_record_types": {
+      "lexeme": 10,
+      "construction": 4,
+      "phrase": 2,
+      "sentence": 23
+    },
+    "new_tranche_files": {
+      "data/entries/n1-domestic-action-source.jsonl": 5,
+      "data/entries/n1-domestic-action-contact.jsonl": 5,
+      "data/entries/n1-domestic-action-grammar.jsonl": 4,
+      "data/entries/n1-domestic-action-examples.jsonl": 25
+    },
+    "lifecycle": "candidate",
+    "canonical_records_added": 0,
+    "current_data_sha256": "5cebe7097df05603d4246e6f7d10cff14c0887103a3dd9ca7d85f2649ddc1321"
+  },
+  "source_boundary": {
+    "regional_reference": "John O'Meara, Delaware Stem Morphology, Moraviantown Munsee variety",
+    "regional_items": [
+      "/mwəh-w-/; nəmohaaw /nə-mwəhw-aa-w/ — TA eat someone; I eat him — pp. 66 and 81, examples 2.6 and 2.33a",
+      "/miičii-/; nəmiičiin /nə-miičii-n/ — TI eat something; I eat it — pp. 66 and 81, examples 2.6 and 2.33a",
+      "mpeešəwaaw /nə-peešəw-aa-w/ — TA I bring him — pp. 81-82, example 2.33c",
+      "mpeeloon /nə-peel-oo-n/ — TI2 I bring it — p. 82, example 2.33c"
+    ],
+    "biblical_hebrew_item": "יַ֫חַד yaḥad — unitedness; together, including adverbial community in action — BDB headword senses 1-2a",
+    "honesty_boundary": "Donor records preserve printed and analyzed source material exactly. Contact object inventories, a/o class bridges, miičii-o deletion, postclausal yaxad, phrase order, finite cells, and mixed syntax are explicit project design rather than claimed attested history."
+  },
+  "constructed_language": {
+    "domestic_absolute": {
+      "predicates": [
+        "miičii- — TI eat an admitted food",
+        "peešəw- — TA bring an admitted animate-class entity",
+        "peel- — TI bring an admitted inanimate-class entity"
+      ],
+      "participant_cells_per_predicate": [
+        "third singular",
+        "first plural inclusive",
+        "first plural exclusive"
+      ],
+      "cells": 9,
+      "eat_surfaces": [
+        "miičow",
+        "kəmiičohna",
+        "nəmiičohna"
+      ],
+      "bring_animate_surfaces": [
+        "peešəwaw",
+        "kəpeešəwahna",
+        "nəpeešəwahna"
+      ],
+      "bring_inanimate_surfaces": [
+        "peelow",
+        "kəpeelohna",
+        "nəpeelohna"
+      ],
+      "morphophonemic_boundary": "The full lexical stem remains miičii- in analysis; its final ii deletes only before contact TI bridge o in these three cells.",
+      "object_boundary": "Every clause has one overt bare nondefinite class-compatible object. Count objects are singular and no object is plural-marked."
+    },
+    "family_and_property": {
+      "mother": "em — bounded ordinary mother sense, with local human animate assignment",
+      "small_child": "yeled katan — one physically small child; exact noun-property pair only",
+      "nominal_coordination": "em wə-yeled — mother and child"
+    },
+    "coactivity": {
+      "form": "yaxad",
+      "hosts": [
+        "kəmiičohna lexem yaxad",
+        "nəmiičohna lexem yaxad",
+        "kəmiičohna pri yaxad",
+        "nəmiičohna pri yaxad"
+      ],
+      "boundary": "Joint participation by the indexed first-plural group; not a comitative, reciprocal, ordinary coordinator, simultaneity-only marker, or narrative linker."
+    },
+    "static_event_settings": [
+      "yeled miičow lexem bayitənk — a child eats bread in a house",
+      "kəmiičohna lexem bayitənk — we including you eat bread in a house",
+      "nəmiičohna lexem bayitənk — we excluding you eat bread in a house",
+      "kəmiičohna lexem šulxanənk — we including you eat bread at a table"
+    ],
+    "richer_sentences": [
+      "yeled katan peelow lexem — a small child brings bread",
+      "kələmatapiihna šulxanənk wə-kəmiičohna lexem — we including you sit at a table and eat bread",
+      "kəmiičohna lexem wə-kəməneehna — we including you eat bread and drink"
+    ]
+  },
+  "narrative_boundary": {
+    "preserved_goal": "The required narrative system still centers the specific interaction of Biblical Hebrew wayyiqtol and weqatal with Algonquian obviation and recoverable discourse tracking.",
+    "not_built_here": [
+      "tense, aspect, modality, polarity, imperatives, or event sequence",
+      "definiteness, possession, nominal plural, or object incorporation",
+      "general noun-class assignment or productive adjective syntax",
+      "direct/inverse alignment or proximate/obviative tracking",
+      "wayyiqtol-derived foreground chains",
+      "weqatal-derived consequence, continuation, or recurring frames"
+    ]
+  },
+  "creative_anchor_gate": {
+    "anchors": 2,
+    "segments": 41,
+    "requirements": 16,
+    "valid": true,
+    "ledger_revision": 2,
+    "continuity_result": "We Walk Well now links honest candidate substrates for inclusive eating in one house, a small child bringing bread, and eating together. Bring remains only a conflict probe for carry; plural possessed homes, definite small-child wording, route attachment to eating, clusivity choice, meter, owner review, and human acceptance remain open.",
+    "unchanged_anchor": "When the Lights Learn Our Names received no false coverage: bringing a cup is not lifting it, sitting and eating is not setting a table, and ordinary clauses do not supply the narrative engine."
+  },
+  "embedding_state": {
+    "living_snapshot_records": 180,
+    "structured_records": 264,
+    "records_missing_from_semantic_snapshot": 84,
+    "exact_structured_lookup_records": 264,
+    "motion_checkpoint_dry_plan": {
+      "scope": "frozen historical 180 plus 45 motion/action records; excludes the 39 domestic records",
+      "incremental_records": 45,
+      "diagnostic_queries": 12,
+      "api_inputs": 57,
+      "api_requests_in_this_run": 0,
+      "planned_provider_requests_if_authorized": 1,
+      "rough_input_tokens": 34692,
+      "rough_cost_usd": 0.00069384,
+      "conservative_input_token_upper_bound": 140321,
+      "conservative_cost_upper_bound_usd": 0.00280642,
+      "provider_max_retries": 0
+    },
+    "domestic_record_projection": {
+      "records": 39,
+      "utf8_bytes": 103940,
+      "rough_input_tokens": 25985,
+      "rough_record_only_cost_usd": 0.0005197,
+      "diagnostics_not_yet_frozen": true
+    },
+    "base_database": {
+      "fresh_vectors": 180,
+      "semantic_content_sha256": "dd05344036862956887a6763a54906476de52aea4aa279154de22e91797edf87",
+      "dry_run_access": "read-only",
+      "dry_run_byte_hash_before_and_after": "4e9009fc771dc522e8966474e27a3b2a731b00d6d1026c10c68b9f5f0e63aaff"
+    },
+    "authorization_state": "consumed and closed; no provider call, live semantic query, or generative API action occurred"
+  },
+  "verification": {
+    "tests": 217,
+    "tests_passed": 217,
+    "records_valid": 264,
+    "anchor_ledgers_valid": 2,
+    "construction_findings": 0,
+    "adversarial_coverage": [
+      "donor printed/analyzed source boundary, meaning, locator, and confidence mutations",
+      "contact ancestry, evidence caution, historical claim, spelling, and script mutations",
+      "missing, duplicated, or corrupted nine-cell surfaces, script, segmentation, and glosses",
+      "untruncated miičii-o surface and erased boundary-repair explanation",
+      "TA/TI predicate and overt object-class mismatch or object omission",
+      "broadened host classes, reordered phrases, erased restrictions, and unlisted hosts",
+      "English meaning, sense definition, component role, realization, and clusivity drift",
+      "invented source evidence on constructed records",
+      "TAM, narrative, direct/inverse, obviation, and tranche-tag bypass attempts",
+      "directional phrase substituted for a static event setting"
+    ]
+  },
+  "artifact_sha256": {
+    "data/entries/n1-domestic-action-source.jsonl": "9475497b06f655e51ecf1095b05218cc08466baf7cbfb0cd0d7780a7a1bc9cd9",
+    "data/entries/n1-domestic-action-contact.jsonl": "e3646fefe6d454bac6d9c6dc5f03427cde9312aa84052a10f64e0869b77a677d",
+    "data/entries/n1-domestic-action-grammar.jsonl": "06d902cfb8ac1586ff6c1b1a4d4bedcdd92f635a936f6e7e17e700206e454481",
+    "data/entries/n1-domestic-action-examples.jsonl": "6d25971bf55827505d6b2f6bdf8071afa0211737ec2c4417ff23f1435a964cae",
+    "data/creative-anchors/we-walk-well.json": "6e50ffc704b79126f4419e9e64c46f583dbd1fc80783b9337e862492156a5eab",
+    "docs/research/domestic-action-tranche.md": "5572536812f283c59e01bf94ba0b13edff2d1bdb0fa6cbfa670c432bdf9b9de4",
+    "tests/fixtures/motion_action_semantic_queries.json": "88070c9ff46e38d3f47b5308442db33985c4e57f29967105253ea4da2b9f9f12"
+  },
+  "contains_vectors": false,
+  "contains_credentials": false
+}

@@ -5,11 +5,12 @@ This repository is the structured knowledge base for an intentionally constructe
 Its explicit alternate-history premise imagines that Judea does not fall, that a culturally rich Judean community eventually crosses the Atlantic and settles in the valley, and that long contact produces a pidgin and then a nativized creole—a full community language that continues to elaborate across ordinary life, learning, art, narrative, and public institutions. Hebrew language and culture are preserved and transformed throughout that development. This is worldbuilding, not claimed history or reconstruction, and the project does not represent any real Jewish or Indigenous community's speech.
 
 The project is currently in **N1 contact-language construction**. The knowledge
-base now contains 225 records. Its latest 45-record manually authored tranche
-adds 28 ordinary motion cells, seven objectless drink cells, four bounded find
-cells, and exact goal/source/route phrases and clauses. The preceding semantic
-checkpoint covers 180 records; these 45 later records remain unembedded. Every
-record remains noncanonical. No legacy translation is canonical. The old
+base now contains 264 records. Its latest 39-record manually authored tranche
+adds a nine-cell eat/bring Absolute, family and coactivity material, complete
+domestic clauses, and richer ordinary coordination. It follows the 45-record
+motion-and-action tranche. The living semantic checkpoint covers 180 records;
+the 84 later records remain unembedded. Every record remains noncanonical. No
+legacy translation is canonical. The old
 fine-tuning-era tree remains recoverable from the archival Git tags documented
 in [the legacy audit](docs/legacy-audit.md).
 
@@ -41,6 +42,8 @@ in [the legacy audit](docs/legacy-audit.md).
 24. [Static-place semantic checkpoint](docs/reports/static-place-semantic-bootstrap-2026-07-13.json)
 25. [Motion and action tranche](docs/research/motion-and-action-tranche.md)
 26. [Motion and action local checkpoint](docs/reports/motion-action-enrichment-2026-07-13.json)
+27. [Domestic action tranche](docs/research/domestic-action-tranche.md)
+28. [Domestic action local checkpoint](docs/reports/domestic-action-enrichment-2026-07-13.json)
 
 ## Core rules
 
@@ -85,7 +88,7 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin search home
 # Show the embedding plan without spending anything.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin embed --data data/entries
 
-# Validate all 225 records, both creative-anchor ledgers, and declared
+# Validate all 264 records, both creative-anchor ledgers, and declared
 # constructions, then inspect the current
 # dry-run embedding envelope without spending.
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate --data data/entries
@@ -93,6 +96,7 @@ PYTHONPATH=src .venv/bin/python -m judeoalgonquin validate-anchors \
   --anchors data/creative-anchors --data data/entries
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin evaluate --data data/entries
 PYTHONPATH=src .venv/bin/python -m judeoalgonquin n1-core-embedding-eval
+PYTHONPATH=src .venv/bin/python -m judeoalgonquin motion-action-embedding-eval
 ```
 
 Paid embedding and semantic-search paths require both `--live` and an enabled,
@@ -100,6 +104,9 @@ capped authorization in [`config/api-budget.json`](config/api-budget.json). The
 foundation smoke call, architecture-probe sanity call, and first N1 core
 checkpoint have been consumed. The later 180-record static-place semantic
 checkpoint also completed, using 108,422 input tokens at an estimated
-$0.00216844; its 45 successor records have not been embedded. The committed
-policy is disabled, so any embedding refresh, live semantic query, generative
-API call, or other paid action requires new owner approval.
+$0.00216844; its 84 successor records have not been embedded. A new dry-only,
+one-request plan can safely add the frozen 45-record motion tranche and twelve
+diagnostics for a rough $0.000694 (conservative ceiling about $0.002807), but it
+intentionally excludes the 39 newer domestic records. The committed policy is
+disabled, so any embedding refresh, live semantic query, generative API call,
+or other paid action requires new owner approval.

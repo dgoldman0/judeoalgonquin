@@ -1,0 +1,110 @@
+[
+  {
+    "id": "motion-action-english-away-source",
+    "query": "an ordinary clause saying that a child moves away from a house, with the house as source rather than goal or static location",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.sentence.motion_child_goes_away_from_house"
+    ],
+    "rationale": "Tests retrieval of a complete source-motion clause rather than an isolated away predicate or house noun."
+  },
+  {
+    "id": "motion-action-english-inclusive-door",
+    "query": "we including you find an indefinite door with the inanimate member of the bounded find construction",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.sentence.action_we_find_door_inclusive"
+    ],
+    "rationale": "Tests participant clusivity, overt objecthood, and the locally admitted inanimate class together."
+  },
+  {
+    "id": "motion-action-english-drink-paradigm",
+    "query": "the seven-person ordinary drink paradigm that is objectless and does not yet allow water milk or another beverage",
+    "query_type": "english",
+    "acceptable_ids": [
+      "ja.construction.contact_ai_drink_independent"
+    ],
+    "rationale": "Tests retrieval of a construction by both its paradigm breadth and its valency restriction."
+  },
+  {
+    "id": "motion-action-conlang-return-hebrew",
+    "query": "אַדַם קווַכקִיוו",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.motion_person_returns"
+    ],
+    "rationale": "Tests the pointed Hebrew-script representation of a complete return clause without an English gloss."
+  },
+  {
+    "id": "motion-action-conlang-find-person-exclusive",
+    "query": "nəmoxkawahna adam",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.action_we_find_person_exclusive"
+    ],
+    "rationale": "Tests a romanized exclusive first-plural transitive clause whose participant and object-class values are morphological."
+  },
+  {
+    "id": "motion-action-conlang-walk-drink",
+    "query": "kəpəməsiihna wə-kəməneehna",
+    "query_type": "conlang",
+    "acceptable_ids": [
+      "ja.sentence.action_we_walk_and_drink"
+    ],
+    "rationale": "Tests conlang-only retrieval of two independently inflected inclusive predicates under ordinary coordination."
+  },
+  {
+    "id": "motion-action-compositional-motion-person",
+    "query": "the closed four-stem by seven-participant ordinary AI motion paradigm covering walk go away return and go home",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_ai_motion_independent"
+    ],
+    "rationale": "Tests paradigm-level retrieval rather than any one memorized motion sentence."
+  },
+  {
+    "id": "motion-action-compositional-direction-frame",
+    "query": "put an overt subject before an inflected motion verb, then one of el min or derex and a bare noun, while excluding static locative morphology",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_ai_motion_relator_clause"
+    ],
+    "rationale": "Tests the synthesized clause frame by ordering, licensed relators, complement shape, and its static-location firewall."
+  },
+  {
+    "id": "motion-action-compositional-find-class",
+    "query": "the first-plural Absolute construction that keeps animate moxkaw and inanimate moxkam distinct and requires an overt indefinite object",
+    "query_type": "compositional",
+    "acceptable_ids": [
+      "ja.construction.contact_find_absolute_first_plural"
+    ],
+    "rationale": "Tests retrieval of the bounded transitive construction through its class-sensitive stem and object requirements."
+  },
+  {
+    "id": "motion-action-contrast-goal-not-static",
+    "query": "toward a house as a directional goal phrase, not in a house, not from a house, and without static suffix enk",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.phrase.motion_toward_house"
+    ],
+    "rationale": "Tests the goal phrase against both the older static locative and the new source phrase."
+  },
+  {
+    "id": "motion-action-contrast-home-lexical",
+    "query": "a child goes home with homeward direction inside the verb; do not add bayit as a separate destination or claim arrival",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.sentence.motion_child_goes_home"
+    ],
+    "rationale": "Tests lexical homeward motion against the analytically expressed house-goal construction."
+  },
+  {
+    "id": "motion-action-contrast-drink-no-object",
+    "query": "I drink as an objectless ordinary action, not I drink water or milk and not a habitual or narrative event",
+    "query_type": "contrastive",
+    "acceptable_ids": [
+      "ja.sentence.action_i_drink"
+    ],
+    "rationale": "Tests the current valency and discourse firewall rather than inviting an unsupported beverage object or TAM reading."
+  }
+]

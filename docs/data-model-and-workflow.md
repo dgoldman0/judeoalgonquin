@@ -145,7 +145,11 @@ cells and host combinations are exhaustive. Tooling may validate that closed
 inventory but may not fill an apparent Cartesian product, substitute a new
 host, or infer an omitted person, object, relator, or clause. The motion-and-
 action tranche's 28 motion, seven drink, four find, three relator-phrase, and
-three relator-clause cells are the current concrete example of this rule.
+three relator-clause cells are one concrete example. The domestic tranche adds
+an exact nine-cell eat/bring Absolute, four listed coactivity hosts, one
+small-child phrase, and four listed static event-setting combinations. Missing
+cells are not permission for tooling to generate a cross-product; the domestic
+records explicitly exercise every declared host.
 
 [*We Walk Well* and *When the Lights Learn Our Names*](../references/creative-anchors/README.md) are the initial `creative_anchor` sources. Their themes, voice, narrative aims, and existing wording are continuity constraints. A revision may change any individual form after review, but it must retain a link to the anchor, explain material departures, and never overwrite the preserved source text.
 
@@ -175,12 +179,13 @@ An embedding search document may include the form, sense, gloss, formation ratio
 Embeddings are regenerated only for changed records and any derived documents whose content changed. Switching embedding models creates a separately identified index; it does not rewrite language records.
 
 The current living semantic checkpoint contains vectors for exactly the 180
-records present at the static-place checkpoint. The 45 motion-and-action
-records were authored later, so the structured corpus now contains 225 records
-while those 45 have no vector in that snapshot. Retrieval callers must expose
-that coverage boundary: exact structured lookup remains current, but absence
-from semantic results is not evidence against a post-checkpoint record. A
-semantic refresh remains a paid operation requiring explicit owner approval.
+records present at the static-place checkpoint. The 45 motion-and-action and
+39 domestic-action records were authored later, so the structured corpus now
+contains 264 records while those 84 have no vector in that snapshot. Retrieval
+callers must expose that coverage boundary: exact structured lookup remains
+current, but absence from semantic results is not evidence against a
+post-checkpoint record. A semantic refresh remains a paid operation requiring
+explicit owner approval.
 
 Similarity is a discovery signal, not proof of equivalence or conflict. Every suggested duplicate or contradiction must be resolved through structured evidence and review.
 
@@ -254,3 +259,14 @@ while the earlier 180 vectors remain the last committed living checkpoint.
 Paid access is disabled. Any embedding refresh, live semantic query, or
 generative API call requires a new explicit authorization and the same
 reservation, cap, and reporting controls.
+
+The 39 domestic-action records were likewise authored and reviewed without an
+API call. Their embedding documents total about 103,940 UTF-8 bytes, roughly
+25,985 tokens by the planning heuristic (about $0.000520 at the configured
+rate) before diagnostic queries. A dedicated dry-only checkpoint for the
+earlier 45 motion records freezes the historical 180+45 boundary and plans one
+57-input request—45 records plus 12 diagnostics—at about 34,692 tokens or
+$0.000694, with a conservative ceiling of $0.002807. It intentionally does not
+pretend to refresh the 39 newer records. A later living-index refresh must
+include domestic-specific diagnostics and receive explicit approval; none of
+these estimates is authorization.
